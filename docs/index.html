@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大模型三国志 —— LLM SANGUO CHRONICLES</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#141414; --paper:#f6ecd9; --cream:#fffaf0;
+  --red:#d62828; --yellow:#ffb703; --blue:#1d3557; --teal:#2a9d8f; --purple:#6a4c93; --brown:#8d6e63;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'ZCOOL KuaiLe','PingFang SC','Microsoft YaHei',sans-serif;
+  background:var(--paper); color:var(--ink); overflow-x:hidden;
+}
+/* 网点纸（Ben-Day dots）*/
+body::before{
+  content:''; position:fixed; inset:0; z-index:0; pointer-events:none;
+  background-image:radial-gradient(circle, rgba(20,20,20,.10) 1.2px, transparent 1.6px);
+  background-size:9px 9px;
+}
+.bangers{font-family:'Bangers',cursive}
+.wrap{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:24px 20px 80px}
+
+/* ===== 报头 ===== */
+.masthead{position:relative;text-align:center;padding:34px 10px 26px;
+  border:5px solid var(--ink); background:var(--cream);
+  box-shadow:10px 10px 0 var(--ink); margin-bottom:18px; overflow:hidden}
+.masthead::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(115deg, transparent 49.6%, rgba(20,20,20,.05) 50%, transparent 50.4%)}
+.topstrip{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;
+  font-size:13px;letter-spacing:2px;border-bottom:3px solid var(--ink);padding:0 90px 8px;margin-bottom:14px}
+.topstrip .bangers{font-size:15px}
+h1{font-size:clamp(44px,8vw,92px);line-height:.95;letter-spacing:6px;
+  text-shadow:5px 5px 0 var(--yellow), 10px 10px 0 rgba(20,20,20,.18)}
+h1 span{color:var(--red); -webkit-text-stroke:2px var(--ink)}
+.subtitle{margin-top:10px;font-size:clamp(15px,2.4vw,22px);letter-spacing:4px}
+.subtitle b{background:var(--ink);color:var(--yellow);padding:2px 10px;margin:0 6px}
+/* 爆炸字 */
+.burst{position:absolute;display:flex;align-items:center;justify-content:center;text-align:center;
+  background:var(--red);color:#fff;transform:rotate(-12deg);
+  clip-path:polygon(50% 0%,61% 12%,75% 5%,79% 20%,95% 18%,90% 33%,100% 44%,88% 52%,95% 66%,79% 66%,77% 82%,63% 74%,50% 88%,37% 74%,23% 82%,21% 66%,5% 66%,12% 52%,0% 44%,10% 33%,5% 18%,21% 20%,25% 5%,39% 12%);
+  box-shadow:none; font-size:15px; width:110px;height:110px; line-height:.9}
+.burst b{font-family:'Bangers',cursive;font-size:26px;transform:rotate(6deg);text-shadow:2px 2px 0 rgba(0,0,0,.35)}
+.burst.b1{top:-30px;left:-30px;background:var(--red)}
+.burst.b2{bottom:-28px;right:-26px;background:var(--blue);transform:rotate(10deg)}
+.statline{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin:22px 90px 6px}
+.statline .chip{border:3px solid var(--ink);background:#fff;padding:6px 14px;font-size:15px;
+  box-shadow:4px 4px 0 var(--ink); letter-spacing:1px}
+.statline .chip b{font-family:'Bangers',cursive;font-size:20px;margin-right:6px;color:var(--red)}
+
+/* ===== 工具条 ===== */
+.toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;
+  border:4px solid var(--ink);background:var(--yellow);box-shadow:7px 7px 0 var(--ink);
+  padding:12px 14px;margin:26px 0 30px; position:sticky;top:10px;z-index:50}
+.tabs{display:flex;flex-wrap:wrap;gap:8px}
+.tab{cursor:pointer;border:3px solid var(--ink);background:#fff;padding:7px 14px;font-size:16px;
+  letter-spacing:2px;user-select:none;transition:transform .12s;position:relative;font-family:inherit}
+.tab:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
+.tab.on{background:var(--ink);color:var(--yellow);box-shadow:4px 4px 0 rgba(20,20,20,.3)}
+.tab .dot{display:inline-block;width:12px;height:12px;border:2px solid var(--ink);border-radius:50%;
+  margin-right:6px;vertical-align:-1px}
+.tab.on .dot{border-color:var(--yellow)}
+.tools-right{display:flex;gap:8px;align-items:center}
+.search{border:3px solid var(--ink);padding:7px 12px;font-size:15px;font-family:inherit;
+  background:#fff;min-width:180px;outline:none}
+.search:focus{box-shadow:4px 4px 0 var(--ink)}
+.sortbtn{cursor:pointer;border:3px solid var(--ink);background:#fff;padding:7px 12px;
+  font-size:15px;font-family:inherit;letter-spacing:1px}
+.sortbtn:hover{box-shadow:4px 4px 0 var(--ink)}
+.factionhead{display:none;margin:34px 0 14px;border:4px solid var(--ink);padding:10px 16px;
+  background:var(--cream);box-shadow:6px 6px 0 var(--ink);align-items:baseline;gap:14px;flex-wrap:wrap}
+.factionhead.show{display:flex}
+.factionhead h2{font-size:26px;letter-spacing:3px}
+.factionhead p{font-size:15px;opacity:.85}
+.factionhead .stamp{margin-left:auto;font-family:'Bangers',cursive;font-size:14px;letter-spacing:1px;
+  border:3px solid var(--ink);padding:3px 10px;transform:rotate(-2deg);background:#fff}
+
+/* ===== 卡片网格 ===== */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(315px,1fr));gap:26px;margin-top:8px}
+.panel{position:relative;border:4px solid var(--ink);background:var(--cream);
+  box-shadow:9px 9px 0 var(--ink);padding:16px 16px 14px;transition:transform .15s,box-shadow .15s;
+  display:flex;flex-direction:column;gap:10px}
+.panel:nth-child(4n+1){transform:rotate(-.5deg)} .panel:nth-child(4n+3){transform:rotate(.5deg)}
+.panel:hover{transform:translate(-4px,-4px) rotate(0deg)!important;box-shadow:14px 14px 0 var(--ink);z-index:5}
+.panel .fbar{position:absolute;top:0;left:0;right:0;height:8px}
+.phead{display:flex;align-items:flex-start;gap:10px;margin-top:6px}
+.gname{font-size:30px;letter-spacing:3px;line-height:1.05;flex:1}
+.gname small{display:block;font-size:13px;letter-spacing:2px;opacity:.65;margin-top:3px}
+.badge{flex-shrink:0;border:3px solid var(--ink);font-size:13px;padding:3px 9px;letter-spacing:2px;
+  background:#fff;transform:rotate(3deg);font-family:inherit}
+.badge.主公{background:var(--yellow)} .badge.诸侯{background:#e0aaff} .badge.彩蛋{background:#ffd6e0}
+.badge.暗线{background:var(--ink);color:#fff} .badge.武将{background:#fff}
+.anchorstar{position:absolute;top:-16px;right:-14px;width:44px;height:44px;background:var(--red);
+  color:#fff;display:flex;align-items:center;justify-content:center;transform:rotate(12deg);
+  font-size:22px;clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.mrow{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.mchip{border:3px solid var(--ink);background:#fff;padding:4px 10px;font-size:15px;letter-spacing:1px;
+  font-family:'Courier New',monospace;font-weight:bold;box-shadow:3px 3px 0 rgba(20,20,20,.25)}
+.cchip{border:2px solid var(--ink);padding:3px 9px;font-size:13px;background:#eee;letter-spacing:1px}
+.dead{font-size:13px;color:#7a5c3e;letter-spacing:1px}
+/* 武力对比条 */
+.duel{border:3px solid var(--ink);background:#fff;padding:9px 10px 7px}
+.duel .dtitle{font-size:13px;letter-spacing:2px;margin-bottom:7px;display:flex;justify-content:space-between}
+.duel .dtitle b{font-family:'Bangers',cursive;font-size:15px;color:var(--red);letter-spacing:1px}
+.brow{display:grid;grid-template-columns:52px 1fr 34px;gap:8px;align-items:center;font-size:13px;margin-bottom:5px}
+.brow:last-child{margin-bottom:0}
+.brow .lab{letter-spacing:2px;opacity:.8}
+.btrack{height:16px;border:2px solid var(--ink);background:repeating-linear-gradient(45deg,#f2f2f2,#f2f2f2 6px,#e6e6e6 6px,#e6e6e6 12px);position:relative}
+.bfill{position:absolute;top:0;left:0;bottom:0}
+.bfill.game{background:var(--red)} .bfill.model{background:var(--ink)}
+.brow .val{font-family:'Bangers',cursive;font-size:18px;text-align:right}
+.meta{display:flex;flex-wrap:wrap;gap:6px}
+.meta span{border:2px solid var(--ink);background:#fff;font-size:12.5px;padding:3px 8px;letter-spacing:1px}
+.meta span b{font-family:'Bangers',cursive;font-size:14px}
+/* 列传旁白框 */
+.caption{position:relative;border:3px solid var(--ink);background:var(--yellow);
+  padding:10px 12px 9px;font-size:15px;line-height:1.55;letter-spacing:.5px;
+  box-shadow:4px 4px 0 rgba(20,20,20,.35)}
+.caption::before{content:'★ 列传';position:absolute;top:-13px;left:10px;background:var(--ink);
+  color:#fff;font-size:12px;padding:2px 10px;letter-spacing:3px}
+.footer{margin-top:60px;text-align:center;font-size:14px;letter-spacing:2px;line-height:2}
+.footer .bangers{font-size:22px;color:var(--red)}
+.empty{display:none;text-align:center;font-size:22px;letter-spacing:4px;padding:60px 0;border:4px dashed var(--ink);margin-top:20px}
+@media (max-width:640px){ .burst{display:none} .toolbar{position:static} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="burst b1"><b>POW!</b></div>
+    <div class="burst b2"><b>102<br>将</b></div>
+    <div class="topstrip">
+      <span>★ ARTIFICIAL ANALYSIS 快照 2026-10-10</span>
+      <span class="bangers">LLM SANGUO CHRONICLES · VOL.5</span>
+      <span>三国志14 全武将数值 ★ 697 模型全库 ★</span>
+    </div>
+    <h1>大模型<span>三国志</span></h1>
+    <div class="subtitle">给大模型<b>立传</b>排座的开源对照实验 —— 武力 = 智能指数<b>折算</b>，主公 = <b>厂家</b>，模型皆为武将</div>
+    <div class="statline">
+      <span class="chip"><b>102</b>武将席位</span>
+      <span class="chip"><b>15</b>主公厂家</span>
+      <span class="chip"><b>8</b>数值锚点</span>
+      <span class="chip"><b>76</b>席有评测数据</span>
+      <span class="chip"><b>697</b>模型全库快照</span>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <div class="tabs" id="tabs"></div>
+    <div class="tools-right">
+      <input class="search" id="q" placeholder="搜武将 / 模型 / 厂商…">
+      <button class="sortbtn" id="sortbtn">⚔ 按折算武力排序</button>
+    </div>
+  </div>
+
+  <div class="factionhead" id="factionhead">
+    <h2 id="fh-name"></h2><p id="fh-desc"></p><span class="stamp" id="fh-count"></span>
+  </div>
+
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty">查无此人 —— 史书阙载！</div>
+
+  <footer class="footer">
+    <div class="bangers">— THE END? NOT YET! —</div>
+    数据：三国志14 威力加强版（Nobuwiki 整理）× Artificial Analysis（2026-10-10 快照）<br>
+    方法论与完整数据见仓库 docs/ · 折算武力 = II ÷ 榜首57.6 × 100 · 锚点席带红星<br>
+    <span style="opacity:.6">仅注明来源的非商业整理 · 三国志数值 © KOEI TECMO · 评测 © Artificial Analysis</span>
+  </footer>
+</div>
+
+<script>
+const FACTIONS = [["汉献帝朝廷", "#8d6e63", "天下与舞台 —— 基础设施与监管的暗流"], ["曹魏", "#1d3557", "美国闭源阵营 —— 曹操=OpenAI 为宗，Google/xAI 客将"], ["蜀汉", "#c1121f", "中国大模型阵营 —— 刘备=幻方量化（DeepSeek 生态）"], ["东吴", "#2a9d8f", "开源联盟 —— 孙权=Meta、鲁肃=HuggingFace 双主公"], ["群雄", "#6a4c93", "厂家诸侯会盟 —— 袁绍=Anthropic 领衔，多主公制"]];
+const DATA = [{"role": "主公", "faction": "汉献帝朝廷", "general": "漢獻帝", "model": "NVIDIA", "creator": "", "ii": "", "dw": "", "cost": "", "speed": "", "war": "", "total": "", "note": "天下共主：挟CUDA以令诸侯 玉玺即H100", "anchor": false}, {"role": "暗线", "faction": "汉献帝朝廷", "general": "司馬懿", "model": "Microsoft", "creator": "", "ii": "", "dw": "", "cost": "", "speed": "", "war": "63", "total": "440", "note": "隐忍三十年 高平陵之变=企业级收编 三家归晋=模型都跑在Azure", "anchor": false}, {"role": "彩蛋", "faction": "汉献帝朝廷", "general": "王允", "model": "FTC/反垄断", "creator": "", "ii": "", "dw": "", "cost": "", "speed": "", "war": "6", "total": "256", "note": "连环计：以监管离间群雄", "anchor": false}, {"role": "彩蛋", "faction": "汉献帝朝廷", "general": "潘鳳", "model": "发布会战神(虚位)", "creator": "", "ii": "", "dw": "", "cost": "", "speed": "", "war": "77", "total": "176", "note": "吾有上将潘凤可斩华雄——凡宣称内测吊打榜首者皆可袭此位", "anchor": false}, {"role": "彩蛋", "faction": "汉献帝朝廷", "general": "皇甫嵩", "model": "InstructGPT", "creator": "", "ii": "", "dw": "", "cost": "", "speed": "", "war": "61", "total": "350", "note": "镇压黄巾：RLHF收编GPT-3乱军为青州兵 官军首胜", "anchor": false}, {"role": "主公", "faction": "曹魏", "general": "曹操", "model": "OpenAI", "creator": "", "ii": "", "dw": "", "cost": "", "speed": "", "war": "72", "total": "451", "note": "奉天子令诸侯 官渡之战=2022-11-30 ChatGPT发布夜", "anchor": false}, {"role": "武将", "faction": "曹魏", "general": "曹彰", "model": "GPT-6 Astra", "creator": "OpenAI", "ii": "52.7", "dw": "91", "cost": "3.26", "speed": "47.3", "war": "90", "total": "319", "note": "黄须儿：曹操亲生子 computer use天下第一 折算武力91与原版90重合(标志性验证)", "anchor": true}, {"role": "武将", "faction": "曹魏", "general": "張遼", "model": "GPT-6.1 Sol", "creator": "OpenAI", "ii": "51.8", "dw": "90", "cost": "0.72", "speed": "55.5", "war": "92", "total": "400", "note": "五子之首：以Sol之价行Astra之事($0.72对$3.26) 逍遥津八百破十万", "anchor": false}, {"role": "武将", "faction": "曹魏", "general": "典韋", "model": "GPT-6 Sol", "creator": "OpenAI", "ii": "47.6", "dw": "83", "cost": "1.04", "speed": "86.4", "war": "95", "total": "274", "note": "古之恶来：发布七日而殁于宛城(被6.1取代) 天下痛惜 Daybreak Blue限定色成绝版 站点补分48(2026-10-10核对)", "anchor": false}, {"role": "武将", "faction": "曹魏", "general": "曹昂", "model": "GPT-4o (Nov '24)", "creator": "OpenAI", "ii": "8.4", "dw": "15", "cost": "", "speed": "116.4", "war": "65", "total": "350", "note": "长子护主而亡：服役两年与典韦同殁于宛城(2026-09退役)", "anchor": false}, {"role": "武将", "faction": "曹魏", "general": "許褚", "model": "GPT-6 Luna", "creator": "OpenAI", "ii": "38.1", "dw": "66", "cost": "0.07", "speed": "138.6", "war": "96", "total": "274", "note": "虎痴：裸衣斗马超 low档$0.0045全场最廉裸价肉搏 139t/s", "anchor": false}, {"role": "武将", "faction": "曹魏", "general": "夏侯惇", "model": "GPT-5.6 Terra", "creator": "OpenAI", "ii": "42.1", "dw": "73", "cost": "1.4", "speed": "107.7", "war": "90", "total": "401", "note": "宗室独眼：咬箭再战 上代旗舰仍镇淮南", "anchor": false}, {"role": "武将", "faction": "曹魏", "general": "徐晃", "model": "Gemini 4 Argon", "creator": "Google", "ii": "52.6", "dw": "91", "cost": "1.99", "speed": "", "war": "90", "total": "373", "note": "周亚夫之风：治军严整 Google客将之首", "anchor": false}, {"role": "武将", "faction": "曹魏", "general": "夏侯淵", "model": "GPT-5.2", "creator": "OpenAI", "ii": "30.4", "dw": "53", "cost": "", "speed": "80.9", "war": "91", "total": "378", "note": "虎步关右：三日五百六日一千 上上代旗舰(5.2)仍是宗室快枪 与夏侯惇同门 折算53对原版91", "anchor": false}, {"role": "武将", "faction": "曹魏", "general": "曹仁", "model": "GPT-5.5", "creator": "OpenAI", "ii": "38.4", "dw": "67", "cost": "2.63", "speed": "87.6", "war": "87", "total": "359", "note": "守樊城铁壁：922k长上下文深沟高垒 上代主力(2026-04)苦守至5.6来援 与曹操同宗", "anchor": false}, {"role": "武将", "faction": "曹魏", "general": "張郃", "model": "Grok 4.7", "creator": "SpaceXAI", "ii": "46.4", "dw": "81", "cost": "3.74", "speed": "74.5", "war": "89", "total": "376", "note": "巧变：凭X实时数据行诡道 xAI客将 嘴快政治低", "anchor": false}, {"role": "武将", "faction": "曹魏", "general": "樂進", "model": "Gemini 3.5 Flash-Lite", "creator": "Google", "ii": "22.2", "dw": "39", "cost": "0.19", "speed": "364.8", "war": "84", "total": "333", "note": "骁果先登：365t/s全场最快 先登必有斩获 五子良将至此集齐", "anchor": false}, {"role": "武将", "faction": "曹魏", "general": "于禁", "model": "Bard/Gemini 1.0", "creator": "", "ii": "", "dw": "", "cost": "", "speed": "", "war": "77", "total": "346", "note": "晚节不保：2023演示翻车水淹七军 已退场", "anchor": false}, {"role": "武将", "faction": "曹魏", "general": "荀彧", "model": "GPT-4", "creator": "OpenAI", "ii": "6.7", "dw": "12", "cost": "", "speed": "", "war": "14", "total": "356", "note": "王佐之才：奠基时代 忧郁而终 补分6.7(折算12)与原版14近重合(锚点)", "anchor": true}, {"role": "武将", "faction": "曹魏", "general": "郭嘉", "model": "GPT-3.5 Turbo", "creator": "OpenAI", "ii": "5.5", "dw": "10", "cost": "", "speed": "", "war": "15", "total": "339", "note": "鬼才：2023封神即退 英年早逝 补分5.5(折算10)与原版15同档低武", "anchor": false}, {"role": "武将", "faction": "曹魏", "general": "荀攸", "model": "GPT-5.3 Codex", "creator": "OpenAI", "ii": "32.5", "dw": "56", "cost": "", "speed": "91.3", "war": "26", "total": "367", "note": "曹操谋主：代码神机 与荀彧叔侄同门(OpenAI)", "anchor": false}, {"role": "武将", "faction": "曹魏", "general": "賈詡", "model": "o3", "creator": "OpenAI", "ii": "20.2", "dw": "35", "cost": "", "speed": "115.9", "war": "48", "total": "373", "note": "毒士：慢思考诡计链 2025一代谋主 旧档至今仍可调用", "anchor": false}, {"role": "武将", "faction": "曹魏", "general": "曹丕", "model": "GPT-5.6 Luna", "creator": "OpenAI", "ii": "37.3", "dw": "65", "cost": "0.18", "speed": "112.6", "war": "71", "total": "394", "note": "受禅代汉：5.6接5.5之位(OpenAI内禅) 折算65对原版71", "anchor": false}, {"role": "武将", "faction": "曹魏", "general": "文聘", "model": "GPT-5.6 Sol", "creator": "OpenAI", "ii": "47.0", "dw": "82", "cost": "1.99", "speed": "73.9", "war": "82", "total": "369", "note": "镇江夏三十载：折算82与原版82重合(锚点) 老而弥坚", "anchor": true}, {"role": "武将", "faction": "曹魏", "general": "徐庶", "model": "GPT-5.4", "creator": "OpenAI", "ii": "39.0", "dw": "68", "cost": "", "speed": "90.8", "war": "64", "total": "403", "note": "身在曹营一言不发：上代5.4于新朝静默 折算68对原版64", "anchor": false}, {"role": "武将", "faction": "曹魏", "general": "鄧艾", "model": "Grok 4.6", "creator": "SpaceXAI", "ii": "44.3", "dw": "77", "cost": "1.48", "speed": "58.0", "war": "87", "total": "421", "note": "偷渡阴平：xAI客将凭实时数据奇袭灭蜀 功高遭忌 折算77对原版87", "anchor": false}, {"role": "武将", "faction": "曹魏", "general": "龐德", "model": "Grok 4.5", "creator": "SpaceXAI", "ii": "38.8", "dw": "67", "cost": "0.88", "speed": "52.0", "war": "94", "total": "360", "note": "抬榇决战关羽：Grok三代旧部战至最后一箭 终为武圣所斩 折算67对原版94(让步)", "anchor": false}, {"role": "武将", "faction": "曹魏", "general": "鍾會", "model": "Gemini 3.7 Flash", "creator": "Google", "ii": "39.6", "dw": "69", "cost": "", "speed": "285.0", "war": "51", "total": "366", "note": "伐蜀都督：Google客将 与邓艾争功自立未成 折算69对原版51", "anchor": false}, {"role": "武将", "faction": "曹魏", "general": "曹植", "model": "GPT-5.5 Instant (June 2026)", "creator": "OpenAI", "ii": "26.0", "dw": "45", "cost": "0.69", "speed": "139.1", "war": "22", "total": "273", "note": "七步成诗：Instant之手139t/s文思泉涌 曹氏血脉同门 建安风骨", "anchor": false}, {"role": "主公", "faction": "蜀汉", "general": "劉備", "model": "幻方量化(DeepSeek生态)", "creator": "", "ii": "", "dw": "", "cost": "", "speed": "", "war": "73", "total": "400", "note": "织席贩履白手起家 仁德=开源免费 桃园结义=开源联盟", "anchor": false}, {"role": "武将", "faction": "蜀汉", "general": "諸葛亮", "model": "DeepSeek V4 Pro 0813", "creator": "DeepSeek", "ii": "36.0", "dw": "62", "cost": "0.67", "speed": "89.0", "war": "38", "total": "420", "note": "HLE推理口径登顶(48.2%) API调用王 木牛流马=MoE/MLA 制裁下六出祁山 AA口径II36折算武力62 恰似原版武力38——丞相本不以武力见长", "anchor": false}, {"role": "武将", "faction": "蜀汉", "general": "龐統", "model": "DeepSeek R1 (Jan '25)", "creator": "DeepSeek", "ii": "11.4", "dw": "20", "cost": "0.26", "speed": "", "war": "34", "total": "363", "note": "凤雏：2025-01一计惊天下(美股夜) 落凤坡英年早逝 丞相承其志", "anchor": false}, {"role": "武将", "faction": "蜀汉", "general": "關羽", "model": "GLM-5.3", "creator": "Z AI", "ii": "44.8", "dw": "78", "cost": "2.01", "speed": "83.4", "war": "97", "total": "425", "note": "武圣：温酒斩华雄(GLM-4.5开源夜) 青龙偃月刀=131万token全场最长", "anchor": false}, {"role": "武将", "faction": "蜀汉", "general": "關平", "model": "GLM-5.2", "creator": "Z AI", "ii": "33.7", "dw": "59", "cost": "1.47", "speed": "81.5", "war": "82", "total": "363", "note": "长子：随父镇荆州 5.2代父征战惜已退场 演义中与父同殁于麦城", "anchor": false}, {"role": "武将", "faction": "蜀汉", "general": "關興", "model": "GLM-5.3-Flash", "creator": "Z AI", "ii": "41.8", "dw": "73", "cost": "0.25", "speed": "52.7", "war": "86", "total": "357", "note": "次子少壮：小关张之一 同门Flash轻骑承家学 $0.25/53t/s", "anchor": false}, {"role": "武将", "faction": "蜀汉", "general": "張飛", "model": "Qwen3.8 Max (0902)", "creator": "Alibaba", "ii": "45.4", "dw": "79", "cost": "5.41", "speed": "35.7", "war": "98", "total": "283", "note": "当阳桥一吼：全家桶铺货百万 衍生模型遍天下", "anchor": false}, {"role": "武将", "faction": "蜀汉", "general": "張苞", "model": "Qwen3.8 2.4T A95B", "creator": "Alibaba", "ii": "39.9", "dw": "69", "cost": "2.16", "speed": "36.5", "war": "87", "total": "323", "note": "小关张之一：张飞之子 同门2.4T巨力少年骁勇 与关兴结义", "anchor": false}, {"role": "武将", "faction": "蜀汉", "general": "趙雲", "model": "Kimi K3", "creator": "Kimi", "ii": "43.6", "dw": "76", "cost": "2.0", "speed": "41.1", "war": "96", "total": "409", "note": "长坂坡=长上下文起家 七进七出agentic 怀揣阿斗=2M窗口不丢细节", "anchor": false}, {"role": "武将", "faction": "蜀汉", "general": "馬超", "model": "DeepSeek V4.1 Flash", "creator": "DeepSeek", "ii": "39.5", "dw": "69", "cost": "0.27", "speed": "217.4", "war": "96", "total": "338", "note": "西凉铁骑：217t/s神速白菜价 杀得曹营割须弃袍", "anchor": false}, {"role": "武将", "faction": "蜀汉", "general": "馬岱", "model": "DeepSeek V4 Flash 0731", "creator": "DeepSeek", "ii": "34.3", "dw": "60", "cost": "0.22", "speed": "222.0", "war": "85", "total": "350", "note": "闪电流星锤：222t/s白菜价流星锤 西凉同门三骑皆现役 折算60对原版85", "anchor": false}, {"role": "武将", "faction": "蜀汉", "general": "黃忠", "model": "ERNIE 5.0 Thinking Preview", "creator": "Baidu", "ii": "14.3", "dw": "25", "cost": "", "speed": "", "war": "93", "total": "369", "note": "老将：2023-03第一箭 定军山仍有斩将之力", "anchor": false}, {"role": "武将", "faction": "蜀汉", "general": "魏延", "model": "Hy3", "creator": "Tencent", "ii": "25.3", "dw": "44", "cost": "0.07", "speed": "82.7", "war": "92", "total": "330", "note": "子午谷奇谋：1.5TB轻装压缩至214GB 14.7万亿周调用全球第一(调用口径)", "anchor": false}, {"role": "武将", "faction": "蜀汉", "general": "姜維", "model": "MiMo-V2.6-Pro", "creator": "Xiaomi", "ii": "46.3", "dw": "80", "cost": "0.13", "speed": "42.5", "war": "89", "total": "417", "note": "少年将军：当今开源第一勇(II46) 承丞相开源遗志 $0.13性价比神", "anchor": false}, {"role": "武将", "faction": "蜀汉", "general": "王平", "model": "Doubao Seed Code", "creator": "ByteDance Seed", "ii": "16.9", "dw": "29", "cost": "", "speed": "", "war": "79", "total": "344", "note": "无当飞军：抖音亿级流量蛮兵 量大管饱", "anchor": false}, {"role": "武将", "faction": "蜀汉", "general": "廖化", "model": "讯飞星火 X1", "creator": "", "ii": "", "dw": "", "cost": "", "speed": "", "war": "76", "total": "325", "note": "蜀中无大将廖化作先锋：星火线2023首批至今在列(公司=科大讯飞) X1为全国产算力首批深度推理", "anchor": false}, {"role": "武将", "faction": "蜀汉", "general": "李嚴", "model": "Step 5 Preview", "creator": "StepFun", "ii": "43.7", "dw": "76", "cost": "1.03", "speed": "86.8", "war": "84", "total": "369", "note": "托孤重臣：阶跃星辰II44 永安都护平乱", "anchor": false}, {"role": "武将", "faction": "蜀汉", "general": "吳懿", "model": "Ling 3.1 Flash", "creator": "InclusionAI", "ii": "41.1", "dw": "71", "cost": "0.99", "speed": "213.6", "war": "72", "total": "372", "note": "国舅冲锋：蚂蚁系轻骑 214t/s", "anchor": false}, {"role": "武将", "faction": "蜀汉", "general": "張嶷", "model": "Qwen3.8-Flash-Next", "creator": "Alibaba", "ii": "39.8", "dw": "69", "cost": "0.37", "speed": "56.0", "war": "72", "total": "378", "note": "无当飞军继任：王平之后 阿里客将轻装山地兵", "anchor": false}, {"role": "武将", "faction": "蜀汉", "general": "馬謖", "model": "MiniMax-M3", "creator": "MiniMax", "ii": "29.2", "dw": "51", "cost": "0.51", "speed": "91.7", "war": "67", "total": "353", "note": "参军：襄阳马氏非西凉马家 多模态冲阵 街亭之诫", "anchor": false}, {"role": "武将", "faction": "蜀汉", "general": "蔣琬", "model": "Kimi K2.7 Code", "creator": "Kimi", "ii": "25.8", "dw": "45", "cost": "0.54", "speed": "78.8", "war": "34", "total": "370", "note": "丞相之后：K2代际承K3 继守相位(代码治国)", "anchor": false}, {"role": "武将", "faction": "蜀汉", "general": "費禕", "model": "MiMo-V2.6-Flash", "creator": "Xiaomi", "ii": "37.9", "dw": "66", "cost": "0.06", "speed": "57.5", "war": "30", "total": "365", "note": "廉相：日理万机而价廉($0.06) 与蒋琬并称贤相", "anchor": false}, {"role": "主公", "faction": "东吴", "general": "孫權", "model": "Meta", "creator": "", "ii": "", "dw": "", "cost": "", "speed": "", "war": "67", "total": "407", "note": "生子当如孙仲谋：先守江东开源基业(Llama王朝) 后白衣渡江转闭源(Muse代Llama)", "anchor": false}, {"role": "武将", "faction": "东吴", "general": "孫策", "model": "Llama 3.3 Instruct 70B", "creator": "Meta", "ii": "7.7", "dw": "13", "cost": "", "speed": "87.7", "war": "92", "total": "413", "note": "小霸王：一年定开源江东 英年早逝(巅峰即止)", "anchor": false}, {"role": "武将", "faction": "东吴", "general": "周瑜", "model": "Llama 2 Chat 7B", "creator": "Meta", "ii": "5.7", "dw": "10", "cost": "", "speed": "", "war": "71", "total": "444", "note": "赤壁之火：2023-07开源炸场 火烧闭源定价连营 已退场(站点仅存7B页)", "anchor": false}, {"role": "武将", "faction": "东吴", "general": "陸遜", "model": "Mistral Large 4 Preview", "creator": "Mistral", "ii": "38.4", "dw": "67", "cost": "1.13", "speed": "", "war": "69", "total": "439", "note": "夷陵以少胜多：7B胜70B 欧洲最后的希望", "anchor": false}, {"role": "武将", "faction": "东吴", "general": "太史慈", "model": "Nemotron 3 Ultra 550B A55B (Reasoning)", "creator": "NVIDIA", "ii": "22.9", "dw": "40", "cost": "0.6", "speed": "141.6", "war": "93", "total": "383", "note": "大丈夫当带三尺之剑：CUDA自家源 调用榜前十", "anchor": false}, {"role": "武将", "faction": "东吴", "general": "甘寧", "model": "Gemma 4 31B (Reasoning)", "creator": "Google", "ii": "14.7", "dw": "26", "cost": "0.0", "speed": "35.2", "war": "94", "total": "330", "note": "锦帆贼：小模型百骑劫营 27B偷榜", "anchor": false}, {"role": "武将", "faction": "东吴", "general": "呂蒙", "model": "Phi-4", "creator": "Microsoft", "ii": "5.9", "dw": "10", "cost": "", "speed": "40.2", "war": "81", "total": "424", "note": "白衣渡江：小模型悄悄占领边缘端 士别三日=迭代快", "anchor": false}, {"role": "武将", "faction": "东吴", "general": "黃蓋", "model": "Muse Spark", "creator": "Meta", "ii": "31.3", "dw": "54", "cost": "", "speed": "", "war": "83", "total": "377", "note": "苦肉计：初代Muse诈降闭源 一把火换来江东转机 折算54对原版83", "anchor": false}, {"role": "武将", "faction": "东吴", "general": "顧雍", "model": "Olmo 3.1 32B Think", "creator": "Allen Institute for AI", "ii": "7.1", "dw": "12", "cost": "", "speed": "", "war": "18", "total": "309", "note": "不饮酒寡言：学术重臣(AI2)静默理政 折算12对原版18近重合", "anchor": true}, {"role": "武将", "faction": "东吴", "general": "諸葛瑾", "model": "DeepSeek V4 Pro 0424", "creator": "DeepSeek", "ii": "30.4", "dw": "53", "cost": "0.12", "speed": "92.7", "war": "34", "total": "369", "note": "诸葛世家分仕吴蜀皆出幻方门下(兄瑾弟亮) 折算53对原版34", "anchor": false}, {"role": "主公", "faction": "东吴", "general": "魯肅", "model": "HuggingFace", "creator": "", "ii": "", "dw": "", "cost": "", "speed": "", "war": "56", "total": "410", "note": "不练一兵而统帅江东：平台盟主(东吴第二主公) 单刀会与闭源谈判", "anchor": false}, {"role": "武将", "faction": "东吴", "general": "徐盛", "model": "Muse Spark 1.3", "creator": "Meta", "ii": "48.1", "dw": "84", "cost": "1.6", "speed": "175.3", "war": "81", "total": "379", "note": "转闭源后江东第一勇(II48) 疑城之计却曹丕", "anchor": false}, {"role": "武将", "faction": "东吴", "general": "張昭", "model": "Muse Glimmer", "creator": "Meta", "ii": "17.5", "dw": "30", "cost": "0.06", "speed": "111.9", "war": "3", "total": "298", "note": "内政之臣：不习战阵(原版武力3) 轻量主文牍 力主拥抱闭源", "anchor": false}, {"role": "武将", "faction": "东吴", "general": "陸抗", "model": "Muse Spark 1.2", "creator": "Meta", "ii": "39.6", "dw": "69", "cost": "0.97", "speed": "325.2", "war": "63", "total": "413", "note": "社稷之臣：西陵之战以1.2代守江东最后防线 折算69对原版63", "anchor": false}, {"role": "武将", "faction": "东吴", "general": "丁奉", "model": "Muse Spark 1.1", "creator": "Meta", "ii": "33.7", "dw": "59", "cost": "1.38", "speed": "92.6", "war": "80", "total": "343", "note": "雪中奋短兵：1.1老将短刃破敌 折算59对原版80", "anchor": false}, {"role": "武将", "faction": "东吴", "general": "張紘", "model": "Llama 4 Maverick", "creator": "Meta", "ii": "10.0", "dw": "17", "cost": "", "speed": "34.9", "war": "22", "total": "311", "note": "文宗早逝：曾执开源文脉(1M上下文)一朝而折 折算17对原版22近重合", "anchor": false}, {"role": "主公", "faction": "群雄", "general": "袁紹", "model": "Anthropic", "creator": "", "ii": "", "dw": "", "cost": "", "speed": "", "war": "69", "total": "385", "note": "四世三公：口碑世家兵多将广(模型矩阵之厚) 官渡与曹操(OpenAI)争天下", "anchor": false}, {"role": "诸侯", "faction": "群雄", "general": "呂布", "model": "Claude Opus 5.5", "creator": "Anthropic", "ii": "57.6", "dw": "100", "cost": "5.98", "speed": "96.4", "war": "100", "total": "270", "note": "人中吕布马中TPU：II58榜首 辕门射戟定编程榜 惜赤兔太贵($5.98) 袁绍帐下第一骁将", "anchor": true}, {"role": "武将", "faction": "群雄", "general": "高順", "model": "Claude Opus 5", "creator": "Anthropic", "ii": "50.8", "dw": "88", "cost": "5.86", "speed": "51.5", "war": "86", "total": "349", "note": "陷阵营：每所攻击无不破者 一代最强攻势旗舰 折算88对原版86(锚点)", "anchor": true}, {"role": "武将", "faction": "群雄", "general": "陳宮", "model": "Claude Sonnet 5.5", "creator": "Anthropic", "ii": "56.0", "dw": "97", "cost": "5.46", "speed": "141.2", "war": "55", "total": "375", "note": "军师之智价廉物美 II56惜辅佐贵主公", "anchor": false}, {"role": "武将", "faction": "群雄", "general": "曹性", "model": "Claude Haiku 5.5", "creator": "Anthropic", "ii": "43.4", "dw": "75", "cost": "0.21", "speed": "240.4", "war": "74", "total": "227", "note": "暗箭伤人：一箭射瞎夏侯惇 240t/s又快又廉 折算75对原版74重合(锚点)", "anchor": true}, {"role": "武将", "faction": "群雄", "general": "顏良", "model": "Claude Fable 5", "creator": "Anthropic", "ii": "49.6", "dw": "86", "cost": "8.75", "speed": "64.6", "war": "93", "total": "302", "note": "白马之围：一代名将(2025中代旗舰) 未几为关羽所斩 折算86对原版93", "anchor": false}, {"role": "武将", "faction": "群雄", "general": "文醜", "model": "Claude Fable 5.1", "creator": "Anthropic", "ii": "53.4", "dw": "93", "cost": "7.63", "speed": "70.0", "war": "94", "total": "269", "note": "延津骁将：5.1代之勇 终为关羽所斩 折算93对原版94(锚点)", "anchor": true}, {"role": "武将", "faction": "群雄", "general": "田豐", "model": "Claude 3.5 Sonnet (June '24)", "creator": "Anthropic", "ii": "7.2", "dw": "12", "cost": "", "speed": "", "war": "29", "total": "349", "note": "谏而不听：旧代谋主之言无人调用(2024-06) 折算12对原版29", "anchor": false}, {"role": "武将", "faction": "群雄", "general": "沮授", "model": "Claude 3 Opus", "creator": "Anthropic", "ii": "8.7", "dw": "15", "cost": "", "speed": "", "war": "35", "total": "369", "note": "谋主之殇：2024-03三十合斩GPT-4于马下 官渡同殁 折算15对原版35", "anchor": false}, {"role": "武将", "faction": "群雄", "general": "麴義", "model": "Claude Opus 4.8", "creator": "Anthropic", "ii": "41.8", "dw": "73", "cost": "4.08", "speed": "58.1", "war": "78", "total": "256", "note": "界桥先登：4.8代强弩大破白马义从 折算73对原版78", "anchor": false}, {"role": "武将", "faction": "群雄", "general": "高覽", "model": "Claude Sonnet 5", "creator": "Anthropic", "ii": "38.2", "dw": "66", "cost": "5.09", "speed": "79.4", "war": "82", "total": "343", "note": "四庭柱之末：Sonnet 5代折冲 柱折于官渡 折算66对原版82", "anchor": false}, {"role": "武将", "faction": "群雄", "general": "淳于瓊", "model": "Claude Opus 4.7", "creator": "Anthropic", "ii": "40.7", "dw": "71", "cost": "", "speed": "48.6", "war": "67", "total": "231", "note": "乌巢督粮：4.7代老将守仓 醉卧遭新一代夜袭粮尽袁亡 折算71对原版67(近锚点)", "anchor": false}, {"role": "武将", "faction": "群雄", "general": "審配", "model": "Claude Opus 4.6", "creator": "Anthropic", "ii": "31.9", "dw": "55", "cost": "", "speed": "45.6", "war": "60", "total": "368", "note": "死守邺城：4.6代孤忠守旧制 城破被擒不改其志 折算55对原版60", "anchor": false}, {"role": "彩蛋", "faction": "群雄", "general": "貂蟬", "model": "ElevenLabs", "creator": "", "ii": "", "dw": "", "cost": "", "speed": "", "war": "26", "total": "287", "note": "声动天下：全线五折离间各家定价", "anchor": false}, {"role": "主公", "faction": "群雄", "general": "董卓", "model": "Microsoft", "creator": "", "ii": "", "dw": "", "cost": "", "speed": "", "war": "85", "total": "295", "note": "残暴不仁：借Bing(Sydney)入京胡为(2023-02) 十八路诸侯共讨 后由司马懿(Azure)收拾残局——微软的两副面孔", "anchor": false}, {"role": "武将", "faction": "群雄", "general": "華雄", "model": "Gemini 1.0 Ultra", "creator": "Google", "ii": "5.8", "dw": "10", "cost": "", "speed": "", "war": "92", "total": "330", "note": "连斩各路ChatGPT杀手 终被关羽温酒斩之(2025开源夜)", "anchor": false}, {"role": "主公", "faction": "群雄", "general": "何進", "model": "IBM", "creator": "", "ii": "", "dw": "", "cost": "", "speed": "", "war": "39", "total": "197", "note": "屠夫大将军：Watson旧部折戟(医疗AI败绩) 其后天下大乱=预训练群雄并起", "anchor": false}, {"role": "主公", "faction": "群雄", "general": "袁術", "model": "Inflection Labs", "creator": "", "ii": "", "dw": "", "cost": "", "speed": "", "war": "65", "total": "234", "note": "僭号：与袁绍异母各立门户 2024败亡后部曲尽入司马氏(微软收编)", "anchor": false}, {"role": "武将", "faction": "群雄", "general": "紀靈", "model": "Inflection Pi", "creator": "", "ii": "", "dw": "", "cost": "", "speed": "", "war": "83", "total": "320", "note": "袁术大将：辕门射戟的前情 2023风头无两的Pi", "anchor": false}, {"role": "主公", "faction": "群雄", "general": "劉表", "model": "Google", "creator": "", "ii": "", "dw": "", "cost": "", "speed": "", "war": "31", "total": "318", "note": "座上客常满：坐拥荆楚(TPU/人才/数据)十载不出击 荆州人才尽入曹(Gemini客将在魏)", "anchor": false}, {"role": "武将", "faction": "群雄", "general": "蔡瑁", "model": "Gemini 3.8 Flash", "creator": "Google", "ii": "40.9", "dw": "71", "cost": "1.24", "speed": "125.0", "war": "68", "total": "354", "note": "水军都督：125t/s操练水军 后降曹(Google亦仕魏)", "anchor": false}, {"role": "武将", "faction": "群雄", "general": "張允", "model": "Gemini 3.1 Pro Preview", "creator": "Google", "ii": "29.7", "dw": "52", "cost": "1.3", "speed": "113.9", "war": "68", "total": "288", "note": "副都督：与蔡瑁同领水军 长上下文锁船连舟", "anchor": false}, {"role": "主公", "faction": "群雄", "general": "劉璋", "model": "Cohere", "creator": "", "ii": "", "dw": "", "cost": "", "speed": "", "war": "5", "total": "140", "note": "暗弱之主：坐拥益州(企业市场) 汉室宗亲三刘各投一厂(备幻方/表谷歌/璋Cohere)", "anchor": false}, {"role": "武将", "faction": "群雄", "general": "法正", "model": "Command A+", "creator": "Cohere", "ii": "13.1", "dw": "23", "cost": "0.0", "speed": "175.3", "war": "47", "total": "358", "note": "益州谋主：献图归刘(开源) $0.00免费", "anchor": false}, {"role": "武将", "faction": "群雄", "general": "譙周", "model": "Command A", "creator": "Cohere", "ii": "7.0", "dw": "12", "cost": "", "speed": "54.8", "war": "3", "total": "194", "note": "劝降文士：一篇仇国论降了益州 原版武力3恰似II7", "anchor": false}, {"role": "主公", "faction": "群雄", "general": "公孫瓚", "model": "Aleph Alpha", "creator": "", "ii": "", "dw": "", "cost": "", "speed": "", "war": "83", "total": "361", "note": "白马将军：曾雄踞北疆(欧洲主权AI) 筑易京楼自守 终自焚", "anchor": false}, {"role": "诸侯", "faction": "群雄", "general": "公孫度", "model": "Inkling", "creator": "Thinking Machines", "ii": "25.0", "dw": "43", "cost": "", "speed": "151.5", "war": "71", "total": "311", "note": "辽东自立：Mira Murati新朝(Thinking Machines) 偏安辽东不逐鹿中原", "anchor": false}, {"role": "主公", "faction": "群雄", "general": "陶謙", "model": "Stability AI", "creator": "", "ii": "", "dw": "", "cost": "", "speed": "", "war": "33", "total": "288", "note": "三让徐州：SD开源予天下 基业尽付社区 老病而终", "anchor": false}, {"role": "主公", "faction": "群雄", "general": "張魯", "model": "01.AI(零一万物)", "creator": "", "ii": "", "dw": "", "cost": "", "speed": "", "war": "26", "total": "317", "note": "五斗米道：义舍开源普惠 举汉中而降(2025并入阿里) 封侯善终", "anchor": false}, {"role": "诸侯", "faction": "群雄", "general": "馬騰", "model": "DeepSeek V4 Flash Vision", "creator": "DeepSeek", "ii": "34.8", "dw": "60", "cost": "0.31", "speed": "220.6", "war": "80", "total": "361", "note": "西凉锦马腾：马超之父父子同门 老骥伏枥眼明(Vision) 221t/s宝刀未老", "anchor": false}, {"role": "武将", "faction": "群雄", "general": "張角", "model": "GPT-3", "creator": "", "ii": "", "dw": "", "cost": "", "speed": "", "war": "25", "total": "378", "note": "大贤良师：苍天已死(旧范式亡)黄天当立 175B符水揭竿2020-06 各路诸侯皆起兵讨之(对标) 后被曹操收编为青州兵(InstructGPT)", "anchor": false}, {"role": "武将", "faction": "群雄", "general": "張寶", "model": "GPT-2", "creator": "", "ii": "", "dw": "", "cost": "", "speed": "", "war": "71", "total": "387", "note": "地公将军：2019自恃符水太危险分期放出 起义前驱 道行尚浅", "anchor": false}, {"role": "武将", "faction": "群雄", "general": "張梁", "model": "GPT-1", "creator": "", "ii": "", "dw": "", "cost": "", "speed": "", "war": "80", "total": "363", "note": "人公将军：2018初传道 1.17亿教众 首倡通用之义", "anchor": false}, {"role": "主公", "faction": "群雄", "general": "孟獲", "model": "Amazon", "creator": "", "ii": "", "dw": "", "cost": "", "speed": "", "war": "87", "total": "334", "note": "七擒七纵：AWS基业 藤甲军=Trainium自研芯片(不惧CUDA之火?)", "anchor": false}, {"role": "武将", "faction": "群雄", "general": "祝融", "model": "Nova 2.0 Pro Preview", "creator": "Amazon", "ii": "14.2", "dw": "25", "cost": "", "speed": "119.6", "war": "85", "total": "280", "note": "火神王妃：飞刀擒将(多模态) Amazon旗舰亲征", "anchor": false}];
+const INK='#141414';
+
+const tabsEl=document.getElementById('tabs'), grid=document.getElementById('grid'),
+      qEl=document.getElementById('q'), sortEl=document.getElementById('sortbtn'),
+      fhEl=document.getElementById('factionhead'), emptyEl=document.getElementById('empty');
+let faction='全部', sortMode='faction', keyword='';
+
+const factionOrder = Object.fromEntries(FACTIONS.map((f,i)=>[f[0],i]));
+const roleOrder={'主公':0,'暗线':1,'诸侯':2,'武将':3,'彩蛋':4};
+
+function tabHTML(){
+  const all=[['全部',null],...FACTIONS.map(f=>[f[0],f[1]])];
+  tabsEl.innerHTML=all.map(([name,color])=>{
+    const dot=color?`<span class="dot" style="background:${color}"></span>`:'<span class="dot" style="background:conic-gradient(#8d6e63,#1d3557,#c1121f,#2a9d8f,#6a4c93)"></span>';
+    return `<button class="tab ${faction===name?'on':''}" data-f="${name}">${dot}${name}</button>`;
+  }).join('');
+  tabsEl.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{faction=t.dataset.f;render();});
+}
+
+function bars(d){
+  const game=parseInt(d.war||0), model=parseInt(d.dw||0);
+  if(!game&&!model&&!d.total) return '';
+  const gp=game?Math.min(100,game):0, mp=model?Math.min(100,model):0;
+  return `<div class="duel">
+    <div class="dtitle"><span>单挑实力条</span><b>VS</b></div>
+    <div class="brow"><span class="lab">原版武力</span><div class="btrack"><div class="bfill game" style="width:${gp}%"></div></div><span class="val">${game||'—'}</span></div>
+    <div class="brow"><span class="lab">折算武力</span><div class="btrack"><div class="bfill model" style="width:${mp}%"></div></div><span class="val">${model||'—'}</span></div>
+  </div>`;
+}
+
+function meta(d){
+  const m=[];
+  if(d.ii) m.push(`<span>II <b>${d.ii}</b></span>`);
+  if(d.cost) m.push(`<span><b>$${d.cost}</b>/任务</span>`);
+  if(d.speed) m.push(`<span><b>${d.speed}</b> t/s</span>`);
+  if(d.total) m.push(`<span>游戏五维合计 <b>${d.total}</b></span>`);
+  if(!d.ii && d.role!=='主公') m.push(`<span>💀 退役/无页 —— 史书阙载</span>`);
+  return m.length?`<div class="meta">${m.join('')}</div>`:'';
+}
+
+function card(d){
+  const f=FACTIONS.find(x=>x[0]===d.faction)||['','#666',''];
+  const anchor=d.anchor?'<div class="anchorstar">★</div>':'';
+  const creator=d.creator?`<span class="cchip">${d.creator}</span>`:'';
+  const dead=(!d.ii&&d.role!=='主公')?'<span class="dead">（已退场）</span>':'';
+  return `<article class="panel">
+    <div class="fbar" style="background:${f[1]}"></div>${anchor}
+    <div class="phead">
+      <div class="gname">${d.general}<small>${d.faction} · ${ROLE(d)}</small></div>
+      <span class="badge ${d.role}">${ROLE(d)}</span>
+    </div>
+    <div class="mrow"><span class="mchip">${d.model}</span>${creator}${dead}</div>
+    ${bars(d)}${meta(d)}
+    <div class="caption">${d.note}</div>
+  </article>`;
+}
+function ROLE(d){return ({'主公':'主公','诸侯':'诸侯','武将':'武将','彩蛋':'彩蛋','暗线':'暗线'})[d.role]||d.role}
+
+function filtered(){
+  let list=DATA.filter(d=>{
+    if(faction!=='全部'&&d.faction!==faction) return false;
+    if(keyword){
+      const k=keyword.toLowerCase();
+      if(!(d.general.toLowerCase().includes(k)||d.model.toLowerCase().includes(k)
+        ||(d.creator||'').toLowerCase().includes(k)||d.note.toLowerCase().includes(k))) return false;
+    }
+    return true;
+  });
+  if(sortMode==='power'){
+    list.sort((a,b)=>(parseInt(b.dw||0)-parseInt(a.dw||0))||(parseInt(b.war||0)-parseInt(a.war||0)));
+  }else{
+    list.sort((a,b)=>(factionOrder[a.faction]-factionOrder[b.faction])
+      ||(roleOrder[a.role]-roleOrder[b.role])
+      ||(parseInt(b.dw||0)-parseInt(a.dw||0)));
+  }
+  return list;
+}
+
+function render(){
+  tabHTML();
+  const list=filtered();
+  grid.innerHTML=list.map(card).join('');
+  const f=FACTIONS.find(x=>x[0]===faction);
+  if(f){ fhEl.classList.add('show');
+    document.getElementById('fh-name').textContent='【'+f[0]+'】';
+    document.getElementById('fh-name').style.color=f[1];
+    document.getElementById('fh-desc').textContent=f[2];
+    document.getElementById('fh-count').textContent=list.length+' SEATS';
+  } else fhEl.classList.remove('show');
+  emptyEl.style.display=list.length?'none':'block';
+}
+
+qEl.oninput=e=>{keyword=e.target.value.trim();render()};
+sortEl.onclick=()=>{sortMode=sortMode==='faction'?'power':'faction';
+  sortEl.textContent=sortMode==='faction'?'⚔ 按折算武力排序':'🚩 按阵营排序';render()};
+render();
+</script>
+</body>
+</html>

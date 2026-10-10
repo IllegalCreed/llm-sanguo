@@ -13,6 +13,6 @@
 
 ## 下一步（按优先级）
 
-1. **武将卡网页**（计划放 `docs/` 并挂 GitHub Pages）：读 `mapping/mapping_v0.2.csv`，每张卡 = 五维雷达图双轴对比（游戏原版 vs 模型折算）+ 列传典故。推荐纯静态（单 HTML + 内嵌数据），无构建依赖
+1. ~~武将卡网页~~ → 已完成（2026-10-10，`scripts/build_site.py` → `docs/index.html`，美漫风纯静态单页）；待办仅在 GitHub 仓库 Settings 开启 Pages（选 main / docs 目录）
 2. AA 快照更新脚本：历史快照保留，对比可做"武将成长曲线"；更新时须对站点做全量对账（2026-10-10 导出发现 GPT-6 Sol、GPT-5.5 两例主线带分行缺失，靠人工对质才发现）
 3. 接入 OpenRouter 调用份额补全"魅力"维度；接入 AA Agentic/Coding 指数补全"统率"
