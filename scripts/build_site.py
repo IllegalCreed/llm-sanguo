@@ -464,7 +464,7 @@ function radarSVG(axes, color, sub){
   axes.forEach((ax,k)=>{
     const [lx,ly]=pt(k,R+26);
     const anchorTxt = lx<cx-10?'end':(lx>cx+10?'start':'middle');
-    s+=`<text x="${lx.toFixed(1)}" y="${(ly+5).toFixed(1)}" text-anchor="${anchorTxt}" font-size="13.5" font-family="'ZCOOL KuaiLe',sans-serif" fill="#141414" transform="rotate(${k%2? 2.5 : -2.5} ${lx.toFixed(1)} ${(ly+5).toFixed(1)})">${ax.label}</text>`;
+    s+=`<text x="${lx.toFixed(1)}" y="${(ly+5).toFixed(1)}" text-anchor="${anchorTxt}" font-size="14" font-family="'ZCOOL KuaiLe',sans-serif" fill="#141414" style="paint-order:stroke;stroke:#fffaf0;stroke-width:3.5px;stroke-linejoin:round" transform="rotate(${k%2? 2.5 : -2.5} ${lx.toFixed(1)} ${(ly+5).toFixed(1)})">${ax.label}</text>`;
   });
   poly.forEach((p,k)=>{
     const ax=axes[k];
@@ -472,7 +472,7 @@ function radarSVG(axes, color, sub){
       const [dx,dy]=pt(k,R*0.55);
       s+=`<g transform="translate(${dx.toFixed(1)},${dy.toFixed(1)}) rotate(${k%2?-8:8})">
         <rect x="-30" y="-11" width="60" height="22" fill="#fff" stroke="#141414" stroke-width="2.5"/>
-        <text text-anchor="middle" y="5" font-family="'Bangers',cursive" font-size="14" fill="#8a7a5c">NO DATA!</text></g>`;
+        <text text-anchor="middle" y="5" font-family="'Bangers',cursive" font-size="14" font-weight="bold" fill="#8a7a5c" style="paint-order:stroke;stroke:#fff;stroke-width:2px;stroke-linejoin:round">NO DATA!</text></g>`;
       return;
     }
     const vv=Math.max(0,Math.min(100,ax.val));
@@ -482,14 +482,14 @@ function radarSVG(axes, color, sub){
     let tp;
     if(vv>=45){ tp = pt(k, vv/100*R - (16+(k%2)*10)); }
     else      { tp = pt(k, vv/100*R + 18); }
-    s+=`<text x="${tp[0].toFixed(1)}" y="${(tp[1]+5).toFixed(1)}" text-anchor="middle" font-family="'Bangers',cursive" font-size="15" fill="#141414">${ax.val}</text>`;
+    s+=`<text x="${tp[0].toFixed(1)}" y="${(tp[1]+5).toFixed(1)}" text-anchor="middle" font-family="'Bangers',cursive" font-size="22" font-weight="bold" fill="#fff" style="paint-order:stroke;stroke:#141414;stroke-width:4px;stroke-linejoin:round">${ax.val}</text>`;
     // MAX 章不占轴位：在顶点处沿轴的垂直方向偏移 33px（偶奇定侧），落入两轴之间的空白
     if(ax.val>=90){
       const th=-Math.PI/2+k*2*Math.PI/n;
       const px=(k%2? -Math.sin(th): Math.sin(th))*33, py=(k%2? Math.cos(th): -Math.cos(th))*33;
-      s+=`<g transform="translate(${(vx2+px).toFixed(1)},${(vy2+py).toFixed(1)}) rotate(${k%2?14:-12}) scale(.9)">
+      s+=`<g transform="translate(${(vx2+px).toFixed(1)},${(vy2+py).toFixed(1)}) rotate(${k%2?14:-12}) scale(1.15)">
         <polygon points="0,-16 4,-5 16,-8 7,0 14,9 3,5 0,16 -4,5 -14,9 -7,0 -16,-8 -4,-5" fill="#ffb703" stroke="#141414" stroke-width="2.5"/>
-        <text text-anchor="middle" y="4" font-family="'Bangers',cursive" font-size="11">MAX!</text></g>`;
+        <text text-anchor="middle" y="4.5" font-family="'Bangers',cursive" font-size="13" font-weight="bold" fill="#141414" style="paint-order:stroke;stroke:#fff;stroke-width:2.5px;stroke-linejoin:round">MAX!</text></g>`;
     }
   });
   s+=`<text x="180" y="294" text-anchor="middle" font-size="12" letter-spacing="2" fill="#141414" opacity=".6">${sub}</text></svg>`;
