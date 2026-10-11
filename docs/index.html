@@ -4,6 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>大模型三国志 —— LLM SANGUO CHRONICLES</title>
+<meta name="description" content="把 Artificial Analysis 模型评测和《三国志14》武将五维对照排座。武力 = 智能指数折算，智力 = 性价比。演义版 102 席，Claude Opus 5.5 对吕布（100:100）。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="大模型三国志">
+<meta property="og:title" content="大模型三国志 —— LLM Sanguo Chronicles">
+<meta property="og:description" content="把 Artificial Analysis 模型评测和《三国志14》武将五维对照排座。武力 = 智能指数折算，智力 = 性价比。演义版 102 席，Claude Opus 5.5 对吕布（100:100）。">
+<meta property="og:url" content="https://illegalcreed.github.io/llm-sanguo/">
+<meta property="og:image" content="https://illegalcreed.github.io/llm-sanguo/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="大模型三国志 —— LLM Sanguo Chronicles">
+<meta name="twitter:description" content="把 Artificial Analysis 模型评测和《三国志14》武将五维对照排座。武力 = 智能指数折算，智力 = 性价比。演义版 102 席。">
+<meta name="twitter:image" content="https://illegalcreed.github.io/llm-sanguo/assets/og.png">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
 <style>
@@ -97,7 +113,14 @@ h1 span{color:var(--red); -webkit-text-stroke:2px var(--ink)}
 .footer{margin-top:60px;text-align:center;font-size:14px;letter-spacing:2px;line-height:2}
 .footer .bangers{font-size:22px;color:var(--red)}
 .empty{display:none;text-align:center;font-size:22px;letter-spacing:4px;padding:60px 0;border:4px dashed var(--ink);margin-top:20px}
-@media (max-width:640px){ .burst{display:none} .toolbar{position:static} }
+@media (max-width:640px){
+  .burst{display:none}
+  .toolbar{position:static}
+  .topstrip{padding-left:10px;padding-right:10px}
+  .statline{margin-left:0;margin-right:0}
+  .tools-right{width:100%}
+  .search{min-width:0;flex:1;width:0}
+}
 
 /* ===== 详情层 ===== */
 #overlay{display:none;position:fixed;inset:0;z-index:100;overflow-y:auto;background:rgba(20,20,20,.55);padding:26px 14px}
@@ -181,7 +204,7 @@ h1 span{color:var(--red); -webkit-text-stroke:2px var(--ink)}
     <div class="bangers">— THE END? NOT YET! —</div>
     数据：三国志14 威力加强版（Nobuwiki 整理）× Artificial Analysis（2026-10-10 快照）<br>
     立绘采自 Nobuwiki（© KOEI TECMO），无页面者以本站手绘风头像代之 · 方法论与完整数据见仓库 docs/<br>
-    <span style="opacity:.6">仅注明来源的非商业整理 · 三国志数值与立绘 © KOEI TECMO · 评测 © Artificial Analysis</span>
+    <span style="opacity:.6">MIT 只覆盖代码。三国志数值与立绘 © KOEI TECMO（整理自 Nobuwiki）· 评测 © Artificial Analysis · 权利人请到仓库开 issue 要求下架</span>
   </footer>
 </div>
 
