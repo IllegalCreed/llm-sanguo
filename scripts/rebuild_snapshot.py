@@ -77,6 +77,9 @@ def parse_leaderboard(html):
             'speed': get(obj, 'medianOutputTokensPerSecond'),
             'ttft': get(obj, 'medianTimeToFirstTokenSeconds'),
             'total': get(obj, 'medianEndToEndResponseTimeSeconds'),
+            'hle': get(obj, 'hle'), 'gpqa': get(obj, 'gpqa'),
+            'scicode': get(obj, 'scicode'), 'mmmu': get(obj, 'mmmuPro'),
+            'tbench': get(obj, 'terminalBench40'), 'omni': get(obj, 'omniscience'),
         })
         if slug and name and get(obj, 'contextWindowTokens') is None and \
                 get(obj, 'intelligenceIndex') is None and get(obj, 'releaseSlug'):
@@ -92,6 +95,16 @@ def fmt_ctx(v):
         if n >= div and n % div == 0:
             return f"{int(n // div)}{suf}"
     return v
+
+
+def fmt_pct(v):
+    """0-1 分数转百分比整数，null 为 --。"""
+    if v is None or v in ('null', ''):
+        return '--'
+    try:
+        return str(round(float(v) * 100))
+    except ValueError:
+        return '--'
 
 
 def fmt_num(v, digits=1, prefix=''):
@@ -123,7 +136,9 @@ def main():
     out_csv = args[-1]
     header = ['model', 'context_window', 'creator', 'intelligence_index',
               'cost_per_task_usd', 'median_tokens_per_s',
-              'latency_first_chunk_s', 'total_response_s', 'further_analysis', 'source']
+              'latency_first_chunk_s', 'total_response_s',
+              'hle', 'gpqa', 'scicode', 'mmmu_pro', 'terminalbench40', 'omniscience',
+              'further_analysis', 'source']
 
     def ii_str(r):
         if r['ii'] is None or r['ii'] == 'null':
@@ -141,6 +156,9 @@ def main():
             'median_tokens_per_s': fmt_num(r.get('speed'), 1),
             'latency_first_chunk_s': fmt_num(r.get('ttft'), 2),
             'total_response_s': fmt_num(r.get('total'), 2),
+            'hle': fmt_pct(r.get('hle')), 'gpqa': fmt_pct(r.get('gpqa')),
+            'scicode': fmt_pct(r.get('scicode')), 'mmmu_pro': fmt_pct(r.get('mmmu')),
+            'terminalbench40': fmt_pct(r.get('tbench')), 'omniscience': fmt_num(r.get('omni'), 0),
             'further_analysis': 'Model Providers',
             'source': f"https://artificialanalysis.ai/models/{r['slug']}",
         })

@@ -13,6 +13,6 @@
 
 ## 下一步（按优先级）
 
-1. ~~武将卡网页~~ → 已完成（2026-10-10，`scripts/build_site.py` → `docs/index.html`，美漫风纯静态单页）；待办仅在 GitHub 仓库 Settings 开启 Pages（选 main / docs 目录）
+1. ~~武将卡网页~~ → 已完成（2026-10-10 v1 卡片流 + v2 详情层：KOEI 立绘/美漫备用头像、《三国志14》五维雷达×模型六维基准雷达、两朝列传；`scripts/build_site.py` → `docs/index.html`）；待办仅在 GitHub 仓库 Settings 开启 Pages（选 main / docs 目录）
 2. AA 快照更新脚本：历史快照保留，对比可做"武将成长曲线"；更新时须对站点做全量对账（2026-10-10 导出发现 GPT-6 Sol、GPT-5.5 两例主线带分行缺失，靠人工对质才发现）
 3. 接入 OpenRouter 调用份额补全"魅力"维度；接入 AA Agentic/Coding 指数补全"统率"

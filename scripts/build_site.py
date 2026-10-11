@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
-"""从 mapping/mapping_v0.5.csv 生成美漫风格展示站 docs/index.html。
+"""从 mapping/mapping_v0.5.csv + 两份史源生成美漫风展示站 docs/index.html。
 
-纯静态单页：数据内嵌为 JS 常量，无前端构建依赖，可直接挂 GitHub Pages。
-改完映射后重跑本脚本即可同步（或先跑 enrich_mapping.py 再跑本脚本）。
+- 纯静态单页：数据内嵌为 JS 常量，无前端构建依赖，可直接挂 GitHub Pages
+- 详情层：KOEI 立绘（docs/portraits/，nobuwiki 采集；无页面者用美漫姓氏头像）、
+  游戏五维雷达 × 模型六维基准雷达（快照子分）、两朝列传（游戏生平字段 + 模型典故）
+- 改完映射后重跑：python3 scripts/enrich_mapping.py && python3 scripts/build_site.py
 """
 import csv
 import json
 import os
+import re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -18,23 +21,113 @@ FACTION_META = [
     ("群雄", "#6a4c93", "厂家诸侯会盟 —— 袁绍=Anthropic 领衔，多主公制"),
 ]
 ANCHORS = {"呂布", "文聘", "文醜", "曹彰", "高順", "曹性", "荀彧", "顧雍"}
-ROLE_LABEL = {"主公": "主公", "诸侯": "诸侯", "武将": "武将", "彩蛋": "彩蛋", "暗线": "暗线"}
+
+EFFORT_WORDS = {"max", "xhigh", "high", "medium", "low", "with", "fallback", "default"}
+
+
+def _is_effort_token(tok):
+    words = tok.lower().split()
+    if not words:
+        return False
+    if all(w in EFFORT_WORDS for w in words):
+        return True
+    return words[-1] == "fallback" and len(words) > 1
+
+
+def canonical_name(name):
+    def clean(m):
+        tokens = [t.strip() for t in m.group(1).split(",")]
+        kept = [t for t in tokens if not _is_effort_token(t)]
+        return "(" + ", ".join(kept) + ")" if kept else ""
+    return re.sub(r"\(([^()]*)\)", clean, name).strip()
+
+
+def load_officers():
+    path = os.path.join(ROOT, "data", "sanguo14_officers.csv")
+    with open(path, encoding="utf-8") as f:
+        return {r["name"]: r for r in csv.DictReader(f)}
+
+
+def load_snapshot_best():
+    """快照按 canonical 名取 II 最高的行（与 enrich 同规则），供雷达取子分。"""
+    path = os.path.join(ROOT, "data", "aa_models_snapshot_2026-10-10.csv")
+    with open(path, encoding="utf-8") as f:
+        rows = list(csv.DictReader(f))
+
+    def fnum(s):
+        s = (s or "").replace("*", "").replace("$", "")
+        try:
+            return float(s)
+        except ValueError:
+            return -1
+
+    best = {}
+    for r in rows:
+        key = canonical_name(r["model"])
+        if key not in best or fnum(r["intelligence_index"]) > fnum(best[key]["intelligence_index"]):
+            best[key] = r
+    return best
+
+
+def game_bio(o):
+    """三国侧列传：由游戏字段织成短传。"""
+    if not o:
+        return "天子不列武臣册——《三国志14》不收录帝王之数，其五维为史书阙载。"
+    parts = []
+    years = []
+    if o.get("debut_year"):
+        years.append(f"登场于{int(float(o['debut_year']))}年")
+    if o.get("death_year"):
+        years.append(f"卒于{int(float(o['death_year']))}年")
+    if years:
+        parts.append("，".join(years))
+    if o.get("affiliation"):
+        parts.append(f"登场势力「{o['affiliation']}」")
+    if o.get("doctrine"):
+        parts.append(f"主义「{o['doctrine']}」" + (f"，政策「{o['policy']}」(Lv{o['policy_lv']})" if o.get("policy") else ""))
+    kin = []
+    for label, key in [("父", "father"), ("母", "mother"), ("配偶", "spouse"), ("义兄弟", "sworn_brother")]:
+        if o.get(key):
+            kin.append(f"{label}{o[key]}")
+    if kin:
+        parts.append("亲族：" + "、".join(kin))
+    parts.append(f"原版五维 统{o['leadership']}/武{o['warfare']}/智{o['intellect']}/政{o['politics']}/魅{o['charm']}，合计{o['total']}")
+    return "；".join(parts) + "。"
 
 
 def load_data():
+    officers = load_officers()
+    best = load_snapshot_best()
     path = os.path.join(ROOT, "mapping", "mapping_v0.5.csv")
     with open(path, encoding="utf-8") as f:
         rows = list(csv.DictReader(f))
+
     data = []
     for r in rows:
+        o = officers.get(r["general"])
+        snap = best.get(canonical_name(r["model"]))
+
+        def sub(key):
+            v = (snap or {}).get(key)
+            return int(float(v)) if v and v != "--" else None
+
+        portrait = None
+        p = os.path.join(ROOT, "docs", "portraits", f"{r['general']}.jpg")
+        if os.path.exists(p):
+            portrait = f"portraits/{r['general']}.jpg"
+
         data.append({
             "role": r["role"], "faction": r["faction"], "general": r["general"],
             "model": r["model"], "creator": r["creator"],
             "ii": r["aa_ii"], "dw": r["derived_warfare"],
             "cost": r["cost_per_task_usd"], "speed": r["median_tokens_per_s"],
             "war": r["game_warfare"], "total": r["game_total"],
-            "note": r["note"],
-            "anchor": r["general"] in ANCHORS,
+            "note": r["note"], "anchor": r["general"] in ANCHORS,
+            "portrait": portrait,
+            "bio": game_bio(o),
+            "g": [o["leadership"], o["warfare"], o["intellect"], o["politics"], o["charm"]] if o else None,
+            "r6": {"hle": sub("hle"), "gpqa": sub("gpqa"), "scicode": sub("scicode"),
+                   "mmmu": sub("mmmu_pro"), "tb": sub("terminalbench40"), "omni": sub("omniscience")},
         })
     return data
 
@@ -53,97 +146,72 @@ TEMPLATE = r"""<!DOCTYPE html>
   --red:#d62828; --yellow:#ffb703; --blue:#1d3557; --teal:#2a9d8f; --purple:#6a4c93; --brown:#8d6e63;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-body{
-  font-family:'ZCOOL KuaiLe','PingFang SC','Microsoft YaHei',sans-serif;
-  background:var(--paper); color:var(--ink); overflow-x:hidden;
-}
-/* 网点纸（Ben-Day dots）*/
-body::before{
-  content:''; position:fixed; inset:0; z-index:0; pointer-events:none;
-  background-image:radial-gradient(circle, rgba(20,20,20,.10) 1.2px, transparent 1.6px);
-  background-size:9px 9px;
-}
+body{font-family:'ZCOOL KuaiLe','PingFang SC','Microsoft YaHei',sans-serif;background:var(--paper);color:var(--ink);overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:radial-gradient(circle, rgba(20,20,20,.10) 1.2px, transparent 1.6px);background-size:9px 9px}
 .bangers{font-family:'Bangers',cursive}
 .wrap{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:24px 20px 80px}
 
-/* ===== 报头 ===== */
-.masthead{position:relative;text-align:center;padding:34px 10px 26px;
-  border:5px solid var(--ink); background:var(--cream);
-  box-shadow:10px 10px 0 var(--ink); margin-bottom:18px; overflow:hidden}
+.masthead{position:relative;text-align:center;padding:34px 10px 26px;border:5px solid var(--ink);background:var(--cream);
+  box-shadow:10px 10px 0 var(--ink);margin-bottom:18px;overflow:hidden}
 .masthead::after{content:'';position:absolute;inset:0;
   background:linear-gradient(115deg, transparent 49.6%, rgba(20,20,20,.05) 50%, transparent 50.4%)}
-.topstrip{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;
-  font-size:13px;letter-spacing:2px;border-bottom:3px solid var(--ink);padding:0 90px 8px;margin-bottom:14px}
+.topstrip{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;font-size:13px;letter-spacing:2px;
+  border-bottom:3px solid var(--ink);padding:0 90px 8px;margin-bottom:14px}
 .topstrip .bangers{font-size:15px}
-h1{font-size:clamp(44px,8vw,92px);line-height:.95;letter-spacing:6px;
-  text-shadow:5px 5px 0 var(--yellow), 10px 10px 0 rgba(20,20,20,.18)}
+h1{font-size:clamp(44px,8vw,92px);line-height:.95;letter-spacing:6px;text-shadow:5px 5px 0 var(--yellow), 10px 10px 0 rgba(20,20,20,.18)}
 h1 span{color:var(--red); -webkit-text-stroke:2px var(--ink)}
 .subtitle{margin-top:10px;font-size:clamp(15px,2.4vw,22px);letter-spacing:4px}
 .subtitle b{background:var(--ink);color:var(--yellow);padding:2px 10px;margin:0 6px}
-/* 爆炸字 */
-.burst{position:absolute;display:flex;align-items:center;justify-content:center;text-align:center;
-  background:var(--red);color:#fff;transform:rotate(-12deg);
+.burst{position:absolute;display:flex;align-items:center;justify-content:center;text-align:center;background:var(--red);color:#fff;
+  transform:rotate(-12deg);
   clip-path:polygon(50% 0%,61% 12%,75% 5%,79% 20%,95% 18%,90% 33%,100% 44%,88% 52%,95% 66%,79% 66%,77% 82%,63% 74%,50% 88%,37% 74%,23% 82%,21% 66%,5% 66%,12% 52%,0% 44%,10% 33%,5% 18%,21% 20%,25% 5%,39% 12%);
-  box-shadow:none; font-size:15px; width:110px;height:110px; line-height:.9}
+  font-size:15px;width:110px;height:110px;line-height:.9}
 .burst b{font-family:'Bangers',cursive;font-size:26px;transform:rotate(6deg);text-shadow:2px 2px 0 rgba(0,0,0,.35)}
 .burst.b1{top:-30px;left:-30px;background:var(--red)}
 .burst.b2{bottom:-28px;right:-26px;background:var(--blue);transform:rotate(10deg)}
 .statline{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin:22px 90px 6px}
-.statline .chip{border:3px solid var(--ink);background:#fff;padding:6px 14px;font-size:15px;
-  box-shadow:4px 4px 0 var(--ink); letter-spacing:1px}
+.statline .chip{border:3px solid var(--ink);background:#fff;padding:6px 14px;font-size:15px;box-shadow:4px 4px 0 var(--ink);letter-spacing:1px}
 .statline .chip b{font-family:'Bangers',cursive;font-size:20px;margin-right:6px;color:var(--red)}
 
-/* ===== 工具条 ===== */
-.toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;
-  border:4px solid var(--ink);background:var(--yellow);box-shadow:7px 7px 0 var(--ink);
-  padding:12px 14px;margin:26px 0 30px; position:sticky;top:10px;z-index:50}
+.toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;border:4px solid var(--ink);
+  background:var(--yellow);box-shadow:7px 7px 0 var(--ink);padding:12px 14px;margin:26px 0 30px;position:sticky;top:10px;z-index:50}
 .tabs{display:flex;flex-wrap:wrap;gap:8px}
-.tab{cursor:pointer;border:3px solid var(--ink);background:#fff;padding:7px 14px;font-size:16px;
-  letter-spacing:2px;user-select:none;transition:transform .12s;position:relative;font-family:inherit}
+.tab{cursor:pointer;border:3px solid var(--ink);background:#fff;padding:7px 14px;font-size:16px;letter-spacing:2px;user-select:none;transition:transform .12s;position:relative;font-family:inherit}
 .tab:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
 .tab.on{background:var(--ink);color:var(--yellow);box-shadow:4px 4px 0 rgba(20,20,20,.3)}
-.tab .dot{display:inline-block;width:12px;height:12px;border:2px solid var(--ink);border-radius:50%;
-  margin-right:6px;vertical-align:-1px}
+.tab .dot{display:inline-block;width:12px;height:12px;border:2px solid var(--ink);border-radius:50%;margin-right:6px;vertical-align:-1px}
 .tab.on .dot{border-color:var(--yellow)}
 .tools-right{display:flex;gap:8px;align-items:center}
-.search{border:3px solid var(--ink);padding:7px 12px;font-size:15px;font-family:inherit;
-  background:#fff;min-width:180px;outline:none}
+.search{border:3px solid var(--ink);padding:7px 12px;font-size:15px;font-family:inherit;background:#fff;min-width:180px;outline:none}
 .search:focus{box-shadow:4px 4px 0 var(--ink)}
-.sortbtn{cursor:pointer;border:3px solid var(--ink);background:#fff;padding:7px 12px;
-  font-size:15px;font-family:inherit;letter-spacing:1px}
+.sortbtn{cursor:pointer;border:3px solid var(--ink);background:#fff;padding:7px 12px;font-size:15px;font-family:inherit;letter-spacing:1px}
 .sortbtn:hover{box-shadow:4px 4px 0 var(--ink)}
-.factionhead{display:none;margin:34px 0 14px;border:4px solid var(--ink);padding:10px 16px;
-  background:var(--cream);box-shadow:6px 6px 0 var(--ink);align-items:baseline;gap:14px;flex-wrap:wrap}
+.factionhead{display:none;margin:34px 0 14px;border:4px solid var(--ink);padding:10px 16px;background:var(--cream);
+  box-shadow:6px 6px 0 var(--ink);align-items:baseline;gap:14px;flex-wrap:wrap}
 .factionhead.show{display:flex}
 .factionhead h2{font-size:26px;letter-spacing:3px}
 .factionhead p{font-size:15px;opacity:.85}
-.factionhead .stamp{margin-left:auto;font-family:'Bangers',cursive;font-size:14px;letter-spacing:1px;
-  border:3px solid var(--ink);padding:3px 10px;transform:rotate(-2deg);background:#fff}
+.factionhead .stamp{margin-left:auto;font-family:'Bangers',cursive;font-size:14px;letter-spacing:1px;border:3px solid var(--ink);padding:3px 10px;transform:rotate(-2deg);background:#fff}
 
-/* ===== 卡片网格 ===== */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(315px,1fr));gap:26px;margin-top:8px}
-.panel{position:relative;border:4px solid var(--ink);background:var(--cream);
-  box-shadow:9px 9px 0 var(--ink);padding:16px 16px 14px;transition:transform .15s,box-shadow .15s;
-  display:flex;flex-direction:column;gap:10px}
+.panel{position:relative;border:4px solid var(--ink);background:var(--cream);box-shadow:9px 9px 0 var(--ink);
+  padding:16px 16px 14px;transition:transform .15s,box-shadow .15s;display:flex;flex-direction:column;gap:10px;cursor:pointer}
 .panel:nth-child(4n+1){transform:rotate(-.5deg)} .panel:nth-child(4n+3){transform:rotate(.5deg)}
 .panel:hover{transform:translate(-4px,-4px) rotate(0deg)!important;box-shadow:14px 14px 0 var(--ink);z-index:5}
 .panel .fbar{position:absolute;top:0;left:0;right:0;height:8px}
 .phead{display:flex;align-items:flex-start;gap:10px;margin-top:6px}
 .gname{font-size:30px;letter-spacing:3px;line-height:1.05;flex:1}
 .gname small{display:block;font-size:13px;letter-spacing:2px;opacity:.65;margin-top:3px}
-.badge{flex-shrink:0;border:3px solid var(--ink);font-size:13px;padding:3px 9px;letter-spacing:2px;
-  background:#fff;transform:rotate(3deg);font-family:inherit}
+.badge{flex-shrink:0;border:3px solid var(--ink);font-size:13px;padding:3px 9px;letter-spacing:2px;background:#fff;transform:rotate(3deg);font-family:inherit}
 .badge.主公{background:var(--yellow)} .badge.诸侯{background:#e0aaff} .badge.彩蛋{background:#ffd6e0}
 .badge.暗线{background:var(--ink);color:#fff} .badge.武将{background:#fff}
-.anchorstar{position:absolute;top:-16px;right:-14px;width:44px;height:44px;background:var(--red);
-  color:#fff;display:flex;align-items:center;justify-content:center;transform:rotate(12deg);
-  font-size:22px;clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.anchorstar{position:absolute;top:-16px;right:-14px;width:44px;height:44px;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;transform:rotate(12deg);font-size:22px;
+  clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
 .mrow{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
-.mchip{border:3px solid var(--ink);background:#fff;padding:4px 10px;font-size:15px;letter-spacing:1px;
-  font-family:'Courier New',monospace;font-weight:bold;box-shadow:3px 3px 0 rgba(20,20,20,.25)}
+.mchip{border:3px solid var(--ink);background:#fff;padding:4px 10px;font-size:15px;letter-spacing:1px;font-family:'Courier New',monospace;font-weight:bold;box-shadow:3px 3px 0 rgba(20,20,20,.25)}
 .cchip{border:2px solid var(--ink);padding:3px 9px;font-size:13px;background:#eee;letter-spacing:1px}
 .dead{font-size:13px;color:#7a5c3e;letter-spacing:1px}
-/* 武力对比条 */
 .duel{border:3px solid var(--ink);background:#fff;padding:9px 10px 7px}
 .duel .dtitle{font-size:13px;letter-spacing:2px;margin-bottom:7px;display:flex;justify-content:space-between}
 .duel .dtitle b{font-family:'Bangers',cursive;font-size:15px;color:var(--red);letter-spacing:1px}
@@ -157,16 +225,53 @@ h1 span{color:var(--red); -webkit-text-stroke:2px var(--ink)}
 .meta{display:flex;flex-wrap:wrap;gap:6px}
 .meta span{border:2px solid var(--ink);background:#fff;font-size:12.5px;padding:3px 8px;letter-spacing:1px}
 .meta span b{font-family:'Bangers',cursive;font-size:14px}
-/* 列传旁白框 */
-.caption{position:relative;border:3px solid var(--ink);background:var(--yellow);
-  padding:10px 12px 9px;font-size:15px;line-height:1.55;letter-spacing:.5px;
-  box-shadow:4px 4px 0 rgba(20,20,20,.35)}
-.caption::before{content:'★ 列传';position:absolute;top:-13px;left:10px;background:var(--ink);
-  color:#fff;font-size:12px;padding:2px 10px;letter-spacing:3px}
+.caption{position:relative;border:3px solid var(--ink);background:var(--yellow);padding:10px 12px 9px;font-size:15px;line-height:1.55;letter-spacing:.5px;box-shadow:4px 4px 0 rgba(20,20,20,.35)}
+.caption::before{content:'★ 列传';position:absolute;top:-13px;left:10px;background:var(--ink);color:#fff;font-size:12px;padding:2px 10px;letter-spacing:3px}
+.viewhint{align-self:center;font-size:12px;letter-spacing:2px;opacity:.55;border-top:2px dashed rgba(20,20,20,.3);padding-top:6px}
 .footer{margin-top:60px;text-align:center;font-size:14px;letter-spacing:2px;line-height:2}
 .footer .bangers{font-size:22px;color:var(--red)}
 .empty{display:none;text-align:center;font-size:22px;letter-spacing:4px;padding:60px 0;border:4px dashed var(--ink);margin-top:20px}
 @media (max-width:640px){ .burst{display:none} .toolbar{position:static} }
+
+/* ===== 详情层 ===== */
+#overlay{display:none;position:fixed;inset:0;z-index:100;overflow-y:auto;background:rgba(20,20,20,.55);padding:26px 14px}
+#overlay.open{display:block}
+.sheet{position:relative;max-width:1080px;margin:0 auto;background:var(--paper);border:5px solid var(--ink);box-shadow:14px 14px 0 rgba(0,0,0,.45);padding:26px 26px 30px}
+.sheet::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(circle, rgba(20,20,20,.07) 1.2px, transparent 1.6px);background-size:9px 9px}
+.dhead{display:flex;gap:22px;flex-wrap:wrap;position:relative;z-index:1}
+.dportrait{width:180px;flex-shrink:0}
+.dportrait img{width:180px;height:auto;display:block;border:4px solid var(--ink);box-shadow:6px 6px 0 var(--ink);background:#fff}
+.avatar-burst{width:180px;height:216px;display:flex;align-items:center;justify-content:center;position:relative;
+  border:4px solid var(--ink);box-shadow:6px 6px 0 var(--ink);background:var(--yellow)}
+.avatar-burst .bigchar{font-size:96px;letter-spacing:0;text-shadow:4px 4px 0 rgba(20,20,20,.2);z-index:2;transform:rotate(-6deg)}
+.avatar-burst .starbg{position:absolute;inset:8px;
+  clip-path:polygon(50% 0%,61% 12%,75% 5%,79% 20%,95% 18%,90% 33%,100% 44%,88% 52%,95% 66%,79% 66%,77% 82%,63% 74%,50% 88%,37% 74%,23% 82%,21% 66%,5% 66%,12% 52%,0% 44%,10% 33%,5% 18%,21% 20%,25% 5%,39% 12%)}
+.dtitle{flex:1;min-width:260px}
+.dtitle .fac{font-size:15px;letter-spacing:3px;opacity:.75}
+.dtitle h2{font-size:clamp(40px,6vw,64px);letter-spacing:6px;line-height:1;margin:2px 0 8px}
+.dtitle .badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.dchips{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px}
+.dstats{display:flex;gap:8px;flex-wrap:wrap}
+.dstats span{border:3px solid var(--ink);background:#fff;padding:5px 12px;font-size:14px;letter-spacing:1px;box-shadow:3px 3px 0 rgba(20,20,20,.25)}
+.dstats span b{font-family:'Bangers',cursive;font-size:17px;margin:0 3px;color:var(--red)}
+.dclose{position:absolute;top:-18px;right:-16px;width:52px;height:52px;background:var(--red);color:#fff;border:4px solid var(--ink);font-size:22px;cursor:pointer;z-index:3;display:flex;align-items:center;justify-content:center;font-family:'Bangers',cursive;
+  clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.dclose:hover{transform:scale(1.1) rotate(8deg)}
+.duelsection{display:flex;gap:22px;flex-wrap:wrap;margin:24px 0 8px;position:relative;z-index:1}
+.radarbox{flex:1;min-width:300px;border:4px solid var(--ink);background:var(--cream);box-shadow:7px 7px 0 var(--ink);padding:12px 12px 6px;text-align:center}
+.radarbox h3{font-size:17px;letter-spacing:3px;margin-bottom:4px}
+.radarbox .sub{font-size:12px;letter-spacing:2px;opacity:.6;margin-bottom:6px}
+.bios{display:flex;gap:22px;flex-wrap:wrap;margin-top:20px;position:relative;z-index:1}
+.bio{flex:1;min-width:300px;border:4px solid var(--ink);padding:14px 14px 12px;box-shadow:7px 7px 0 rgba(20,20,20,.3);font-size:15.5px;line-height:1.75;letter-spacing:.5px}
+.bio.san{background:var(--cream)}
+.bio.llm{background:var(--yellow)}
+.bio h3{font-size:17px;letter-spacing:3px;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.bio h3 .tag{font-size:11px;letter-spacing:2px;background:var(--ink);color:#fff;padding:2px 8px}
+.dnav{display:flex;justify-content:space-between;gap:10px;margin-top:22px;position:relative;z-index:1}
+.dnav button{font-family:inherit;cursor:pointer;border:4px solid var(--ink);background:#fff;padding:9px 18px;font-size:16px;letter-spacing:2px;box-shadow:5px 5px 0 var(--ink)}
+.dnav button:hover{transform:translate(-2px,-2px)}
+.dnav .pos{font-family:'Bangers',cursive;font-size:20px;align-self:center;letter-spacing:2px}
 </style>
 </head>
 <body>
@@ -209,23 +314,26 @@ h1 span{color:var(--red); -webkit-text-stroke:2px var(--ink)}
   <footer class="footer">
     <div class="bangers">— THE END? NOT YET! —</div>
     数据：三国志14 威力加强版（Nobuwiki 整理）× Artificial Analysis（2026-10-10 快照）<br>
-    方法论与完整数据见仓库 docs/ · 折算武力 = II ÷ 榜首57.6 × 100 · 锚点席带红星<br>
-    <span style="opacity:.6">仅注明来源的非商业整理 · 三国志数值 © KOEI TECMO · 评测 © Artificial Analysis</span>
+    立绘采自 Nobuwiki（© KOEI TECMO），无页面者以本站手绘风头像代之 · 方法论与完整数据见仓库 docs/<br>
+    <span style="opacity:.6">仅注明来源的非商业整理 · 三国志数值与立绘 © KOEI TECMO · 评测 © Artificial Analysis</span>
   </footer>
 </div>
+
+<div id="overlay"><div class="sheet" id="sheet"></div></div>
 
 <script>
 const FACTIONS = __FACTIONS__;
 const DATA = __DATA__;
-const INK='#141414';
 
 const tabsEl=document.getElementById('tabs'), grid=document.getElementById('grid'),
       qEl=document.getElementById('q'), sortEl=document.getElementById('sortbtn'),
-      fhEl=document.getElementById('factionhead'), emptyEl=document.getElementById('empty');
-let faction='全部', sortMode='faction', keyword='';
+      fhEl=document.getElementById('factionhead'), emptyEl=document.getElementById('empty'),
+      overlayEl=document.getElementById('overlay'), sheetEl=document.getElementById('sheet');
+let faction='全部', sortMode='faction', keyword='', curList=[], curIdx=-1;
 
 const factionOrder = Object.fromEntries(FACTIONS.map((f,i)=>[f[0],i]));
 const roleOrder={'主公':0,'暗线':1,'诸侯':2,'武将':3,'彩蛋':4};
+const ROLES={'主公':'主公','诸侯':'诸侯','武将':'武将','彩蛋':'彩蛋','暗线':'暗线'};
 
 function tabHTML(){
   const all=[['全部',null],...FACTIONS.map(f=>[f[0],f[1]])];
@@ -252,31 +360,31 @@ function meta(d){
   if(d.ii) m.push(`<span>II <b>${d.ii}</b></span>`);
   if(d.cost) m.push(`<span><b>$${d.cost}</b>/任务</span>`);
   if(d.speed) m.push(`<span><b>${d.speed}</b> t/s</span>`);
-  if(d.total) m.push(`<span>游戏五维合计 <b>${d.total}</b></span>`);
-  if(!d.ii && d.role!=='主公') m.push(`<span>💀 退役/无页 —— 史书阙载</span>`);
+  if(d.total) m.push(`<span>五维合计 <b>${d.total}</b></span>`);
+  if(!d.ii && d.role!=='主公') m.push(`<span>💀 史书阙载</span>`);
   return m.length?`<div class="meta">${m.join('')}</div>`:'';
 }
 
-function card(d){
+function card(d, i){
   const f=FACTIONS.find(x=>x[0]===d.faction)||['','#666',''];
   const anchor=d.anchor?'<div class="anchorstar">★</div>':'';
   const creator=d.creator?`<span class="cchip">${d.creator}</span>`:'';
   const dead=(!d.ii&&d.role!=='主公')?'<span class="dead">（已退场）</span>':'';
-  return `<article class="panel">
+  return `<article class="panel" data-i="${i}">
     <div class="fbar" style="background:${f[1]}"></div>${anchor}
     <div class="phead">
-      <div class="gname">${d.general}<small>${d.faction} · ${ROLE(d)}</small></div>
-      <span class="badge ${d.role}">${ROLE(d)}</span>
+      <div class="gname">${d.general}<small>${d.faction} · ${ROLES[d.role]||d.role}</small></div>
+      <span class="badge ${d.role}">${ROLES[d.role]||d.role}</span>
     </div>
     <div class="mrow"><span class="mchip">${d.model}</span>${creator}${dead}</div>
     ${bars(d)}${meta(d)}
     <div class="caption">${d.note}</div>
+    <div class="viewhint">▸ 点击展开详情：立绘 · 双雷达 · 两朝列传</div>
   </article>`;
 }
-function ROLE(d){return ({'主公':'主公','诸侯':'诸侯','武将':'武将','彩蛋':'彩蛋','暗线':'暗线'})[d.role]||d.role}
 
 function filtered(){
-  let list=DATA.filter(d=>{
+  let list=DATA.map((d,i)=>({d,i})).filter(({d})=>{
     if(faction!=='全部'&&d.faction!==faction) return false;
     if(keyword){
       const k=keyword.toLowerCase();
@@ -286,28 +394,138 @@ function filtered(){
     return true;
   });
   if(sortMode==='power'){
-    list.sort((a,b)=>(parseInt(b.dw||0)-parseInt(a.dw||0))||(parseInt(b.war||0)-parseInt(a.war||0)));
+    list.sort((a,b)=>(parseInt(b.d.dw||0)-parseInt(a.d.dw||0))||(parseInt(b.d.war||0)-parseInt(a.d.war||0)));
   }else{
-    list.sort((a,b)=>(factionOrder[a.faction]-factionOrder[b.faction])
-      ||(roleOrder[a.role]-roleOrder[b.role])
-      ||(parseInt(b.dw||0)-parseInt(a.dw||0)));
+    list.sort((a,b)=>(factionOrder[a.d.faction]-factionOrder[b.d.faction])
+      ||(roleOrder[a.d.role]-roleOrder[b.d.role])
+      ||(parseInt(b.d.dw||0)-parseInt(a.d.dw||0)));
   }
   return list;
 }
 
 function render(){
   tabHTML();
-  const list=filtered();
-  grid.innerHTML=list.map(card).join('');
+  curList=filtered();
+  grid.innerHTML=curList.map(({d,i})=>card(d,i)).join('');
+  grid.querySelectorAll('.panel').forEach(p=>p.onclick=()=>openDetail(parseInt(p.dataset.i)));
   const f=FACTIONS.find(x=>x[0]===faction);
   if(f){ fhEl.classList.add('show');
     document.getElementById('fh-name').textContent='【'+f[0]+'】';
     document.getElementById('fh-name').style.color=f[1];
     document.getElementById('fh-desc').textContent=f[2];
-    document.getElementById('fh-count').textContent=list.length+' SEATS';
+    document.getElementById('fh-count').textContent=curList.length+' SEATS';
   } else fhEl.classList.remove('show');
-  emptyEl.style.display=list.length?'none':'block';
+  emptyEl.style.display=curList.length?'none':'block';
 }
+
+/* ===== SVG 雷达 ===== */
+function radarSVG(axes, color, sub){
+  const n=axes.length, cx=180, cy=140, R=105;
+  const pt=(k,r)=>{const a=-Math.PI/2+k*2*Math.PI/n;return [cx+r*Math.cos(a),cy+r*Math.sin(a)];};
+  let s=`<svg viewBox="0 0 360 300" style="width:100%;max-width:380px">`;
+  for(let ring=1;ring<=5;ring++){
+    const r=R*ring/5;
+    const pts=axes.map((_,k)=>pt(k,r).map(v=>v.toFixed(1)).join(',')).join(' ');
+    s+=`<polygon points="${pts}" fill="none" stroke="#141414" stroke-width="${ring===5?2.5:1}" opacity="${ring===5?1:.35}"/>`;
+  }
+  axes.forEach((ax,k)=>{
+    const [x,y]=pt(k,R);
+    const [lx,ly]=pt(k,R+24);
+    s+=`<line x1="${cx}" y1="${cy}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="#141414" stroke-width="1" opacity=".35"/>`;
+    const anchorTxt = lx<cx-10?'end':(lx>cx+10?'start':'middle');
+    s+=`<text x="${lx.toFixed(1)}" y="${(ly+5).toFixed(1)}" text-anchor="${anchorTxt}" font-size="13" font-family="'ZCOOL KuaiLe',sans-serif" fill="#141414">${ax.label}</text>`;
+  });
+  const poly=axes.map((ax,k)=>{
+    const v=ax.val==null?0:Math.max(0,Math.min(100,ax.val))/100*R;
+    return pt(k,v);
+  });
+  s+=`<polygon points="${poly.map(p=>p.map(v=>v.toFixed(1)).join(',')).join(' ')}" fill="${color}55" stroke="${color}" stroke-width="3"/>`;
+  poly.forEach((p,k)=>{
+    const ax=axes[k];
+    if(ax.val==null){
+      const [dx,dy]=pt(k,R*0.5);
+      s+=`<text x="${dx.toFixed(1)}" y="${dy.toFixed(1)}" text-anchor="middle" font-size="11" fill="#8a7a5c">无数据</text>`;
+    }else{
+      s+=`<circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="4.5" fill="${color}" stroke="#141414" stroke-width="1.5"/>`;
+      s+=`<text x="${p[0].toFixed(1)}" y="${(p[1]-9).toFixed(1)}" text-anchor="middle" font-family="'Bangers',cursive" font-size="14" fill="#141414">${ax.val}</text>`;
+    }
+  });
+  s+=`<text x="180" y="294" text-anchor="middle" font-size="12" letter-spacing="2" fill="#141414" opacity=".6">${sub}</text></svg>`;
+  return s;
+}
+
+/* ===== 详情层 ===== */
+function int0(v){return v==null?null:parseInt(v);}
+function openDetail(idx){
+  const pos=curList.findIndex(x=>x.i===idx);
+  if(pos<0) return;
+  curIdx=pos;
+  const d=DATA[idx];
+  const f=FACTIONS.find(x=>x[0]===d.faction)||['','#666',''];
+  const portrait=d.portrait
+    ?`<img src="${d.portrait}" alt="${d.general}">`
+    :`<div class="avatar-burst"><div class="starbg" style="background:${f[1]}77"></div><span class="bigchar">${d.general[0]}</span></div>`;
+  const game5=[
+    {label:'统率',val:int0(d.g&&d.g[0])},{label:'武力',val:int0(d.g&&d.g[1])},
+    {label:'智力',val:int0(d.g&&d.g[2])},{label:'政治',val:int0(d.g&&d.g[3])},
+    {label:'魅力',val:int0(d.g&&d.g[4])},
+  ];
+  const r6=d.r6||{};
+  const model6=[
+    {label:'HLE推理',val:r6.hle},{label:'GPQA科学',val:r6.gpqa},
+    {label:'SciCode代码',val:r6.scicode},{label:'MMMU多模态',val:r6.mmmu},
+    {label:'Tbench智能体',val:r6.tb},{label:'知识',val:r6.omni},
+  ];
+  const has6=Object.values(r6).some(v=>v!=null);
+  const stats=[];
+  if(d.ii) stats.push(`<span>II<b>${d.ii}</b></span>`);
+  if(d.dw) stats.push(`<span>折算武力<b>${d.dw}</b></span>`);
+  if(d.cost) stats.push(`<span>成本<b>$${d.cost}</b>/任务</span>`);
+  if(d.speed) stats.push(`<span>速度<b>${d.speed}</b>t/s</span>`);
+  if(!d.ii&&d.role!=='主公') stats.push(`<span><b>已退场</b>·史书阙载</span>`);
+  sheetEl.innerHTML=`
+    <button class="dclose" id="dclose">✕</button>
+    <div class="dhead">
+      <div class="dportrait">${portrait}</div>
+      <div class="dtitle">
+        <div class="fac">【${d.faction}】 · ${ROLES[d.role]||d.role}${d.anchor?' · ★ 数值锚点':''}</div>
+        <h2>${d.general}</h2>
+        <div class="badges"><span class="badge ${d.role}">${ROLES[d.role]||d.role}</span>
+          ${d.anchor?'<span class="badge 主公">★ 锚点</span>':''}</div>
+        <div class="dchips"><span class="mchip">${d.model}</span>${d.creator?`<span class="cchip">${d.creator}</span>`:''}</div>
+        <div class="dstats">${stats.join('')||'<span>厂家机构位 · 不列单挑之数</span>'}</div>
+      </div>
+    </div>
+    <div class="duelsection">
+      <div class="radarbox"><h3>《三国志14》五维</h3><div class="sub">游戏原版数值 · 满值100</div>
+        ${d.g?radarSVG(game5, '#d62828', 'GAME STATS · SAN14'):'<div style="padding:60px 0;font-size:18px;letter-spacing:3px">天子不列武臣册</div>'}</div>
+      <div class="radarbox"><h3>《大模型》六维</h3><div class="sub">AA 基准子分 · 百分比</div>
+        ${has6?radarSVG(model6, '#1d3557', 'BENCHMARK SCANS · AA SNAPSHOT'):'<div style="padding:60px 0;font-size:18px;letter-spacing:3px">已退场 · 无评测记录</div>'}</div>
+    </div>
+    <div class="bios">
+      <div class="bio san"><h3>《三国志》本传 <span class="tag">GAME LORE</span></h3><p>${d.bio}</p></div>
+      <div class="bio llm"><h3>《大模型纪》列传 <span class="tag">AI CHRONICLE</span></h3><p>${d.note}</p></div>
+    </div>
+    <div class="dnav">
+      <button id="dprev">◀ 上一位</button>
+      <span class="pos">${curIdx+1} / ${curList.length}</span>
+      <button id="dnext">下一位 ▶</button>
+    </div>`;
+  document.getElementById('dclose').onclick=closeDetail;
+  document.getElementById('dprev').onclick=()=>{curIdx=(curIdx-1+curList.length)%curList.length;openDetail(curList[curIdx].i);};
+  document.getElementById('dnext').onclick=()=>{curIdx=(curIdx+1)%curList.length;openDetail(curList[curIdx].i);};
+  overlayEl.classList.add('open');
+  overlayEl.scrollTop=0;
+  document.body.style.overflow='hidden';
+}
+function closeDetail(){overlayEl.classList.remove('open');document.body.style.overflow='';}
+overlayEl.addEventListener('click',e=>{if(e.target===overlayEl)closeDetail();});
+document.addEventListener('keydown',e=>{
+  if(!overlayEl.classList.contains('open'))return;
+  if(e.key==='Escape')closeDetail();
+  if(e.key==='ArrowLeft'&&curIdx>=0){curIdx=(curIdx-1+curList.length)%curList.length;openDetail(curList[curIdx].i);}
+  if(e.key==='ArrowRight'&&curIdx>=0){curIdx=(curIdx+1)%curList.length;openDetail(curList[curIdx].i);}
+});
 
 qEl.oninput=e=>{keyword=e.target.value.trim();render()};
 sortEl.onclick=()=>{sortMode=sortMode==='faction'?'power':'faction';
@@ -327,7 +545,8 @@ def main():
     out = os.path.join(ROOT, "docs", "index.html")
     with open(out, "w", encoding="utf-8") as f:
         f.write(html)
-    print(f"site built: {len(data)} seats -> {os.path.relpath(out, ROOT)}")
+    portraits = sum(1 for d in data if d["portrait"])
+    print(f"site built: {len(data)} seats ({portraits} with portraits) -> {os.path.relpath(out, ROOT)}")
 
 
 if __name__ == "__main__":
