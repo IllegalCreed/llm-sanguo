@@ -125,7 +125,7 @@ h1 span{color:var(--red); -webkit-text-stroke:2px var(--ink)}
   clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
 .dclose:hover{transform:scale(1.1) rotate(8deg)}
 .duelsection{display:flex;gap:22px;flex-wrap:wrap;margin:24px 0 8px;position:relative;z-index:1}
-.radarbox{flex:1;min-width:300px;border:4px solid var(--ink);background:var(--cream);box-shadow:7px 7px 0 var(--ink);padding:12px 12px 6px;text-align:center}
+.radarbox{flex:1;min-width:300px;border:4px solid var(--ink);background:radial-gradient(circle, rgba(20,20,20,.08) 1.2px, transparent 1.7px) 0 0/9px 9px, var(--cream);box-shadow:7px 7px 0 var(--ink);padding:12px 12px 6px;text-align:center}
 .radarbox h3{font-size:17px;letter-spacing:3px;margin-bottom:4px}
 .radarbox .sub{font-size:12px;letter-spacing:2px;opacity:.6;margin-bottom:6px}
 .bios{display:flex;gap:22px;flex-wrap:wrap;margin-top:20px;position:relative;z-index:1}
@@ -284,36 +284,73 @@ function render(){
   emptyEl.style.display=curList.length?'none':'block';
 }
 
-/* ===== SVG 雷达 ===== */
+/* ===== SVG 雷达（美漫版：网点填充/手绘抖线/硬阴影/MAX爆炸章） ===== */
+let RADAR_SEQ=0;
 function radarSVG(axes, color, sub){
+  const uid='r'+(++RADAR_SEQ);
   const n=axes.length, cx=180, cy=140, R=105;
   const pt=(k,r)=>{const a=-Math.PI/2+k*2*Math.PI/n;return [cx+r*Math.cos(a),cy+r*Math.sin(a)];};
+  const P=(k,r)=>pt(k,r).map(v=>v.toFixed(1)).join(',');
   let s=`<svg viewBox="0 0 360 300" style="width:100%;max-width:380px">`;
+  s+=`<defs>
+    <pattern id="dots-${uid}" width="7.5" height="7.5" patternUnits="userSpaceOnUse" patternTransform="rotate(8)">
+      <circle cx="2.2" cy="2.2" r="1.7" fill="${color}" opacity=".5"/></pattern>
+    <filter id="rough-${uid}" x="-8%" y="-8%" width="116%" height="116%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="${RADAR_SEQ*13+3}" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="3.2"/></filter>
+    <filter id="rough2-${uid}" x="-8%" y="-8%" width="116%" height="116%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.09" numOctaves="1" seed="${RADAR_SEQ*7+5}" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="2.2"/></filter>
+  </defs>`;
+  // 网格环 + 轴线（手绘抖动）
+  s+=`<g filter="url(#rough-${uid})">`;
   for(let ring=1;ring<=5;ring++){
     const r=R*ring/5;
-    const pts=axes.map((_,k)=>pt(k,r).map(v=>v.toFixed(1)).join(',')).join(' ');
-    s+=`<polygon points="${pts}" fill="none" stroke="#141414" stroke-width="${ring===5?2.5:1}" opacity="${ring===5?1:.35}"/>`;
+    const pts=axes.map((_,k)=>P(k,r)).join(' ');
+    s+=`<polygon points="${pts}" fill="none" stroke="#141414" stroke-width="${ring===5?3.4:1.6}" opacity="${ring===5?.95:.3}" stroke-linejoin="round"/>`;
   }
   axes.forEach((ax,k)=>{
     const [x,y]=pt(k,R);
-    const [lx,ly]=pt(k,R+24);
-    s+=`<line x1="${cx}" y1="${cy}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="#141414" stroke-width="1" opacity=".35"/>`;
-    const anchorTxt = lx<cx-10?'end':(lx>cx+10?'start':'middle');
-    s+=`<text x="${lx.toFixed(1)}" y="${(ly+5).toFixed(1)}" text-anchor="${anchorTxt}" font-size="13" font-family="'ZCOOL KuaiLe',sans-serif" fill="#141414">${ax.label}</text>`;
+    s+=`<line x1="${cx}" y1="${cy}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="#141414" stroke-width="1.6" opacity=".3"/>`;
   });
+  s+=`</g>`;
   const poly=axes.map((ax,k)=>{
     const v=ax.val==null?0:Math.max(0,Math.min(100,ax.val))/100*R;
     return pt(k,v);
   });
-  s+=`<polygon points="${poly.map(p=>p.map(v=>v.toFixed(1)).join(',')).join(' ')}" fill="${color}55" stroke="${color}" stroke-width="3"/>`;
+  const polyStr=poly.map(p=>p.map(v=>v.toFixed(1)).join(',')).join(' ');
+  // 数据多边形：黑色硬阴影错位 + 浅底色 + 网点填充 + 粗描边（抖动）
+  s+=`<g filter="url(#rough2-${uid})">
+    <polygon points="${polyStr}" transform="translate(5,5)" fill="#141414"/>
+    <polygon points="${polyStr}" fill="${color}" opacity=".18"/>
+    <polygon points="${polyStr}" fill="url(#dots-${uid})"/>
+    <polygon points="${polyStr}" fill="none" stroke="#141414" stroke-width="4" stroke-linejoin="round"/>
+  </g>`;
+  // 标签与数值
+  axes.forEach((ax,k)=>{
+    const [lx,ly]=pt(k,R+26);
+    const anchorTxt = lx<cx-10?'end':(lx>cx+10?'start':'middle');
+    s+=`<text x="${lx.toFixed(1)}" y="${(ly+5).toFixed(1)}" text-anchor="${anchorTxt}" font-size="13.5" font-family="'ZCOOL KuaiLe',sans-serif" fill="#141414" transform="rotate(${k%2? 2.5 : -2.5} ${lx.toFixed(1)} ${(ly+5).toFixed(1)})">${ax.label}</text>`;
+  });
   poly.forEach((p,k)=>{
     const ax=axes[k];
     if(ax.val==null){
-      const [dx,dy]=pt(k,R*0.5);
-      s+=`<text x="${dx.toFixed(1)}" y="${dy.toFixed(1)}" text-anchor="middle" font-size="11" fill="#8a7a5c">无数据</text>`;
+      const [dx,dy]=pt(k,R*0.55);
+      s+=`<g transform="translate(${dx.toFixed(1)},${dy.toFixed(1)}) rotate(${k%2?-8:8})">
+        <rect x="-30" y="-11" width="60" height="22" fill="#fff" stroke="#141414" stroke-width="2.5"/>
+        <text text-anchor="middle" y="5" font-family="'Bangers',cursive" font-size="14" fill="#8a7a5c">NO DATA!</text></g>`;
     }else{
-      s+=`<circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="4.5" fill="${color}" stroke="#141414" stroke-width="1.5"/>`;
-      s+=`<text x="${p[0].toFixed(1)}" y="${(p[1]-9).toFixed(1)}" text-anchor="middle" font-family="'Bangers',cursive" font-size="14" fill="#141414">${ax.val}</text>`;
+      const [vx,vy]=p;
+      s+=`<circle cx="${vx.toFixed(1)}" cy="${vy.toFixed(1)}" r="5.5" fill="#fff" stroke="#141414" stroke-width="2.5"/>`;
+      // 数值沿轴向外移，避开 MAX 章与标签
+      const [tx,ty]=pt(k,Math.min(R+8,(ax.val>=90? Math.max(0,Math.min(100,ax.val))/100*R+16 : Math.max(0,Math.min(100,ax.val))/100*R))+12);
+      s+=`<text x="${tx.toFixed(1)}" y="${(ty+5).toFixed(1)}" text-anchor="middle" font-family="'Bangers',cursive" font-size="16" fill="#141414">${ax.val}</text>`;
+      if(ax.val>=90){
+        const [bx,by]=pt(k,Math.max(0,Math.max(0,Math.min(100,ax.val))/100*R-26));
+        s+=`<g transform="translate(${bx.toFixed(1)},${by.toFixed(1)}) rotate(${k%2?12:-10}) scale(.9)">
+          <polygon points="0,-16 4,-5 16,-8 7,0 14,9 3,5 0,16 -4,5 -14,9 -7,0 -16,-8 -4,-5" fill="#ffb703" stroke="#141414" stroke-width="2.5"/>
+          <text text-anchor="middle" y="4" font-family="'Bangers',cursive" font-size="11">MAX!</text></g>`;
+      }
     }
   });
   s+=`<text x="180" y="294" text-anchor="middle" font-size="12" letter-spacing="2" fill="#141414" opacity=".6">${sub}</text></svg>`;
