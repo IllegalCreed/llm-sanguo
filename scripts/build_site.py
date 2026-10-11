@@ -473,18 +473,23 @@ function radarSVG(axes, color, sub){
       s+=`<g transform="translate(${dx.toFixed(1)},${dy.toFixed(1)}) rotate(${k%2?-8:8})">
         <rect x="-30" y="-11" width="60" height="22" fill="#fff" stroke="#141414" stroke-width="2.5"/>
         <text text-anchor="middle" y="5" font-family="'Bangers',cursive" font-size="14" fill="#8a7a5c">NO DATA!</text></g>`;
-    }else{
-      const [vx,vy]=p;
-      s+=`<circle cx="${vx.toFixed(1)}" cy="${vy.toFixed(1)}" r="5.5" fill="#fff" stroke="#141414" stroke-width="2.5"/>`;
-      // 数值沿轴向外移，避开 MAX 章与标签
-      const [tx,ty]=pt(k,Math.min(R+8,(ax.val>=90? Math.max(0,Math.min(100,ax.val))/100*R+16 : Math.max(0,Math.min(100,ax.val))/100*R))+12);
-      s+=`<text x="${tx.toFixed(1)}" y="${(ty+5).toFixed(1)}" text-anchor="middle" font-family="'Bangers',cursive" font-size="16" fill="#141414">${ax.val}</text>`;
-      if(ax.val>=90){
-        const [bx,by]=pt(k,Math.max(0,Math.max(0,Math.min(100,ax.val))/100*R-26));
-        s+=`<g transform="translate(${bx.toFixed(1)},${by.toFixed(1)}) rotate(${k%2?12:-10}) scale(.9)">
-          <polygon points="0,-16 4,-5 16,-8 7,0 14,9 3,5 0,16 -4,5 -14,9 -7,0 -16,-8 -4,-5" fill="#ffb703" stroke="#141414" stroke-width="2.5"/>
-          <text text-anchor="middle" y="4" font-family="'Bangers',cursive" font-size="11">MAX!</text></g>`;
-      }
+      return;
+    }
+    const vv=Math.max(0,Math.min(100,ax.val));
+    const vx2=+p[0], vy2=+p[1];
+    s+=`<circle cx="${vx2.toFixed(1)}" cy="${vy2.toFixed(1)}" r="5.5" fill="#fff" stroke="#141414" stroke-width="2.5"/>`;
+    // 数值布局（几何验证）：高值(≥45)在顶点内侧径向 16+偶奇10px；低值在顶点外侧 +18px
+    let tp;
+    if(vv>=45){ tp = pt(k, vv/100*R - (16+(k%2)*10)); }
+    else      { tp = pt(k, vv/100*R + 18); }
+    s+=`<text x="${tp[0].toFixed(1)}" y="${(tp[1]+5).toFixed(1)}" text-anchor="middle" font-family="'Bangers',cursive" font-size="15" fill="#141414">${ax.val}</text>`;
+    // MAX 章不占轴位：在顶点处沿轴的垂直方向偏移 33px（偶奇定侧），落入两轴之间的空白
+    if(ax.val>=90){
+      const th=-Math.PI/2+k*2*Math.PI/n;
+      const px=(k%2? -Math.sin(th): Math.sin(th))*33, py=(k%2? Math.cos(th): -Math.cos(th))*33;
+      s+=`<g transform="translate(${(vx2+px).toFixed(1)},${(vy2+py).toFixed(1)}) rotate(${k%2?14:-12}) scale(.9)">
+        <polygon points="0,-16 4,-5 16,-8 7,0 14,9 3,5 0,16 -4,5 -14,9 -7,0 -16,-8 -4,-5" fill="#ffb703" stroke="#141414" stroke-width="2.5"/>
+        <text text-anchor="middle" y="4" font-family="'Bangers',cursive" font-size="11">MAX!</text></g>`;
     }
   });
   s+=`<text x="180" y="294" text-anchor="middle" font-size="12" letter-spacing="2" fill="#141414" opacity=".6">${sub}</text></svg>`;
