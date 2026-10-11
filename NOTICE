@@ -1,0 +1,47 @@
+NOTICE
+
+The MIT License in LICENSE applies only to the code in this repository:
+the Python scripts, the page template inside scripts/build_site.py, and the
+project documentation written for this repository.
+
+It does not license the third-party data or artwork checked in alongside
+that code.
+
+1. Romance of the Three Kingdoms XIV (《三国志14 威力加强版》) officer stats
+   in data/ and the portraits in docs/portraits/ are © KOEI TECMO GAMES.
+   Both were compiled from Nobuwiki (https://www.nobuwiki.org/) and are kept
+   here as a sourced, non-commercial reference. They are not MIT-licensed.
+
+2. Model evaluation figures in data/aa_models_snapshot_2026-10-10.csv (and
+   the raw table export data/aa_models_raw.tsv) are © Artificial Analysis
+   (https://artificialanalysis.ai/). The snapshot is an attributed,
+   non-commercial compilation. It is not MIT-licensed, and this project is
+   not an official Artificial Analysis product.
+
+This repository is an entertainment analogy. It is not affiliated with
+KOEI TECMO or Artificial Analysis.
+
+Takedown: if you are a rights holder and want material removed, open an
+issue at https://github.com/IllegalCreed/llm-sanguo/issues .
+
+---
+
+本仓库根目录的 MIT 许可证只覆盖代码：Python 脚本、scripts/build_site.py
+里的页面模板，以及为本项目撰写的说明文档。
+
+下列第三方材料不在 MIT 授权范围内：
+
+1. 《三国志14 威力加强版》武将数值（data/）与立绘（docs/portraits/）版权归
+   © KOEI TECMO GAMES。数值与立绘均整理自 Nobuwiki
+   （https://www.nobuwiki.org/），仅作注明来源的非商业对照。立绘继续随站点公开展示；
+   这不等于获得了 KOEI TECMO 的授权。
+
+2. 模型评测快照 data/aa_models_snapshot_2026-10-10.csv 及表格导出
+   data/aa_models_raw.tsv 版权归 Artificial Analysis
+   （https://artificialanalysis.ai/）。此处为注明来源的非商业整理，并非
+   Artificial Analysis 官方合作或官方产品。
+
+本项目是娱乐性类比，与光荣特库摩、Artificial Analysis 均无隶属关系。
+
+下架联系：权利人如需移除相关材料，请在
+https://github.com/IllegalCreed/llm-sanguo/issues 开启一个 GitHub issue。

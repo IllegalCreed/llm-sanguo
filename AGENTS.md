@@ -22,7 +22,7 @@
 ## 注意事项
 
 - 榜单数据有强时效性，涉及模型版本号的讨论先核对快照日期，别用训练语料里的旧版本号（本项目踩过坑：曾把 GPT-6 时代写成 o4）
-- AA 核对的正确姿势（勿再猜 slug/手拼行）：首选 `curl https://artificialanalysis.ai/leaderboards/models` 一页拿到全库（`rebuild_snapshot.py --leaderboard` 解析内嵌 `models` 数组，含 creator 与全部指标）；备选 sitemap 逐页模式（`--pages`）；补录行 source 指向模型页。快照导出只是 leaderboard 表格口径（267 现役），退役模型有页有分但不在表格。`data/aa_models_raw.tsv` 保持导出原貌，补录只进清洗后的 CSV
+- AA 核对的正确姿势（勿再猜 slug/手拼行）：首选 `curl https://artificialanalysis.ai/leaderboards/models` 一页拿到全库（`rebuild_snapshot.py --leaderboard` 解析内嵌 `models` 数组，含 creator 与全部指标）；备选 sitemap 逐页模式（`--pages`）；补录行 source 指向模型页。`data/aa_models_raw.tsv` 是 leaderboard **表格导出留档**（267 行现役口径），保持原貌、不参与折算；清洗后的 `data/aa_models_snapshot_2026-10-10.csv` 才是全库（697 模型、687 有分）。退役模型有页有分，但不在那 267 行表格里。补录只进清洗后的 CSV
 - 武将名沿用游戏数据的繁体写法（孫權=孙权同一人），叙述文本用简体即可，勿改数据侧繁体名
 - 漢獻帝不在三国志14武将册（游戏不收录皇帝），其五维为空是有意设定，勿当缺失修
 - `data/` 下 `*_raw.*` 为原始导出留档，勿删

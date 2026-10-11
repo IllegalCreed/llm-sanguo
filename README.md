@@ -1,76 +1,139 @@
+[English](README.en.md)
+
 # 大模型三国志（LLM Sanguo）
 
-以《三国志14》全武将数值与 [Artificial Analysis](https://artificialanalysis.ai/leaderboards/models) 模型评测为两大"史源"，把当今 AI 大模型与三国武将一一对应的开源对照项目。
+[![在线站点](https://img.shields.io/badge/site-GitHub%20Pages-2a9d8f?style=flat-square)](https://illegalcreed.github.io/llm-sanguo/)
+[![代码 MIT](https://img.shields.io/badge/code-MIT-1d3557?style=flat-square)](LICENSE)
+
+**在线看：<https://illegalcreed.github.io/llm-sanguo/>**
 
 > 人中吕布，马中赤兔，卡中 Blackwell。
 
-## 这是什么
+它把 [Artificial Analysis](https://artificialanalysis.ai/leaderboards/models) 2026-10-10 的模型评测，和《三国志14 威力加强版》1180 名武将的五维放在一起，给大模型排座位：武力看智能指数，智力看性价比，主公位只坐厂家。
 
-- 《三国志14 威力加强版》全 **1180 名武将**的五维数值（统率/武力/智力/政治/魅力）——数据来自 [Nobuwiki「三國志14 威力加強版」全武將數據一覽](https://www.nobuwiki.org/san/game_14/s14_01)
-- Artificial Analysis 榜单 **267 个模型**的评测快照（Intelligence Index / 单任务成本 / 速度 / 延迟）——抓取于 2026-10-10
-- 一套带权重的映射方法论：**武力 ↔ 模型智力（Intelligence Index）为最高权重主轴**，其余数值维度次之，阵营与生平典故仅作最低权重的叙事调味
-- 自动匹配脚本：按百分位加权距离，为任意模型推荐最匹配的武将（"天命版"纯强度匹配），与人工编排的"演义版"（阵营优先、强度约束）并行
+演义版现编排 **102 席**，做成一页美漫风武将卡。可以按阵营切换、搜索、排序；点开一位，能看到立绘（或姓氏头像）、游戏五维和模型基准两张雷达，以及两朝列传。页面是纯静态的，打开就能看。
 
-## 目录结构
+## 怎么对上的
+
+1. **武力 ↔ Intelligence Index**（权重 0.7）。以当次快照榜首为 100：`折算武力 = round(模型 II ÷ 榜首 II × 100)`。榜首是 Claude Opus 5.5，II **57.6**。
+2. **智力 ↔ 性价比**（权重 0.3）。每任务成本越低，智力百分位越高。
+3. 统率 / 政治 / 魅力对应 agentic、对齐、调用量。快照里还没有这些列，暂时人工写。
+4. 阵营和典故只负责叙事、打破并列，不参与打分。主公位写公司（曹操 = OpenAI，刘备 = 幻方量化，孙权 = Meta，袁绍 = Anthropic），模型只坐武将或诸侯位。
+
+天命版用百分位距离自动匹配：`score = 0.7 × |II 百分位 − 武力百分位| + 0.3 × |性价比百分位 − 智力百分位|`，越小越像。站点展示的 102 席是演义版：阵营优先，强度仍受上面的公式约束。两套结果允许不一样。
+
+站点上标了星的八组数值锚点，都来自现行演义表 `mapping/mapping_v0.5.csv`（折算武力 : 游戏原版武力）：
+
+| 模型 | 武将 | 折算 : 原版 |
+|---|---|---|
+| Claude Opus 5.5 | 吕布 | 100 : 100 |
+| Claude Fable 5.1 | 文丑 | 93 : 94 |
+| GPT-6 Astra | 曹彰 | 91 : 90 |
+| Claude Opus 5 | 高顺 | 88 : 86 |
+| GPT-5.6 Sol | 文聘 | 82 : 82 |
+| Claude Haiku 5.5 | 曹性 | 75 : 74 |
+| GPT-4 | 荀彧 | 12 : 14 |
+| Olmo 3.1 32B Think | 顾雍 | 12 : 18 |
+
+GPT-6 Astra 对曹彰，是折算武力 91 与原版 90 的重合。`mapping/suggestions_tianming.csv` 是更早一份整数分表格上的天命建议，里面 Astra 最近的是颜良；那张表不驱动现在这个页面。
+
+## 站点一览
+
+总览（桌面宽度）：
+
+![总览：标题、统计与武将列表](docs/assets/overview.png)
+
+群雄一页（袁绍 = Anthropic，35 席）：
+
+![群雄阵营](docs/assets/faction-qun.png)
+
+吕布 / Claude Opus 5.5 的详情：游戏五维雷达和模型基准雷达。
+
+![吕布详情与双雷达](docs/assets/detail-lubu.png)
+
+手机宽度（390）：
+
+![手机宽度首页](docs/assets/mobile.png)
+
+![手机宽度详情](docs/assets/mobile-detail.png)
+
+阵营切换，再点开吕布：
+
+![浏览动图](docs/assets/browse.gif)
+
+## 快照口径
+
+脚本和站点用的是清洗后的全库表 `data/aa_models_snapshot_2026-10-10.csv`：**697 个模型，其中 687 个有 Intelligence Index**。`data/aa_models_raw.tsv` 是更早的 leaderboard 表格导出，**267 行现役口径**，只留档，不参与现行折算。武将表 `data/sanguo14_officers.csv` 是 1180 人。
+
+## 本地生成
+
+Python 3，只用标准库，没有第三方依赖。
+
+```bash
+# 天命版：按当前快照给模型找最接近的武将（会重写 mapping/suggestions_tianming.csv）
+python3 scripts/match.py --model "Claude Opus 5.5"
+
+# 演义表：改完 mapping/mapping_source.csv 后重算数值
+python3 scripts/enrich_mapping.py
+
+# 展示页：mapping/mapping_v0.5.csv → docs/index.html
+python3 scripts/build_site.py
+```
+
+生成后用浏览器打开 `docs/index.html`，或在 `docs/` 下起一个静态服务器。GitHub Pages 发布的就是这个目录。
+
+## 目录
 
 ```
 ├── data/
-│   ├── sanguo14_officers.csv              # 三国志14全武将五维数据（清洗后）
-│   ├── aa_models_snapshot_2026-10-10.csv  # AA 模型评测快照（清洗后）
-│   └── *_raw.*                            # 原始导出留档
+│   ├── sanguo14_officers.csv                 # 1180 名武将，清洗后
+│   ├── aa_models_snapshot_2026-10-10.csv     # 全库快照：697 模型 / 687 有分
+│   ├── aa_models_raw.tsv                     # 表格导出留档：267 行现役口径
+│   └── *_raw.*
 ├── docs/
-│   └── methodology.md                     # 映射方法论与权重规则
+│   ├── index.html                            # 展示页（build_site.py 生成）
+│   ├── methodology.md                        # 映射方法论
+│   ├── ROADMAP.md
+│   ├── portraits/                            # 82 张立绘；其余 20 席用姓氏头像
+│   └── assets/                               # 本 README 的截图
 ├── mapping/
-│   ├── mapping_source.csv                 # 人工维护的映射源（只写关系与典故）
-│   ├── mapping_v0.2.csv                   # 脚本联结后的完整映射（双套数值）
-│   └── suggestions_tianming.csv           # 天命版自动匹配建议
-└── scripts/
-    ├── enrich_mapping.py                  # 联结两份数据，生成 mapping_v0.2.csv
-    └── match.py                           # 加权百分位自动匹配
+│   ├── mapping_source.csv                    # 人工维护：只写关系与典故
+│   ├── mapping_v0.2.csv … mapping_v0.4.csv   # 历史版本
+│   ├── mapping_v0.5.csv                      # 现行演义版 102 席，站点数据源
+│   └── suggestions_tianming.csv              # 天命版建议（旧表口径留档）
+├── scripts/
+│   ├── enrich_mapping.py                     # source → v0.5
+│   ├── build_site.py                         # v0.5 → docs/index.html
+│   ├── rebuild_snapshot.py                   # 重建 AA 快照
+│   └── match.py                              # 天命版自动匹配
+├── LICENSE                                   # MIT，只覆盖代码
+├── NOTICE                                    # 数值与立绘的归属
+└── AGENTS.md
 ```
 
-## 快速开始
-
-```bash
-# 为某个模型找最像的武将（天命版：纯强度百分位匹配）
-python3 scripts/match.py --model "Claude Opus 5.5 (max with fallback)"
-
-# 查看全部自动匹配建议
-python3 scripts/match.py --top 5
-
-# 重新生成映射表（改动 mapping_source.csv 后）
-python3 scripts/enrich_mapping.py
-```
-
-## 核心规则（详见 docs/methodology.md）
-
-1. **武力 = Intelligence Index 折算**，以当世第一（吕布 = 快照中 II 最高的模型）为 100 基准：
-   `折算武力 = round(模型II / 榜首II × 100)`
-2. **智力 = 性价比**（每任务成本的反比）——谋士以计破力，模型以性价比破算力军备
-3. 统率 / 政治 / 魅力 对应 agentic 能力 / 指令遵循与对齐 / 调用量与生态口碑，目前快照未含这些列，暂由人工评估，路线图中接入
-4. **阵营与典故（曹魏=美国闭源、蜀汉=中国阵营、东吴=开源联盟等）权重最低**，只用于打破并列与叙事
-
-两个锚点验证（天命版自动算出，详见 `mapping/suggestions_tianming.csv`）：
-
-- **Claude Opus 5.5 (max) ↔ 吕布：距离 0.000**——II 百分位与武力百分位双双第一，且都以"贵、性价比低"著称（吕布原版政治 13 魅力 36；Opus 每任务 $5.98）
-- **GPT-6 Astra (max) ↔ 颜良：距离 0.004**——武力顶级而"第一"地位屡遭争议（OpenAI 自称最强 vs AA 榜首另有其人），许田围猎的剧本是数据自动写出来的
-
-## 数据来源与致谢
-
-| 数据 | 来源 | 采集方式 |
-|---|---|---|
-| 三国志14全武将数值 | [Nobuwiki](https://www.nobuwiki.org/san/game_14/s14_01)（光荣特库摩游戏数据整理） | 浏览器渲染导出 |
-| 模型评测快照 | [Artificial Analysis](https://artificialanalysis.ai/leaderboards/models) | 浏览器渲染导出，快照日期 2026-10-10 |
-
-《三国志》相关版权归 © KOEI TECMO GAMES 所有；评测数据版权归 Artificial Analysis 所有。本项目仅作技术社区娱乐性类比与数据整理，不用于商业用途。
+武将名在数据文件里保持游戏原表的繁体。叙述用简体，二者是同一人。
 
 ## 路线图
 
-- [ ] 武将卡网页：五维雷达图 + 模型折算值 + 列传典故
-- [ ] 接入 AA Agentic / Coding 指数，补全"统率"维度
-- [ ] 接入 OpenRouter 调用份额，补全"魅力"维度
-- [ ] AA 快照定期更新脚本（历史快照对比 = 武将的"成长曲线"）
+已经做完的：两份史源、方法论、演义版 v0.5（102 席）、天命版脚本、美漫风单页。站点已挂在 GitHub Pages。
+
+还没做的：
+
+- 接入 AA Agentic / Coding 指数，补「统率」
+- 接入 OpenRouter 调用份额，补「魅力」
+- 保留历史快照，对比出武将的成长曲线
+
+细节在 [docs/ROADMAP.md](docs/ROADMAP.md)，规则在 [docs/methodology.md](docs/methodology.md)。
+
+## 数据、立绘与许可
+
+[LICENSE](LICENSE) 是标准 MIT，**只覆盖本仓库的代码**（`scripts/` 与项目文档）。下面这些不在 MIT 里：
+
+- 《三国志14》武将数值，以及 `docs/portraits/` 里的立绘，版权归 **© KOEI TECMO GAMES**，整理自 [Nobuwiki](https://www.nobuwiki.org/san/game_14/s14_01)
+- 模型评测数字版权归 **Artificial Analysis**
+
+本项目是注明来源的非商业对照，与光荣特库摩、Artificial Analysis 都没有隶属关系。权利人如需下架，请到本仓库开一个 [GitHub issue](https://github.com/IllegalCreed/llm-sanguo/issues)。完整说明见 [NOTICE](NOTICE)。
 
 ## 贡献
 
-欢迎提 issue / PR：换将、补将、修数值、加典故都可以。规则只有一条——**先看数据，再谈演义**（改映射请引用两份史源数据，别拍脑袋）。
+欢迎提 issue / PR：换将、补将、修数值、加典故都可以。规则只有一条——**先看数据，再谈演义**（改映射请引用两份史源，别拍脑袋）。
