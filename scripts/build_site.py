@@ -99,8 +99,21 @@ def game_bio(o):
     return "；".join(parts) + "。"
 
 
+def load_seat_history():
+    path = os.path.join(ROOT, "mapping", "seat_history.csv")
+    hist = {}
+    if not os.path.exists(path):
+        return hist
+    with open(path, encoding="utf-8") as f:
+        for r in csv.DictReader(f):
+            hist.setdefault(r["general"], []).append(
+                f"{r['date']}：{r['old_model'] or '（新席）'} → {r['new_model'] or '（去职）'}（{r['reason']}）")
+    return hist
+
+
 def load_data():
     officers = load_officers()
+    seat_hist = load_seat_history()
     best = load_snapshot_best()
     path = os.path.join(ROOT, "mapping", "mapping_v0.8.csv")
     with open(path, encoding="utf-8") as f:
@@ -132,6 +145,7 @@ def load_data():
             "portrait": portrait,
             "bio": game_bio(o),
             "g": [o["leadership"], o["warfare"], o["intellect"], o["politics"], o["charm"]] if o else None,
+            "history": seat_hist.get(r["general"], []),
             "r6": {"hle": sub("hle"), "gpqa": sub("gpqa"), "scicode": sub("scicode"),
                    "mmmu": sub("mmmu_pro"), "tb": sub("terminalbench40"), "omni": sub("omniscience")},
         })
@@ -595,6 +609,7 @@ function openDetail(idx){
       <div class="bio san"><h3>《三国志》本传 <span class="tag">GAME LORE</span></h3><p>${d.bio}</p></div>
       <div class="bio llm"><h3>《大模型纪》列传 <span class="tag">AI CHRONICLE</span></h3><p>${d.note}</p></div>
     </div>
+    ${(d.history&&d.history.length)?`<div class="bios" style="margin-top:-2px"><div class="bio san" style="background:#fff"><h3>易主记录 <span class="tag">SEAT HISTORY</span></h3><p style="line-height:1.9">${d.history.map(h=>'◆ '+h).join('<br>')}</p></div></div>`:''}
     <div class="dnav">
       <button id="dprev">◀ 上一位</button>
       <span class="pos">${curIdx+1} / ${curList.length}</span>
