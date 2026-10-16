@@ -322,7 +322,7 @@ h1 span{color:var(--red); -webkit-text-stroke:2px var(--ink)}
 
   <header class="masthead">
     <div class="burst b1"><b>POW!</b></div>
-    <div class="burst b2"><b>102<br>将</b></div>
+    <div class="burst b2"><b>103<br>将</b></div>
     <div class="topstrip">
       <span>★ ARTIFICIAL ANALYSIS 快照 2026-10-10</span>
       <span class="bangers">LLM SANGUO CHRONICLES · VOL.5</span>
@@ -331,7 +331,7 @@ h1 span{color:var(--red); -webkit-text-stroke:2px var(--ink)}
     <h1>大模型<span>三国志</span></h1>
     <div class="subtitle">给大模型<b>立传</b>排座的开源对照实验 —— 武力 = 智能指数<b>折算</b>，主公 = <b>厂家</b>，模型皆为武将</div>
     <div class="statline">
-      <span class="chip"><b>102</b>武将席位</span>
+      <span class="chip"><b>103</b>武将席位</span>
       <span class="chip"><b>15</b>主公厂家</span>
       <span class="chip"><b>8</b>数值锚点</span>
       <span class="chip"><b>76</b>席有评测数据</span>
