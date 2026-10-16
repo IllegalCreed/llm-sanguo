@@ -80,6 +80,8 @@ def parse_leaderboard(html):
             'hle': get(obj, 'hle'), 'gpqa': get(obj, 'gpqa'),
             'scicode': get(obj, 'scicode'), 'mmmu': get(obj, 'mmmuPro'),
             'tbench': get(obj, 'terminalBench40'), 'omni': get(obj, 'omniscience'),
+            'analyst': get(obj, 'analystAgent'), 'apex': get(obj, 'apexAgents'),
+            'sre': get(obj, 'itbenchSre'), 'gdpval': get(obj, 'gdpvalNormalized'),
         })
         if slug and name and get(obj, 'contextWindowTokens') is None and \
                 get(obj, 'intelligenceIndex') is None and get(obj, 'releaseSlug'):
@@ -138,6 +140,7 @@ def main():
               'cost_per_task_usd', 'median_tokens_per_s',
               'latency_first_chunk_s', 'total_response_s',
               'hle', 'gpqa', 'scicode', 'mmmu_pro', 'terminalbench40', 'omniscience',
+              'analyst_agent', 'apex_agents', 'itbench_sre', 'gdpval',
               'further_analysis', 'source']
 
     def ii_str(r):
@@ -159,6 +162,8 @@ def main():
             'hle': fmt_pct(r.get('hle')), 'gpqa': fmt_pct(r.get('gpqa')),
             'scicode': fmt_pct(r.get('scicode')), 'mmmu_pro': fmt_pct(r.get('mmmu')),
             'terminalbench40': fmt_pct(r.get('tbench')), 'omniscience': fmt_num(r.get('omni'), 0),
+            'analyst_agent': fmt_pct(r.get('analyst')), 'apex_agents': fmt_pct(r.get('apex')),
+            'itbench_sre': fmt_pct(r.get('sre')), 'gdpval': fmt_pct(r.get('gdpval')),
             'further_analysis': 'Model Providers',
             'source': f"https://artificialanalysis.ai/models/{r['slug']}",
         })

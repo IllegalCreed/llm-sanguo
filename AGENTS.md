@@ -9,9 +9,9 @@
 ## 关键事实（新会话先读这个）
 
 - **数据**：`data/sanguo14_officers.csv`（1180 武将，Nobuwiki 整理的 PK 版数据）；`data/aa_models_snapshot_2026-10-10.csv`（697 模型、687 有分，源自 leaderboard 单页内嵌全库表，II/成本/速度/延迟俱全，榜首 57.6）
-- **方法论**：`docs/methodology.md`。核心规则——武力 ↔ Intelligence Index 为最高权重（0.7），折算公式 `武力 = round(II ÷ 榜首II × 100)`；智力 = 性价比（成本反比，权重 0.3）；统率/政治/魅力对应 agentic/对齐/调用量，暂无数据源；阵营典故仅作叙事；模型名不带推理档位后缀（max/xhigh 等），数值统一取最高档
-- **映射**：`mapping/mapping_v0.5.csv` 演义版 102 席（双套数值：游戏原版 + 模型折算）；`mapping/mapping_source.csv` 是人工维护源（只写关系与典故，数值由脚本联结）。铁律：主公位=厂家机构位只写公司名（曹操=OpenAI、刘备=幻方量化、孙权=Meta），模型只坐武将/诸侯位（退役与否写进 note，不设"已故"角色）；血缘武将同厂商；模型名不带推理档位后缀、数值取最高档
-- **脚本**：`scripts/enrich_mapping.py`（改 mapping_source.csv 后重跑，产出 v0.5）；`scripts/build_site.py`（v0.5 → 美漫风展示站 `docs/index.html`，改完映射记得重跑）；`scripts/rebuild_snapshot.py`（快照重建，--leaderboard 单页全库为首选）；`scripts/match.py --model "模型名"`（天命版自动匹配）
+- **方法论**：`docs/methodology.md`。核心规则——武力 ↔ Intelligence Index 为最高权重（0.7），折算公式 `武力 = round(II ÷ 榜首II × 100)`；智力 = 性价比（成本反比，权重 0.3）；统率/政治/魅力对应 agentic/对齐/调用量，暂无数据源；阵营典故仅作叙事；模型名不带推理档位后缀（max/xhigh 等），数值统一取最高档；折算统率 = agentic 四子分均值÷榜首×100，折算智力 = (1−成本百分位)×100
+- **映射**：`mapping/mapping_v0.6.csv` 演义版 102 席（武力/统率/智力三维折算）（双套数值：游戏原版 + 模型折算）；`mapping/mapping_source.csv` 是人工维护源（只写关系与典故，数值由脚本联结）。铁律：主公位=厂家机构位只写公司名（曹操=OpenAI、刘备=幻方量化、孙权=Meta），模型只坐武将/诸侯位（退役与否写进 note，不设"已故"角色）；血缘武将同厂商；模型名不带推理档位后缀、数值取最高档
+- **脚本**：`scripts/enrich_mapping.py`（改 mapping_source.csv 后重跑，产出 v0.6）；`scripts/build_site.py`（v0.5 → 美漫风展示站 `docs/index.html`，改完映射记得重跑）；`scripts/rebuild_snapshot.py`（快照重建，--leaderboard 单页全库为首选）；`scripts/match.py --model "模型名"`（天命版自动匹配）
 - **锚点验证**：Opus 5.5 ↔ 吕布 100:100；GPT-5.6 Sol ↔ 文聘 82:82；Fable 5.1 ↔ 文醜 93:94；GPT-6 Astra ↔ 曹彰 91:90；Opus 5 ↔ 高順 88:86；Claude Haiku 5.5 ↔ 曹性 75:74；GPT-4 ↔ 荀彧 12:14；Olmo ↔ 顧雍 12:18
 - **阵营设定**：曹魏=美国闭源（曹操=OpenAI，Google/xAI 客将）；蜀汉=中国阵营（刘备=幻方量化 DeepSeek 生态）；东吴=开源联盟（孙权=Meta、鲁肃=HuggingFace 平台位双主公）；群雄=厂家诸侯会盟、多主公制——袁绍=Anthropic 领衔（Claude 系五代家将尽归其门下），董卓=Microsoft（Bing 暴政）、何进=IBM、袁术=Inflection、刘表=Google、刘璋=Cohere、公孙瓒=Aleph Alpha、陶谦=Stability、张鲁=01.AI、孟获=Amazon，吕布军、黄巾、南中均已并入群雄；汉献帝=NVIDIA、司马懿=Microsoft 暗线、王允=FTC。客将不得越本家仕敌营（Anthropic 模型只在袁绍营）
 

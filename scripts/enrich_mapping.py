@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""联结 mapping_source.csv 与两份史源数据，生成 mapping_v0.5.csv。
+"""联结 mapping_source.csv 与两份史源数据，生成 mapping_v0.6.csv。
 
 - 游戏原版五维：data/sanguo14_officers.csv（按武将名精确匹配，繁体）
 - 模型评测：data/aa_models_snapshot_*.csv（取最新一份快照）
@@ -11,7 +11,12 @@
   版本日期（如 "(0902)"）、特供版（如 "(Daybreak Blue)"）、变体
   （如 "(non-reasoning)"）等非档位括注属于名字本身，保留参与匹配
 - 折算武力 = round(II ÷ 榜首II × 100)
+- 折算统率 = round(统率基准 ÷ 统率榜首 × 100)，统率基准 = analystAgent/apexAgents/
+  itbenchSre/gdpval 四项 agentic 子分中非空项的均值（0-100）
+- 折算智力 = round((1 − 成本百分位) × 100)，成本百分位取全库有成本模型的排名
+  （越便宜越有计）
 """
+import bisect
 import csv
 import glob
 import os
@@ -86,6 +91,14 @@ def load_models():
             return None
 
     top_ii = max((fnum(r["intelligence_index"]) or 0) for r in rows)
+    costs = sorted(c for c in (fnum(r["cost_per_task_usd"]) for r in rows) if c is not None)
+
+    def agentic(r):
+        vals = [fnum(r[k]) for k in
+                ("analyst_agent", "apex_agents", "itbench_sre", "gdpval")]
+        vals = [v for v in vals if v is not None]
+        return round(sum(vals) / len(vals)) if vals else None
+
     index = {}
     for r in rows:
         ii = fnum(r["intelligence_index"])
@@ -94,6 +107,7 @@ def load_models():
             "derived_warfare": round(ii / top_ii * 100) if ii else "",
             "cost": fnum(r["cost_per_task_usd"]),
             "speed": fnum(r["median_tokens_per_s"]),
+            "leadership": agentic(r),
         }
         key = canonical_name(r["model"])
         best = index.get(key)
@@ -101,7 +115,8 @@ def load_models():
         if best is None or ((rec["ii"] or -1), effort_rank(r["model"])) > \
                 ((best["ii"] or -1), effort_rank(best["model"])):
             index[key] = rec
-    return index, os.path.basename(path), top_ii
+    top_leadership = max((rec["leadership"] or 0) for rec in index.values()) or None
+    return index, os.path.basename(path), top_ii, top_leadership, costs
 
 
 def is_non_model(name):
@@ -110,14 +125,15 @@ def is_non_model(name):
 
 def main():
     officers = load_officers()
-    index, snapshot, top_ii = load_models()
+    index, snapshot, top_ii, top_leadership, costs = load_models()
     src = os.path.join(MAPPING, "mapping_source.csv")
     with open(src, encoding="utf-8") as f:
         rows = list(csv.DictReader(f))
 
     header = [
         "role", "faction", "general", "model", "creator", "aa_ii",
-        "derived_warfare", "cost_per_task_usd", "median_tokens_per_s",
+        "derived_warfare", "derived_leadership", "derived_intellect",
+        "cost_per_task_usd", "median_tokens_per_s",
         "game_leadership", "game_warfare", "game_intellect",
         "game_politics", "game_charm", "game_total", "note",
     ]
@@ -137,6 +153,12 @@ def main():
             "creator": (m or {}).get("creator", ""),
             "aa_ii": (m or {}).get("ii", "") if m else "",
             "derived_warfare": (m or {}).get("derived_warfare", "") if m else "",
+            "derived_leadership": (
+                round(m["leadership"] / top_leadership * 100)
+                if m and m.get("leadership") and top_leadership else ""),
+            "derived_intellect": (
+                round((1 - bisect.bisect_left(costs, m["cost"]) / (len(costs) - 1)) * 100)
+                if m and m.get("cost") is not None and len(costs) > 1 else ""),
             "cost_per_task_usd": (m or {}).get("cost", "") if m else "",
             "median_tokens_per_s": (m or {}).get("speed", "") if m else "",
             "game_leadership": g["leadership"] if g else "",
@@ -148,7 +170,7 @@ def main():
             "note": r["note"],
         })
 
-    dst = os.path.join(MAPPING, "mapping_v0.5.csv")
+    dst = os.path.join(MAPPING, "mapping_v0.6.csv")
     with open(dst, "w", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=header)
         w.writeheader()
