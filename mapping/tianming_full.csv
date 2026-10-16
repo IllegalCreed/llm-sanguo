@@ -1,601 +1,601 @@
 model,creator,ii,general,game_affiliation,warfare,intellect,score
-"Claude Opus 5.5 (Max, Default Fallback)",Anthropic,57.6,成吉思汗,,92,88,2.5063
-"Claude Sonnet 5.5 (Max, Default Fallback)",Anthropic,56.0,吉爾菲艾斯,,91,90,2.2073
-Muse Wonder Full (Max),Meta,55.8,關羽,江州,97,75,0.0038
-"Claude Fable 5.1 (Max, Default Fallback)",Anthropic,53.4,姜維,成都,89,90,3.816
-GPT-6 Astra (Max),OpenAI,52.7,趙雲,成都,96,76,2.7424
-Gemini 4 Argon (High),Google,52.6,甘寧,建業,94,76,0.4834
-Muse Wonder (Max),Meta,52.4,張遼,虎牢關,92,78,3.6136
-GPT-6.1 Sol (Max),OpenAI,51.8,魏延,成都,92,69,0.9441
-Claude Opus 5 (Max),Anthropic,50.8,鄧艾,新野,87,89,3.8211
-"Claude Fable 5 (Max, Opus 4.8 Fallback)",Anthropic,49.6,羅嚴塔爾,,87,86,4.9957
-Muse Spark 1.3 (Max),Meta,48.1,先寇布,,93,77,1.0993
-GPT-6 Sol (Max),OpenAI,47.6,龐德,武威,94,71,0.97
-GPT-5.6 Sol (Max),OpenAI,47.0,呼延灼,,91,75,1.6077
-Grok 4.7 (Xhigh),SpaceXAI,46.4,上杉謙信,,90,79,3.1983
-MiMo-V2.6-Pro,Xiaomi,46.3,周泰,建業,91,48,1.8543
-Qwen3.8 Max (0902),Alibaba,45.4,花榮,,89,79,4.4152
-GLM-5.3 (Max),Z AI,44.8,孫堅,長沙,90,77,1.6599
-Grok 4.6 (High),SpaceXAI,44.3,徐晃,洛陽,90,74,1.3115
-Step 5 Preview,StepFun,43.7,孫策,桂陽,92,69,2.5365
-Kimi K3 (Max),Kimi,43.6,夏侯霸,陳留,84,77,4.0934
-Claude Haiku 5.5 (Max),Anthropic,43.4,夏侯淵,陳留,91,55,0.6032
-GPT-5.6 Terra (Max),OpenAI,42.1,傅僉,新野,85,72,4.3257
-GLM-5.3-Flash,Z AI,41.8,夏侯惇,陳留,90,60,0.7376
-Claude Opus 4.8 (Max),Anthropic,41.8,燕青,,85,85,2.7918
-Ling 3.1 Flash,InclusionAI,41.1,張郃,平原,89,69,2.062
-Gemini 3.8 Flash (High),Google,40.9,公孫瓚,成都,83,71,4.9756
-Claude Opus 4.7 (Max),Anthropic,40.7,曹彰,許昌,90,40,0.0698
-Qwen3.8 Max,Alibaba,40.2,米達麥亞,,85,83,2.5217
-Qwen3.8 2.4T A95B,Alibaba,39.9,張任,成都,84,76,4.1805
-Qwen3.8-Flash-Next,Alibaba,39.8,羌族長,羌,90,65,0.6183
-Gemini 3.7 Flash (Medium),Google,39.6,凌統,建業,89,58,0.1791
-Muse Spark 1.2 (Xhigh),Meta,39.6,董卓,洛陽,85,69,3.0187
-DeepSeek V4.1 Flash (Max),DeepSeek,39.5,高順,虎牢關,86,60,1.1637
-GPT-5.4 (Xhigh),OpenAI,39.0,王雙,天水,88,19,0.0621
-Muse Spark Open (Xhigh),Meta,38.9,派翠夏,,85,69,2.1803
-Grok 4.5 (High),SpaceXAI,38.8,鄧忠,新野,85,68,3.1471
-Mistral Large 4 Preview,Mistral,38.4,李嚴,宛,84,76,4.1192
-GPT-5.5 (Xhigh),OpenAI,38.4,亞典波羅,,83,82,2.4282
-Claude Sonnet 5 (Max),Anthropic,38.2,呂蒙,建業,81,89,4.0625
-GPT-6 Luna (Max),OpenAI,38.1,孟獲,雲南,87,42,0.1889
-MiMo-V2.6-Flash,Xiaomi,37.9,劇辛,,87,41,0.3622
-GPT-5.6 Luna (Max),OpenAI,37.3,關索,江州,88,54,1.0788
-DeepSeek V4 Pro 0813 (Max),DeepSeek,36.0,黃蓋,長沙,83,68,2.0531
-Agnes 2.5 Pro Beta,Sapiens AI,35.2,關興,江州,86,63,0.3346
-DeepSeek V4 Flash Vision (Max),DeepSeek,34.8,閻行,天水,84,61,1.6255
-DeepSeek V4 Flash 0731 (Max),DeepSeek,34.3,韓當,長沙,85,59,0.3915
-Gemini 3.6 Flash (High),Google,34.0,朱桓,吳,82,74,2.6194
-JT-4.1 Flash 236B A21B (Reasoning),China Mobile,33.9,周旨,襄陽,85,41,0.0302
-Muse Spark 1.1 (Xhigh),Meta,33.7,徐盛,下邳,81,77,4.1689
-GLM-5.2 (Max),Z AI,33.7,項燕,,80,77,4.8686
-Qwen3.8 27B (Xhigh),Alibaba,33.7,嚴顏,江州,82,69,3.2454
-Gemini 3.5 Flash (Medium),Google,33.6,樂進,陳留,84,53,0.0802
-Motif 3,Motif Technologies,33.6,沙摩柯,武陵,84,25,0.0802
-GPT-5.3 Codex (Xhigh),OpenAI,32.5,周倉,薊,84,42,0.197
-Motif 3 (Beta),Motif Technologies,32.3,蔣欽,建業,84,53,0.3139
-Claude Opus 4.6 (Max),Anthropic,31.9,紀靈,壽春,83,51,0.2223
-Muse Spark,Meta,31.3,徐質,安定,83,24,0.1055
-"Claude Opus 4.7 (Non-reasoning, High)",Anthropic,30.9,武安國,北海,83,34,0.0114
-K2 Horizon 375B A23B,Institute of Foundation Models,30.5,羌勇士,,83,19,1.2224
-DeepSeek V4 Pro 0424 (Max),DeepSeek,30.4,波布蘭,,84,50,1.2081
-GPT-5.2 (Xhigh),OpenAI,30.4,文欽,許昌,83,43,0.362
-Claude Sonnet 4.6 (Max),Anthropic,30.1,程普,長沙,79,79,3.4941
-Gemini 3.1 Pro Preview,Google,29.7,丁奉,廬江,80,71,3.5674
-Qwen3.7 Max,Alibaba,29.5,關平,江州,82,68,3.7855
-MiniMax-M3,MiniMax,29.2,冷苞,成都,82,67,0.075
-Claude Opus 4.5 (Reasoning),Anthropic,29.1,越吉,天水,82,16,0.1744
-MiMo-V2-Pro,Xiaomi,28.6,鄂煥,建寧,82,42,0.2913
-GPT-6 Sol (Non-reasoning),OpenAI,28.5,孫禮,薊,81,65,1.1171
-GPT-5.2 Codex (Xhigh),OpenAI,28.5,曹洪,許昌,81,44,0.1874
-Qwen3.6 Max Preview,Alibaba,28.4,張燕,北平,81,54,0.0706
-GPT-5.6 Sol (Non-reasoning),OpenAI,28.3,張曼成,薊,81,47,0.0463
-Nex-N2-Pro (Based on Qwen3.5-397B-A17B),Nex AGI,28.2,蹋頓,北平,81,52,0.28
-Solar Pro 4,Upstage,28.2,李通,汝南,81,57,0.28
-Gemini 3 Pro Preview (High),Google,28.0,凌操,桂陽,81,42,0.3969
-GLM-5 (Reasoning),Z AI,27.9,烏桓強兵,烏桓,81,15,0.5137
-JT-4.1 Flash 236B A21B (Non-reasoning),China Mobile,27.3,管亥,北平,80,10,0.5569
-Grok Build 0.1 0616,SpaceXAI,27.2,邢道榮,零陵,80,41,0.44
-Qwen3.6 Plus,Alibaba,27.0,吳蘭,成都,80,35,0.2063
-Kimi K2.6 (Reasoning),Kimi,27.0,張梁,薊,80,70,0.5731
-"Quasar 438B (Max, Based on GLM-5.2)",Multiverse Computing,26.7,郝昭,晉陽,79,78,1.2591
-GLM-5-Turbo,Z AI,26.6,孫尚香,長沙,80,57,0.0275
-Nemotron 3.5 Super VL,NVIDIA,26.5,烏桓烈婦,,79,57,2.9102
-Apodex 1.1,Apodex,26.4,文聘,宛,82,66,2.4821
-"Claude Opus 4.6 (Non-reasoning, High)",Anthropic,26.4,趙氏貞,交趾,80,31,0.378
-Gemini 3 Flash Preview (Reasoning),Google,26.3,王平,梓潼,79,76,0.2769
-GLM-5.1 (Reasoning),Z AI,26.1,蒙恬,,79,70,1.2567
-GPT-5.5 Instant (June 2026),OpenAI,26.0,潘璋,陳留,80,70,1.944
-MiMo-V2.5-Pro (Reasoning),Xiaomi,26.0,牛金,宛,79,40,0.4286
-Kimi K2.7 Code,Kimi,25.8,留贊,會稽,77,65,3.3439
-Inkling Small,Thinking Machines,25.7,劉封,江州,79,44,0.7271
-Grok 4.20 0309 v2 (Reasoning),SpaceXAI,25.7,郭淮,晉陽,78,82,0.3476
-K2 Horizon MoVA 36B A4B,Institute of Foundation Models,25.3,麴義,平原,78,50,0.1139
-Hy3,Tencent,25.3,宋謙,廬江,78,42,0.1387
-Grok 4.20 0309 (Reasoning),SpaceXAI,25.2,魏續,洛陽,78,31,0.1198
-Qwen3.7 Plus,Alibaba,25.2,楊任,漢中,78,56,0.975
-MiMo-V2-Omni-0327,Xiaomi,25.1,嚴輿,吳,78,48,0.2367
-Inkling (Xhigh),Thinking Machines,25.0,孫韶,建業,78,73,0.3536
-GPT-5 Codex (High),OpenAI,24.9,于禁,濮陽,77,72,0.422
-Grok 4.3 (High),SpaceXAI,24.9,張純,薊,77,56,0.5456
-Solar Open2 250B,Upstage,24.7,韓德,安定,77,24,0.0454
-GPT-5.1 (High),OpenAI,24.7,魏越,晉陽,77,34,0.0454
-"Claude Sonnet 4.6 (Non-reasoning, High)",Anthropic,24.7,強端,漢中,77,26,0.0454
-DeepSeek V4.1 Flash (Non-reasoning),DeepSeek,24.7,雷銅,成都,78,51,1.6487
-Ling-3.0-flash-VL,InclusionAI,24.6,沈瑩,建業,77,61,0.1623
-DeepSeek V4 Flash 0420 (High),DeepSeek,24.4,烏桓剛將,,77,44,1.0698
-GLM-5.1 (Non-reasoning),Z AI,24.2,宋憲,洛陽,77,37,0.396
-GPT-5.4 mini (Xhigh),OpenAI,24.1,廖化,薊,76,62,2.2895
-Solar Mini 4,Upstage,24.1,諸葛尚,成都,75,62,3.286
-MiMo-V2-Omni,Xiaomi,23.9,于詮,吳,76,40,0.2034
-Gemini 3.5 Flash (Minimal),Google,23.8,王渾,晉陽,76,72,0.0865
-GPT-5.1 Codex (High),OpenAI,23.7,郭汜,長安,76,13,0.1472
-Claude Opus 4.5 (Non-reasoning),Anthropic,23.7,金環三結,雲南,76,19,0.1472
-Kimi K2.6 (Non-reasoning),Kimi,23.6,胡軫,函谷關,76,12,0.2641
-GLM 5V Turbo (Reasoning),Z AI,23.5,胡奮,安定,76,50,0.4978
-Kimi K2.5 (Reasoning),Kimi,23.5,謝旌,建業,76,34,0.4978
-"Claude Sonnet 5 (Non-reasoning, High)",Anthropic,23.2,蔣舒,梓潼,76,35,0.7315
-GPT-5.5 (Non-reasoning),OpenAI,23.2,丁原,晉陽,76,37,0.7315
-GPT-5 (High),OpenAI,23.0,王基,北海,75,76,0.6359
-Nemotron 3 Ultra 550B A55B (Reasoning),NVIDIA,22.9,曹真,許昌,74,68,2.0034
-Qwen3.5 27B (Reasoning),Alibaba,22.9,俄何燒戈,天水,75,12,0.4022
-Claude 4.1 Opus (Reasoning),Anthropic,22.8,樂綝,濮陽,75,40,0.0516
-MiniMax-M2.5,MiniMax,22.8,韓綜,北平,75,28,0.0516
-MiniMax-M2.7,MiniMax,22.8,吳匡,陳留,75,45,0.0516
-Hy3-preview (Reasoning),Tencent,22.7,臧霸,濮陽,75,53,0.1821
-GPT-5.5 Instant (May 2026),OpenAI,22.7,孫觀,濮陽,75,51,0.1821
-Ling-3.0-flash-Fin,InclusionAI,22.6,孫翊,桂陽,75,27,0.2989
-Grok 4,SpaceXAI,22.5,戴陵,安定,75,39,0.4158
-MiMo-V2-Flash (Feb 2026),Xiaomi,22.4,龐會,武威,75,47,0.6495
-GLM-5.2 (Non-reasoning),Z AI,22.4,鮑三娘,江陵,75,38,0.6495
-GLM-4.7 (Reasoning),Z AI,22.2,阿會喃,雲南,74,26,0.5417
-Gemini 3.5 Flash-Lite,Google,22.2,毌丘儉,洛陽,74,55,0.8793
-Kimi K2 Thinking,Kimi,22.0,許儀,許昌,74,15,0.4248
-o3-pro,OpenAI,21.9,侯成,洛陽,74,67,0.308
-G9v3-39A5B,AI9Stars,21.8,徐榮,函谷關,74,62,0.0426
-MiMo-V2.5,Xiaomi,21.8,樊稠,長安,74,31,0.1289
-GLM-5 (Non-reasoning),Z AI,21.8,曹休,許昌,74,62,0.0426
-KAT Coder Pro V2,KwaiKAT,21.7,曹性,晉陽,74,38,0.1595
-DeepSeek V3.2 (Reasoning),DeepSeek,21.5,孫河,桂陽,74,45,0.3932
-A.X-K2,SK Telecom,21.5,張翼,成都,74,72,0.3932
-Qwen3.5 397B A17B (Non-reasoning),Alibaba,21.4,程遠志,北平,74,18,0.7438
-Qwen3.6 27B (Reasoning),Alibaba,21.4,柳隱,成都,74,68,0.8114
-Nemotron 3.5 Bolt 74B-A9B,NVIDIA,21.4,唐彬,小沛,74,66,0.7438
-Qwen3 Max Thinking,Alibaba,21.3,馬玩,天水,74,16,0.8607
-MiniMax-M2.1,MiniMax,20.9,阿貴,漢中,73,20,0.863
-DeepSeek V4 Pro 0424 (Non-reasoning),DeepSeek,20.8,王濬,洛陽,73,78,0.5124
-MiMo-V2-Flash (Reasoning),Xiaomi,20.8,郭援,南皮,73,36,0.5124
-GPT-5.6 Terra (Non-reasoning),OpenAI,20.8,胡遵,安定,73,52,0.595
-GPT-5.4 nano (Xhigh),OpenAI,20.7,夏侯威,陳留,73,49,2.1896
-Claude 4.5 Sonnet (Reasoning),Anthropic,20.7,馬忠,梓潼,72,68,2.6582
-Claude 4 Opus (Reasoning),Anthropic,20.6,夏侯德,陳留,73,32,0.0719
-GPT-5 mini (Medium),OpenAI,20.6,賀齊,會稽,73,72,0.0719
-K2 Horizon 7B,Institute of Foundation Models,20.6,高昇,北平,73,40,0.0719
-Qwen3.5 Omni Plus,Alibaba,20.4,伍延,江陵,73,44,0.5393
-GPT-5.1 Codex mini (High),OpenAI,20.4,朱褒,建寧,73,24,0.5393
-Grok 4.1 Fast (Reasoning),SpaceXAI,20.4,蔣班,壽春,73,62,0.5393
-DeepSeek V4 Pro 0813 (Non-reasoning),DeepSeek,20.4,張繡,長安,73,62,1.7768
-o3,OpenAI,20.2,成廉,晉陽,73,36,0.773
-Qwen3.8 27B (Non-reasoning),Alibaba,20.2,田豫,成都,72,80,1.2576
-Ling 3.0 Flash,InclusionAI,20.1,孫桓,建業,73,72,0.8899
-Qwen3.6 27B (Non-reasoning),Alibaba,19.8,于毒,北平,72,44,0.9525
-K-EXAONE 2.0 0803,LG AI Research,19.7,袁尚,鄴,72,42,0.8357
-Step 3.7 Flash,StepFun,19.5,軻比能,晉陽,72,51,0.7188
-Kimi K2.5 (Non-reasoning),Kimi,19.4,韓起,襄平,72,25,0.4851
-Qwen3.5 27B (Non-reasoning),Alibaba,19.4,關銀屏,江州,72,39,0.4851
-Claude 4.5 Sonnet (Non-reasoning),Anthropic,19.3,韓遂,天水,72,77,0.2514
-Qwen3.5 35B A3B (Reasoning),Alibaba,19.3,牽弘,南皮,72,66,0.2514
-LongCat 2.0,LongCat,19.1,劉辟,薊,72,51,0.7284
-Claude 4 Sonnet (Reasoning),Anthropic,18.9,吳懿,陳留,72,69,0.0992
-DeepSeek V4 Flash 0420 (Non-reasoning),DeepSeek,18.9,句扶,梓潼,72,67,0.0992
-JT-35B-Flash,China Mobile,18.7,吾彥,建業,72,77,0.2161
-MiniMax-M2,MiniMax,18.6,朱靈,平原,72,67,0.5667
-KAT-Coder-Pro V1,KwaiKAT,18.6,焦觸,鄴,72,33,0.5667
-Claude 4.1 Opus (Non-reasoning),Anthropic,18.6,全琮,吳,72,73,0.5667
-GLM-4.6 (Reasoning),Z AI,18.5,曹操,許昌,72,91,0.8004
-GPT-6 Luna (Non-reasoning),OpenAI,18.5,李傕,長安,72,23,0.8538
-Qwen3.5 397B A17B (Reasoning),Alibaba,18.4,劉璝,成都,72,66,0.957
-MiMo-V2.5-Pro (Non-reasoning),Xiaomi,18.3,郭馬,建安,71,47,0.9846
-Qwen3.6 35B A3B (Reasoning),Alibaba,18.2,胡淵,安定,71,65,1.7724
-GPT-5.4 (Non-reasoning),OpenAI,18.2,夏侯尚,陳留,71,75,0.7508
-Grok 4 Fast (Reasoning),SpaceXAI,17.9,韓浩,洛陽,71,68,0.5171
-Gemini 3 Flash Preview (Non-reasoning),Google,17.9,管承,北平,71,24,0.5171
-Qwen3.5 122B A10B (Non-reasoning),Alibaba,17.7,嚴綱,北平,71,40,0.2834
-Claude 3.7 Sonnet (Reasoning),Anthropic,17.7,牽招,南皮,71,73,0.2834
-Muse Glimmer (High),Meta,17.5,成宜,天水,71,40,0.5215
-GLM-4.7 (Non-reasoning),Z AI,17.4,公孫越,北平,71,48,0.0497
-Hy3-preview (Non-reasoning),Tencent,17.0,公孫度,襄平,71,68,0.4178
-Ling-2.6-1T,InclusionAI,17.0,黃亂,建安,71,36,0.4178
-GPT-5.2 (Non-reasoning),OpenAI,17.0,吳班,陳留,71,56,0.4178
-Step 3.5 Flash 2603,StepFun,17.0,史渙,小沛,71,56,0.4178
-Doubao Seed Code,ByteDance Seed,16.9,師纂,新野,71,54,0.6515
-Claude 4.5 Haiku (Reasoning),Anthropic,16.9,呂虔,濮陽,70,61,0.8595
-Gemma 4 26B A4B (Reasoning),Google,16.7,王威,襄陽,70,62,0.421
-o4-mini (High),OpenAI,16.7,花鬘,雲南,70,32,0.421
-Ring-2.6-1T,InclusionAI,16.6,卞喜,薊,70,62,0.3893
-Step 3.5 Flash,StepFun,16.6,龔都,薊,70,23,0.1633
-Claude 4 Opus (Non-reasoning),Anthropic,16.6,嚴白虎,吳,70,23,0.1633
-Claude 4 Sonnet (Non-reasoning),Anthropic,16.6,公孫淵,襄平,70,60,0.1633
-DeepSeek V3.2 Exp (Reasoning),DeepSeek,16.6,昌豨,濮陽,70,44,0.1633
-Qwen3 Max Thinking (Preview),Alibaba,16.3,秦朗,晉陽,70,35,0.2802
-Gemini 2.5 Pro,Google,16.1,鮮于輔,薊,69,65,2.0763
-MiMo-V2-Flash (Non-reasoning),Xiaomi,16.0,成公英,天水,70,80,0.6308
-DeepSeek V3.2 (Non-reasoning),DeepSeek,16.0,孫震,吳,70,48,0.6308
-K2 Horizon 3.7B,Institute of Foundation Models,15.6,袁紹,鄴,69,70,0.4454
-Qwen3 Max,Alibaba,15.6,袁譚,平原,69,30,0.4454
-Qwen3.5 122B A10B (Reasoning),Alibaba,15.6,曹純,許昌,71,62,2.9102
-Gemini 3.1 Flash-Lite,Google,15.6,陳蘭,廬江,69,41,0.5267
-GPT-5.6 Luna (Non-reasoning),OpenAI,15.5,張橫,天水,70,23,1.3853
-Gemini 2.5 Flash Preview (Sep '25) (Reasoning),Google,15.5,何儀,薊,69,36,0.2117
-Claude 4.5 Haiku (Non-reasoning),Anthropic,15.4,霍弋,江陵,69,69,0.0949
-Kimi K2 0905,Kimi,15.3,賈信,洛陽,69,51,0.1389
-Claude 3.7 Sonnet (Non-reasoning),Anthropic,15.3,麴演,武威,69,50,0.1389
-Qwen3.6 35B A3B (Non-reasoning),Alibaba,15.2,丘力居,北平,69,56,0.3726
-o1,OpenAI,15.2,橋蕤,壽春,69,38,0.3726
-Qwen3.5 35B A3B (Non-reasoning),Alibaba,15.1,朱然,建業,69,71,0.4895
-Gemini 2.5 Pro Preview (Mar' 25),Google,15.0,徐商,晉陽,69,32,0.6063
-GLM-4.6 (Non-reasoning),Z AI,14.9,泄歸泥,晉陽,69,33,0.84
-GLM-4.7-Flash (Reasoning),Z AI,14.9,曹豹,下邳,69,32,0.84
-DeepSeek V3.1 Terminus (Reasoning),DeepSeek,14.8,孫異,吳,69,55,0.9569
-Gemma 4 31B (Reasoning),Google,14.7,呂翔,平原,69,12,1.5063
-Grok 3 mini Reasoning (High),SpaceXAI,14.6,殷署,長安,68,37,1.3049
-Grok 4.20 0309 (Non-reasoning),SpaceXAI,14.6,尹禮,濮陽,68,47,1.3049
-Gemini 2.5 Pro Preview (May' 25),Google,14.5,區星,長沙,68,38,1.0712
-DeepSeek V3.2 Speciale,DeepSeek,14.5,王方,洛陽,68,28,1.0712
-K-EXAONE (Reasoning),LG AI Research,14.4,於夫羅,晉陽,68,22,0.9543
-ERNIE 5.0 Thinking Preview,Baidu,14.3,夏侯蘭,許昌,68,44,0.8375
-Grok 4.20 0309 v2 (Non-reasoning),SpaceXAI,14.2,管統,北海,68,32,0.37
-Mistral Medium 3.5,Mistral,14.2,盛曼,江陵,68,66,0.8975
-Gemma 4 12B (Reasoning),Google,14.2,金旋,長安,68,13,0.37
-Nova 2.0 Pro Preview (Medium),Amazon,14.2,句安,江州,68,48,0.37
-Grok Code Fast 1,SpaceXAI,14.1,高翔,梓潼,68,51,0.2532
-Grok 4.3 (Non-reasoning),SpaceXAI,14.0,公孫續,北平,68,53,0.4801
-DeepSeek V3.1 Terminus (Non-reasoning),DeepSeek,13.9,公孫範,北平,68,63,0.2143
-Gemma 4 31B (Non-reasoning),Google,13.9,谷利,建業,68,33,0.2143
-DeepSeek V3.2 Exp (Non-reasoning),DeepSeek,13.9,胡烈,安定,68,72,0.2143
-Apriel-v1.5-15B-Thinker,ServiceNow,13.8,蔡瑁,襄陽,68,77,0.3312
-DeepSeek V3.1 (Non-reasoning),DeepSeek,13.7,笮融,建業,68,40,0.448
-Nova 2.0 Omni (Medium),Amazon,13.6,朱異,吳,68,61,0.5649
-DeepSeek V3.1 (Reasoning),DeepSeek,13.5,周朝,零陵,68,29,0.6817
-Qwen3 VL 235B A22B (Reasoning),Alibaba,13.4,于糜,會稽,67,33,0.3926
-Apriel-v1.6-15B-Thinker,ServiceNow,13.4,王頎,北海,67,61,0.3926
-Nova 2.0 Lite (High),Amazon,13.4,賀達,會稽,67,38,0.3926
-GPT-5.1 (Non-reasoning),OpenAI,13.3,奚泥,雲南,67,3,0.1589
-Qwen3.5 9B (Non-reasoning),Alibaba,13.3,侯音,宛,67,43,0.1589
-EXAONE 4.5 33B (Reasoning),LG AI Research,13.2,黃祖,江夏,67,55,0.042
-Command A+,Cohere,13.1,張闓,薊,66,8,1.5188
-Gemma 4 26B A4B (Non-reasoning),Google,13.1,淳于瓊,平原,67,29,0.5423
-Qwen3.5 4B (Reasoning),Alibaba,13.1,眭元進,平原,67,45,0.5423
-DeepSeek R1 0528 (May '25),DeepSeek,13.1,鮮于丹,吳,67,42,0.5423
-Gemini 2.5 Flash (Reasoning),Google,13.1,孫權,建業,67,80,0.5423
-GPT-5 nano (High),OpenAI,13.0,孫皎,桂陽,67,65,0.6591
-Nemotron 3.5 Lightning,NVIDIA,12.9,士徽,交趾,66,44,1.308
-Nemotron 3 Super 120B A12B (Reasoning),NVIDIA,12.8,比克古,,68,75,2.8852
-GLM-4.5 (Reasoning),Z AI,12.8,樂就,廬江,66,58,0.7714
-Kimi K2,Kimi,12.7,郝萌,晉陽,66,41,0.304
-Qwen3 235B A22B 2507 (Reasoning),Alibaba,12.7,夏侯恩,許昌,66,50,0.304
-GPT-4.1,OpenAI,12.7,韓暹,北平,66,35,0.304
-Granite 4.2 30B,IBM,12.7,朱蓋,許昌,66,44,1.2206
-Qwen3 Max (Preview),Alibaba,12.6,侯選,天水,66,35,0.1871
-Qwen3.5 Omni Flash,Alibaba,12.5,公孫康,襄平,66,65,0.1634
-o3-mini,OpenAI,12.5,呼廚泉,晉陽,66,48,0.1634
-MiniCPM5-2B,OpenBMB,12.5,左奕,武陵,66,51,0.1634
-o1-pro,OpenAI,12.4,脩允,建安,66,36,0.3972
-Gemini 2.5 Flash Preview (Sep '25) (Non-reasoning),Google,12.4,單經,北平,66,44,0.3972
-Mercury 2.5,Inception,12.3,太史享,北海,66,48,0.9572
-JT-MINI,China Mobile,12.2,孫冀,吳,66,51,0.6309
-Grok 3,SpaceXAI,12.1,張濟,長安,66,55,0.8646
-Seed-OSS-36B-Instruct,ByteDance Seed,12.1,丁封,廬江,66,53,0.8646
-Qwen3 235B A22B 2507 Instruct,Alibaba,12.0,袁術,壽春,65,68,0.8591
-Qwen3 Coder 480B A35B Instruct,Alibaba,11.9,王惇,建業,65,43,0.6253
-Qwen3 VL 32B (Reasoning),Alibaba,11.9,賈華,廬江,65,40,0.6253
-Magistral Medium 1.2,Mistral,11.8,霍峻,江陵,65,72,0.3916
-Sonar Reasoning Pro,Perplexity,11.8,韓猛,平原,65,43,0.3916
-"HyperNova 60B 2605 (High, Based on gpt-oss-120b)",Multiverse Computing,11.7,許貢,吳,65,63,0.1927
-MiniMax M1 80k,MiniMax,11.7,高沛,梓潼,65,69,0.1927
-GPT-5.4 nano (Non-reasoning),OpenAI,11.7,吳景,長沙,65,54,0.1927
-Nemotron Cascade 2 30B A3B,NVIDIA,11.7,施朔,建業,65,45,0.1927
-Gemini 2.5 Flash Preview (Reasoning),Google,11.7,司馬��,洛陽,65,75,0.1927
-gpt-oss-120b (High),OpenAI,11.6,孫輔,長沙,65,48,0.5981
-K2 Think V2,Institute of Foundation Models,11.5,周昂,會稽,65,65,0.5433
-LongCat Flash Lite,LongCat,11.5,鄒靖,薊,65,66,0.5433
-GPT-5 (Minimal),OpenAI,11.4,王昶,晉陽,64,79,0.1767
-DeepSeek R1 (Jan '25),DeepSeek,11.4,南蠻女將,南蠻,64,62,1.3782
-o1-preview,OpenAI,11.4,王淩,晉陽,64,71,0.1767
-HyperCLOVA X SEED Think (32B),Naver,11.4,毌丘興,洛陽,64,50,0.1767
-Grok 4.1 Fast (Non-reasoning),SpaceXAI,11.3,媯覽,建業,64,38,0.057
-Mistral Small 4 (Reasoning),Mistral,11.3,鄒丹,北平,64,34,0.983
-GLM-4.6V (Reasoning),Z AI,11.2,黃崇,梓潼,64,72,0.5244
-K-EXAONE (Non-reasoning),LG AI Research,11.2,伍習,長安,64,42,0.5244
-Qwen3 Next 80B A3B (Reasoning),Alibaba,11.2,司馬師,洛陽,64,88,0.5244
-Qwen3.5 9B (Reasoning),Alibaba,11.2,孫奐,建業,63,55,1.6008
-GPT-5.4 mini (Non-reasoning),OpenAI,11.1,王經,平原,63,68,0.4349
-GLM-4.5-Air,Z AI,11.1,王門,襄平,63,30,0.4349
-Granite 4.2 8B,IBM,11.1,崔勇,長安,63,31,0.5212
-Grok 4 Fast (Non-reasoning),SpaceXAI,11.1,高定,建寧,63,43,0.4349
-Ling 3.0 Tiny,InclusionAI,11.1,土安,雲南,63,2,0.4858
-Mi:dm K 2.5 Pro,Korea Telecom,11.0,司馬懿,洛陽,63,96,0.3181
-Ring-1T,InclusionAI,10.9,州泰,新野,63,73,0.2012
-G9v3-3B,AI9Stars,10.8,朱儁,會稽,63,70,0.2662
-Trinity Large Thinking,Arcee AI,10.8,吳敦,濮陽,62,49,0.9022
-Qwen3.5 4B (Non-reasoning),Alibaba,10.8,荀正,壽春,63,33,0.2662
-Mercury 2,Inception,10.8,全懌,吳,63,38,0.3457
-INTELLECT-3 (Based on GLM-4.5-Air),Prime Intellect,10.6,諸葛靚,下邳,63,66,0.5
-GLM-4.7-Flash (Non-reasoning),Z AI,10.6,蘇飛,江夏,63,66,0.5
-GPT-5 (ChatGPT),OpenAI,10.4,郭石,桂陽,62,43,0.1607
-Solar Open 100B (Reasoning),Upstage,10.4,賈範,襄平,62,73,0.1607
-Grok 3 Reasoning Beta,SpaceXAI,10.4,關彝,江州,62,44,0.1607
-Gemini 2.5 Flash-Lite Preview (Sep '25) (Reasoning),Google,10.4,毌丘秀,洛陽,62,33,0.1607
-Nemotron 3 Nano Omni 30B A3B Reasoning,NVIDIA,10.3,魏邈,建業,62,59,0.0438
-GPT-4.1 mini,OpenAI,10.2,吳巨,薊,62,26,0.0731
-MiniMax M1 40k,MiniMax,10.0,閻宇,江陵,61,55,0.4076
-Nova 2.0 Pro Preview (Non-reasoning),Amazon,10.0,賈逵,洛陽,61,84,0.4076
-gpt-oss-20b (Low),OpenAI,10.0,皇甫嵩,安定,61,73,0.4076
-Qwen3 VL 235B A22B Instruct,Alibaba,9.9,向寵,襄陽,61,76,0.1767
-North Mini Code,Cohere,9.9,牛輔,潼關,60,18,2.1218
-GPT-5 mini (Minimal),OpenAI,9.9,千萬,漢中,61,28,0.1767
-K2-V2 (High),Institute of Foundation Models,9.9,曹安民,許昌,61,50,0.1767
-Gemini 2.5 Flash (Non-reasoning),Google,9.9,曹髦,許昌,61,59,0.1767
-Qwen3 30B A3B 2507 (Reasoning),Alibaba,9.8,張舉,薊,62,41,1.6482
-o1-mini,OpenAI,9.8,趙儼,許昌,61,71,0.4105
-DeepSeek V3 0324,DeepSeek,9.7,糜芳,江州,61,31,0.7304
-Ling 2.6 Flash,InclusionAI,9.7,樊能,會稽,61,36,0.6442
-Qwen3 Next 80B A3B Instruct,Alibaba,9.6,王伉,成都,60,61,0.1946
-Tri-21B-think Preview,Trillion Labs,9.6,關統,江州,60,61,0.1946
-Qwen3 Coder 30B A3B Instruct,Alibaba,9.6,許定,許昌,60,22,0.1946
-GPT-4.5 (Preview),OpenAI,9.6,任峻,洛陽,60,62,0.1946
-DiffusionGemma 26B A4B,Google,9.5,審配,鄴,60,83,0.2729
-Qwen3 235B A22B (Reasoning),Alibaba,9.5,石鑒,晉陽,60,73,0.2729
-QwQ 32B,Alibaba,9.5,孫霸,吳,60,61,0.2729
-Qwen3 VL 30B A3B (Reasoning),Alibaba,9.5,趙叡,平原,60,38,0.2729
-Gemini 2.0 Flash Thinking Experimental (Jan '25),Google,9.4,韓莒子,平原,59,50,0.0871
-Gemma 4 12B (Non-reasoning),Google,9.4,高幹,鄴,59,53,0.0871
-Gemini 2.5 Flash-Lite Preview (Sep '25) (Non-reasoning),Google,9.3,黃權,梓潼,59,85,0.2635
-Llama 4 Maverick,Meta,9.3,范方,北平,58,38,0.5284
-Mistral Large 3,Mistral,9.3,張著,梓潼,58,35,0.8232
-Qwen3 Coder Next,Alibaba,9.2,朱績,吳,57,69,0.7214
-Motif-2-12.7B-Reasoning,Motif Technologies,9.2,王韜,天水,58,70,0.1353
-Mistral Medium 3.1,Mistral,9.2,毌丘甸,洛陽,58,68,0.1353
-Ling-1T,InclusionAI,9.2,士祗,交趾,58,42,0.1353
-Nova Premier,Amazon,9.2,司馬望,洛陽,58,79,0.1353
-Solar Pro 2 (Preview) (Reasoning),Upstage,9.1,閻柔,薊,57,70,0.1672
-Granite 4.2 3B,IBM,9.1,王忠,長安,57,21,0.5005
-Magistral Medium 1,Mistral,9.1,王匡,洛陽,57,61,0.1672
-Mistral Medium 3,Mistral,9.0,尹楷,鄴,56,42,0.0598
-Llama Nemotron Super 49B v1.5 (Reasoning),NVIDIA,9.0,嚴政,北平,56,38,0.0598
-Devstral Medium,Mistral,9.0,高蕃,鄴,56,34,0.0598
-Mistral Small 4 (Non-reasoning),Mistral,9.0,周胤,桂陽,56,45,0.0598
-Tri-21B-Think,Trillion Labs,9.0,朱治,長沙,56,72,0.0598
-"GPT-4o (March 2025, chatgpt-4o-latest)",OpenAI,9.0,岑威,宛,56,45,0.0598
-Gemini 2.0 Flash (Feb '25),Google,8.9,皇甫闓,安定,55,64,0.0098
-Claude 3.5 Haiku,Anthropic,8.9,胡班,濮陽,55,58,0.0098
-Llama 3.3 Nemotron Super 49B v1 (Reasoning),NVIDIA,8.9,崔琰,平原,55,70,0.0098
-Gemma 4 E4B (Reasoning),Google,8.9,柳毅,襄平,55,21,0.3431
-NVIDIA Nemotron 3 Nano 30B A3B (Reasoning),NVIDIA,8.9,張達,永安,56,31,0.6108
-Qwen3 4B 2507 (Reasoning),Alibaba,8.8,雅丹,天水,54,69,0.1033
-MiniCPM5-1B (Reasoning),OpenBMB,8.8,蔡中,襄陽,54,2,0.1033
-Sarvam 105B (High),Sarvam,8.8,朱光,壽春,54,49,0.1033
-Gemini 2.0 Pro Experimental (Feb '25),Google,8.7,夏侯儒,陳留,53,67,0.4463
-Nova 2.0 Lite (Non-reasoning),Amazon,8.7,鞏志,武陵,53,61,0.4463
-Devstral Small (May '25),Mistral,8.7,胡綜,建業,53,77,0.4463
-Claude 3 Opus,Anthropic,8.7,帶來洞主,雲南,53,54,0.4463
-MiniCPM5-1B (Non-reasoning),OpenBMB,8.7,張特,薊,53,74,0.4463
-Sonar Reasoning,Perplexity,8.7,文則,北平,53,32,0.4463
-Gemini 2.5 Flash Preview (Non-reasoning),Google,8.7,魯淑,廬江,53,74,0.4463
-Devstral 2,Mistral,8.6,關靖,晉陽,52,72,0.5074
-Magistral Small 1.2,Mistral,8.6,韓範,鄴,52,59,0.5074
-Gemini 2.5 Flash-Lite (Reasoning),Google,8.5,丘建,濮陽,52,65,0.2737
-DeepSeek V3 (Dec '24),DeepSeek,8.5,馬遵,天水,52,31,0.3599
-GPT-4o (Nov '24),OpenAI,8.4,袁熙,鄴,51,68,0.2256
-Nanbeige4.1-3B,Nanbeige,8.4,王異,天水,51,82,0.2256
-LFM2.5-2.6B,Liquid AI,8.4,夏侯和,陳留,51,70,0.2256
-Qwen3 VL 32B Instruct,Alibaba,8.4,何楨,廬江,51,74,0.2256
-DeepSeek R1 Distill Qwen 32B,DeepSeek,8.4,周㬂,會稽,51,77,0.2256
-GLM-4.6V (Non-reasoning),Z AI,8.4,鍾會,許昌,51,91,0.2256
-Qwen3 235B A22B (Non-reasoning),Alibaba,8.3,上官子脩,天水,51,38,0.1087
-Magistral Small 1,Mistral,8.2,郭圖,平原,50,82,0.06
-Gemini 2.0 Flash (experimental),Google,8.2,蔡和,襄陽,50,1,0.06
-EXAONE 4.0 32B (Reasoning),LG AI Research,8.2,周善,廬江,50,44,0.06
-Qwen3 VL 8B (Reasoning),Alibaba,8.2,范彊,永安,50,33,0.06
-Nova 2.0 Omni (Non-reasoning),Amazon,8.2,楊阜,天水,50,82,0.06
-DeepSeek R1 0528 Qwen3 8B,DeepSeek,8.1,太原雪齋,,50,96,0.1768
-Qwen2.5 Max,Alibaba,8.0,闞澤,會稽,49,83,0.2407
-Qwen3 VL 30B A3B Instruct,Alibaba,7.9,袁燿,壽春,48,41,0.0145
-Hermes 4 - Llama-3.1 70B (Reasoning),Nous Research,7.9,賈詡,長安,48,97,0.0145
-Gemini 1.5 Pro (Sep '24),Google,7.9,徐璆,壽春,48,62,0.0145
-Solar Pro 2 (Preview) (Non-reasoning),Upstage,7.9,段煨,潼關,48,54,0.0145
-DeepSeek R1 Distill Llama 70B,DeepSeek,7.9,烏桓宰相,,48,70,0.0145
-Claude 3.5 Sonnet (Oct '24),Anthropic,7.9,羌宰相,,48,70,0.0145
-DeepSeek R1 Distill Qwen 14B,DeepSeek,7.8,尹賞,天水,46,60,0.087
-Falcon-H1R-7B,TII UAE,7.8,應劭,汝南,46,73,0.087
-GPT-4.1 nano,OpenAI,7.8,何苗,宛,46,34,0.087
-Solar Pro 3,Upstage,7.8,孫匡,長沙,46,44,0.146
-Ling-flash-2.0,InclusionAI,7.8,胡質,壽春,46,74,0.087
-Gemma 4 E2B (Reasoning),Google,7.8,伍孚,汝南,46,53,0.087
-Qwen3 Omni 30B A3B (Reasoning),Alibaba,7.8,孫綝,吳,46,65,0.087
-GPT-4o (Aug '24),OpenAI,7.7,衛瓘,洛陽,45,79,0.0817
-Qwen2.5 Instruct 72B,Alibaba,7.7,袁春卿,鄴,45,43,0.0817
-Sonar,Perplexity,7.7,橋瑁,許昌,45,69,0.0817
-Step3 VL 10B,StepFun,7.7,士匡,交趾,45,62,0.0817
-Llama 3.3 Instruct 70B,Meta,7.7,秦宜祿,晉陽,45,17,0.0817
-Qwen3 30B A3B (Reasoning),Alibaba,7.6,王嗣,成都,43,61,0.0484
-Sonar Pro,Perplexity,7.6,王必,陳留,43,57,0.0484
-Devstral Small (Jul '25),Mistral,7.6,蔣濟,廣陵,43,85,0.0484
-QwQ 32B-Preview,Alibaba,7.6,辛評,平原,43,75,0.0484
-GLM-4.5V (Reasoning),Z AI,7.6,曹宇,許昌,43,42,0.0484
-Mistral Large 2 (Nov '24),Mistral,7.6,孫朗,長沙,43,30,0.0484
-Devstral Small 2,Mistral,7.5,丘本,安定,41,67,0.0041
-Llama 3.1 Nemotron Ultra 253B v1 (Reasoning),NVIDIA,7.5,吾粲,柴桑,41,78,0.0041
-Qwen3 30B A3B 2507 Instruct,Alibaba,7.5,周魴,吳,41,80,0.0041
-ERNIE 4.5 300B A47B,Baidu,7.5,徐宣,廣陵,41,69,0.0041
-Hermes 4 - Llama-3.1 405B (Reasoning),Nous Research,7.5,滕胤,北海,41,71,0.0041
-Solar Pro 2 (Reasoning),Upstage,7.5,李福,梓潼,41,62,0.0041
-NVIDIA Nemotron Nano 12B v2 VL (Reasoning),NVIDIA,7.5,田文,,41,89,0.0041
-Gemma 4 E4B (Non-reasoning),Google,7.5,公孫晃,襄平,42,64,0.4115
-Granite 4.1 30B,IBM,7.4,王甫,成都,40,78,0.0135
-NVIDIA Nemotron Nano 9B V2 (Reasoning),NVIDIA,7.4,夏侯榮,陳留,40,66,0.0135
-Hermes 4 - Llama-3.1 405B (Non-reasoning),Nous Research,7.4,耿武,洛陽,40,61,0.0135
-Gemini 2.0 Flash-Lite (Feb '25),Google,7.4,胡濟,新野,40,68,0.0135
-Llama Nemotron Super 49B v1.5 (Non-reasoning),NVIDIA,7.4,諸葛緒,下邳,40,27,0.0135
-Qwen3 32B (Non-reasoning),Alibaba,7.3,衛茲,陳留,38,62,0.0879
-GPT-4o (May '24),OpenAI,7.3,金禕,長安,38,63,0.0879
-Gemini 2.0 Flash-Lite (Preview),Google,7.3,士廞,交趾,38,55,0.0879
-Llama 3.1 Nemotron Nano 4B v1.1 (Reasoning),NVIDIA,7.3,諸葛亮,成都,38,100,0.0879
-Kimi Linear 48B A3B Instruct,Kimi,7.3,孫魯班,吳,38,74,0.0879
-Llama 3.1 Instruct 405B,Meta,7.3,杜瓊,成都,38,63,0.0879
-Llama 3.3 Nemotron Super 49B v1 (Non-reasoning),NVIDIA,7.3,關純,鄴,38,70,0.0879
-Qwen3 VL 8B Instruct,Alibaba,7.3,龐羲,梓潼,38,68,0.0879
-Qwen3 4B (Reasoning),Alibaba,7.2,韋康,長安,37,60,0.1364
-LFM2.5-8B-A1B,Liquid AI,7.2,司馬孚,洛陽,37,76,0.1364
-Qwen3 32B (Reasoning),Alibaba,7.2,射援,長安,37,69,0.1364
-Claude 3.5 Sonnet (June '24),Anthropic,7.2,曹訓,許昌,37,11,0.1364
-Llama 3.1 Tulu3 405B,Allen Institute for AI,7.2,倉慈,壽春,37,68,0.1364
-GPT-4o (ChatGPT),OpenAI,7.2,孫登,吳,37,79,0.1364
-Ring-flash-2.0,InclusionAI,7.2,董璜,長安,37,26,0.1364
-Pixtral Large,Mistral,7.1,王戎,下邳,36,72,0.1845
-Olmo 3.1 32B Think,Allen Institute for AI,7.1,溫恢,晉陽,36,73,0.1845
-Mistral Small 3.1,Mistral,7.1,郝普,新野,36,42,2.3548
-Grok 2 (Dec '24),SpaceXAI,7.1,夏侯獻,陳留,36,64,0.1845
-GPT-5 nano (Minimal),OpenAI,7.1,金尚,壽春,36,60,0.1845
-Gemini 1.5 Flash (Sep '24),Google,7.1,吳綱,廬江,36,65,0.1845
-Qwen3 VL 4B (Reasoning),Alibaba,7.0,王朗,下邳,35,79,0.0544
-GPT-4 Turbo,OpenAI,7.0,姜敘,天水,35,56,0.0544
-Solar Pro 2 (Non-reasoning),Upstage,7.0,朱鑠,洛陽,35,55,0.0544
-Mistral Small 3.2,Mistral,7.0,楊密,天水,33,51,2.7872
-Nova Pro,Amazon,7.0,曹爽,許昌,35,30,0.0544
-Command A,Cohere,7.0,沮授,鄴,35,90,0.0544
-Qwen3.5 2B (Reasoning),Alibaba,6.9,何氏,宛,34,65,0.1331
-Llama 3.1 Nemotron Instruct 70B,NVIDIA,6.9,虞汜,會稽,34,74,0.1331
-Llama 3.1 Instruct 8B,Meta,6.9,黃琬,江夏,34,71,0.1331
-Grok Beta,SpaceXAI,6.9,射堅,長安,34,66,0.1331
-Qwen2.5 Instruct 32B,Alibaba,6.9,蔣琬,零陵,34,84,0.1331
-NVIDIA Nemotron 3 Nano 30B A3B (Non-reasoning),NVIDIA,6.8,諸葛瑾,建業,34,81,0.2175
-NVIDIA Nemotron Nano 9B V2 (Non-reasoning),NVIDIA,6.8,石韜,許昌,34,70,0.2175
-Mistral Large 2 (Jul '24),Mistral,6.8,趙昱,下邳,34,71,0.2175
-Qwen3 4B 2507 Instruct,Alibaba,6.7,徐邈,薊,32,67,0.0799
-Qwen2.5 Coder Instruct 32B,Alibaba,6.7,宗預,宛,32,65,0.0799
-Qwen3 14B (Non-reasoning),Alibaba,6.7,戴員,建業,32,52,0.0799
-GPT-4,OpenAI,6.7,張紹,綿竹關,32,31,0.0799
-GLM-4.5V (Non-reasoning),Z AI,6.7,鄭渾,洛陽,32,67,0.0799
-Mistral Small 3,Mistral,6.7,滕脩,宛,32,31,0.0799
-Gemini 2.5 Flash-Lite (Non-reasoning),Google,6.7,杜畿,長安,32,74,0.0799
-Nova Lite,Amazon,6.7,劉曄,壽春,32,92,0.0799
-GPT-4o mini,OpenAI,6.7,呂乂,宛,32,63,0.0799
-Hermes 4 - Llama-3.1 70B (Non-reasoning),Nous Research,6.7,呂不韋,,32,88,0.0799
-Qwen3 30B A3B (Non-reasoning),Alibaba,6.6,王思,濮陽,30,63,0.0648
-DeepSeek-V2.5 (Dec '24),DeepSeek,6.6,王累,成都,30,78,0.0648
-Qwen3 4B (Non-reasoning),Alibaba,6.6,宋忠,襄陽,30,64,0.0648
-Llama 3.1 Instruct 70B,Meta,6.6,杜預,長安,30,85,0.0648
-Granite 4.1 8B,IBM,6.6,裴潛,洛陽,30,74,0.0648
-Sarvam 30B (High),Sarvam,6.6,費禕,江夏,30,83,0.0648
-Gemini 2.0 Flash Thinking Experimental (Dec '24),Google,6.6,姚伷,江州,30,66,0.0648
-DeepSeek-V2.5,DeepSeek,6.6,呂凱,雲南,30,66,0.0648
-Olmo 3.1 32B Instruct,Allen Institute for AI,6.5,魏攸,北平,28,73,0.2433
-Mistral Saba,Mistral,6.5,黃月英,成都,28,88,0.2433
-DeepSeek R1 Distill Llama 8B,DeepSeek,6.5,常林,晉陽,28,70,0.2433
-Gemma 4 E2B (Non-reasoning),Google,6.5,孫皓,吳,28,31,0.2433
-Olmo 3 32B Think,Allen Institute for AI,6.5,張春華,洛陽,28,79,0.2433
-Llama 4 Scout,Meta,6.5,曹羲,許昌,26,50,2.4742
-Gemini 1.5 Pro (May '24),Google,6.4,陰夔,鄴,27,64,0.0784
-R1 1776,Perplexity,6.4,閻象,壽春,27,70,0.0784
-Qwen2.5 Turbo,Alibaba,6.4,王脩,北海,27,76,0.0784
-Reka Flash (Sep '24),Reka AI,6.4,何晏,宛,27,71,0.0784
-Llama 3.2 Instruct 90B (Vision),Meta,6.4,蒯越,襄陽,27,82,0.0784
-Solar Mini,Upstage,6.4,辛憲英,平原,27,84,0.0784
-Qwen3 14B (Reasoning),Alibaba,6.4,張華,薊,27,83,0.0784
-Celeris-1,Celeris,6.3,鍾進,許昌,26,38,0.5556
-Grok-1,SpaceXAI,6.3,衛臻,陳留,26,81,0.1472
-Qwen2 Instruct 72B,Alibaba,6.3,荀攸,陳留,26,94,0.1472
-Phi-4 Mini Instruct,Microsoft,6.3,辛敞,平原,26,42,0.1472
-EXAONE 4.0 32B (Non-reasoning),LG AI Research,6.3,張肅,成都,26,58,0.1472
-Qwen3.5 2B (Non-reasoning),Alibaba,6.2,貂蟬,洛陽,26,81,0.0865
-Gemini 1.5 Flash-8B,Google,6.2,張魯,漢中,26,73,0.0865
-Qwen3.5 0.8B (Reasoning),Alibaba,6.1,楊戲,成都,26,58,0.4371
-DeepHermes 3 - Mistral 24B Preview (Non-reasoning),Nous Research,6.1,李儒,洛陽,26,93,0.4371
-Jamba 1.7 Large,AI21 Labs,6.1,涼茂,陳留,26,67,0.4371
-Granite 4.0 H Small,IBM,6.0,郭奕,許昌,24,70,0.0548
-Ministral 3 14B,Mistral,6.0,何植,吳,24,26,1.0372
-Jamba 1.5 Large,AI21 Labs,6.0,韓忠,襄平,24,53,0.0548
-Qwen3 Omni 30B A3B Instruct,Alibaba,6.0,高堂隆,陳留,24,76,0.0548
-Hermes 3 - Llama-3.1 70B,Nous Research,6.0,鍾繇,許昌,24,76,0.0548
-Qwen3 8B (Non-reasoning),Alibaba,6.0,張布,吳,24,70,0.0548
-DeepSeek-Coder-V2,DeepSeek,6.0,樊建,新野,24,71,0.0548
-OLMo 2 32B,Allen Institute for AI,6.0,卞氏,許昌,24,73,0.0548
-Jamba 1.6 Large,AI21 Labs,6.0,楊氏,武威,24,42,0.0548
-LFM2 24B A2B,Liquid AI,5.9,伊籍,江州,23,77,0.2442
-Gemini 1.5 Flash (May '24),Google,5.9,華覈,吳,23,71,0.2442
-Phi-4,Microsoft,5.9,何曾,許昌,23,70,0.2442
-Claude 3 Sonnet,Anthropic,5.9,桓鄰,交趾,23,64,0.2442
-Nova Micro,Amazon,5.9,魏諷,小沛,23,71,0.2442
-Granite 4.1 3B,IBM,5.9,許汜,許昌,23,54,0.2442
-Mistral Small (Sep '24),Mistral,5.8,阮籍,陳留,22,69,0.0376
-Gemini 1.0 Ultra,Google,5.8,侯氏,北平,22,47,0.0376
-Phi-3 Mini Instruct 3.8B,Microsoft,5.8,蔡氏,襄陽,22,70,0.0376
-NVIDIA Nemotron Nano 12B v2 VL (Non-reasoning),NVIDIA,5.8,崔林,平原,22,66,0.0376
-Gemma 3n E4B Instruct Preview (May '25),Google,5.8,曹植,許昌,22,81,0.0376
-Phi-4 Multimodal Instruct,Microsoft,5.8,張紘,廣陵,22,86,0.0376
-Qwen2.5 Coder Instruct 7B,Alibaba,5.8,陳壽,江州,22,60,0.0376
-Mistral Large (Feb '24),Mistral,5.8,鄧義,新野,22,61,0.0376
-Mixtral 8x22B Instruct,Mistral,5.7,韋昭,建業,20,65,0.0944
-Llama 2 Chat 7B,Meta,5.7,王楷,濮陽,20,57,0.0944
-Llama 3.2 Instruct 3B,Meta,5.7,嚴氏,洛陽,20,56,0.0944
-MiniCPM-V 4.6 1.3B,OpenBMB,5.7,張昌蒲,長安,20,72,0.0944
-Jamba Reasoning 3B,AI21 Labs,5.7,菲列特利加,,20,84,0.0944
-Qwen3 VL 4B Instruct,Alibaba,5.7,王肅,下邳,21,76,0.2025
-Qwen1.5 Chat 110B,Alibaba,5.7,王商,成都,21,74,0.2025
-Reka Flash 3,Reka AI,5.6,王祥,下邳,19,68,0.2506
-Olmo 3 7B Think,Allen Institute for AI,5.6,國淵,北海,19,71,0.2506
-Claude 2.1,Anthropic,5.6,薛悌,濮陽,19,65,0.2506
-Claude 3 Haiku,Anthropic,5.6,仲長統,濮陽,19,60,0.2506
-OLMo 2 7B,Allen Institute for AI,5.6,呂壹,建業,19,40,0.2506
-Molmo 7B-D,Allen Institute for AI,5.6,奧貝斯坦,,19,95,0.2506
-Ling-mini-2.0,InclusionAI,5.5,袁渙,壽春,17,72,0.1743
-DeepSeek R1 Distill Qwen 1.5B,DeepSeek,5.5,公孫恭,襄平,17,69,0.1743
-DeepSeek-V2-Chat,DeepSeek,5.5,秦松,廣陵,17,66,0.1743
-Claude 2.0,Anthropic,5.5,趙正,成都,17,57,0.1743
-Mistral Small (Feb '24),Mistral,5.5,樊氏,鄴,17,56,0.1743
-Mistral Medium,Mistral,5.5,傅幹,武威,17,77,0.1743
-GPT-3.5 Turbo,OpenAI,5.5,楊彪,壽春,17,69,0.1743
-Ministral 3 8B,Mistral,5.5,曹奐,許昌,18,30,1.9445
-Llama 3 Instruct 70B,Meta,5.5,劉氏,鄴,17,67,0.1743
-Qwen Chat 72B,Alibaba,5.4,王謀,成都,16,62,0.0442
-Arctic Instruct,Snowflake,5.4,孔伷,陳留,16,67,0.0442
-LFM 40B,Liquid AI,5.4,司馬芝,洛陽,16,61,0.0442
-Llama 3.2 Instruct 11B (Vision),Meta,5.4,荀勗,許昌,16,77,0.0442
-Qwen3.5 0.8B (Non-reasoning),Alibaba,5.4,蔣顯,零陵,16,60,0.0442
-PALM-2,Google,5.4,邵悌,平原,16,72,0.0442
-Gemini 1.0 Pro,Google,5.3,殷禮,吳,14,72,0.1441
-DeepSeek Coder V2 Lite Instruct,DeepSeek,5.3,袁胤,壽春,14,39,0.1441
-"Sarvam M (Reasoning, Based on Mistral Small 3.1)",Sarvam,5.3,王沈,晉陽,14,66,0.1441
-Llama 2 Chat 70B,Meta,5.3,荀彧,陳留,14,95,0.1441
-DeepSeek LLM 67B Chat (V1),DeepSeek,5.3,荀粲,許昌,14,68,0.1441
-Llama 2 Chat 13B,Meta,5.3,曹沖,許昌,14,80,0.1441
-Command-R+ (Apr '24),Cohere,5.3,陳群,許昌,14,74,0.1441
-OpenChat 3.5 (1210),OpenChat,5.3,程秉,北海,14,68,0.1441
-DBRX Instruct,Databricks,5.3,羊徽瑜,濮陽,14,71,0.1441
-Exaone 4.0 1.2B (Reasoning),LG AI Research,5.3,士孫瑞,洛陽,13,65,0.1527
-Olmo 3 7B Instruct,Allen Institute for AI,5.2,桓範,小沛,11,80,0.064
-Exaone 4.0 1.2B (Non-reasoning),LG AI Research,5.2,蔡琰,陳留,11,76,0.064
-LFM2.5-1.2B-Thinking,Liquid AI,5.2,是儀,建業,11,81,0.064
-Jamba 1.7 Mini,AI21 Labs,5.2,徐奕,下邳,11,60,0.064
-LFM2 2.6B,Liquid AI,5.2,楊,,11,100,0.064
-LFM2.5-1.2B-Instruct,Liquid AI,5.2,夏侯令女,許昌,10,71,0.2922
-Jamba 1.5 Mini,AI21 Labs,5.2,孫亮,吳,10,70,0.2922
-Granite 4.0 H 1B,IBM,5.2,張溫,吳,10,69,0.2922
-Qwen3 1.7B (Reasoning),Alibaba,5.2,傅巽,長安,10,69,0.2922
-Jamba 1.6 Mini,AI21 Labs,5.2,步練師,建業,10,64,0.2922
-Qwen3 8B (Reasoning),Alibaba,5.2,劉琦,濮陽,10,62,0.2922
-Mixtral 8x7B Instruct,Mistral,5.1,尹大目,鄴,9,34,0.2422
-Gemma 3 270M,Google,5.1,王連,宛,9,69,0.2422
-Apertus 70B Instruct,Swiss AI Initiative,5.1,郭攸之,宛,9,66,0.2422
-Granite 4.0 Micro,IBM,5.1,何宗,成都,9,65,0.2422
-DeepHermes 3 - Llama-3.1 8B Preview (Non-reasoning),Nous Research,5.1,顧邵,吳,9,64,0.2422
-Mistral 7B Instruct,Mistral,5.0,夏侯楙,陳留,7,5,0.1961
-Claude Instant,Anthropic,5.0,環氏,下邳,7,65,0.1961
-Command-R (Mar '24),Cohere,5.0,戲志才,許昌,7,85,0.1961
-Qwen Chat 14B,Alibaba,5.0,蔣幹,柴桑,7,65,0.1961
-Llama 65B,Meta,5.0,甄氏,鄴,7,72,0.1961
-Granite 4.0 1B,IBM,5.0,秦宓,成都,7,70,0.1961
-Molmo2-8B,Allen Institute for AI,5.0,張範,洛陽,7,64,0.1961
-LFM2 8B A1B,Liquid AI,4.9,陸績,吳,7,65,0.2714
-Granite 3.3 8B (Non-reasoning),IBM,4.9,王允,洛陽,6,67,0.3817
-Qwen3 1.7B (Non-reasoning),Alibaba,4.9,王業,武陵,6,35,0.3817
-Gemma 3 27B Instruct,Google,4.9,劉璋,江夏,5,9,1.2808
-Ministral 3 3B,Mistral,4.8,韓馥,許昌,3,27,0.8325
-Qwen3 0.6B (Non-reasoning),Alibaba,4.8,嚴畯,吳,2,70,0.0556
-LFM2 1.2B,Liquid AI,4.8,曹華,許昌,2,60,0.0556
-Gemma 3 4B Instruct,Google,4.8,董白,長安,2,43,0.0556
-LFM2.5-VL-1.6B,Liquid AI,4.8,王粲,濮陽,3,79,0.1225
-Qwen3 0.6B (Reasoning),Alibaba,4.8,邯鄲淳,許昌,3,66,0.1225
-Granite 4.0 350M,IBM,4.8,譙周,成都,3,65,0.1225
-Llama 3.2 Instruct 1B,Meta,4.8,張昭,下邳,3,84,0.1225
-Tiny Aya Global,Cohere,4.8,丁儀,小沛,3,64,0.1225
-Llama 3 Instruct 8B,Meta,4.8,杜氏,晉陽,3,50,0.1225
+"Claude Opus 5.5 (Max, Default Fallback)",Anthropic,57.6,姜維,成都,89,90,2.353
+"Claude Sonnet 5.5 (Max, Default Fallback)",Anthropic,56.0,鄧艾,新野,87,89,3.242
+Muse Wonder Full (Max),Meta,55.8,許褚,許昌,96,36,0.0999
+"Claude Fable 5.1 (Max, Default Fallback)",Anthropic,53.4,張遼,虎牢關,92,78,3.9146
+GPT-6 Astra (Max),OpenAI,52.7,甘寧,建業,94,76,1.9267
+Gemini 4 Argon (High),Google,52.6,關羽,江州,97,75,0.6959
+Muse Wonder (Max),Meta,52.4,趙雲,成都,96,76,2.8928
+GPT-6.1 Sol (Max),OpenAI,51.8,太史慈,北海,93,67,1.102
+Claude Opus 5 (Max),Anthropic,50.8,孫堅,長沙,90,77,4.0436
+"Claude Fable 5 (Max, Opus 4.8 Fallback)",Anthropic,49.6,呂蒙,建業,81,89,5.974
+Muse Spark 1.3 (Max),Meta,48.1,徐晃,洛陽,90,74,1.057
+GPT-6 Sol (Max),OpenAI,47.6,龐德,武威,94,71,0.8825
+GPT-5.6 Sol (Max),OpenAI,47.0,張任,成都,84,76,3.714
+Grok 4.7 (Xhigh),SpaceXAI,46.4,夏侯霸,陳留,84,77,4.5316
+MiMo-V2.6-Pro,Xiaomi,46.3,周泰,建業,91,48,1.0752
+Qwen3.8 Max (0902),Alibaba,45.4,李嚴,宛,84,76,5.7311
+GLM-5.3 (Max),Z AI,44.8,傅僉,新野,85,72,4.8132
+Grok 4.6 (High),SpaceXAI,44.3,張郃,平原,89,69,3.8661
+Step 5 Preview,StepFun,43.7,魏延,成都,92,69,2.3579
+Kimi K3 (Max),Kimi,43.6,朱桓,吳,82,74,4.3141
+Claude Haiku 5.5 (Max),Anthropic,43.4,凌統,建業,89,58,0.9564
+GPT-5.6 Terra (Max),OpenAI,42.1,公孫瓚,成都,83,71,3.7497
+GLM-5.3-Flash,Z AI,41.8,高順,虎牢關,86,60,0.7626
+Claude Opus 4.8 (Max),Anthropic,41.8,徐盛,下邳,81,77,5.4754
+Ling 3.1 Flash,InclusionAI,41.1,董卓,洛陽,85,69,1.7895
+Gemini 3.8 Flash (High),Google,40.9,孫策,桂陽,92,69,4.1515
+Claude Opus 4.7 (Max),Anthropic,40.7,曹仁,許昌,87,58,0.0312
+Qwen3.8 Max,Alibaba,40.2,程普,長沙,79,79,5.0102
+Qwen3.8 2.4T A95B,Alibaba,39.9,郝昭,晉陽,79,78,4.8859
+Qwen3.8-Flash-Next,Alibaba,39.8,關興,江州,86,63,0.3691
+Gemini 3.7 Flash (Medium),Google,39.6,兀突骨,雲南,86,1,0.2195
+Muse Spark 1.2 (Xhigh),Meta,39.6,鄧忠,新野,85,68,1.5855
+DeepSeek V4.1 Flash (Max),DeepSeek,39.5,韓當,長沙,85,59,0.3726
+GPT-5.4 (Xhigh),OpenAI,39.0,周旨,襄陽,85,41,0.0807
+Muse Spark Open (Xhigh),Meta,38.9,嚴顏,江州,82,69,1.7067
+Grok 4.5 (High),SpaceXAI,38.8,黃蓋,長沙,83,68,1.8751
+Mistral Large 4 Preview,Mistral,38.4,丁奉,廬江,80,71,2.996
+GPT-5.5 (Xhigh),OpenAI,38.4,王平,梓潼,79,76,4.8561
+Claude Sonnet 5 (Max),Anthropic,38.2,郭淮,晉陽,78,82,4.5534
+GPT-6 Luna (Max),OpenAI,38.1,周倉,薊,84,42,0.2776
+MiMo-V2.6-Flash,Xiaomi,37.9,胡車兒,長安,82,41,1.2092
+GPT-5.6 Luna (Max),OpenAI,37.3,南蠻悍婦,南蠻,83,54,0.3078
+DeepSeek V4 Pro 0813 (Max),DeepSeek,36.0,關平,江州,82,68,1.1333
+Agnes 2.5 Pro Beta,Sapiens AI,35.2,紀靈,壽春,83,51,0.087
+DeepSeek V4 Flash Vision (Max),DeepSeek,34.8,閻行,天水,84,61,1.036
+DeepSeek V4 Flash 0731 (Max),DeepSeek,34.3,鮮卑悍婦,鮮卑,82,58,0.5028
+Gemini 3.6 Flash (High),Google,34.0,孫韶,建業,78,73,3.619
+JT-4.1 Flash 236B A21B (Reasoning),China Mobile,33.9,越吉,天水,82,16,0.1129
+Muse Spark 1.1 (Xhigh),Meta,33.7,張梁,薊,80,70,3.4248
+GLM-5.2 (Max),Z AI,33.7,潘璋,陳留,80,70,3.9126
+Qwen3.8 27B (Xhigh),Alibaba,33.7,高覽,平原,82,68,1.9967
+Gemini 3.5 Flash (Medium),Google,33.6,曹洪,許昌,81,44,0.2626
+Motif 3,Motif Technologies,33.6,孫禮,薊,81,65,0.2626
+GPT-5.3 Codex (Xhigh),OpenAI,32.5,張燕,北平,81,54,0.1457
+Motif 3 (Beta),Motif Technologies,32.3,張曼成,薊,81,47,0.0289
+Claude Opus 4.6 (Max),Anthropic,31.9,蹋頓,北平,81,52,0.088
+Muse Spark,Meta,31.3,李通,汝南,81,57,0.2049
+"Claude Opus 4.7 (Non-reasoning, High)",Anthropic,30.9,凌操,桂陽,81,42,0.3217
+K2 Horizon 375B A23B,Institute of Foundation Models,30.5,管亥,北平,80,10,0.896
+DeepSeek V4 Pro 0424 (Max),DeepSeek,30.4,馬騰,武威,80,51,1.1445
+GPT-5.2 (Xhigh),OpenAI,30.4,邢道榮,零陵,80,41,0.2619
+Claude Sonnet 4.6 (Max),Anthropic,30.1,李典,陳留,77,79,2.7875
+Gemini 3.1 Pro Preview,Google,29.7,于禁,濮陽,77,72,2.2933
+Qwen3.7 Max,Alibaba,29.5,王渾,晉陽,76,72,3.4057
+MiniMax-M3,MiniMax,29.2,文聘,宛,82,66,2.077
+Claude Opus 4.5 (Reasoning),Anthropic,29.1,牛金,宛,79,40,0.2782
+MiMo-V2-Pro,Xiaomi,28.6,忙牙長,雲南,79,3,0.1613
+GPT-6 Sol (Non-reasoning),OpenAI,28.5,沈瑩,建業,77,61,2.382
+GPT-5.2 Codex (Xhigh),OpenAI,28.5,俞涉,壽春,79,24,0.0724
+Qwen3.6 Max Preview,Alibaba,28.4,劉封,江州,79,44,0.1893
+GPT-5.6 Sol (Non-reasoning),OpenAI,28.3,山越強兵,山越,79,18,0.3061
+Nex-N2-Pro (Based on Qwen3.5-397B-A17B),Nex AGI,28.2,麴義,平原,78,50,0.1274
+Solar Pro 4,Upstage,28.2,魏續,洛陽,78,31,0.1274
+Gemini 3 Pro Preview (High),Google,28.0,嚴輿,吳,78,48,0.0106
+GLM-5 (Reasoning),Z AI,27.9,宋謙,廬江,78,42,0.1063
+JT-4.1 Flash 236B A21B (Non-reasoning),China Mobile,27.3,楊任,漢中,78,56,0.2231
+Grok Build 0.1 0616,SpaceXAI,27.2,雷銅,成都,78,51,0.34
+Qwen3.6 Plus,Alibaba,27.0,韓德,安定,77,24,0.3605
+Kimi K2.6 (Reasoning),Kimi,27.0,留贊,會稽,77,65,3.531
+"Quasar 438B (Max, Based on GLM-5.2)",Multiverse Computing,26.7,王基,北海,75,76,2.7092
+GLM-5-Turbo,Z AI,26.6,魏越,晉陽,77,34,0.1268
+Nemotron 3.5 Super VL,NVIDIA,26.5,廖化,薊,76,62,1.2996
+Apodex 1.1,Apodex,26.4,諸葛尚,成都,75,62,3.6844
+"Claude Opus 4.6 (Non-reasoning, High)",Anthropic,26.4,強端,漢中,77,26,0.2238
+Gemini 3 Flash Preview (Reasoning),Google,26.3,宋憲,洛陽,77,37,0.3407
+GLM-5.1 (Reasoning),Z AI,26.1,張翼,成都,74,72,4.5463
+GPT-5.5 Instant (June 2026),OpenAI,26.0,曹真,許昌,74,68,3.1045
+MiMo-V2.5-Pro (Reasoning),Xiaomi,26.0,于詮,吳,76,40,0.6715
+Kimi K2.7 Code,Kimi,25.8,侯成,洛陽,74,67,3.2062
+Inkling Small,Thinking Machines,25.7,吳匡,陳留,75,45,1.4948
+Grok 4.20 0309 v2 (Reasoning),SpaceXAI,25.7,郭汜,長安,76,13,0.1743
+K2 Horizon MoVA 36B A4B,Institute of Foundation Models,25.3,金環三結,雲南,76,19,0.4081
+Hy3,Tencent,25.3,樂綝,濮陽,75,40,1.5841
+Grok 4.20 0309 (Reasoning),SpaceXAI,25.2,俄何燒戈,天水,75,12,0.6261
+Qwen3.7 Plus,Alibaba,25.2,雍闓,建寧,75,60,1.5545
+MiMo-V2-Omni-0327,Xiaomi,25.1,韓綜,北平,75,28,0.5092
+Inkling (Xhigh),Thinking Machines,25.0,臧霸,濮陽,75,53,0.3924
+GPT-5 Codex (High),OpenAI,24.9,孫觀,濮陽,75,51,0.1586
+Grok 4.3 (High),SpaceXAI,24.9,毌丘儉,洛陽,74,55,1.8541
+Solar Open2 250B,Upstage,24.7,孫翊,桂陽,75,27,0.3088
+GPT-5.1 (High),OpenAI,24.7,戴陵,安定,75,39,0.3088
+"Claude Sonnet 4.6 (Non-reasoning, High)",Anthropic,24.7,龐會,武威,75,47,0.3088
+DeepSeek V4.1 Flash (Non-reasoning),DeepSeek,24.7,鮑隆,桂陽,75,49,1.1891
+Ling-3.0-flash-VL,InclusionAI,24.6,鮑三娘,江陵,75,38,0.4257
+DeepSeek V4 Flash 0420 (High),DeepSeek,24.4,李歆,梓潼,75,45,0.629
+GLM-5.1 (Non-reasoning),Z AI,24.2,樓班,北平,75,39,0.6594
+GPT-5.4 mini (Xhigh),OpenAI,24.1,唐彬,小沛,74,66,1.5912
+Solar Mini 4,Upstage,24.1,徐榮,函谷關,74,62,1.6161
+MiMo-V2-Omni,Xiaomi,23.9,阿會喃,雲南,74,26,0.4581
+Gemini 3.5 Flash (Minimal),Google,23.8,許儀,許昌,74,15,0.3412
+GPT-5.1 Codex (High),OpenAI,23.7,曹休,許昌,74,62,0.1075
+Claude Opus 4.5 (Non-reasoning),Anthropic,23.7,曹性,晉陽,74,38,0.1075
+Kimi K2.6 (Non-reasoning),Kimi,23.6,孫河,桂陽,74,45,0.0094
+GLM 5V Turbo (Reasoning),Z AI,23.5,程遠志,北平,74,18,0.2431
+Kimi K2.5 (Reasoning),Kimi,23.5,馬玩,天水,74,16,0.2431
+"Claude Sonnet 5 (Non-reasoning, High)",Anthropic,23.2,波才,薊,74,52,0.4768
+GPT-5.5 (Non-reasoning),OpenAI,23.2,樊稠,長安,74,31,0.4768
+GPT-5 (High),OpenAI,23.0,趙娥,武威,74,66,0.5937
+Nemotron 3 Ultra 550B A55B (Reasoning),NVIDIA,22.9,柳隱,成都,74,68,1.7514
+Qwen3.5 27B (Reasoning),Alibaba,22.9,步度根,晉陽,74,45,0.8274
+Claude 4.1 Opus (Reasoning),Anthropic,22.8,阿貴,漢中,73,20,0.7572
+MiniMax-M2.5,MiniMax,22.8,王濬,洛陽,73,78,0.7572
+MiniMax-M2.7,MiniMax,22.8,郭援,南皮,73,36,0.7572
+Hy3-preview (Reasoning),Tencent,22.7,夏侯威,陳留,73,49,0.5235
+GPT-5.5 Instant (May 2026),OpenAI,22.7,夏侯德,陳留,73,32,0.5235
+Ling-3.0-flash-Fin,InclusionAI,22.6,賀齊,會稽,73,72,0.4066
+Grok 4,SpaceXAI,22.5,高昇,北平,73,40,0.2898
+MiMo-V2-Flash (Feb 2026),Xiaomi,22.4,伍延,江陵,73,44,0.056
+GLM-5.2 (Non-reasoning),Z AI,22.4,胡遵,安定,73,52,0.056
+GLM-4.7 (Reasoning),Z AI,22.2,朱褒,建寧,73,24,0.1777
+Gemini 3.5 Flash-Lite,Google,22.2,鮮卑精兵,鮮卑,73,48,2.7923
+Kimi K2 Thinking,Kimi,22.0,蔣班,壽春,73,62,0.2945
+o3-pro,OpenAI,21.9,成廉,晉陽,73,36,0.4114
+G9v3-39A5B,AI9Stars,21.8,孫桓,建業,73,72,0.762
+MiMo-V2.5,Xiaomi,21.8,董荼那,雲南,73,33,1.3377
+GLM-5 (Non-reasoning),Z AI,21.8,譚雄,武陵,73,14,0.762
+KAT Coder Pro V2,KwaiKAT,21.7,張虎,晉陽,73,44,0.8789
+DeepSeek V3.2 (Reasoning),DeepSeek,21.5,于毒,北平,72,44,0.9561
+A.X-K2,SK Telecom,21.5,袁尚,鄴,72,42,0.9561
+Qwen3.5 397B A17B (Non-reasoning),Alibaba,21.4,軻比能,晉陽,72,51,0.6055
+Qwen3.6 27B (Reasoning),Alibaba,21.4,句扶,梓潼,72,67,0.9263
+Nemotron 3.5 Bolt 74B-A9B,NVIDIA,21.4,韓起,襄平,72,25,0.6055
+Qwen3 Max Thinking,Alibaba,21.3,關銀屏,江州,72,39,0.4886
+MiniMax-M2.1,MiniMax,20.9,韓遂,天水,72,77,0.3718
+DeepSeek V4 Pro 0424 (Non-reasoning),DeepSeek,20.8,牽弘,南皮,72,66,0.0212
+MiMo-V2-Flash (Reasoning),Xiaomi,20.8,吳懿,陳留,72,69,0.0212
+GPT-5.6 Terra (Non-reasoning),OpenAI,20.8,劉辟,薊,72,51,0.1142
+GPT-5.4 nano (Xhigh),OpenAI,20.7,山越兵,山越,72,51,1.2812
+Claude 4.5 Sonnet (Reasoning),Anthropic,20.7,朱靈,平原,72,67,0.3795
+Claude 4 Opus (Reasoning),Anthropic,20.6,吾彥,建業,72,77,0.5631
+GPT-5 mini (Medium),OpenAI,20.6,焦觸,鄴,72,33,0.5631
+K2 Horizon 7B,Institute of Foundation Models,20.6,全琮,吳,72,73,0.5631
+Qwen3.5 Omni Plus,Alibaba,20.4,曹操,許昌,72,91,1.0306
+GPT-5.1 Codex mini (High),OpenAI,20.4,張英,建業,72,40,1.0306
+Grok 4.1 Fast (Reasoning),SpaceXAI,20.4,張球,壽春,72,44,1.0306
+DeepSeek V4 Pro 0813 (Non-reasoning),DeepSeek,20.4,曹純,許昌,71,62,1.9021
+o3,OpenAI,20.2,郭馬,建安,71,47,0.8711
+Qwen3.8 27B (Non-reasoning),Alibaba,20.2,張寶,北平,71,81,2.055
+Ling 3.0 Flash,InclusionAI,20.1,夏侯尚,陳留,71,75,0.7542
+Qwen3.6 27B (Non-reasoning),Alibaba,19.8,韓浩,洛陽,71,68,0.6373
+K-EXAONE 2.0 0803,LG AI Research,19.7,管承,北平,71,24,0.5205
+Step 3.7 Flash,StepFun,19.5,嚴綱,北平,71,40,0.4036
+Kimi K2.5 (Non-reasoning),Kimi,19.4,牽招,南皮,71,73,0.1699
+Qwen3.5 27B (Non-reasoning),Alibaba,19.4,公孫越,北平,71,48,0.1699
+Claude 4.5 Sonnet (Non-reasoning),Anthropic,19.3,公孫度,襄平,71,68,0.0638
+Qwen3.5 35B A3B (Reasoning),Alibaba,19.3,黃亂,建安,71,36,0.0638
+LongCat 2.0,LongCat,19.1,唐咨,下邳,71,50,0.8894
+Claude 4 Sonnet (Reasoning),Anthropic,18.9,胡淵,安定,71,65,0.4144
+DeepSeek V4 Flash 0420 (Non-reasoning),DeepSeek,18.9,吳班,陳留,71,56,0.4144
+JT-35B-Flash,China Mobile,18.7,史渙,小沛,71,56,0.5313
+MiniMax-M2,MiniMax,18.6,王威,襄陽,70,62,0.4527
+KAT-Coder-Pro V1,KwaiKAT,18.6,花鬘,雲南,70,32,0.4527
+Claude 4.1 Opus (Non-reasoning),Anthropic,18.6,龔都,薊,70,23,0.4527
+GLM-4.6 (Reasoning),Z AI,18.5,嚴白虎,吳,70,23,0.219
+GPT-6 Luna (Non-reasoning),OpenAI,18.5,張橫,天水,70,23,0.382
+Qwen3.5 397B A17B (Reasoning),Alibaba,18.4,陳騫,廣陵,71,65,1.4761
+MiMo-V2.5-Pro (Non-reasoning),Xiaomi,18.3,公孫淵,襄平,70,60,0.0147
+Qwen3.6 35B A3B (Reasoning),Alibaba,18.2,張楊,晉陽,70,67,1.391
+GPT-5.4 (Non-reasoning),OpenAI,18.2,昌豨,濮陽,70,44,0.2484
+Grok 4 Fast (Reasoning),SpaceXAI,17.9,秦朗,晉陽,70,35,0.4822
+Gemini 3 Flash Preview (Non-reasoning),Google,17.9,成公英,天水,70,80,0.4822
+Qwen3.5 122B A10B (Non-reasoning),Alibaba,17.7,孫震,吳,70,48,0.7159
+Claude 3.7 Sonnet (Reasoning),Anthropic,17.7,陳式,江州,70,30,0.7159
+Muse Glimmer (High),Meta,17.5,橋蕤,壽春,69,38,1.1696
+GLM-4.7 (Non-reasoning),Z AI,17.4,袁紹,鄴,69,70,0.7187
+Hy3-preview (Non-reasoning),Tencent,17.0,袁譚,平原,69,30,0.2512
+Ling-2.6-1T,InclusionAI,17.0,何儀,薊,69,36,0.2512
+GPT-5.2 (Non-reasoning),OpenAI,17.0,霍弋,江陵,69,69,0.2512
+Step 3.5 Flash 2603,StepFun,17.0,賈信,洛陽,69,51,0.2512
+Doubao Seed Code,ByteDance Seed,16.9,麴演,武威,69,50,0.0175
+Claude 4.5 Haiku (Reasoning),Anthropic,16.9,丘力居,北平,69,56,1.466
+Gemma 4 26B A4B (Reasoning),Google,16.7,朱然,建業,69,71,0.2162
+o4-mini (High),OpenAI,16.7,徐商,晉陽,69,32,0.2162
+Ring-2.6-1T,InclusionAI,16.6,朱異,吳,68,61,2.1249
+Step 3.5 Flash,StepFun,16.6,泄歸泥,晉陽,69,33,0.8005
+Claude 4 Opus (Non-reasoning),Anthropic,16.6,鮮于輔,薊,69,65,0.8005
+Claude 4 Sonnet (Non-reasoning),Anthropic,16.6,曹豹,下邳,69,32,0.8005
+DeepSeek V3.2 Exp (Reasoning),DeepSeek,16.6,孫異,吳,69,55,0.8005
+Qwen3 Max Thinking (Preview),Alibaba,16.3,孫歆,吳,69,35,0.9174
+Gemini 2.5 Pro,Google,16.1,焦彝,壽春,68,62,2.0779
+MiMo-V2-Flash (Non-reasoning),Xiaomi,16.0,孫峻,吳,69,68,1.268
+DeepSeek V3.2 (Non-reasoning),DeepSeek,16.0,陳蘭,廬江,69,41,1.268
+K2 Horizon 3.7B,Institute of Foundation Models,15.6,殷署,長安,68,37,1.0672
+Qwen3 Max,Alibaba,15.6,尹禮,濮陽,68,47,1.0672
+Qwen3.5 122B A10B (Reasoning),Alibaba,15.6,楊欣,武威,68,61,1.6762
+Gemini 3.1 Flash-Lite,Google,15.6,笮融,建業,68,40,1.3037
+GPT-5.6 Luna (Non-reasoning),OpenAI,15.5,於夫羅,晉陽,68,22,1.1109
+Gemini 2.5 Flash Preview (Sep '25) (Reasoning),Google,15.5,區星,長沙,68,38,0.8335
+Claude 4.5 Haiku (Non-reasoning),Anthropic,15.4,王方,洛陽,68,28,0.7167
+Kimi K2 0905,Kimi,15.3,夏侯蘭,許昌,68,44,0.4829
+Claude 3.7 Sonnet (Non-reasoning),Anthropic,15.3,管統,北海,68,32,0.4829
+Qwen3.6 35B A3B (Non-reasoning),Alibaba,15.2,金旋,長安,68,13,0.2492
+o1,OpenAI,15.2,句安,江州,68,48,0.2492
+Qwen3.5 35B A3B (Non-reasoning),Alibaba,15.1,高翔,梓潼,68,51,0.1323
+Gemini 2.5 Pro Preview (Mar' 25),Google,15.0,公孫續,北平,68,53,0.0155
+GLM-4.6 (Non-reasoning),Z AI,14.9,公孫範,北平,68,63,0.2182
+GLM-4.7-Flash (Reasoning),Z AI,14.9,谷利,建業,68,33,0.2182
+DeepSeek V3.1 Terminus (Reasoning),DeepSeek,14.8,胡烈,安定,68,72,0.3351
+Gemma 4 31B (Reasoning),Google,14.7,呂曠,平原,68,13,1.0525
+Grok 3 mini Reasoning (High),SpaceXAI,14.6,蔡瑁,襄陽,68,77,0.6857
+Grok 4.20 0309 (Non-reasoning),SpaceXAI,14.6,周朝,零陵,68,29,0.6857
+Gemini 2.5 Pro Preview (May' 25),Google,14.5,于糜,會稽,67,33,0.6154
+DeepSeek V3.2 Speciale,DeepSeek,14.5,王頎,北海,67,61,0.6154
+K-EXAONE (Reasoning),LG AI Research,14.4,賀達,會稽,67,38,0.4985
+ERNIE 5.0 Thinking Preview,Baidu,14.3,奚泥,雲南,67,3,0.3817
+Grok 4.20 0309 v2 (Non-reasoning),SpaceXAI,14.2,侯音,宛,67,43,0.0858
+Mistral Medium 3.5,Mistral,14.2,孫皎,桂陽,67,65,0.8173
+Gemma 4 12B (Reasoning),Google,14.2,黃祖,江夏,67,55,0.0858
+Nova 2.0 Pro Preview (Medium),Amazon,14.2,淳于瓊,平原,67,29,0.0858
+Grok Code Fast 1,SpaceXAI,14.1,眭元進,平原,67,45,0.2026
+Grok 4.3 (Non-reasoning),SpaceXAI,14.0,丁封,廬江,66,53,1.4201
+DeepSeek V3.1 Terminus (Non-reasoning),DeepSeek,13.9,鮮于丹,吳,67,42,0.6701
+Gemma 4 31B (Non-reasoning),Google,13.9,孫權,建業,67,80,0.6701
+DeepSeek V3.2 Exp (Non-reasoning),DeepSeek,13.9,孫賁,長沙,67,40,0.6701
+Apriel-v1.5-15B-Thinker,ServiceNow,13.8,孫瑜,桂陽,67,68,0.7869
+DeepSeek V3.1 (Non-reasoning),DeepSeek,13.7,樂就,廬江,66,58,0.8312
+Nova 2.0 Omni (Medium),Amazon,13.6,郝萌,晉陽,66,41,0.7143
+DeepSeek V3.1 (Reasoning),DeepSeek,13.5,夏侯恩,許昌,66,50,0.5975
+Qwen3 VL 235B A22B (Reasoning),Alibaba,13.4,韓暹,北平,66,35,0.2469
+Apriel-v1.6-15B-Thinker,ServiceNow,13.4,侯選,天水,66,35,0.2469
+Nova 2.0 Lite (High),Amazon,13.4,公孫康,襄平,66,65,0.2469
+GPT-5.1 (Non-reasoning),OpenAI,13.3,呼廚泉,晉陽,66,48,0.0131
+Qwen3.5 9B (Non-reasoning),Alibaba,13.3,左奕,武陵,66,51,0.0131
+EXAONE 4.5 33B (Reasoning),LG AI Research,13.2,士徽,交趾,66,44,0.1037
+Command A+,Cohere,13.1,張闓,薊,66,8,1.0026
+Gemma 4 26B A4B (Non-reasoning),Google,13.1,脩允,建安,66,36,0.688
+Qwen3.5 4B (Reasoning),Alibaba,13.1,朱蓋,許昌,66,44,0.688
+DeepSeek R1 0528 (May '25),DeepSeek,13.1,單經,北平,66,44,0.688
+Gemini 2.5 Flash (Reasoning),Google,13.1,孫冀,吳,66,51,0.688
+GPT-5 nano (High),OpenAI,13.0,太史享,北海,66,48,0.8049
+Nemotron 3.5 Lightning,NVIDIA,12.9,施朔,建業,65,45,1.348
+Nemotron 3 Super 120B A12B (Reasoning),NVIDIA,12.8,司馬��,洛陽,65,75,1.2019
+GLM-4.5 (Reasoning),Z AI,12.8,袁術,壽春,65,68,0.713
+Kimi K2,Kimi,12.7,王惇,建業,65,43,0.2455
+Qwen3 235B A22B 2507 (Reasoning),Alibaba,12.7,賈華,廬江,65,40,0.2455
+GPT-4.1,OpenAI,12.7,霍峻,江陵,65,72,0.2455
+Granite 4.2 30B,IBM,12.7,楊醜,晉陽,65,42,0.4364
+Qwen3 Max (Preview),Alibaba,12.6,韓猛,平原,65,43,0.1287
+Qwen3.5 Omni Flash,Alibaba,12.5,許貢,吳,65,63,0.2219
+o3-mini,OpenAI,12.5,高沛,梓潼,65,69,0.2219
+MiniCPM5-2B,OpenBMB,12.5,吳景,長沙,65,54,0.2219
+o1-pro,OpenAI,12.4,周昂,會稽,65,65,0.4556
+Gemini 2.5 Flash Preview (Sep '25) (Non-reasoning),Google,12.4,鄒靖,薊,65,66,0.4556
+Mercury 2.5,Inception,12.3,孫輔,長沙,65,48,0.748
+JT-MINI,China Mobile,12.2,王昶,晉陽,64,79,0.5785
+Grok 3,SpaceXAI,12.1,王淩,晉陽,64,71,0.3448
+Seed-OSS-36B-Instruct,ByteDance Seed,12.1,毌丘興,洛陽,64,50,0.3448
+Qwen3 235B A22B 2507 Instruct,Alibaba,12.0,媯覽,建業,64,38,0.2279
+Qwen3 Coder 480B A35B Instruct,Alibaba,11.9,黃崇,梓潼,64,72,0.0058
+Qwen3 VL 32B (Reasoning),Alibaba,11.9,伍習,長安,64,42,0.0058
+Magistral Medium 1.2,Mistral,11.8,司馬師,洛陽,64,88,0.2395
+Sonar Reasoning Pro,Perplexity,11.8,徐庶,江州,64,93,0.2395
+"HyperNova 60B 2605 (High, Based on gpt-oss-120b)",Multiverse Computing,11.7,王經,平原,63,68,0.711
+MiniMax M1 80k,MiniMax,11.7,王門,襄平,63,30,0.711
+GPT-5.4 nano (Non-reasoning),OpenAI,11.7,高定,建寧,63,43,0.711
+Nemotron Cascade 2 30B A3B,NVIDIA,11.7,崔勇,長安,63,31,0.711
+Gemini 2.5 Flash Preview (Reasoning),Google,11.7,司馬懿,洛陽,63,96,0.711
+gpt-oss-120b (High),OpenAI,11.6,徹里吉,天水,63,46,0.7499
+K2 Think V2,Institute of Foundation Models,11.5,州泰,新野,63,73,0.3604
+LongCat Flash Lite,LongCat,11.5,朱儁,會稽,63,70,0.3604
+GPT-5 (Minimal),OpenAI,11.4,荀正,壽春,63,33,0.1071
+DeepSeek R1 (Jan '25),DeepSeek,11.4,山越女將,山越,63,59,0.1759
+o1-preview,OpenAI,11.4,諸葛靚,下邳,63,66,0.1071
+HyperCLOVA X SEED Think (32B),Naver,11.4,全懌,吳,63,38,0.1071
+Grok 4.1 Fast (Non-reasoning),SpaceXAI,11.3,蘇飛,江夏,63,66,0.3408
+Mistral Small 4 (Reasoning),Mistral,11.3,張顗,鄴,62,30,1.0759
+GLM-4.6V (Reasoning),Z AI,11.2,郭石,桂陽,62,43,0.3262
+K-EXAONE (Non-reasoning),LG AI Research,11.2,賈範,襄平,62,73,0.3262
+Qwen3 Next 80B A3B (Reasoning),Alibaba,11.2,關彝,江州,62,44,0.3262
+Qwen3.5 9B (Reasoning),Alibaba,11.2,馬鐵,武威,62,56,0.585
+GPT-5.4 mini (Non-reasoning),OpenAI,11.1,毌丘秀,洛陽,62,33,0.2581
+GLM-4.5-Air,Z AI,11.1,魏邈,建業,62,59,0.2581
+Granite 4.2 8B,IBM,11.1,史蹟,廬江,62,32,0.5764
+Grok 4 Fast (Non-reasoning),SpaceXAI,11.1,吳巨,薊,62,26,0.2581
+Ling 3.0 Tiny,InclusionAI,11.1,土安,雲南,63,2,1.4497
+Mi:dm K 2.5 Pro,Korea Telecom,11.0,顧承,吳,62,54,0.375
+Ring-1T,InclusionAI,10.9,閻宇,江陵,61,55,0.3756
+G9v3-3B,AI9Stars,10.8,賈逵,洛陽,61,84,0.0918
+Trinity Large Thinking,Arcee AI,10.8,曹安民,許昌,61,50,0.6026
+Qwen3.5 4B (Non-reasoning),Alibaba,10.8,皇甫嵩,安定,61,73,0.0918
+Mercury 2,Inception,10.8,傅士仁,薊,61,37,0.1383
+INTELLECT-3 (Based on GLM-4.5-Air),Prime Intellect,10.6,向寵,襄陽,61,76,0.3255
+GLM-4.7-Flash (Non-reasoning),Z AI,10.6,千萬,漢中,61,28,0.3255
+GPT-5 (ChatGPT),OpenAI,10.4,王伉,成都,60,61,0.6084
+Solar Open 100B (Reasoning),Upstage,10.4,關統,江州,60,61,0.6084
+Grok 3 Reasoning Beta,SpaceXAI,10.4,牛輔,潼關,60,18,0.6084
+Gemini 2.5 Flash-Lite Preview (Sep '25) (Reasoning),Google,10.4,許定,許昌,60,22,0.6084
+Nemotron 3 Nano Omni 30B A3B Reasoning,NVIDIA,10.3,任峻,洛陽,60,62,0.4915
+GPT-4.1 mini,OpenAI,10.2,審配,鄴,60,83,0.3746
+MiniMax M1 40k,MiniMax,10.0,石鑒,晉陽,60,73,0.0241
+Nova 2.0 Pro Preview (Non-reasoning),Amazon,10.0,孫霸,吳,60,61,0.0241
+gpt-oss-20b (Low),OpenAI,10.0,趙叡,平原,60,38,0.0241
+Qwen3 VL 235B A22B Instruct,Alibaba,9.9,韓莒子,平原,59,50,0.0403
+North Mini Code,Cohere,9.9,董旻,長安,60,24,2.3334
+GPT-5 mini (Minimal),OpenAI,9.9,高幹,鄴,59,53,0.0403
+K2-V2 (High),Institute of Foundation Models,9.9,黃權,梓潼,59,85,0.0403
+Gemini 2.5 Flash (Non-reasoning),Google,9.9,司馬炎,洛陽,59,76,0.0403
+Qwen3 30B A3B 2507 (Reasoning),Alibaba,9.8,董衡,安定,59,41,0.4029
+o1-mini,OpenAI,9.8,申儀,上庸,59,59,0.1934
+DeepSeek V3 0324,DeepSeek,9.7,張著,梓潼,58,35,1.6834
+Ling 2.6 Flash,InclusionAI,9.7,王韜,天水,58,70,0.3069
+Qwen3 Next 80B A3B Instruct,Alibaba,9.6,毌丘甸,洛陽,58,68,0.1605
+Tri-21B-think Preview,Trillion Labs,9.6,士祗,交趾,58,42,0.1605
+Qwen3 Coder 30B A3B Instruct,Alibaba,9.6,司馬望,洛陽,58,79,0.1605
+GPT-4.5 (Preview),OpenAI,9.6,周昕,會稽,58,73,0.1605
+DiffusionGemma 26B A4B,Google,9.5,閻柔,薊,57,70,0.1061
+Qwen3 235B A22B (Reasoning),Alibaba,9.5,王匡,洛陽,57,61,0.1061
+QwQ 32B,Alibaba,9.5,王子服,洛陽,57,58,0.1061
+Qwen3 VL 30B A3B (Reasoning),Alibaba,9.5,王忠,長安,57,21,0.1061
+Gemini 2.0 Flash Thinking Experimental (Jan '25),Google,9.4,蔡勳,襄陽,57,28,0.1277
+Gemma 4 12B (Non-reasoning),Google,9.4,司馬昭,洛陽,57,87,0.1277
+Gemini 2.5 Flash-Lite Preview (Sep '25) (Non-reasoning),Google,9.3,尹楷,鄴,56,42,0.1891
+Llama 4 Maverick,Meta,9.3,嚴政,北平,56,38,0.3427
+Mistral Large 3,Mistral,9.3,孫奮,吳,55,36,0.7352
+Qwen3 Coder Next,Alibaba,9.2,雅丹,天水,54,69,0.9679
+Motif-2-12.7B-Reasoning,Motif Technologies,9.2,皇甫闓,安定,55,64,0.1386
+Mistral Medium 3.1,Mistral,9.2,胡班,濮陽,55,58,0.1386
+Ling-1T,InclusionAI,9.2,崔琰,平原,55,70,0.1386
+Nova Premier,Amazon,9.2,孫松,桂陽,55,41,0.1386
+Solar Pro 2 (Preview) (Reasoning),Upstage,9.1,蔡中,襄陽,54,2,0.0549
+Granite 4.2 3B,IBM,9.1,柳毅,襄平,55,21,0.5752
+Magistral Medium 1,Mistral,9.1,朱光,壽春,54,49,0.0549
+Mistral Medium 3,Mistral,9.0,夏侯儒,陳留,53,67,0.1124
+Llama Nemotron Super 49B v1.5 (Reasoning),NVIDIA,9.0,鞏志,武陵,53,61,0.1124
+Devstral Medium,Mistral,9.0,胡綜,建業,53,77,0.1124
+Mistral Small 4 (Non-reasoning),Mistral,9.0,帶來洞主,雲南,53,54,0.1124
+Tri-21B-Think,Trillion Labs,9.0,張特,薊,53,74,0.1124
+"GPT-4o (March 2025, chatgpt-4o-latest)",OpenAI,9.0,文則,北平,53,32,0.1124
+Gemini 2.0 Flash (Feb '25),Google,8.9,關靖,晉陽,52,72,0.5044
+Claude 3.5 Haiku,Anthropic,8.9,韓範,鄴,52,59,0.5044
+Llama 3.3 Nemotron Super 49B v1 (Reasoning),NVIDIA,8.9,丘建,濮陽,52,65,0.5044
+Gemma 4 E4B (Reasoning),Google,8.9,曹霖,許昌,51,28,1.962
+NVIDIA Nemotron 3 Nano 30B A3B (Reasoning),NVIDIA,8.9,馬遵,天水,52,31,0.5082
+Qwen3 4B 2507 (Reasoning),Alibaba,8.8,季雍,南皮,52,41,0.1538
+MiniCPM5-1B (Reasoning),OpenBMB,8.8,司馬伷,洛陽,52,62,0.1538
+Sarvam 105B (High),Sarvam,8.8,車冑,下邳,52,40,0.1538
+Gemini 2.0 Pro Experimental (Feb '25),Google,8.7,袁熙,鄴,51,68,0.0698
+Nova 2.0 Lite (Non-reasoning),Amazon,8.7,王異,天水,51,82,0.0698
+Devstral Small (May '25),Mistral,8.7,夏侯和,陳留,51,70,0.0698
+Claude 3 Opus,Anthropic,8.7,何楨,廬江,51,74,0.0698
+MiniCPM5-1B (Non-reasoning),OpenBMB,8.7,周㬂,會稽,51,77,0.0698
+Sonar Reasoning,Perplexity,8.7,鍾會,許昌,51,91,0.0698
+Gemini 2.5 Flash Preview (Non-reasoning),Google,8.7,上官子脩,天水,51,38,0.0698
+Devstral 2,Mistral,8.6,孫秀,吳,51,53,0.1639
+Magistral Small 1.2,Mistral,8.6,步騭,廣陵,51,84,0.1639
+Gemini 2.5 Flash-Lite (Reasoning),Google,8.5,郭圖,平原,50,82,0.0028
+DeepSeek V3 (Dec '24),DeepSeek,8.5,范彊,永安,50,33,0.5785
+GPT-4o (Nov '24),OpenAI,8.4,袁燿,壽春,48,41,0.1691
+Nanbeige4.1-3B,Nanbeige,8.4,賈詡,長安,48,97,0.1691
+LFM2.5-2.6B,Liquid AI,8.4,徐璆,壽春,48,62,0.1691
+Qwen3 VL 32B Instruct,Alibaba,8.4,段煨,潼關,48,54,0.1691
+DeepSeek R1 Distill Qwen 32B,DeepSeek,8.4,南蠻軍師,南蠻,48,70,0.1691
+GLM-4.6V (Non-reasoning),Z AI,8.4,闞澤,會稽,49,83,0.2313
+Qwen3 235B A22B (Non-reasoning),Alibaba,8.3,聶友,柴桑,49,61,0.3481
+Magistral Small 1,Mistral,8.2,虞翻,會稽,47,86,0.1984
+Gemini 2.0 Flash (experimental),Google,8.2,惠衢,廬江,47,34,0.1984
+EXAONE 4.0 32B (Reasoning),LG AI Research,8.2,黃射,江夏,47,55,0.1984
+Qwen3 VL 8B (Reasoning),Alibaba,8.2,諸葛恪,吳,47,90,0.1984
+Nova 2.0 Omni (Non-reasoning),Amazon,8.2,法正,長安,47,94,0.1984
+DeepSeek R1 0528 Qwen3 8B,DeepSeek,8.1,尹賞,天水,46,60,0.2853
+Qwen2.5 Max,Alibaba,8.0,應劭,汝南,46,73,0.1684
+Qwen3 VL 30B A3B Instruct,Alibaba,7.9,衛瓘,洛陽,45,79,0.0656
+Hermes 4 - Llama-3.1 70B (Reasoning),Nous Research,7.9,袁春卿,鄴,45,43,0.0656
+Gemini 1.5 Pro (Sep '24),Google,7.9,橋瑁,許昌,45,69,0.0656
+Solar Pro 2 (Preview) (Non-reasoning),Upstage,7.9,士匡,交趾,45,62,0.0656
+DeepSeek R1 Distill Llama 70B,DeepSeek,7.9,秦宜祿,晉陽,45,17,0.0656
+Claude 3.5 Sonnet (Oct '24),Anthropic,7.9,張羨,新野,45,55,0.0656
+DeepSeek R1 Distill Qwen 14B,DeepSeek,7.8,王嗣,成都,43,61,0.0162
+Falcon-H1R-7B,TII UAE,7.8,王必,陳留,43,57,0.0162
+GPT-4.1 nano,OpenAI,7.8,蔣濟,廣陵,43,85,0.0162
+Solar Pro 3,Upstage,7.8,曹宇,許昌,43,42,0.8009
+Ling-flash-2.0,InclusionAI,7.8,辛評,平原,43,75,0.0162
+Gemma 4 E2B (Reasoning),Google,7.8,孫朗,長沙,43,30,0.0162
+Qwen3 Omni 30B A3B (Reasoning),Alibaba,7.8,張裔,成都,43,67,0.0162
+GPT-4o (Aug '24),OpenAI,7.7,公孫晃,襄平,42,64,0.0666
+Qwen2.5 Instruct 72B,Alibaba,7.7,左靈,長安,42,49,0.0666
+Sonar,Perplexity,7.7,士武,交趾,42,57,0.0666
+Step3 VL 10B,StepFun,7.7,徐詳,吳,42,63,0.0666
+Llama 3.3 Instruct 70B,Meta,7.7,陳表,廬江,42,73,0.0666
+Qwen3 30B A3B (Reasoning),Alibaba,7.6,王甫,成都,40,78,0.2999
+Sonar Pro,Perplexity,7.6,夏侯榮,陳留,40,66,0.2999
+Devstral Small (Jul '25),Mistral,7.6,耿武,洛陽,40,61,0.2999
+QwQ 32B-Preview,Alibaba,7.6,胡濟,新野,40,68,0.2999
+GLM-4.5V (Reasoning),Z AI,7.6,諸葛緒,下邳,40,27,0.2999
+Mistral Large 2 (Nov '24),Mistral,7.6,全柔,吳,40,55,0.2999
+Devstral Small 2,Mistral,7.5,袁遺,汝南,39,73,0.1679
+Llama 3.1 Nemotron Ultra 253B v1 (Reasoning),NVIDIA,7.5,夏侯玄,陳留,39,75,0.1679
+Qwen3 30B A3B 2507 Instruct,Alibaba,7.5,何進,宛,39,6,0.1679
+ERNIE 4.5 300B A47B,Baidu,7.5,孫和,吳,39,67,0.1679
+Hermes 4 - Llama-3.1 405B (Reasoning),Nous Research,7.5,孫休,吳,39,78,0.1679
+Solar Pro 2 (Reasoning),Upstage,7.5,張琰,晉陽,39,30,0.1679
+NVIDIA Nemotron Nano 12B v2 VL (Reasoning),NVIDIA,7.5,毛玠,陳留,39,60,0.1679
+Gemma 4 E4B (Non-reasoning),Google,7.5,衛茲,陳留,38,62,0.4994
+Granite 4.1 30B,IBM,7.4,金禕,長安,38,63,0.0849
+NVIDIA Nemotron Nano 9B V2 (Reasoning),NVIDIA,7.4,士廞,交趾,38,55,0.0849
+Hermes 4 - Llama-3.1 405B (Non-reasoning),Nous Research,7.4,諸葛亮,成都,38,100,0.0849
+Gemini 2.0 Flash-Lite (Feb '25),Google,7.4,孫魯班,吳,38,74,0.0849
+Llama Nemotron Super 49B v1.5 (Non-reasoning),NVIDIA,7.4,杜瓊,成都,38,63,0.0849
+Qwen3 32B (Non-reasoning),Alibaba,7.3,王戎,下邳,36,72,0.3148
+GPT-4o (May '24),OpenAI,7.3,溫恢,晉陽,36,73,0.3148
+Gemini 2.0 Flash-Lite (Preview),Google,7.3,郝普,新野,36,42,0.3148
+Llama 3.1 Nemotron Nano 4B v1.1 (Reasoning),NVIDIA,7.3,夏侯獻,陳留,36,64,0.3148
+Kimi Linear 48B A3B Instruct,Kimi,7.3,金尚,壽春,36,60,0.3148
+Llama 3.1 Instruct 405B,Meta,7.3,吳綱,廬江,36,65,0.3148
+Llama 3.3 Nemotron Super 49B v1 (Non-reasoning),NVIDIA,7.3,士壹,交趾,36,67,0.3148
+Qwen3 VL 8B Instruct,Alibaba,7.3,趙咨,宛,36,56,0.3148
+Qwen3 4B (Reasoning),Alibaba,7.2,王朗,下邳,35,79,0.3643
+LFM2.5-8B-A1B,Liquid AI,7.2,姜敘,天水,35,56,0.3643
+Qwen3 32B (Reasoning),Alibaba,7.2,朱鑠,洛陽,35,55,0.3643
+Claude 3.5 Sonnet (June '24),Anthropic,7.2,曹爽,許昌,35,30,0.3643
+Llama 3.1 Tulu3 405B,Allen Institute for AI,7.2,沮授,鄴,35,90,0.3643
+GPT-4o (ChatGPT),OpenAI,7.2,張既,長安,35,75,0.3643
+Ring-flash-2.0,InclusionAI,7.2,程武,濮陽,35,75,0.3643
+Pixtral Large,Mistral,7.1,傅嘏,長安,35,81,0.3369
+Olmo 3.1 32B Think,Allen Institute for AI,7.1,鮑勛,濮陽,35,74,0.3369
+Mistral Small 3.1,Mistral,7.1,張紹,綿竹關,32,31,3.5021
+Grok 2 (Dec '24),SpaceXAI,7.1,濮陽興,濮陽,35,70,0.3369
+GPT-5 nano (Minimal),OpenAI,7.1,賴恭,零陵,35,60,0.3369
+Gemini 1.5 Flash (Sep '24),Google,7.1,劉基,建業,35,60,0.3369
+Qwen3 VL 4B (Reasoning),Alibaba,7.0,何氏,宛,34,65,0.304
+GPT-4 Turbo,OpenAI,7.0,虞汜,會稽,34,74,0.304
+Solar Pro 2 (Non-reasoning),Upstage,7.0,黃琬,江夏,34,71,0.304
+Mistral Small 3.2,Mistral,7.0,楊密,天水,33,51,2.1111
+Nova Pro,Amazon,7.0,射堅,長安,34,66,0.304
+Command A,Cohere,7.0,蔣琬,零陵,34,84,0.304
+Qwen3.5 2B (Reasoning),Alibaba,6.9,蒯良,襄陽,33,88,0.0876
+Llama 3.1 Nemotron Instruct 70B,NVIDIA,6.9,華歆,平原,33,82,0.0876
+Llama 3.1 Instruct 8B,Meta,6.9,韓玄,洛陽,33,7,0.0876
+Grok Beta,SpaceXAI,6.9,簡雍,成都,33,70,0.0876
+Qwen2.5 Instruct 32B,Alibaba,6.9,孫乾,江州,33,78,0.0876
+NVIDIA Nemotron 3 Nano 30B A3B (Non-reasoning),NVIDIA,6.8,徐邈,薊,32,67,0.1624
+NVIDIA Nemotron Nano 9B V2 (Non-reasoning),NVIDIA,6.8,宗預,宛,32,65,0.1624
+Mistral Large 2 (Jul '24),Mistral,6.8,戴員,建業,32,52,0.1624
+Qwen3 4B 2507 Instruct,Alibaba,6.7,王思,濮陽,30,63,0.072
+Qwen2.5 Coder Instruct 32B,Alibaba,6.7,王累,成都,30,78,0.072
+Qwen3 14B (Non-reasoning),Alibaba,6.7,宋忠,襄陽,30,64,0.072
+GPT-4,OpenAI,6.7,杜預,長安,30,85,0.072
+GLM-4.5V (Non-reasoning),Z AI,6.7,裴潛,洛陽,30,74,0.072
+Mistral Small 3,Mistral,6.7,費禕,江夏,30,83,0.072
+Gemini 2.5 Flash-Lite (Non-reasoning),Google,6.7,姚伷,江州,30,66,0.072
+Nova Lite,Amazon,6.7,呂凱,雲南,30,66,0.072
+GPT-4o mini,OpenAI,6.7,韓胤,廬江,29,64,0.2617
+Hermes 4 - Llama-3.1 70B (Non-reasoning),Nous Research,6.7,吳質,北海,29,64,0.2617
+Qwen3 30B A3B (Non-reasoning),Alibaba,6.6,魏攸,北平,28,73,0.0608
+DeepSeek-V2.5 (Dec '24),DeepSeek,6.6,黃月英,成都,28,88,0.0608
+Qwen3 4B (Non-reasoning),Alibaba,6.6,常林,晉陽,28,70,0.0608
+Llama 3.1 Instruct 70B,Meta,6.6,孫皓,吳,28,31,0.0608
+Granite 4.1 8B,IBM,6.6,張春華,洛陽,28,79,0.0608
+Sarvam 30B (High),Sarvam,6.6,陳化,汝南,28,60,0.0608
+Gemini 2.0 Flash Thinking Experimental (Dec '24),Google,6.6,鄭度,成都,28,74,0.0608
+DeepSeek-V2.5,DeepSeek,6.6,董允,江陵,28,78,0.0608
+Olmo 3.1 32B Instruct,Allen Institute for AI,6.5,陰夔,鄴,27,64,0.0937
+Mistral Saba,Mistral,6.5,閻象,壽春,27,70,0.0937
+DeepSeek R1 Distill Llama 8B,DeepSeek,6.5,王脩,北海,27,76,0.0937
+Gemma 4 E2B (Non-reasoning),Google,6.5,何晏,宛,27,71,0.0937
+Olmo 3 32B Think,Allen Institute for AI,6.5,蒯越,襄陽,27,82,0.0937
+Llama 4 Scout,Meta,6.5,曹羲,許昌,26,50,2.0703
+Gemini 1.5 Pro (May '24),Google,6.4,衛臻,陳留,26,81,0.0097
+R1 1776,Perplexity,6.4,荀攸,陳留,26,94,0.0097
+Qwen2.5 Turbo,Alibaba,6.4,鍾進,許昌,26,38,0.0097
+Reka Flash (Sep '24),Reka AI,6.4,辛敞,平原,26,42,0.0097
+Llama 3.2 Instruct 90B (Vision),Meta,6.4,張肅,成都,26,58,0.0097
+Solar Mini,Upstage,6.4,貂蟬,洛陽,26,81,0.0097
+Qwen3 14B (Reasoning),Alibaba,6.4,張魯,漢中,26,73,0.0097
+Celeris-1,Celeris,6.3,畢軌,鄴,25,42,1.8367
+Grok-1,SpaceXAI,6.3,殷觀,江陵,25,63,0.4263
+Qwen2 Instruct 72B,Alibaba,6.3,閻圃,漢中,25,81,0.4263
+Phi-4 Mini Instruct,Microsoft,6.3,桓階,長沙,25,67,0.4263
+EXAONE 4.0 32B (Non-reasoning),LG AI Research,6.3,嵇康,許昌,25,67,0.4263
+Qwen3.5 2B (Non-reasoning),Alibaba,6.2,耿紀,許昌,25,60,0.1926
+Gemini 1.5 Flash-8B,Google,6.2,崔氏,平原,25,55,0.1926
+Qwen3.5 0.8B (Reasoning),Alibaba,6.1,荀諶,鄴,25,78,0.158
+DeepHermes 3 - Mistral 24B Preview (Non-reasoning),Nous Research,6.1,諸葛均,下邳,25,51,0.158
+Jamba 1.7 Large,AI21 Labs,6.1,辛毘,平原,25,79,0.158
+Granite 4.0 H Small,IBM,6.0,伊籍,江州,23,77,0.4585
+Ministral 3 14B,Mistral,6.0,劉度,零陵,23,26,1.5702
+Jamba 1.5 Large,AI21 Labs,6.0,華覈,吳,23,71,0.4585
+Qwen3 Omni 30B A3B Instruct,Alibaba,6.0,何曾,許昌,23,70,0.4585
+Hermes 3 - Llama-3.1 70B,Nous Research,6.0,桓鄰,交趾,23,64,0.4585
+Qwen3 8B (Non-reasoning),Alibaba,6.0,魏諷,小沛,23,71,0.4585
+DeepSeek-Coder-V2,DeepSeek,6.0,許汜,許昌,23,54,0.4585
+OLMo 2 32B,Allen Institute for AI,6.0,顧譚,吳,23,69,0.4585
+Jamba 1.6 Large,AI21 Labs,6.0,謝景,宛,23,57,0.4585
+LFM2 24B A2B,Liquid AI,5.9,蔣斌,零陵,23,64,0.2426
+Gemini 1.5 Flash (May '24),Google,5.9,諸葛喬,成都,23,75,0.2426
+Phi-4,Microsoft,5.9,黨均,襄陽,23,77,0.2426
+Claude 3 Sonnet,Anthropic,5.9,馬良,江州,23,84,0.2426
+Nova Micro,Amazon,5.9,萬彧,建業,23,70,0.2426
+Granite 4.1 3B,IBM,5.9,盧毓,薊,23,71,0.2426
+Mistral Small (Sep '24),Mistral,5.8,王肅,下邳,21,76,0.2238
+Gemini 1.0 Ultra,Google,5.8,王商,成都,21,74,0.2238
+Phi-3 Mini Instruct 3.8B,Microsoft,5.8,許攸,鄴,21,81,0.2238
+NVIDIA Nemotron Nano 12B v2 VL (Non-reasoning),NVIDIA,5.8,吳國太,長沙,21,67,0.2238
+Gemma 3n E4B Instruct Preview (May '25),Google,5.8,司馬朗,洛陽,21,71,0.2238
+Phi-4 Multimodal Instruct,Microsoft,5.8,趙範,鄴,21,32,0.2238
+Qwen2.5 Coder Instruct 7B,Alibaba,5.8,逢紀,鄴,21,84,0.2238
+Mistral Large (Feb '24),Mistral,5.8,劉璿,成都,21,36,0.2238
+Mixtral 8x22B Instruct,Mistral,5.7,王祥,下邳,19,68,0.0063
+Llama 2 Chat 7B,Meta,5.7,國淵,北海,19,71,0.0063
+Llama 3.2 Instruct 3B,Meta,5.7,薛悌,濮陽,19,65,0.0063
+MiniCPM-V 4.6 1.3B,OpenBMB,5.7,仲長統,濮陽,19,60,0.0063
+Jamba Reasoning 3B,AI21 Labs,5.7,呂壹,建業,19,40,0.0063
+Qwen3 VL 4B Instruct,Alibaba,5.7,韋昭,建業,20,65,0.3273
+Qwen1.5 Chat 110B,Alibaba,5.7,王楷,濮陽,20,57,0.3273
+Reka Flash 3,Reka AI,5.6,隱蕃,北海,18,67,0.0392
+Olmo 3 7B Think,Allen Institute for AI,5.6,王元姬,下邳,18,80,0.0392
+Claude 2.1,Anthropic,5.6,韓珩,薊,18,60,0.0392
+Claude 3 Haiku,Anthropic,5.6,胡沖,汝南,18,58,0.0392
+OLMo 2 7B,Allen Institute for AI,5.6,顧雍,吳,18,80,0.0392
+Molmo 7B-D,Allen Institute for AI,5.6,周群,梓潼,18,67,0.0392
+Ling-mini-2.0,InclusionAI,5.5,王謀,成都,16,62,0.2553
+DeepSeek R1 Distill Qwen 1.5B,DeepSeek,5.5,孔伷,陳留,16,67,0.2553
+DeepSeek-V2-Chat,DeepSeek,5.5,司馬芝,洛陽,16,61,0.2553
+Claude 2.0,Anthropic,5.5,荀勗,許昌,16,77,0.2553
+Mistral Small (Feb '24),Mistral,5.5,蔣顯,零陵,16,60,0.2553
+Mistral Medium,Mistral,5.5,邵悌,平原,16,72,0.2553
+GPT-3.5 Turbo,OpenAI,5.5,向朗,襄陽,16,72,0.2553
+Ministral 3 8B,Mistral,5.5,曹奐,許昌,18,30,2.1937
+Llama 3 Instruct 70B,Meta,5.5,徐氏,長沙,16,75,0.2553
+Qwen Chat 72B,Alibaba,5.4,尹默,梓潼,15,65,0.088
+Arctic Instruct,Snowflake,5.4,郭嘉,許昌,15,98,0.088
+LFM 40B,Liquid AI,5.4,韓嵩,襄陽,15,70,0.088
+Llama 3.2 Instruct 11B (Vision),Meta,5.4,薛珝,小沛,15,68,0.088
+Qwen3.5 0.8B (Non-reasoning),Alibaba,5.4,孟光,洛陽,15,64,0.088
+PALM-2,Google,5.4,楊弘,壽春,15,76,0.088
+Gemini 1.0 Pro,Google,5.3,士孫瑞,洛陽,13,65,0.1464
+DeepSeek Coder V2 Lite Instruct,DeepSeek,5.3,小喬,桂陽,13,74,0.1464
+"Sarvam M (Reasoning, Based on Mistral Small 3.1)",Sarvam,5.3,孫資,晉陽,13,79,0.1464
+Llama 2 Chat 70B,Meta,5.3,董朝,會稽,13,54,0.1464
+DeepSeek LLM 67B Chat (V1),DeepSeek,5.3,婁圭,宛,13,83,0.1464
+Llama 2 Chat 13B,Meta,5.3,殷禮,吳,14,72,0.48
+Command-R+ (Apr '24),Cohere,5.3,袁胤,壽春,14,39,0.48
+OpenChat 3.5 (1210),OpenChat,5.3,王沈,晉陽,14,66,0.48
+DBRX Instruct,Databricks,5.3,荀彧,陳留,14,95,0.48
+Exaone 4.0 1.2B (Reasoning),LG AI Research,5.3,荀粲,許昌,14,68,0.48
+Olmo 3 7B Instruct,Allen Institute for AI,5.2,夏侯令女,許昌,10,71,0.0362
+Exaone 4.0 1.2B (Non-reasoning),LG AI Research,5.2,孫亮,吳,10,70,0.0362
+LFM2.5-1.2B-Thinking,Liquid AI,5.2,張溫,吳,10,69,0.0362
+Jamba 1.7 Mini,AI21 Labs,5.2,傅巽,長安,10,69,0.0362
+LFM2 2.6B,Liquid AI,5.2,步練師,建業,10,64,0.0362
+LFM2.5-1.2B-Instruct,Liquid AI,5.2,劉琦,濮陽,10,62,0.0362
+Jamba 1.5 Mini,AI21 Labs,5.2,桓範,小沛,11,80,0.3642
+Granite 4.0 H 1B,IBM,5.2,蔡琰,陳留,11,76,0.3642
+Qwen3 1.7B (Reasoning),Alibaba,5.2,是儀,建業,11,81,0.3642
+Jamba 1.6 Mini,AI21 Labs,5.2,徐奕,下邳,11,60,0.3642
+Qwen3 8B (Reasoning),Alibaba,5.2,尹大目,鄴,9,34,0.57
+Mixtral 8x7B Instruct,Mistral,5.1,王連,宛,9,69,0.0143
+Gemma 3 270M,Google,5.1,郭攸之,宛,9,66,0.0143
+Apertus 70B Instruct,Swiss AI Initiative,5.1,何宗,成都,9,65,0.0143
+Granite 4.0 Micro,IBM,5.1,顧邵,吳,9,64,0.0143
+DeepHermes 3 - Llama-3.1 8B Preview (Non-reasoning),Nous Research,5.1,陳琳,平原,9,74,0.0143
+Mistral 7B Instruct,Mistral,5.0,夏侯楙,陳留,7,5,0.0352
+Claude Instant,Anthropic,5.0,環氏,下邳,7,65,0.0352
+Command-R (Mar '24),Cohere,5.0,戲志才,許昌,7,85,0.0352
+Qwen Chat 14B,Alibaba,5.0,蔣幹,柴桑,7,65,0.0352
+Llama 65B,Meta,5.0,甄氏,鄴,7,72,0.0352
+Granite 4.0 1B,IBM,5.0,秦宓,成都,7,70,0.0352
+Molmo2-8B,Allen Institute for AI,5.0,張範,洛陽,7,64,0.0352
+LFM2 8B A1B,Liquid AI,4.9,王允,洛陽,6,67,0.3018
+Granite 3.3 8B (Non-reasoning),IBM,4.9,王業,武陵,6,35,0.3018
+Qwen3 1.7B (Non-reasoning),Alibaba,4.9,郭女王,許昌,6,70,0.3018
+Gemma 3 27B Instruct,Google,4.9,劉璋,江夏,5,9,1.2455
+Ministral 3 3B,Mistral,4.8,韓馥,許昌,3,27,0.7472
+Qwen3 0.6B (Non-reasoning),Alibaba,4.8,嚴畯,吳,2,70,0.0335
+LFM2 1.2B,Liquid AI,4.8,曹華,許昌,2,60,0.0335
+Gemma 3 4B Instruct,Google,4.8,董白,長安,2,43,0.0335
+LFM2.5-VL-1.6B,Liquid AI,4.8,王粲,濮陽,3,79,0.1667
+Qwen3 0.6B (Reasoning),Alibaba,4.8,邯鄲淳,許昌,3,66,0.1667
+Granite 4.0 350M,IBM,4.8,譙周,成都,3,65,0.1667
+Llama 3.2 Instruct 1B,Meta,4.8,張昭,下邳,3,84,0.1667
+Tiny Aya Global,Cohere,4.8,丁儀,小沛,3,64,0.1667
+Llama 3 Instruct 8B,Meta,4.8,杜氏,晉陽,3,50,0.1667
 Apertus 8B Instruct,Swiss AI Initiative,4.8,黃皓,成都,1,30,0.2337
 Granite 4.0 H 350M,IBM,4.8,岑昏,建業,1,33,0.2337
 Gemma 3n E4B Instruct,Google,4.8,馮氏,壽春,1,45,0.2337
-Gemma 3n E2B Instruct,Google,4.8,許慈,新野,4,62,0.5381
-Gemma 3 1B Instruct,Google,4.8,全尚,吳,4,12,0.5381
-NVIDIA Nemotron 3 Nano 4B,NVIDIA,4.8,曹節,許昌,4,68,0.5381
-Gemma 3 12B Instruct,Google,3.8,劉禪,成都,5,9,1.3166
-K2 Horizon 0.9B,Institute of Foundation Models,3.0,董扶,成都,4,67,0.7718
+Gemma 3n E2B Instruct,Google,4.8,許慈,新野,4,62,0.6338
+Gemma 3 1B Instruct,Google,4.8,全尚,吳,4,12,0.6338
+NVIDIA Nemotron 3 Nano 4B,NVIDIA,4.8,曹節,許昌,4,68,0.6338
+Gemma 3 12B Instruct,Google,3.8,劉禪,成都,5,9,1.4275
+K2 Horizon 0.9B,Institute of Foundation Models,3.0,董扶,成都,4,67,0.8675

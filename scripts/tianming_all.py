@@ -48,8 +48,12 @@ def main():
     ii_sorted = sorted(m[1] for m in models)
     cost_sorted = sorted(m[2] for m in models if m[2] is not None)
 
+    # 乱入人物过滤：所属为空即 DLC/联动/模板人物（战国秦汉、水浒、日本战国、
+    # 蒙元、银英传、莱莎工房、异族模板等 130 人），天命池只用真三国武将
     officers = []
     for r in csv.DictReader(open(os.path.join(ROOT, "data", "sanguo14_officers.csv"), encoding="utf-8")):
+        if not r["affiliation"].strip():
+            continue
         try:
             officers.append((r["name"], int(r["warfare"]), int(r["intellect"]), r["affiliation"]))
         except (ValueError, KeyError):
