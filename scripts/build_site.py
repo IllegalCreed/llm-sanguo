@@ -115,6 +115,73 @@ def load_tianming(yanyi_by_model):
     return out
 
 
+def load_pinyin(names):
+    try:
+        from pypinyin import lazy_pinyin
+        return {n: "".join(lazy_pinyin(n)) for n in names}
+    except ImportError:
+        return {}
+
+
+def load_drift(seated_canonicals):
+    """构建江湖变迁数据：各快照王座序列、在席 II 漂移、新进榜主流。"""
+    import glob as _g
+    snaps = sorted(_g.glob(os.path.join(ROOT, "data", "aa_models_snapshot_*.csv")))
+    drift = {"snaps": [], "throne": [], "movers": [], "newcomers": []}
+    if len(snaps) < 2:
+        return drift
+
+    def top_of(path):
+        top = ("", -1)
+        for r in csv.DictReader(open(path, encoding="utf-8")):
+            try:
+                ii = float(r["intelligence_index"].replace("*", ""))
+            except ValueError:
+                continue
+            if ii > top[1]:
+                top = (r["model"], ii)
+        return top
+
+    def best_map(path):
+        m = {}
+        for r in csv.DictReader(open(path, encoding="utf-8")):
+            try:
+                ii = float(r["intelligence_index"].replace("*", ""))
+            except ValueError:
+                continue
+            k = canonical_name(r["model"])
+            if ii > m.get(k, (-1, ""))[0]:
+                m[k] = (ii, r["model"])
+        return m
+
+    for p in snaps:
+        d = os.path.basename(p).replace("aa_models_snapshot_", "").replace(".csv", "")
+        t = top_of(p)
+        drift["snaps"].append(d)
+        drift["throne"].append({"date": d, "model": t[0], "ii": t[1]})
+
+    old_m, new_m = best_map(snaps[-2]), best_map(snaps[-1])
+    d_old, d_new = drift["snaps"][-2], drift["snaps"][-1]
+    top_new = max(v[0] for v in new_m.values())
+
+    for cn, display in seated_canonicals.items():
+        a, b = old_m.get(cn), new_m.get(cn)
+        if a and b and a[0] != b[0]:
+            drift["movers"].append({"general": display, "model": b[1],
+                                    "old_ii": a[0], "new_ii": b[0],
+                                    "old_dw": round(a[0] / top_new * 100),
+                                    "new_dw": round(b[0] / top_new * 100)})
+    drift["movers"].sort(key=lambda x: -abs(x["new_ii"] - x["old_ii"]))
+
+    for cn, (ii, model) in new_m.items():
+        if cn not in old_m and ii >= 45:
+            drift["newcomers"].append({"model": model, "ii": ii,
+                                       "dw": round(ii / top_new * 100),
+                                       "seated": cn in {c for c in seated_canonicals}})
+    drift["newcomers"].sort(key=lambda x: -x["ii"])
+    return drift
+
+
 def load_seat_history():
     path = os.path.join(ROOT, "mapping", "seat_history.csv")
     hist = {}
@@ -238,6 +305,14 @@ h1 span{color:var(--red); -webkit-text-stroke:2px var(--ink)}
 .modeTab.on{background:var(--ink);color:var(--yellow)}
 .modeTab.on#mode-yanyi{background:var(--red);color:#fff}
 .modeTab.on#mode-tianming{background:var(--blue);color:#fff}
+.driftwrap{display:flex;flex-direction:column;gap:22px}
+.tl{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+.tlItem{display:flex;gap:10px;align-items:baseline;font-size:15px;line-height:1.6}
+.tlDate{flex-shrink:0;font-family:'Bangers',cursive;font-size:13px;letter-spacing:1px;background:var(--ink);color:#fff;padding:2px 8px}
+.tlBody small{display:block}
+.tlGroup{margin-bottom:14px}
+.tlStamp{display:inline-block;background:var(--red);color:#fff;border:3px solid var(--ink);padding:3px 12px;font-size:15px;letter-spacing:2px;margin-bottom:8px;box-shadow:3px 3px 0 var(--ink);transform:rotate(-1.5deg)}
+.chip2{display:inline-block;border:2.5px solid var(--ink);background:#fff;padding:3px 10px;font-size:13.5px;margin:2px 4px 2px 0;box-shadow:2px 2px 0 rgba(20,20,20,.3)}
 .ttable{width:100%;border-collapse:collapse;border:4px solid var(--ink);background:var(--cream);box-shadow:8px 8px 0 var(--ink);font-size:14.5px}
 .ttable th{font-family:inherit;letter-spacing:2px;font-size:14px;padding:9px 8px;border:3px solid var(--ink);background:var(--ink);color:var(--yellow);position:sticky;top:0}
 .ttable td{padding:6.5px 8px;border:2px solid rgba(20,20,20,.55);letter-spacing:.5px}
@@ -378,6 +453,7 @@ h1 span{color:var(--red); -webkit-text-stroke:2px var(--ink)}
   <div class="modeTabs">
     <button class="modeTab on" id="mode-yanyi">📖 演义版 · __YN__ 席精修</button>
     <button class="modeTab" id="mode-tianming">🔭 天命版 · __TM__ 席全量</button>
+    <button class="modeTab" id="mode-drift">📜 江湖变迁</button>
   </div>
 
   <div class="toolbar" id="yanyi-toolbar">
@@ -409,6 +485,9 @@ h1 span{color:var(--red); -webkit-text-stroke:2px var(--ink)}
 const FACTIONS = __FACTIONS__;
 const DATA = __DATA__;
 const TIANMING = __TIANMING__;
+const PINYIN = __PINYIN__;
+const DRIFT = __DRIFT__;
+const SEATHIST = __SEATHIST__;
 
 const tabsEl=document.getElementById('tabs'), grid=document.getElementById('grid'),
       qEl=document.getElementById('q'), sortEl=document.getElementById('sortbtn'),
@@ -487,7 +566,8 @@ function filtered(){
     if(faction!=='全部'&&d.faction!==faction) return false;
     if(keyword){
       const k=keyword.toLowerCase();
-      if(!(d.general.toLowerCase().includes(k)||d.model.toLowerCase().includes(k)
+      const py=(PINYIN[d.general]||'');
+      if(!(d.general.toLowerCase().includes(k)||py.includes(k)||d.model.toLowerCase().includes(k)
         ||(d.creator||'').toLowerCase().includes(k)||d.note.toLowerCase().includes(k))) return false;
     }
     return true;
@@ -504,15 +584,19 @@ function filtered(){
 
 let mode='yanyi';
 function bindModes(){
-  const y=document.getElementById('mode-yanyi'), t=document.getElementById('mode-tianming');
+  const y=document.getElementById('mode-yanyi'), t=document.getElementById('mode-tianming'),
+        d=document.getElementById('mode-drift');
   if(!TIANMING.length) t.style.display='none';
-  y.onclick=()=>{mode='yanyi';y.classList.add('on');t.classList.remove('on');render();};
-  t.onclick=()=>{mode='tianming';t.classList.add('on');y.classList.remove('on');render();};
+  if(!DRIFT||!DRIFT.snaps||!DRIFT.snaps.length) d.style.display='none';
+  const pick=(m,btn)=>{mode=m;[y,t,d].forEach(b=>b.classList.toggle('on',b===btn));render();};
+  y.onclick=()=>pick('yanyi',y);
+  t.onclick=()=>pick('tianming',t);
+  d.onclick=()=>pick('drift',d);
 }
 function renderTianming(){
   const k=keyword.toLowerCase();
   const list=TIANMING.filter(d=>!k||d.model.toLowerCase().includes(k)||d.general.toLowerCase().includes(k)
-    ||(d.creator||'').toLowerCase().includes(k));
+    ||(PINYIN[d.general]||'').includes(k)||(d.creator||'').toLowerCase().includes(k));
   const rows=list.map((d,i)=>`<tr>
     <td class="b">${i+1}</td>
     <td style="font-family:'Courier New',monospace;font-weight:bold">${d.model}</td>
@@ -530,7 +614,49 @@ function renderTianming(){
       纯强度百分位自动分配（无视阵营典故）· 契合度越低越贴合 · ${list.length} 席</div>`;
 }
 
+function renderDrift(){
+  const k=keyword.toLowerCase();
+  const hit=(...ss)=>!k||ss.some(x=>(x||'').toLowerCase().includes(k));
+  const throne=DRIFT.throne.map(t=>`<div class="tlItem">
+      <span class="tlDate">${t.date}</span>
+      <span class="tlBody">王座：<b class="bangers" style="font-size:17px">${t.model}</b> <span class="bangers">II ${t.ii.toFixed(1)}</span></span>
+    </div>`).join('');
+  const changedThrone = DRIFT.throne.length>1 &&
+    DRIFT.throne[DRIFT.throne.length-2].model!==DRIFT.throne[DRIFT.throne.length-1].model;
+  const movers=DRIFT.movers.length?DRIFT.movers.map(m=>`<div class="tlItem">
+      <span class="tlDate">${DRIFT.snaps[DRIFT.snaps.length-2]}→${DRIFT.snaps[DRIFT.snaps.length-1]}</span>
+      <span class="tlBody">${m.general}（${m.model}）II ${m.old_ii.toFixed(1)}→${m.new_ii.toFixed(1)}，折算武力 ${m.old_dw}→${m.new_dw}</span>
+    </div>`).join(''):'<div class="tlItem"><span class="tlBody">在席模型 II 无变化——天下暂安</span></div>';
+  const news=DRIFT.newcomers.length?DRIFT.newcomers.map(n=>`<span class="chip2">${n.model} <b class="bangers">II ${n.ii.toFixed(1)}</b>${n.seated?'':' · 未设席'}</span>`).join(''):'';
+  const hist={};
+  SEATHIST.forEach(h=>{ if(hit(h.general,h.old_model,h.new_model,h.reason)) (hist[h.date]=hist[h.date]||[]).push(h); });
+  const dates=Object.keys(hist).sort().reverse();
+  const timeline=dates.map(d=>`<div class="tlGroup"><div class="tlStamp">${d}</div>
+      ${hist[d].map(h=>`<div class="tlItem"><span class="tlBody"><b style="font-size:16px">${h.general}</b>：
+        ${h.old_model?h.old_model:'（新席）'} → ${h.new_model?h.new_model:'（去职）'}
+        <small style="opacity:.7">${h.reason}</small></span></div>`).join('')}
+    </div>`).join('')||'<div class="tlItem"><span class="tlBody">暂无匹配</span></div>';
+  return `<div class="driftwrap">
+    <div class="bio san" style="background:var(--cream)"><h3>王座序列 <span class="tag">THRONE</span></h3>
+      ${changedThrone?'<p style="color:var(--red)">⚠️ 王座易主——吕布位待人工禅让，见 docs/DRIFT.md</p>':''}
+      ${news?`<p style="margin:6px 0"><b>新进榜主流：</b>${news}</p>`:''}
+      <div class="tl">${throne}</div></div>
+    <div class="bio san" style="background:#fff"><h3>数值漂移（在席） <span class="tag">DRIFT</span></h3>
+      <p style="opacity:.7;font-size:13px">模型不成长——变化皆因榜首通胀/新秀进榜/降价/份额迁移</p>
+      <div class="tl">${movers}</div></div>
+    <div class="bio llm"><h3>席位易主台账 <span class="tag">SEAT HISTORY</span></h3>
+      <div class="tl">${timeline}</div></div>
+  </div>`;
+}
+
 function render(){
+  if(mode==='drift'){
+    tabsEl.style.display='none'; sortEl.style.display='none';
+    fhEl.classList.remove('show'); emptyEl.style.display='none';
+    grid.style.display='block';
+    grid.innerHTML=renderDrift();
+    return;
+  }
   if(mode==='tianming'){
     tabsEl.style.display='none'; sortEl.style.display='none';
     fhEl.classList.remove('show'); emptyEl.style.display='none';
@@ -730,11 +856,33 @@ def main():
             if r["model"]:
                 yanyi_by_model[canonical_name(r["model"])] = r["general"]
     tianming = load_tianming(yanyi_by_model)
+    seat_hist_rows = []
+    _sh = os.path.join(ROOT, "mapping", "seat_history.csv")
+    if os.path.exists(_sh):
+        seat_hist_rows = list(csv.DictReader(open(_sh, encoding="utf-8")))
     snap_glob = sorted(glob.glob(os.path.join(ROOT, "data", "aa_models_snapshot_*.csv")))[-1]
     snap_date = os.path.basename(snap_glob).replace("aa_models_snapshot_", "").replace(".csv", "")
     snap_count = sum(1 for _ in open(snap_glob, encoding="utf-8")) - 1
     scored = sum(1 for d in data if d["ii"])
+    seated_canonicals = {}
+    for d in data:
+        seated_canonicals[canonical_name(d["model"])] = d["general"]
+    names = {d["general"] for d in data}
+    try:
+        names |= {t["general"] for t in tianming}
+    except NameError:
+        tianming = load_tianming(yanyi_by_model)
+    seat_hist_rows = []
+    _sh = os.path.join(ROOT, "mapping", "seat_history.csv")
+    if os.path.exists(_sh):
+        seat_hist_rows = list(csv.DictReader(open(_sh, encoding="utf-8")))
+        names |= {t["general"] for t in tianming}
+    pinyin = load_pinyin(names)
+    drift = load_drift(seated_canonicals)
     html = (TEMPLATE
+            .replace("__PINYIN__", json.dumps(pinyin, ensure_ascii=False))
+            .replace("__DRIFT__", json.dumps(drift, ensure_ascii=False))
+            .replace("__SEATHIST__", json.dumps(seat_hist_rows, ensure_ascii=False))
             .replace("__SNAPDATE__", snap_date)
             .replace("__SNAPCOUNT__", str(snap_count))
             .replace("__ANCHORS__", str(len(ANCHORS)))
