@@ -231,7 +231,7 @@ def main():
             "derived_intellect": (
                 round((1 - bisect.bisect_left(costs, m["cost"]) / (len(costs) - 1)) * 100)
                 if m and m.get("cost") is not None and len(costs) > 1 else ""),
-            "derived_charm": charm_for(r["model"]) if r["model"] else "",
+            "derived_charm": charm_for(r["model"]) if (r["model"] and m) else "",
             "derived_politics": (
                 round(m["politics"] / top_politics * 100)
                 if m and m.get("politics") and top_politics else ""),

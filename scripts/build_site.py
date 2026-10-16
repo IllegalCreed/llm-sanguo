@@ -7,6 +7,7 @@
 - 改完映射后重跑：python3 scripts/enrich_mapping.py && python3 scripts/build_site.py
 """
 import csv
+import glob
 import json
 import os
 import re
@@ -99,6 +100,21 @@ def game_bio(o):
     return "；".join(parts) + "。"
 
 
+def load_tianming(yanyi_by_model):
+    path = os.path.join(ROOT, "mapping", "tianming_full.csv")
+    if not os.path.exists(path):
+        return []
+    out = []
+    for r in csv.DictReader(open(path, encoding="utf-8")):
+        out.append({
+            "model": r["model"], "creator": r["creator"], "ii": r["ii"],
+            "general": r["general"], "aff": r["game_affiliation"],
+            "war": r["warfare"], "score": r["score"],
+            "yanyi": yanyi_by_model.get(canonical_name(r["model"]), ""),
+        })
+    return out
+
+
 def load_seat_history():
     path = os.path.join(ROOT, "mapping", "seat_history.csv")
     hist = {}
@@ -118,6 +134,11 @@ def load_data():
     path = os.path.join(ROOT, "mapping", "mapping_v0.8.csv")
     with open(path, encoding="utf-8") as f:
         rows = list(csv.DictReader(f))
+
+    yanyi_by_model = {}
+    for r in rows:
+        if r["model"]:
+            yanyi_by_model[canonical_name(r["model"])] = r["general"]
 
     data = []
     for r in rows:
@@ -210,6 +231,21 @@ h1 span{color:var(--red); -webkit-text-stroke:2px var(--ink)}
 .statline .chip{border:3px solid var(--ink);background:#fff;padding:6px 14px;font-size:15px;box-shadow:4px 4px 0 var(--ink);letter-spacing:1px}
 .statline .chip b{font-family:'Bangers',cursive;font-size:20px;margin-right:6px;color:var(--red)}
 
+.modeTabs{display:flex;gap:12px;margin:6px 0 18px;flex-wrap:wrap}
+.modeTab{cursor:pointer;font-family:inherit;font-size:17px;letter-spacing:2px;padding:9px 20px;
+  border:4px solid var(--ink);background:#fff;box-shadow:6px 6px 0 var(--ink)}
+.modeTab:hover{transform:translate(-2px,-2px)}
+.modeTab.on{background:var(--ink);color:var(--yellow)}
+.modeTab.on#mode-yanyi{background:var(--red);color:#fff}
+.modeTab.on#mode-tianming{background:var(--blue);color:#fff}
+.ttable{width:100%;border-collapse:collapse;border:4px solid var(--ink);background:var(--cream);box-shadow:8px 8px 0 var(--ink);font-size:14.5px}
+.ttable th{font-family:inherit;letter-spacing:2px;font-size:14px;padding:9px 8px;border:3px solid var(--ink);background:var(--ink);color:var(--yellow);position:sticky;top:0}
+.ttable td{padding:6.5px 8px;border:2px solid rgba(20,20,20,.55);letter-spacing:.5px}
+.ttable tr:nth-child(even) td{background:rgba(20,20,20,.04)}
+.ttable tr:hover td{background:var(--yellow)}
+.ttable td.b{font-family:'Bangers',cursive;font-size:17px}
+.ttable .overlap{border:2.5px solid var(--ink);background:var(--yellow);padding:2px 7px;font-size:12px;letter-spacing:1px;white-space:nowrap}
+.ttablewrap{overflow-x:auto}
 .toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;border:4px solid var(--ink);
   background:var(--yellow);box-shadow:7px 7px 0 var(--ink);padding:12px 14px;margin:26px 0 30px;position:sticky;top:10px;z-index:50}
 .tabs{display:flex;flex-wrap:wrap;gap:8px}
@@ -324,22 +360,27 @@ h1 span{color:var(--red); -webkit-text-stroke:2px var(--ink)}
     <div class="burst b1"><b>POW!</b></div>
     <div class="burst b2"><b>110<br>将</b></div>
     <div class="topstrip">
-      <span>★ ARTIFICIAL ANALYSIS 快照 2026-10-10</span>
+      <span>★ ARTIFICIAL ANALYSIS 快照 __SNAPDATE__</span>
       <span class="bangers">LLM SANGUO CHRONICLES · VOL.5</span>
-      <span>三国志14 全武将数值 ★ 697 模型全库 ★</span>
+      <span>三国志14 全武将数值 ★ __SNAPCOUNT__ 模型全库 ★</span>
     </div>
     <h1>大模型<span>三国志</span></h1>
     <div class="subtitle">给大模型<b>立传</b>排座的开源对照实验 —— 武力 = 智能指数<b>折算</b>，主公 = <b>厂家</b>，模型皆为武将</div>
     <div class="statline">
       <span class="chip"><b>110</b>武将席位</span>
       <span class="chip"><b>15</b>主公厂家</span>
-      <span class="chip"><b>8</b>数值锚点</span>
-      <span class="chip"><b>76</b>席有评测数据</span>
+      <span class="chip"><b>__ANCHORS__</b>数值锚点</span>
+      <span class="chip"><b>__SCORED__</b>席有评测数据</span>
       <span class="chip"><b>697</b>模型全库快照</span>
     </div>
   </header>
 
-  <div class="toolbar">
+  <div class="modeTabs">
+    <button class="modeTab on" id="mode-yanyi">📖 演义版 · __YN__ 席精修</button>
+    <button class="modeTab" id="mode-tianming">🔭 天命版 · __TM__ 席全量</button>
+  </div>
+
+  <div class="toolbar" id="yanyi-toolbar">
     <div class="tabs" id="tabs"></div>
     <div class="tools-right">
       <input class="search" id="q" placeholder="搜武将 / 模型 / 厂商…">
@@ -367,6 +408,7 @@ h1 span{color:var(--red); -webkit-text-stroke:2px var(--ink)}
 <script>
 const FACTIONS = __FACTIONS__;
 const DATA = __DATA__;
+const TIANMING = __TIANMING__;
 
 const tabsEl=document.getElementById('tabs'), grid=document.getElementById('grid'),
       qEl=document.getElementById('q'), sortEl=document.getElementById('sortbtn'),
@@ -397,10 +439,10 @@ function bars(d){
     if (mv!=null) rows3.push(`<div class="brow"><span class="lab">折算${name}</span><div class="btrack"><div class="bfill model" style="width:${m}%"></div></div><span class="val">${mv}</span></div>`);
   };
   pair('武力', game||null, model||null);
-  pair('统率', d.gl!=null?+d.gl:null, d.g&&d.g[0]!=null?+d.g[0]:null);
-  pair('智力', d.di!=null?+d.di:null, d.g&&d.g[2]!=null?+d.g[2]:null);
-  pair('魅力', d.dc!=null?+d.dc:null, d.g&&d.g[4]!=null?+d.g[4]:null);
-  pair('政治', d.dp!=null?+d.dp:null, d.g&&d.g[3]!=null?+d.g[3]:null);
+  pair('统率', d.g&&d.g[0]!=null?+d.g[0]:null, d.dl!=null?+d.dl:null);
+  pair('智力', d.g&&d.g[2]!=null?+d.g[2]:null, d.di!=null?+d.di:null);
+  pair('魅力', d.g&&d.g[4]!=null?+d.g[4]:null, d.dc!=null?+d.dc:null);
+  pair('政治', d.g&&d.g[3]!=null?+d.g[3]:null, d.dp!=null?+d.dp:null);
   if (!rows3.length) return '';
   return `<div class="duel">
     <div class="dtitle"><span>双朝实力条</span><b>VS</b></div>
@@ -460,7 +502,44 @@ function filtered(){
   return list;
 }
 
+let mode='yanyi';
+function bindModes(){
+  const y=document.getElementById('mode-yanyi'), t=document.getElementById('mode-tianming');
+  if(!TIANMING.length) t.style.display='none';
+  y.onclick=()=>{mode='yanyi';y.classList.add('on');t.classList.remove('on');render();};
+  t.onclick=()=>{mode='tianming';t.classList.add('on');y.classList.remove('on');render();};
+}
+function renderTianming(){
+  const k=keyword.toLowerCase();
+  const list=TIANMING.filter(d=>!k||d.model.toLowerCase().includes(k)||d.general.toLowerCase().includes(k)
+    ||(d.creator||'').toLowerCase().includes(k));
+  const rows=list.map((d,i)=>`<tr>
+    <td class="b">${i+1}</td>
+    <td style="font-family:'Courier New',monospace;font-weight:bold">${d.model}</td>
+    <td>${d.creator}</td>
+    <td class="b">${(+d.ii).toFixed(1)}</td>
+    <td style="font-size:16px">${d.general}<small style="opacity:.55"> (${d.aff})</small></td>
+    <td class="b">${d.war}</td>
+    <td class="b">${(+d.score).toFixed(2)}</td>
+    <td>${d.yanyi?`<span class="overlap">演义·${d.yanyi}</span>`:''}</td>
+  </tr>`).join('');
+  return `<div class="ttablewrap"><table class="ttable">
+    <tr><th>#</th><th>模型</th><th>厂商</th><th>II</th><th>天命武将</th><th>武力</th><th>契合度</th><th>双轨对照</th></tr>
+    ${rows}</table></div>
+    <div style="text-align:center;margin-top:12px;font-size:13px;letter-spacing:2px;opacity:.65">
+      纯强度百分位自动分配（无视阵营典故）· 契合度越低越贴合 · ${list.length} 席</div>`;
+}
+
 function render(){
+  if(mode==='tianming'){
+    tabsEl.style.display='none'; sortEl.style.display='none';
+    fhEl.classList.remove('show'); emptyEl.style.display='none';
+    grid.style.display='block';
+    grid.innerHTML=renderTianming();
+    return;
+  }
+  tabsEl.style.display='flex'; sortEl.style.display='inline-block';
+  grid.style.display='grid';
   tabHTML();
   curList=filtered();
   grid.innerHTML=curList.map(({d,i})=>card(d,i)).join('');
@@ -632,6 +711,7 @@ document.addEventListener('keydown',e=>{
 });
 
 qEl.oninput=e=>{keyword=e.target.value.trim();render()};
+bindModes();
 sortEl.onclick=()=>{sortMode=sortMode==='faction'?'power':'faction';
   sortEl.textContent=sortMode==='faction'?'⚔ 按折算武力排序':'🚩 按阵营排序';render()};
 render();
@@ -643,9 +723,27 @@ render();
 
 def main():
     data = load_data()
+    yanyi_by_model = {}
+    import csv as _csv
+    with open(os.path.join(ROOT, "mapping", "mapping_v0.8.csv"), encoding="utf-8") as f:
+        for r in _csv.DictReader(f):
+            if r["model"]:
+                yanyi_by_model[canonical_name(r["model"])] = r["general"]
+    tianming = load_tianming(yanyi_by_model)
+    snap_glob = sorted(glob.glob(os.path.join(ROOT, "data", "aa_models_snapshot_*.csv")))[-1]
+    snap_date = os.path.basename(snap_glob).replace("aa_models_snapshot_", "").replace(".csv", "")
+    snap_count = sum(1 for _ in open(snap_glob, encoding="utf-8")) - 1
+    scored = sum(1 for d in data if d["ii"])
     html = (TEMPLATE
+            .replace("__SNAPDATE__", snap_date)
+            .replace("__SNAPCOUNT__", str(snap_count))
+            .replace("__ANCHORS__", str(len(ANCHORS)))
+            .replace("__SCORED__", str(scored))
             .replace("__FACTIONS__", json.dumps(FACTION_META, ensure_ascii=False))
-            .replace("__DATA__", json.dumps(data, ensure_ascii=False)))
+            .replace("__DATA__", json.dumps(data, ensure_ascii=False))
+            .replace("__TIANMING__", json.dumps(tianming, ensure_ascii=False))
+            .replace("__YN__", str(len(data)))
+            .replace("__TM__", str(len(tianming))))
     out = os.path.join(ROOT, "docs", "index.html")
     with open(out, "w", encoding="utf-8") as f:
         f.write(html)
