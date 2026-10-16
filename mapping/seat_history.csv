@@ -1,0 +1,23 @@
+date,general,old_model,new_model,reason
+2026-10-10,關興,MiniMax-M3,GLM-5.3-Flash,血缘同厂商：随父关羽归 GLM 门下
+2026-10-10,張苞,Step 5 Preview,Qwen3.8 2.4T A95B,血缘同厂商：随父张飞归 Qwen 门下
+2026-10-10,曹植,Claude Haiku 5.5,GPT-5.5 Instant (June 2026),血缘同厂商：曹氏血脉归 OpenAI 门下
+2026-10-10,曹仁,Gemini 3.1 Pro,GPT-5.5,血缘同厂商：曹氏宗亲归 OpenAI 门下
+2026-10-10,夏侯淵,Gemini 3.8 Flash,gpt-oss-120b,血缘同厂商：夏侯氏归 OpenAI 门下
+2026-10-10,馬岱,Ling 3.1 Flash,DeepSeek V3,血缘同厂商：西凉马家归 DeepSeek 门下
+2026-10-10,孫權,Muse Spark 1.3,Meta,主公位=厂家铁律：孙权回归 Meta 机构位
+2026-10-10,呂布,Claude Opus 5.5,Claude Opus 5.5,吕布军解散并入群雄（阵营重组，模型未变）
+2026-10-15,周泰,Olmo 3.1 32B Think,,数值重排让位顧雍（Olmo 12:18 更贴合），周泰去职
+2026-10-15,顧雍,,Olmo 3.1 32B Think,接周泰席：学术重臣对学术开源
+2026-10-15,蔣欽,Llama 4 Maverick,,数值重排让位張紘，蒋钦去职
+2026-10-15,張紘,,Llama 4 Maverick,接蒋钦席：文宗早逝对争议旗舰一朝而折
+2026-10-15,高順,Claude Fable 5.1,Claude Opus 5,陷阵营升披一代最强攻势旗舰
+2026-10-15,文醜,Claude 3 Opus,Claude Opus 4.8,旧王者凋零降档；后复升 Fable 5.1（93:94 锚点）
+2026-10-15,顏良,Claude 3.5 Sonnet (June '24),Claude Fable 5,升级为更强旧代旗舰；3.5 让田丰
+2026-10-15,鄧艾,Claude Opus 5,Grok 4.6,客将不得越本家仕敌营：Anthropic 模型只在袁绍营
+2026-10-15,龐德,Grok 4.6,Grok 4.5,邓艾换防后顺延（Grok 三代旧部战至最后一箭）
+2026-10-16,馬岱,DeepSeek V3 (Dec '24),DeepSeek V4 Flash 0731,统率维度落地后数值重排：222t/s 流星锤
+2026-10-16,夏侯淵,gpt-oss-120b,GPT-5.2,数值重排：上上代旗舰仍是宗室快枪
+2026-10-16,黃蓋,Falcon-H1R-7B,Muse Spark,数值重排：初代 Muse 诈降闭源（差距 69→29）
+2026-10-15,淳于瓊,,Claude Opus 4.7,新席：乌巢督粮
+2026-10-15,審配,,Claude Opus 4.6,新席：死守邺城

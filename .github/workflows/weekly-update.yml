@@ -1,0 +1,35 @@
+name: 江湖周更
+on:
+  schedule:
+    - cron: '0 3 * * 1'  # 每周一 03:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: 跑管线
+        run: bash scripts/pipeline.sh
+      - name: 提交数值流动
+        run: |
+          git config user.name "jianghu-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "无变化"
+          else
+            git commit -m "chore(data): 江湖周更 $(date +%F)——数值自动流动，席位未动"
+            git push
+          fi
+      - name: 王座易主警报
+        run: |
+          if grep -q "王座易主警报" docs/DRIFT.md; then
+            echo "::warning::榜首换人，吕布位待人工禅让——见 docs/DRIFT.md"
+          fi
