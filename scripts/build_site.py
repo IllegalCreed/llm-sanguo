@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""从 mapping/mapping_v0.6.csv + 两份史源生成美漫风展示站 docs/index.html。
+"""从 mapping/mapping_v0.7.csv + 两份史源生成美漫风展示站 docs/index.html。
 
 - 纯静态单页：数据内嵌为 JS 常量，无前端构建依赖，可直接挂 GitHub Pages
 - 详情层：KOEI 立绘（docs/portraits/，nobuwiki 采集；无页面者用美漫姓氏头像）、
@@ -98,7 +98,7 @@ def game_bio(o):
 def load_data():
     officers = load_officers()
     best = load_snapshot_best()
-    path = os.path.join(ROOT, "mapping", "mapping_v0.6.csv")
+    path = os.path.join(ROOT, "mapping", "mapping_v0.7.csv")
     with open(path, encoding="utf-8") as f:
         rows = list(csv.DictReader(f))
 
@@ -121,6 +121,7 @@ def load_data():
             "model": r["model"], "creator": r["creator"],
             "ii": r["aa_ii"], "dw": r["derived_warfare"],
             "dl": r["derived_leadership"], "di": r["derived_intellect"],
+            "dc": r["derived_charm"],
             "cost": r["cost_per_task_usd"], "speed": r["median_tokens_per_s"],
             "war": r["game_warfare"], "total": r["game_total"],
             "note": r["note"], "anchor": r["general"] in ANCHORS,
@@ -380,6 +381,7 @@ function bars(d){
   pair('武力', game||null, model||null);
   pair('统率', d.gl!=null?+d.gl:null, d.g&&d.g[0]!=null?+d.g[0]:null);
   pair('智力', d.di!=null?+d.di:null, d.g&&d.g[2]!=null?+d.g[2]:null);
+  pair('魅力', d.dc!=null?+d.dc:null, d.g&&d.g[4]!=null?+d.g[4]:null);
   if (!rows3.length) return '';
   return `<div class="duel">
     <div class="dtitle"><span>双朝实力条</span><b>VS</b></div>
@@ -392,6 +394,7 @@ function meta(d){
   if(d.ii) m.push(`<span>II <b>${d.ii}</b></span>`);
   if(d.dl) m.push(`<span>折算统率 <b>${d.dl}</b></span>`);
   if(d.di) m.push(`<span>折算智力 <b>${d.di}</b></span>`);
+  if(d.dc) m.push(`<span>折算魅力 <b>${d.dc}</b></span>`);
   if(d.cost) m.push(`<span><b>$${d.cost}</b>/任务</span>`);
   if(d.speed) m.push(`<span><b>${d.speed}</b> t/s</span>`);
   if(d.total) m.push(`<span>五维合计 <b>${d.total}</b></span>`);
@@ -558,6 +561,7 @@ function openDetail(idx){
   if(d.dw) stats.push(`<span>折算武力<b>${d.dw}</b></span>`);
   if(d.dl) stats.push(`<span>折算统率<b>${d.dl}</b></span>`);
   if(d.di) stats.push(`<span>折算智力<b>${d.di}</b></span>`);
+  if(d.dc) stats.push(`<span>折算魅力<b>${d.dc}</b></span>`);
   if(d.cost) stats.push(`<span>成本<b>$${d.cost}</b>/任务</span>`);
   if(d.speed) stats.push(`<span>速度<b>${d.speed}</b>t/s</span>`);
   if(!d.ii&&d.role!=='主公') stats.push(`<span><b>已退场</b>·史书阙载</span>`);

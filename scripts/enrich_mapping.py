@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""联结 mapping_source.csv 与两份史源数据，生成 mapping_v0.6.csv。
+"""联结 mapping_source.csv 与两份史源数据，生成 mapping_v0.7.csv。
 
 - 游戏原版五维：data/sanguo14_officers.csv（按武将名精确匹配，繁体）
 - 模型评测：data/aa_models_snapshot_*.csv（取最新一份快照）
@@ -15,10 +15,15 @@
   itbenchSre/gdpval 四项 agentic 子分中非空项的均值（0-100）
 - 折算智力 = round((1 − 成本百分位) × 100)，成本百分位取全库有成本模型的排名
   （越便宜越有计）
+- 折算魅力 = round(调用量份额 ÷ 榜首份额 × 100)，调用量取 OpenRouter
+  rankings/models 端点全期 rankingMetricValue（data/openrouter_rankings_*.json，
+  scripts/fetch_openrouter.py 抓取）；slug 三级匹配：去日期精确 → 前缀(≥6字符) →
+  少量人工别名（命名词序/架构后缀差异）
 """
 import bisect
 import csv
 import glob
+import json
 import os
 import re
 import sys
@@ -119,6 +124,44 @@ def load_models():
     return index, os.path.basename(path), top_ii, top_leadership, costs
 
 
+# OpenRouter slug → AA 名的人工别名（词序/命名差异，匹配前先 norm）
+OR_ALIAS = {
+    "claude5fable": "claude-fable-5",
+    "mistrallarge40": "mistral-large-4-preview",
+}
+
+
+def norm_slug(s):
+    return re.sub(r"[^a-z0-9]", "", s.lower())
+
+
+def load_charm():
+    """读最新 OpenRouter 榜，返回 canonical名 → 魅力(0-100) 与榜首份额。"""
+    import glob as _g
+    paths = sorted(_g.glob(os.path.join(DATA, "openrouter_rankings_*.json")))
+    if not paths:
+        return {}, None
+    blob = json.load(open(paths[-1], encoding="utf-8"))["models"]
+
+    def strip_date(slug):
+        m = re.match(r"^[a-z0-9.-]+/(.+)$", slug)
+        name = m.group(1) if m else slug
+        name = re.sub(r"-(\d{4}-?\d{2}-?\d{2})$", "", name)
+        name = re.sub(r"-\d{8,}$", "", name)
+        return name
+
+    normed = {}
+    for slug, v in blob.items():
+        k = norm_slug(strip_date(slug))
+        normed[k] = max(normed.get(k, 0), v)
+    top = max(normed.values()) or None
+
+    charm = {}
+    for k, v in normed.items():
+        charm[k] = round(v / top * 100)
+    return charm, top
+
+
 def is_non_model(name):
     return name in NON_MODEL_NAMES or any(m in name for m in NON_MODEL_MARKS)
 
@@ -126,13 +169,31 @@ def is_non_model(name):
 def main():
     officers = load_officers()
     index, snapshot, top_ii, top_leadership, costs = load_models()
+    charm, charm_top = load_charm()
+
+    def charm_for(model_name):
+        """三级匹配：canonical 精确 → 前缀 → 别名。"""
+        if not charm or charm_top is None:
+            return ""
+        cn = norm_slug(model_name)
+        if cn in charm:
+            return charm[cn]
+        for k, v in charm.items():
+            if len(cn) >= 6 and (k.startswith(cn) or cn.startswith(k)):
+                return v
+        alias = OR_ALIAS.get(cn)
+        if alias:
+            a = norm_slug(alias)
+            if a in charm:
+                return charm[a]
+        return ""
     src = os.path.join(MAPPING, "mapping_source.csv")
     with open(src, encoding="utf-8") as f:
         rows = list(csv.DictReader(f))
 
     header = [
         "role", "faction", "general", "model", "creator", "aa_ii",
-        "derived_warfare", "derived_leadership", "derived_intellect",
+        "derived_warfare", "derived_leadership", "derived_intellect", "derived_charm",
         "cost_per_task_usd", "median_tokens_per_s",
         "game_leadership", "game_warfare", "game_intellect",
         "game_politics", "game_charm", "game_total", "note",
@@ -159,6 +220,7 @@ def main():
             "derived_intellect": (
                 round((1 - bisect.bisect_left(costs, m["cost"]) / (len(costs) - 1)) * 100)
                 if m and m.get("cost") is not None and len(costs) > 1 else ""),
+            "derived_charm": charm_for(r["model"]) if r["model"] else "",
             "cost_per_task_usd": (m or {}).get("cost", "") if m else "",
             "median_tokens_per_s": (m or {}).get("speed", "") if m else "",
             "game_leadership": g["leadership"] if g else "",
@@ -170,7 +232,7 @@ def main():
             "note": r["note"],
         })
 
-    dst = os.path.join(MAPPING, "mapping_v0.6.csv")
+    dst = os.path.join(MAPPING, "mapping_v0.7.csv")
     with open(dst, "w", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=header)
         w.writeheader()
