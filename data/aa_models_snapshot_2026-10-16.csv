@@ -1,0 +1,704 @@
+model,context_window,creator,intelligence_index,cost_per_task_usd,median_tokens_per_s,latency_first_chunk_s,total_response_s,hle,gpqa,scicode,mmmu_pro,terminalbench40,omniscience,analyst_agent,apex_agents,itbench_sre,gdpval,ifbench,nonhallucination,further_analysis,source
+"Claude Opus 5.5 (Max, Default Fallback)",1M,Anthropic,57.6,$5.98,95.2,691.73,696.99,61,--,67,88,60,46,56,--,38,68,--,41,Model Providers,https://artificialanalysis.ai/models/claude-opus-5-5
+"Claude Sonnet 5.5 (Max, Default Fallback)",1M,Anthropic,56.0,$5.46,130.7,425.24,429.07,55,--,61,--,64,32,57,--,--,67,--,53,Model Providers,https://artificialanalysis.ai/models/claude-sonnet-5-5
+"Claude Opus 5.5 (Xhigh, Default Fallback)",1M,Anthropic,56.0,$3.46,82.5,139.63,145.69,58,--,65,87,60,43,--,--,--,67,--,34,Model Providers,https://artificialanalysis.ai/models/claude-opus-5-5-xhigh
+Muse Wonder Full (Max),1M,Meta,55.8,--,--,--,--,54,--,63,--,57,30,--,--,--,68,--,77,Model Providers,https://artificialanalysis.ai/models/muse-wonder-full
+"Claude Opus 5.5 (High, Default Fallback)",1M,Anthropic,53.6,$1.82,84.6,46.45,52.36,56,--,60,86,57,41,--,--,--,60,--,32,Model Providers,https://artificialanalysis.ai/models/claude-opus-5-5-high
+"Claude Fable 5.1 (Max, Default Fallback)",1M,Anthropic,53.4,$7.63,70.9,261.97,269.02,59,94,63,--,52,43,57,--,50,63,--,27,Model Providers,https://artificialanalysis.ai/models/claude-fable-5-1
+"Claude Fable 5.1 (Xhigh, Default Fallback)",1M,Anthropic,53.2,$5.98,66.4,69.44,76.97,59,93,61,--,55,42,--,--,--,62,--,29,Model Providers,https://artificialanalysis.ai/models/claude-fable-5-1-xhigh
+GPT-6 Astra (Max),1M,OpenAI,52.7,$3.26,44.6,275.90,287.11,55,96,56,87,59,43,51,--,49,54,--,49,Model Providers,https://artificialanalysis.ai/models/gpt-6-astra
+Gemini 4 Argon (High),1M,Google,52.6,$1.99,--,--,--,57,--,62,--,57,42,--,--,--,56,--,85,Model Providers,https://artificialanalysis.ai/models/gemini-4-argon
+Muse Wonder (Max),1048576,Meta,52.4,$4.52,180.8,36.32,50.15,50,--,60,--,52,25,--,--,--,64,--,73,Model Providers,https://artificialanalysis.ai/models/muse-wonder
+GPT-6 Astra (Xhigh),1M,OpenAI,52.4,$2.31,44.4,133.66,144.92,55,96,56,86,60,43,--,--,--,53,--,52,Model Providers,https://artificialanalysis.ai/models/gpt-6-astra-xhigh
+"Claude Sonnet 5.5 (Xhigh, Default Fallback)",1M,Anthropic,51.9,$2.01,110.0,25.95,30.50,50,--,57,--,57,24,--,--,--,61,--,37,Model Providers,https://artificialanalysis.ai/models/claude-sonnet-5-5-xhigh
+GPT-6.1 Sol (Max),1M,OpenAI,51.8,$0.72,53.5,277.04,286.38,53,--,54,86,56,42,50,--,--,55,--,46,Model Providers,https://artificialanalysis.ai/models/gpt-6-1-sol
+"Claude Opus 5.5 (Medium, Default Fallback)",1M,Anthropic,51.2,$1.34,88.0,17.41,23.10,55,--,59,86,53,40,--,--,--,54,--,32,Model Providers,https://artificialanalysis.ai/models/claude-opus-5-5-medium
+"Claude Fable 5.1 (High, Default Fallback)",1M,Anthropic,51.2,$3.91,65.2,5.93,13.59,56,91,59,--,52,41,--,--,--,57,--,31,Model Providers,https://artificialanalysis.ai/models/claude-fable-5-1-high
+GPT-6.1 Sol (Xhigh),1M,OpenAI,51.0,$0.39,54.3,122.33,131.54,53,--,56,85,54,41,--,--,--,52,--,49,Model Providers,https://artificialanalysis.ai/models/gpt-6-1-sol-xhigh
+GPT-6 Astra (High),1M,OpenAI,50.9,$1.73,50.3,51.63,61.58,53,95,55,86,54,44,--,--,--,51,--,55,Model Providers,https://artificialanalysis.ai/models/gpt-6-astra-high
+Claude Opus 5 (Max),1M,Anthropic,50.8,$5.86,61.9,59.73,67.80,55,93,56,85,49,37,54,--,--,61,--,39,Model Providers,https://artificialanalysis.ai/models/claude-opus-5
+GPT-6.1 Sol (High),1M,OpenAI,50.2,$0.32,56.3,41.58,50.45,51,--,56,85,52,41,--,--,--,51,--,51,Model Providers,https://artificialanalysis.ai/models/gpt-6-1-sol-high
+Claude Opus 5 (Xhigh),1M,Anthropic,49.7,$4.88,62.7,27.69,35.67,54,94,56,84,46,35,--,--,--,60,--,40,Model Providers,https://artificialanalysis.ai/models/claude-opus-5-xhigh
+"Claude Fable 5 (Max, Opus 4.8 Fallback)",1M,Anthropic,49.6,$8.75,69.1,97.58,104.82,55,93,61,--,42,43,49,--,--,55,63,36,Model Providers,https://artificialanalysis.ai/models/claude-fable-5
+GPT-6 Astra (Medium),1M,OpenAI,49.6,$1.54,48.9,6.48,16.71,53,94,54,85,49,42,--,--,--,49,--,53,Model Providers,https://artificialanalysis.ai/models/gpt-6-astra-medium
+"Claude Fable 5.1 (Medium, Default Fallback)",1M,Anthropic,48.9,$2.98,66.0,6.51,14.09,54,89,56,--,45,38,--,--,--,52,--,31,Model Providers,https://artificialanalysis.ai/models/claude-fable-5-1-medium
+Claude Opus 5 (High),1M,Anthropic,48.1,$3.61,63.3,17.08,24.98,53,94,55,82,46,34,--,--,--,55,--,39,Model Providers,https://artificialanalysis.ai/models/claude-opus-5-high
+Muse Spark 1.3 (Max),1M,Meta,48.1,$1.60,121.9,54.06,74.56,49,94,59,--,33,25,38,--,33,59,--,67,Model Providers,https://artificialanalysis.ai/models/muse-spark-1-3
+GPT-6.1 Sol (Medium),1M,OpenAI,47.8,$0.21,48.8,4.34,14.58,50,--,53,84,48,40,--,--,--,48,--,48,Model Providers,https://artificialanalysis.ai/models/gpt-6-1-sol-medium
+GPT-6 Sol (Max),1050k,OpenAI,47.6,$1.04,102.5,113.68,118.56,48,--,58,83,44,27,--,--,49,50,--,40,Model Providers,https://artificialanalysis.ai/models/gpt-6-sol
+GPT-5.6 Sol (Max),1M,OpenAI,47.0,$1.99,94.8,100.24,105.51,49,94,57,83,40,22,48,--,56,55,73,8,Model Providers,https://artificialanalysis.ai/models/gpt-5-6-sol
+"Claude Fable 5.1 (Low, Default Fallback)",1M,Anthropic,46.8,$2.37,66.1,2.47,10.03,49,88,57,--,40,34,--,--,--,48,--,34,Model Providers,https://artificialanalysis.ai/models/claude-fable-5-1-low
+"Claude Sonnet 5.5 (High, Default Fallback)",1M,Anthropic,46.8,$0.88,110.5,12.43,16.95,46,--,54,--,44,21,--,--,--,52,--,35,Model Providers,https://artificialanalysis.ai/models/claude-sonnet-5-5-high
+Grok 4.7 (Xhigh),500k,SpaceXAI,46.4,$3.74,90.8,37.26,42.76,43,--,57,--,26,32,52,--,42,61,--,71,Model Providers,https://artificialanalysis.ai/models/grok-4-7
+Grok 4.7 (High),500k,SpaceXAI,46.3,$2.73,88.2,23.80,29.47,42,--,58,--,25,31,55,--,--,60,--,68,Model Providers,https://artificialanalysis.ai/models/grok-4-7-high
+MiMo-V2.6-Pro,1M,Xiaomi,46.3,$0.13,47.3,4.06,56.90,49,--,61,--,35,8,38,--,--,59,--,59,Model Providers,https://artificialanalysis.ai/models/mimo-v2-6-pro
+GPT-6 Astra (Low),1M,OpenAI,45.8,$0.82,49.8,2.42,12.46,49,93,54,85,42,41,--,--,--,44,--,53,Model Providers,https://artificialanalysis.ai/models/gpt-6-astra-low
+Qwen3.8 Max (0902),983616,Alibaba,45.4,$5.41,39.3,3.06,66.67,43,93,52,83,39,12,45,42,40,58,--,71,Model Providers,https://artificialanalysis.ai/models/qwen3-8-max
+Muse Spark 1.3 (Xhigh),1M,Meta,45.1,$1.37,298.2,25.16,33.54,47,94,60,82,17,23,--,--,--,56,--,69,Model Providers,https://artificialanalysis.ai/models/muse-spark-1-3-xhigh
+Claude Opus 5 (Medium),1M,Anthropic,44.8,$2.19,60.8,2.70,10.92,51,92,52,82,34,31,--,--,--,50,--,39,Model Providers,https://artificialanalysis.ai/models/claude-opus-5-medium
+GLM-5.3 (Max),1M,Z AI,44.8,$2.01,65.6,3.25,41.35,42,92,59,--,42,14,39,--,46,58,--,70,Model Providers,https://artificialanalysis.ai/models/glm-5-3
+Grok 4.6 (High),500k,SpaceXAI,44.3,$1.48,60.7,33.94,42.18,43,95,56,--,21,30,41,--,--,56,--,66,Model Providers,https://artificialanalysis.ai/models/grok-4-6
+GPT-6 Sol (Xhigh),1050k,OpenAI,44.2,$0.52,101.3,36.20,41.14,46,--,55,83,30,27,--,--,--,48,--,41,Model Providers,https://artificialanalysis.ai/models/gpt-6-sol-xhigh
+Grok 4.6 (Xhigh),500k,SpaceXAI,44.2,$1.75,56.2,40.68,49.57,44,94,53,--,17,29,--,--,--,57,--,76,Model Providers,https://artificialanalysis.ai/models/grok-4-6-xhigh
+GPT-5.6 Sol (Xhigh),1M,OpenAI,44.0,$1.18,93.6,34.86,40.20,47,93,57,83,25,21,--,--,--,53,71,8,Model Providers,https://artificialanalysis.ai/models/gpt-5-6-sol-xhigh
+Step 5 Preview,1M,StepFun,43.7,$1.03,91.1,2.19,29.62,46,--,59,76,33,16,35,38,56,54,--,57,Model Providers,https://artificialanalysis.ai/models/step-5
+Kimi K3 (Max),1048576,Kimi,43.6,$2.00,43.4,3.60,61.19,47,94,59,81,13,20,39,41,48,52,--,47,Model Providers,https://artificialanalysis.ai/models/kimi-k3
+Claude Haiku 5.5 (Max),1M,Anthropic,43.4,$0.21,239.2,336.91,339.00,44,--,55,--,33,11,54,--,--,56,--,60,Model Providers,https://artificialanalysis.ai/models/claude-haiku-5-5
+Grok 4.6 (Medium),500k,SpaceXAI,42.8,$1.14,55.4,30.80,39.83,42,94,56,--,13,28,--,--,--,56,--,76,Model Providers,https://artificialanalysis.ai/models/grok-4-6-medium
+GPT-6 Sol (High),1050k,OpenAI,42.4,$0.37,100.7,9.96,14.92,44,--,55,82,26,27,--,--,--,45,--,42,Model Providers,https://artificialanalysis.ai/models/gpt-6-sol-high
+GPT-5.6 Sol (High),1M,OpenAI,42.3,$0.81,94.7,7.42,12.70,46,93,58,82,21,20,--,--,--,50,69,9,Model Providers,https://artificialanalysis.ai/models/gpt-5-6-sol-high
+"Claude Opus 5.5 (Low, Default Fallback)",1M,Anthropic,42.3,$0.55,87.1,6.69,12.43,48,--,59,85,31,39,--,--,--,37,--,32,Model Providers,https://artificialanalysis.ai/models/claude-opus-5-5-low
+Grok 4.7 (Low),500k,SpaceXAI,42.2,$1.25,70.7,3.69,10.75,39,--,55,78,16,30,--,--,--,54,--,60,Model Providers,https://artificialanalysis.ai/models/grok-4-7-low
+GPT-6.1 Sol (Low),1M,OpenAI,42.1,$0.13,45.4,3.14,14.14,47,--,53,83,31,38,--,--,--,41,--,48,Model Providers,https://artificialanalysis.ai/models/gpt-6-1-sol-low
+GPT-5.6 Terra (Max),1M,OpenAI,42.1,$1.40,129.3,118.28,122.14,43,93,55,81,35,0,--,39,51,48,71,12,Model Providers,https://artificialanalysis.ai/models/gpt-5-6-terra
+GLM-5.3-Flash,1M,Z AI,41.8,$0.28,65.9,2.75,40.70,40,91,52,--,33,7,25,--,51,57,--,72,Model Providers,https://artificialanalysis.ai/models/glm-5-3-flash
+Claude Opus 4.8 (Max),1M,Anthropic,41.8,$4.08,66.2,30.27,37.82,49,92,54,--,22,29,45,--,--,48,62,61,Model Providers,https://artificialanalysis.ai/models/claude-opus-4-8
+Claude Haiku 5.5 (Xhigh),1M,Anthropic,41.2,$0.12,183.1,67.43,70.16,43,--,52,--,29,6,--,--,--,51,--,56,Model Providers,https://artificialanalysis.ai/models/claude-haiku-5-5-xhigh
+Ling 3.1 Flash,1M,InclusionAI,41.1,$1.00,213.2,1.79,13.52,39,--,54,--,33,2,--,--,--,56,--,62,Model Providers,https://artificialanalysis.ai/models/ling-3-1-flash
+Gemini 3.8 Flash (High),1M,Google,40.9,$1.24,147.1,24.43,27.83,48,95,57,86,20,30,46,--,53,47,--,45,Model Providers,https://artificialanalysis.ai/models/gemini-3-8-flash
+"Claude Sonnet 5.5 (Medium, Default Fallback)",1M,Anthropic,40.8,$0.48,112.5,2.99,7.44,40,--,53,--,30,20,--,--,--,41,--,49,Model Providers,https://artificialanalysis.ai/models/claude-sonnet-5-5-medium
+Claude Opus 4.7 (Max),1M,Anthropic,40.7*,--,57.7,17.10,25.76,42,91,--,79,--,27,44,--,47,43,59,58,Model Providers,https://artificialanalysis.ai/models/claude-opus-4-7
+Qwen3.8 Max,1M,Alibaba,40.2,$2.67,39.5,2.73,66.09,43,93,53,82,19,3,--,--,--,55,--,58,Model Providers,https://artificialanalysis.ai/models/qwen3-8-max-0803
+Qwen3.8 2.4T A95B,262k,Alibaba,39.9,$2.16,39.0,2.85,66.98,42,94,54,--,11,4,--,--,--,55,--,61,Model Providers,https://artificialanalysis.ai/models/qwen3-8-2-4t-a95b
+Qwen3.8-Flash-Next,256k,Alibaba,39.8,$0.37,52.2,2.05,49.96,38,92,51,80,25,-10,--,--,--,56,--,55,Model Providers,https://artificialanalysis.ai/models/qwen3-8-flash-next
+GPT-6 Sol (Medium),1050k,OpenAI,39.8,$0.25,--,--,--,41,--,54,80,19,27,--,--,--,42,--,43,Model Providers,https://artificialanalysis.ai/models/gpt-6-sol-medium
+Gemini 3.8 Flash (Medium),1M,Google,39.8,$0.93,--,--,--,42,94,55,84,20,29,--,--,--,46,--,48,Model Providers,https://artificialanalysis.ai/models/gemini-3-8-flash-medium
+Gemini 3.7 Flash (Medium),1M,Google,39.6*,--,285.5,4.95,6.70,39,92,60,85,--,24,--,--,--,43,--,34,Model Providers,https://artificialanalysis.ai/models/gemini-3-7-flash-medium
+Muse Spark 1.2 (Xhigh),1048576,Meta,39.6,$0.97,361.4,12.67,19.58,45,90,57,--,7,27,--,--,--,49,--,67,Model Providers,https://artificialanalysis.ai/models/muse-spark-1-2
+DeepSeek V4.1 Flash (Max),1M,DeepSeek,39.5,$0.27,179.2,1.15,15.10,39,--,52,77,27,-5,35,--,47,55,--,4,Model Providers,https://artificialanalysis.ai/models/deepseek-v4-1-flash
+Claude Opus 5 (Low),1M,Anthropic,39.4,$1.10,61.4,1.76,9.90,43,89,49,80,26,29,--,--,--,40,--,38,Model Providers,https://artificialanalysis.ai/models/claude-opus-5-low
+GPT-5.6 Sol (Medium),1M,OpenAI,39.2,$0.50,88.6,3.43,9.07,42,93,57,81,15,19,--,--,--,46,70,9,Model Providers,https://artificialanalysis.ai/models/gpt-5-6-sol-medium
+Gemini 3.7 Flash (High),1M,Google,39.1,$0.93,285.3,8.83,10.59,48,95,57,85,14,26,60,--,--,45,--,35,Model Providers,https://artificialanalysis.ai/models/gemini-3-7-flash
+GPT-5.4 (Xhigh),1050k,OpenAI,39.0*,--,87.7,149.11,154.81,44,92,--,78,--,6,--,33,--,37,74,8,Model Providers,https://artificialanalysis.ai/models/gpt-5-4
+Muse Spark Open (Xhigh),1048576,Meta,38.9,$0.84,103.4,0.65,24.84,44,89,58,81,8,25,--,--,--,45,--,76,Model Providers,https://artificialanalysis.ai/models/muse-spark-open
+Grok 4.5 (High),500k,SpaceXAI,38.8,$0.88,60.4,7.19,15.47,43,93,55,80,11,25,35,--,--,44,--,46,Model Providers,https://artificialanalysis.ai/models/grok-4-5
+Mistral Large 4 Preview,524288,Mistral,38.4,$1.13,--,--,--,35,--,54,76,27,-5,--,--,--,46,--,58,Model Providers,https://artificialanalysis.ai/models/mistral-large-4
+GPT-5.5 (Xhigh),922k,OpenAI,38.4,$2.63,98.5,36.12,41.20,46,94,56,80,15,21,50,38,46,43,76,11,Model Providers,https://artificialanalysis.ai/models/gpt-5-5
+Claude Sonnet 5 (Max),1M,Anthropic,38.2,$5.09,74.9,147.10,153.77,41,91,54,77,14,16,46,--,--,48,--,61,Model Providers,https://artificialanalysis.ai/models/claude-sonnet-5
+GPT-6 Luna (Max),1M,OpenAI,38.1,$0.07,118.2,96.97,101.20,39,--,55,80,13,1,44,--,--,47,--,23,Model Providers,https://artificialanalysis.ai/models/gpt-6-luna
+GPT-5.6 Terra (Xhigh),1M,OpenAI,38.0,$0.63,112.4,17.31,21.76,42,91,52,79,10,-3,--,--,--,47,66,11,Model Providers,https://artificialanalysis.ai/models/gpt-5-6-terra-xhigh
+MiMo-V2.6-Flash,1M,Xiaomi,37.9,$0.06,53.8,3.69,50.20,35,--,51,73,23,-13,--,--,--,55,--,46,Model Providers,https://artificialanalysis.ai/models/mimo-v2-6-flash
+Claude Haiku 5.5 (High),1M,Anthropic,37.8,$0.08,182.2,19.77,22.52,37,--,49,--,22,6,--,--,--,46,--,55,Model Providers,https://artificialanalysis.ai/models/claude-haiku-5-5-high
+GPT-5.6 Luna (Max),1M,OpenAI,37.3,$0.18,120.6,119.13,123.27,39,91,54,79,12,-10,--,36,40,48,--,7,Model Providers,https://artificialanalysis.ai/models/gpt-5-6-luna
+GPT-5.5 (High),922k,OpenAI,37.0,$1.54,97.6,12.64,17.76,45,93,56,81,9,19,--,--,--,41,72,11,Model Providers,https://artificialanalysis.ai/models/gpt-5-5-high
+Gemini 3.7 Flash (Low),1M,Google,36.9*,--,302.1,1.26,2.92,35,90,56,85,--,22,--,--,--,41,--,32,Model Providers,https://artificialanalysis.ai/models/gemini-3-7-flash-low
+DeepSeek V4 Pro 0813 (Max),1M,DeepSeek,36.0,$0.67,92.3,1.66,28.74,41,93,51,--,14,1,--,--,--,48,--,5,Model Providers,https://artificialanalysis.ai/models/deepseek-v4-pro
+"Claude Sonnet 5.5 (Low, Default Fallback)",1M,Anthropic,35.9,$0.35,109.9,1.35,5.90,36,--,49,--,21,19,--,--,--,34,--,50,Model Providers,https://artificialanalysis.ai/models/claude-sonnet-5-5-low
+Agnes 2.5 Pro Beta,1M,Sapiens AI,35.2*,--,118.6,1.41,22.50,38,91,49,75,--,-11,--,--,--,41,--,67,Model Providers,https://artificialanalysis.ai/models/agnes-2-5-pro-beta
+Grok 4.6 (Low),500k,SpaceXAI,35.1,$0.38,54.3,6.21,15.42,28,88,49,--,3,26,--,--,--,46,--,69,Model Providers,https://artificialanalysis.ai/models/grok-4-6-low
+DeepSeek V4 Flash Vision (Max),1M,DeepSeek,34.8,$0.31,173.0,1.17,15.62,34,91,50,75,12,-18,--,--,--,52,--,9,Model Providers,https://artificialanalysis.ai/models/deepseek-v4-flash-vision
+GPT-6 Luna (Xhigh),1M,OpenAI,34.6,$0.04,112.2,24.60,29.06,34,--,52,80,8,-2,--,--,--,43,--,18,Model Providers,https://artificialanalysis.ai/models/gpt-6-luna-xhigh
+GPT-5.6 Luna (Xhigh),1M,OpenAI,34.6,$0.09,124.1,47.06,51.08,37,89,50,79,4,-11,--,--,--,45,--,8,Model Providers,https://artificialanalysis.ai/models/gpt-5-6-luna-xhigh
+Claude Haiku 5.5 (Medium),1M,Anthropic,34.5,$0.05,173.1,9.21,12.10,34,--,49,--,15,4,--,--,--,39,--,55,Model Providers,https://artificialanalysis.ai/models/claude-haiku-5-5-medium
+Claude Sonnet 5 (Xhigh),1M,Anthropic,34.4,$2.87,77.3,20.82,27.29,39,--,54,--,7,3,--,--,--,43,--,41,Model Providers,https://artificialanalysis.ai/models/claude-sonnet-5-xhigh
+DeepSeek V4 Flash 0731 (Max),1M,DeepSeek,34.3,$0.22,173.7,1.18,15.57,39,91,50,--,12,-14,--,--,--,47,--,8,Model Providers,https://artificialanalysis.ai/models/deepseek-v4-flash
+GLM-5.3 (Low),1M,Z AI,34.3,$0.85,70.4,3.26,38.75,37,--,42,--,35,-8,--,--,--,41,--,36,Model Providers,https://artificialanalysis.ai/models/glm-5-3-low
+GPT-5.6 Terra (High),1M,OpenAI,34.2,$0.34,111.5,2.62,7.10,39,90,52,79,2,-3,--,--,--,44,64,10,Model Providers,https://artificialanalysis.ai/models/gpt-5-6-terra-high
+GPT-6 Sol (Low),1050k,OpenAI,34.2,$0.13,99.0,1.55,6.60,35,--,50,80,9,27,--,--,--,35,--,49,Model Providers,https://artificialanalysis.ai/models/gpt-6-sol-low
+Gemini 3.6 Flash (High),1M,Google,34.0,$1.60,214.7,13.82,16.15,41,93,53,83,7,22,--,--,--,39,--,44,Model Providers,https://artificialanalysis.ai/models/gemini-3-6-flash
+JT-4.1 Flash 236B A21B (Reasoning),262144,China Mobile,33.9,--,--,--,--,44,--,52,--,3,21,--,--,--,41,--,43,Model Providers,https://artificialanalysis.ai/models/jt-4-1-flash-236b-a21b
+GPT-5.5 (Medium),922k,OpenAI,33.8,$0.90,91.8,2.52,7.97,42,93,55,81,5,18,--,--,--,37,71,10,Model Providers,https://artificialanalysis.ai/models/gpt-5-5-medium
+Muse Spark 1.1 (Xhigh),1048576,Meta,33.7,$1.38,177.3,28.48,42.58,46,90,59,--,6,28,--,--,--,36,--,50,Model Providers,https://artificialanalysis.ai/models/muse-spark-1-1
+GLM-5.2 (Max),1M,Z AI,33.7,$1.47,81.7,3.82,34.41,41,89,51,--,1,4,--,34,43,44,73,74,Model Providers,https://artificialanalysis.ai/models/glm-5-2
+Qwen3.8 27B (Xhigh),256k,Alibaba,33.7,$1.01,41.4,3.96,64.38,34,91,47,76,6,-10,--,--,--,46,--,70,Model Providers,https://artificialanalysis.ai/models/qwen3-8-27b
+Gemini 3.5 Flash (Medium),1M,Google,33.6*,--,222.3,11.72,13.97,41,92,--,84,--,21,--,--,--,--,75,38,Model Providers,https://artificialanalysis.ai/models/gemini-3-5-flash-medium
+Motif 3,262144,Motif Technologies,33.6*,--,--,--,--,37,83,42,--,--,10,--,--,--,31,--,72,Model Providers,https://artificialanalysis.ai/models/motif-3
+GPT-5.6 Sol (Low),1M,OpenAI,33.5,$0.26,85.2,1.99,7.86,39,90,56,81,1,19,--,--,--,40,67,11,Model Providers,https://artificialanalysis.ai/models/gpt-5-6-sol-low
+Gemini 3.8 Flash (Low),1M,Google,33.5,--,--,--,--,37,92,55,85,10,21,--,--,--,40,--,35,Model Providers,https://artificialanalysis.ai/models/gemini-3-8-flash-low
+GPT-6 Luna (High),1M,OpenAI,32.9,$0.03,120.2,18.71,22.87,33,--,50,78,5,-6,--,--,--,42,--,16,Model Providers,https://artificialanalysis.ai/models/gpt-6-luna-high
+Gemini 3.5 Flash (High),1M,Google,32.6,$3.69,187.9,12.86,15.53,43,92,54,84,7,21,45,47,40,35,76,38,Model Providers,https://artificialanalysis.ai/models/gemini-3-5-flash
+GPT-5.3 Codex (Xhigh),400k,OpenAI,32.5*,--,100.9,60.73,65.69,42,92,--,78,--,11,--,--,--,--,75,11,Model Providers,https://artificialanalysis.ai/models/gpt-5-3-codex
+Motif 3 (Beta),262144,Motif Technologies,32.3*,--,--,--,--,40,87,--,--,--,-18,--,--,--,30,--,51,Model Providers,https://artificialanalysis.ai/models/motif-0714
+GPT-5.6 Luna (High),1M,OpenAI,32.1,$0.04,117.8,11.61,15.85,33,89,52,78,3,-12,--,--,--,42,--,8,Model Providers,https://artificialanalysis.ai/models/gpt-5-6-luna-high
+Claude Opus 4.6 (Max),1M,Anthropic,31.9*,--,39.9,18.71,31.23,40,90,--,75,--,14,--,33,--,--,53,37,Model Providers,https://artificialanalysis.ai/models/claude-opus-4-6-adaptive
+Claude Sonnet 5 (High),1M,Anthropic,31.7,$1.79,71.3,4.07,11.08,36,--,54,--,5,-4,--,--,--,38,--,34,Model Providers,https://artificialanalysis.ai/models/claude-sonnet-5-high
+Muse Spark,262144,Meta,31.3*,--,--,--,--,41,88,--,81,--,7,--,--,--,25,76,16,Model Providers,https://artificialanalysis.ai/models/muse-spark
+"Claude Opus 4.7 (Non-reasoning, High)",1M,Anthropic,30.9*,--,54.0,1.35,10.60,33,88,--,76,--,15,--,--,--,--,44,46,Model Providers,https://artificialanalysis.ai/models/claude-opus-4-7-non-reasoning
+GPT-5.5 (Low),922k,OpenAI,30.7*,--,86.4,1.47,7.26,33,91,--,79,--,15,--,--,--,27,64,12,Model Providers,https://artificialanalysis.ai/models/gpt-5-5-low
+K2 Horizon 375B A23B,524288,Institute of Foundation Models,30.5,$0.00,891.4,2.59,5.39,32,87,43,--,2,-3,--,--,--,43,--,74,Model Providers,https://artificialanalysis.ai/models/k2-horizon-375b-a23b
+DeepSeek V4 Pro 0424 (Max),1M,DeepSeek,30.4,$0.12,87.4,1.82,57.59,38,89,51,--,15,-11,19,24,38,33,76,6,Model Providers,https://artificialanalysis.ai/models/deepseek-v4-pro-0424
+GPT-5.2 (Xhigh),400k,OpenAI,30.4*,--,78.6,64.48,70.83,38,90,--,--,--,-1,--,--,--,--,75,19,Model Providers,https://artificialanalysis.ai/models/gpt-5-2
+DeepSeek V4 Pro 0424 (High),1M,DeepSeek,30.1*,--,94.3,1.68,28.09,35,91,--,--,--,-11,--,--,--,33,71,11,Model Providers,https://artificialanalysis.ai/models/deepseek-v4-pro-0424-high
+GPT-5.6 Terra (Medium),1M,OpenAI,30.1,$0.18,104.1,1.64,6.45,33,87,50,77,1,-5,--,--,--,38,62,10,Model Providers,https://artificialanalysis.ai/models/gpt-5-6-terra-medium
+Kimi K3 (Low),1048576,Kimi,30.1,$1.15,44.2,3.43,60.00,25,84,53,78,13,4,--,--,--,31,--,23,Model Providers,https://artificialanalysis.ai/models/kimi-k3-low
+Claude Sonnet 4.6 (Max),1M,Anthropic,30.1,$2.49,54.8,82.82,91.95,34,87,50,73,3,12,20,28,40,37,57,52,Model Providers,https://artificialanalysis.ai/models/claude-sonnet-4-6-adaptive
+GPT-6 Luna (Medium),1M,OpenAI,29.9,$0.02,--,--,--,28,--,51,78,3,-5,--,--,--,38,--,15,Model Providers,https://artificialanalysis.ai/models/gpt-6-luna-medium
+Gemini 3.1 Pro Preview,1M,Google,29.7,$1.30,140.1,16.93,20.49,47,94,59,82,4,32,41,32,30,15,77,49,Model Providers,https://artificialanalysis.ai/models/gemini-3-1-pro-preview
+Qwen3.7 Max,1M,Alibaba,29.5,$1.15,197.2,2.25,17.00,41,92,50,--,2,13,19,--,42,31,81,74,Model Providers,https://artificialanalysis.ai/models/qwen3-7-max
+Claude Haiku 5.5 (Low),1M,Anthropic,29.5,$0.02,176.9,6.33,9.16,27,--,49,--,13,3,--,--,--,31,--,55,Model Providers,https://artificialanalysis.ai/models/claude-haiku-5-5-low
+MiniMax-M3,1M,MiniMax,29.2,$0.51,96.5,1.27,27.17,39,93,47,79,2,1,10,--,--,37,83,82,Model Providers,https://artificialanalysis.ai/models/minimax-m3
+Claude Opus 4.5 (Reasoning),200k,Anthropic,29.1*,--,67.3,16.09,23.52,30,87,--,74,--,14,--,--,--,--,58,39,Model Providers,https://artificialanalysis.ai/models/claude-opus-4-5-thinking
+MiMo-V2-Pro,1M,Xiaomi,28.6*,--,--,--,--,30,87,--,--,--,5,--,--,--,--,69,70,Model Providers,https://artificialanalysis.ai/models/mimo-v2-pro
+GPT-6 Sol (Non-reasoning),1050k,OpenAI,28.5,$0.33,95.2,0.87,6.12,18,--,47,70,13,-1,--,--,--,37,--,16,Model Providers,https://artificialanalysis.ai/models/gpt-6-sol-non-reasoning
+GPT-5.2 Codex (Xhigh),400k,OpenAI,28.5*,--,121.2,74.56,78.69,36,90,--,76,--,-2,--,--,--,--,78,27,Model Providers,https://artificialanalysis.ai/models/gpt-5-2-codex
+Qwen3.6 Max Preview,256k,Alibaba,28.4*,--,--,--,--,31,89,--,--,--,9,--,--,--,--,77,54,Model Providers,https://artificialanalysis.ai/models/qwen3-6-max
+GPT-5.6 Sol (Non-reasoning),1M,OpenAI,28.3*,--,94.0,0.94,6.27,17,79,48,72,--,1,--,--,--,37,--,7,Model Providers,https://artificialanalysis.ai/models/gpt-5-6-sol-non-reasoning
+Nex-N2-Pro (Based on Qwen3.5-397B-A17B),262k,Nex AGI,28.2*,--,--,--,--,34,89,43,--,--,-27,--,--,--,30,66,5,Model Providers,https://artificialanalysis.ai/models/nex-n2-pro
+Solar Pro 4,512k,Upstage,28.2*,--,87.8,2.03,30.50,29,89,45,--,1,-1,--,--,--,30,--,76,Model Providers,https://artificialanalysis.ai/models/solar-pro4
+Claude Sonnet 5 (Medium),1M,Anthropic,28.1,$1.00,72.3,1.76,8.67,30,--,52,--,2,-7,--,--,--,33,--,30,Model Providers,https://artificialanalysis.ai/models/claude-sonnet-5-medium
+Gemini 3 Pro Preview (High),1M,Google,28.0*,--,--,--,--,40,91,--,80,--,15,--,--,--,--,70,9,Model Providers,https://artificialanalysis.ai/models/gemini-3-pro
+GLM-5 (Reasoning),200k,Z AI,27.9*,--,70.6,1.73,52.83,29,82,--,--,--,0,--,14,--,--,72,65,Model Providers,https://artificialanalysis.ai/models/glm-5
+GPT-5.4 (Low),1050k,OpenAI,27.6*,--,67.9,1.67,9.04,31,87,--,78,--,5,--,--,--,--,66,17,Model Providers,https://artificialanalysis.ai/models/gpt-5-4-low
+Qwen3.8 27B (Medium),256k,Alibaba,27.6,$1.13,42.5,3.98,62.82,14,85,39,74,5,-36,--,--,--,44,--,33,Model Providers,https://artificialanalysis.ai/models/qwen3-8-27b-medium
+GPT-5.6 Terra (Low),1M,OpenAI,27.5,$0.14,103.8,1.53,6.34,29,84,50,76,2,-7,--,--,--,30,60,10,Model Providers,https://artificialanalysis.ai/models/gpt-5-6-terra-low
+JT-4.1 Flash 236B A21B (Non-reasoning),262144,China Mobile,27.3*,--,--,--,--,18,85,--,64,--,-9,--,--,--,31,--,56,Model Providers,https://artificialanalysis.ai/models/jt-4-1-flash-236b-a21b-non-reasoning
+Grok Build 0.1 0616,256k,SpaceXAI,27.2*,--,73.6,1.74,35.69,38,89,--,77,--,6,--,--,--,28,--,7,Model Providers,https://artificialanalysis.ai/models/grok-build-0-1-06-16
+Qwen3.6 Plus,1M,Alibaba,27.0*,--,56.3,2.05,109.58,28,88,--,78,--,1,--,--,--,25,75,65,Model Providers,https://artificialanalysis.ai/models/qwen3-6-plus
+Kimi K2.6 (Reasoning),256k,Kimi,27.0,$0.80,49.8,2.90,102.29,37,91,52,79,1,5,--,28,31,27,76,59,Model Providers,https://artificialanalysis.ai/models/kimi-k2-6
+"Quasar 438B (Max, Based on GLM-5.2)",1M,Multiverse Computing,26.7,$2.02,134.7,1.31,19.87,19,73,48,--,1,-3,--,--,--,34,--,79,Model Providers,https://artificialanalysis.ai/models/quasar-438b
+GLM-5-Turbo,200k,Z AI,26.6*,--,--,--,--,28,85,--,--,--,-16,--,--,--,--,73,37,Model Providers,https://artificialanalysis.ai/models/glm-5-turbo
+GPT-5.2 (Medium),400k,OpenAI,26.5*,--,--,--,--,27,86,--,75,--,0,--,--,--,--,65,38,Model Providers,https://artificialanalysis.ai/models/gpt-5-2-medium
+Nemotron 3.5 Super VL,1M,NVIDIA,26.5,$0.30,175.5,0.74,14.98,31,--,48,--,0,-4,--,--,--,33,--,64,Model Providers,https://artificialanalysis.ai/models/nemotron-3-5-super-vl
+Apodex 1.1,256k,Apodex,26.4,$0.46,--,--,--,34,86,45,79,0,-22,--,31,--,35,--,22,Model Providers,https://artificialanalysis.ai/models/apodex-1-1
+"Claude Opus 4.6 (Non-reasoning, High)",1M,Anthropic,26.4*,--,44.1,2.42,13.76,19,84,--,73,--,2,--,--,--,--,45,20,Model Providers,https://artificialanalysis.ai/models/claude-opus-4-6
+Gemini 3 Flash Preview (Reasoning),1M,Google,26.3*,--,204.8,6.10,8.54,37,90,--,80,--,10,--,28,--,--,78,7,Model Providers,https://artificialanalysis.ai/models/gemini-3-flash-reasoning
+Qwen3.8 27B (Low),256k,Alibaba,26.2,$1.05,45.3,4.07,59.30,14,85,40,74,3,-27,--,--,--,43,--,47,Model Providers,https://artificialanalysis.ai/models/qwen3-8-27b-low
+GLM-5.1 (Reasoning),200k,Z AI,26.1,$1.02,73.5,1.70,60.08,30,87,45,--,2,1,--,--,40,31,76,70,Model Providers,https://artificialanalysis.ai/models/glm-5-1
+GPT-5.5 Instant (June 2026),400k,OpenAI,26.0,$0.69,159.1,0.84,16.56,20,82,53,--,13,4,--,--,--,0,--,27,Model Providers,https://artificialanalysis.ai/models/gpt-5-5-instant-06-26
+MiMo-V2.5-Pro (Reasoning),1M,Xiaomi,26.0,$0.05,38.0,2.40,68.21,36,87,51,--,0,3,20,2,38,31,80,75,Model Providers,https://artificialanalysis.ai/models/mimo-v2-5-pro
+Kimi K2.7 Code,256k,Kimi,25.8,$0.54,52.7,3.12,54.92,35,90,48,--,1,-10,--,--,--,27,63,18,Model Providers,https://artificialanalysis.ai/models/kimi-k2-7-code
+Inkling Small,1M,Thinking Machines,25.7,$0.09,197.3,1.82,14.49,33,89,50,74,1,-9,28,--,--,31,--,37,Model Providers,https://artificialanalysis.ai/models/inkling-small
+Grok 4.20 0309 v2 (Reasoning),2M,SpaceXAI,25.7*,--,105.5,14.66,19.39,35,91,--,75,--,15,--,--,--,--,81,83,Model Providers,https://artificialanalysis.ai/models/grok-4-20
+K2 Horizon MoVA 36B A4B,524288,Institute of Foundation Models,25.3,--,--,--,--,23,82,40,--,0,-11,--,--,--,35,--,69,Model Providers,https://artificialanalysis.ai/models/k2-horizon-mova-36b-a4b
+Hy3,256k,Tencent,25.3,$0.07,87.9,2.79,31.22,33,90,49,--,1,-18,--,--,--,28,--,26,Model Providers,https://artificialanalysis.ai/models/hy3
+Grok 4.20 0309 (Reasoning),2M,SpaceXAI,25.2*,--,--,--,--,32,88,--,73,--,13,--,14,--,--,83,78,Model Providers,https://artificialanalysis.ai/models/grok-4-20-0309
+Qwen3.7 Plus,1M,Alibaba,25.2,$0.22,56.2,2.24,46.76,36,90,46,80,1,1,--,22,--,13,78,72,Model Providers,https://artificialanalysis.ai/models/qwen3-7-plus
+MiMo-V2-Omni-0327,256k,Xiaomi,25.1*,--,--,--,--,23,85,--,74,--,-15,--,--,--,--,67,60,Model Providers,https://artificialanalysis.ai/models/mimo-v2-omni-0327
+GPT-5.6 Luna (Medium),1M,OpenAI,25.0,$0.02,121.2,2.32,6.45,26,86,47,76,1,-13,--,--,--,31,--,9,Model Providers,https://artificialanalysis.ai/models/gpt-5-6-luna-medium
+Inkling (Xhigh),1M,Thinking Machines,25.0,--,177.9,1.85,15.91,32,87,47,73,1,2,24,--,--,29,--,32,Model Providers,https://artificialanalysis.ai/models/inkling
+GPT-5 Codex (High),400k,OpenAI,24.9*,--,185.9,8.64,11.33,28,84,--,74,--,-8,--,--,--,--,74,25,Model Providers,https://artificialanalysis.ai/models/gpt-5-codex
+Grok 4.3 (High),1M,SpaceXAI,24.9,$0.21,111.6,19.75,24.23,37,90,48,78,0,18,9,17,33,22,81,74,Model Providers,https://artificialanalysis.ai/models/grok-4-3
+Grok 4.3 (Medium),1M,SpaceXAI,24.8*,--,100.6,10.41,15.38,30,89,--,76,--,17,--,--,--,--,83,83,Model Providers,https://artificialanalysis.ai/models/grok-4-3-medium
+Solar Open2 250B,1048576,Upstage,24.7*,--,--,--,--,29,86,48,--,--,-2,--,--,--,24,--,75,Model Providers,https://artificialanalysis.ai/models/solar-open2-250b
+GPT-5.1 (High),400k,OpenAI,24.7*,--,116.8,34.24,38.52,28,87,--,75,--,5,--,--,--,16,73,48,Model Providers,https://artificialanalysis.ai/models/gpt-5-1
+"Claude Sonnet 4.6 (Non-reasoning, High)",1M,Anthropic,24.7*,--,47.7,1.08,11.57,13,80,--,71,--,-4,--,--,--,--,41,31,Model Providers,https://artificialanalysis.ai/models/claude-sonnet-4-6
+DeepSeek V4.1 Flash (Non-reasoning),1M,DeepSeek,24.7,$0.15,165.1,1.14,4.16,11,--,36,66,6,-10,--,--,--,42,--,46,Model Providers,https://artificialanalysis.ai/models/deepseek-v4-1-flash-non-reasoning
+Ling-3.0-flash-VL,262144,InclusionAI,24.6,--,--,--,--,22,86,44,79,0,-5,--,--,--,33,--,78,Model Providers,https://artificialanalysis.ai/models/ling-3-0-flash-vl
+DeepSeek V4 Flash 0420 (High),1M,DeepSeek,24.4,$0.10,44.9,1.92,40.63,30,87,40,--,3,-23,--,--,--,25,73,11,Model Providers,https://artificialanalysis.ai/models/deepseek-v4-flash-0420-high
+Grok 4.3 (Low),1M,SpaceXAI,24.3*,--,90.4,5.11,10.64,18,84,--,73,--,14,--,--,--,--,81,83,Model Providers,https://artificialanalysis.ai/models/grok-4-3-low
+Claude Sonnet 5 (Low),1M,Anthropic,24.3,$0.51,72.3,1.26,8.18,22,--,50,--,3,-8,--,--,--,28,--,27,Model Providers,https://artificialanalysis.ai/models/claude-sonnet-5-low
+GLM-5.1 (Non-reasoning),200k,Z AI,24.2*,--,70.9,1.77,8.82,28,84,--,--,--,-22,--,--,--,--,52,36,Model Providers,https://artificialanalysis.ai/models/glm-5-1-non-reasoning
+DeepSeek V4 Flash 0420 (Max),1M,DeepSeek,24.2,$0.09,42.4,1.88,145.91,35,89,45,--,3,-24,25,--,32,27,79,4,Model Providers,https://artificialanalysis.ai/models/deepseek-v4-flash-0420
+GPT-5.4 mini (Xhigh),400k,OpenAI,24.1,$0.45,254.9,108.82,110.78,28,87,52,73,2,-19,15,28,35,26,73,10,Model Providers,https://artificialanalysis.ai/models/gpt-5-4-mini
+Solar Mini 4,1048576,Upstage,24.1,$0.37,82.3,1.86,32.23,26,--,48,--,1,-11,--,--,--,29,--,64,Model Providers,https://artificialanalysis.ai/models/solar-mini4
+MiMo-V2-Omni,256k,Xiaomi,23.9*,--,--,--,--,22,83,--,70,--,-20,--,--,--,--,54,51,Model Providers,https://artificialanalysis.ai/models/mimo-v2-omni
+Gemini 3.5 Flash (Minimal),1M,Google,23.8*,--,202.0,0.80,3.27,24,83,--,80,--,1,--,--,--,--,47,26,Model Providers,https://artificialanalysis.ai/models/gemini-3-5-flash-minimal
+GPT-5.1 Codex (High),400k,OpenAI,23.7*,--,126.9,7.14,11.08,26,86,--,72,--,-6,--,--,--,--,70,23,Model Providers,https://artificialanalysis.ai/models/gpt-5-1-codex
+Claude Opus 4.5 (Non-reasoning),200k,Anthropic,23.7*,--,52.8,1.18,10.66,13,81,--,71,--,-4,--,--,--,--,43,24,Model Providers,https://artificialanalysis.ai/models/claude-opus-4-5
+Kimi K2.6 (Non-reasoning),256k,Kimi,23.6*,--,44.5,2.81,14.05,20,79,--,--,--,-9,--,--,--,--,44,56,Model Providers,https://artificialanalysis.ai/models/kimi-k2-6-non-reasoning
+GLM 5V Turbo (Reasoning),200k,Z AI,23.5*,--,--,--,--,17,81,--,73,--,-19,--,--,--,--,61,31,Model Providers,https://artificialanalysis.ai/models/glm-5v-turbo
+Kimi K2.5 (Reasoning),256k,Kimi,23.5*,--,57.9,1.83,61.70,31,88,--,75,--,-7,--,12,--,17,70,34,Model Providers,https://artificialanalysis.ai/models/kimi-k2-5
+"Claude Sonnet 4.6 (Non-reasoning, Low)",1M,Anthropic,23.3*,--,49.2,1.15,11.32,11,80,--,69,--,-2,--,--,--,--,42,39,Model Providers,https://artificialanalysis.ai/models/claude-sonnet-4-6-non-reasoning-low-effort
+"Claude Sonnet 5 (Non-reasoning, High)",1M,Anthropic,23.2*,--,72.5,0.79,7.68,19,80,--,72,--,-1,--,--,--,35,--,48,Model Providers,https://artificialanalysis.ai/models/claude-sonnet-5-non-reasoning
+GPT-5.5 (Non-reasoning),922k,OpenAI,23.2*,--,91.1,0.90,6.38,14,77,--,71,--,-5,8,--,--,23,46,7,Model Providers,https://artificialanalysis.ai/models/gpt-5-5-non-reasoning
+GPT-5 (High),400k,OpenAI,23.0*,--,101.7,65.63,70.55,28,85,--,74,--,-9,--,--,--,21,73,18,Model Providers,https://artificialanalysis.ai/models/gpt-5
+Nemotron 3 Ultra 550B A55B (Reasoning),262144,NVIDIA,22.9,$0.60,155.9,1.26,19.05,28,87,40,--,1,-0,6,--,--,26,81,70,Model Providers,https://artificialanalysis.ai/models/nvidia-nemotron-3-ultra-550b-a55b
+Qwen3.5 27B (Reasoning),262144,Alibaba,22.9*,--,77.6,5.72,37.95,24,86,--,75,--,-44,--,--,35,--,76,19,Model Providers,https://artificialanalysis.ai/models/qwen3-5-27b
+GPT-5 (Medium),400k,OpenAI,22.9*,--,90.5,26.99,32.51,25,84,--,74,--,-11,--,--,--,--,71,17,Model Providers,https://artificialanalysis.ai/models/gpt-5-medium
+Claude 4.1 Opus (Reasoning),200k,Anthropic,22.8*,--,--,--,--,12,81,--,68,--,--,--,--,--,--,55,--,Model Providers,https://artificialanalysis.ai/models/claude-4-1-opus-thinking
+MiniMax-M2.5,204800,MiniMax,22.8*,--,67.7,1.45,38.36,21,85,--,--,--,-39,--,--,--,--,72,12,Model Providers,https://artificialanalysis.ai/models/minimax-m2-5
+MiniMax-M2.7,204800,MiniMax,22.8,--,58.9,1.50,51.81,30,87,50,--,0,1,11,11,26,26,76,64,Model Providers,https://artificialanalysis.ai/models/minimax-m2-7
+Hy3-preview (Reasoning),256k,Tencent,22.7*,--,--,--,--,28,87,--,--,--,-35,--,--,--,--,63,13,Model Providers,https://artificialanalysis.ai/models/hy3-preview
+GPT-5.5 Instant (May 2026),400k,OpenAI,22.7*,--,--,--,--,22,85,--,--,--,11,--,--,--,--,71,35,Model Providers,https://artificialanalysis.ai/models/gpt-5-5-instant-05-26
+Ling-3.0-flash-Fin,262144,InclusionAI,22.6,--,228.0,1.77,12.73,23,--,42,--,0,-15,16,27,--,30,--,60,Model Providers,https://artificialanalysis.ai/models/ling-3-0-flash-fin
+Grok 4,256k,SpaceXAI,22.5*,--,82.7,9.38,15.43,27,88,--,69,--,2,--,--,--,--,54,36,Model Providers,https://artificialanalysis.ai/models/grok-4
+MiMo-V2-Flash (Feb 2026),256k,Xiaomi,22.4*,--,--,--,--,22,84,--,--,--,-19,--,--,--,--,72,52,Model Providers,https://artificialanalysis.ai/models/mimo-v2-0206
+GLM-5.2 (Non-reasoning),1M,Z AI,22.4*,--,141.0,1.20,4.75,10,69,--,--,--,-7,--,--,--,37,--,66,Model Providers,https://artificialanalysis.ai/models/glm-5-2-non-reasoning
+Gemini 3 Pro Preview (Low),1M,Google,22.3*,--,--,--,--,29,89,--,--,--,2,--,--,--,--,50,10,Model Providers,https://artificialanalysis.ai/models/gemini-3-pro-low
+GLM-4.7 (Reasoning),200k,Z AI,22.2*,--,38.1,3.37,68.90,27,86,--,--,--,-36,--,--,--,26,68,7,Model Providers,https://artificialanalysis.ai/models/glm-4-7
+Gemini 3.5 Flash-Lite,1M,Google,22.2,$0.19,437.8,6.98,8.12,19,84,41,79,1,5,--,--,--,24,--,66,Model Providers,https://artificialanalysis.ai/models/gemini-3-5-flash-lite
+Kimi K2 Thinking,256k,Kimi,22.0*,--,146.7,1.40,18.44,24,84,--,--,--,-21,--,--,--,--,68,24,Model Providers,https://artificialanalysis.ai/models/kimi-k2-thinking
+o3-pro,200k,OpenAI,21.9*,--,--,--,--,--,85,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/o3-pro
+G9v3-39A5B,131072,AI9Stars,21.8*,--,--,--,--,17,81,37,--,--,4,--,--,--,30,--,87,Model Providers,https://artificialanalysis.ai/models/g9v3-39a5b
+MiMo-V2.5,1M,Xiaomi,21.8,$0.02,34.7,5.88,77.86,27,85,44,75,0,-10,--,--,--,25,67,68,Model Providers,https://artificialanalysis.ai/models/mimo-v2-5-0424
+GLM-5 (Non-reasoning),200k,Z AI,21.8*,--,69.9,1.67,8.82,8,67,--,--,--,-12,--,--,--,--,55,55,Model Providers,https://artificialanalysis.ai/models/glm-5-non-reasoning
+KAT Coder Pro V2,256k,KwaiKAT,21.7*,--,--,--,--,16,85,--,--,--,-22,--,--,--,12,67,44,Model Providers,https://artificialanalysis.ai/models/kat-coder-pro-v2
+GPT-6 Luna (Low),1M,OpenAI,21.5,$0.00,117.9,2.29,6.53,20,--,47,76,0,-9,--,--,--,27,--,16,Model Providers,https://artificialanalysis.ai/models/gpt-6-luna-low
+DeepSeek V3.2 (Reasoning),128k,DeepSeek,21.5*,--,--,--,--,25,84,--,--,--,-22,--,15,--,10,61,17,Model Providers,https://artificialanalysis.ai/models/deepseek-v3-2-reasoning
+A.X-K2,262144,SK Telecom,21.5,--,--,--,--,30,86,41,--,0,-8,--,--,--,23,--,67,Model Providers,https://artificialanalysis.ai/models/a-x-k2
+Qwen3.5 397B A17B (Non-reasoning),262144,Alibaba,21.4*,--,56.3,2.41,11.29,20,86,--,53,--,-38,--,--,--,--,52,17,Model Providers,https://artificialanalysis.ai/models/qwen3-5-397b-a17b-non-reasoning
+Qwen3.6 27B (Reasoning),262144,Alibaba,21.4,$0.62,55.7,3.72,114.68,23,84,43,75,0,-20,--,--,--,24,68,51,Model Providers,https://artificialanalysis.ai/models/qwen3-6-27b
+Nemotron 3.5 Bolt 74B-A9B,262144,NVIDIA,21.4,--,--,--,--,25,--,40,--,0,-19,--,--,--,24,--,56,Model Providers,https://artificialanalysis.ai/models/nemotron-3-5-bolt-74b-a9b
+Qwen3 Max Thinking,256k,Alibaba,21.3*,--,--,--,--,28,86,--,--,--,-37,--,--,--,--,71,5,Model Providers,https://artificialanalysis.ai/models/qwen3-max-thinking
+GPT-5.6 Luna (Low),1M,OpenAI,21.0,$0.01,120.7,1.32,5.46,20,84,46,74,0,-15,--,--,--,25,--,10,Model Providers,https://artificialanalysis.ai/models/gpt-5-6-luna-low
+MiniMax-M2.1,204800,MiniMax,20.9*,--,67.0,1.50,38.81,23,83,--,--,--,-33,--,--,--,--,70,31,Model Providers,https://artificialanalysis.ai/models/minimax-m2-1
+DeepSeek V4 Pro 0424 (Non-reasoning),1M,DeepSeek,20.8*,--,94.1,1.55,6.87,8,72,--,--,--,-30,--,--,--,--,46,12,Model Providers,https://artificialanalysis.ai/models/deepseek-v4-pro-0424-non-reasoning
+MiMo-V2-Flash (Reasoning),256k,Xiaomi,20.8*,--,--,--,--,23,85,--,--,--,-45,--,--,--,--,64,7,Model Providers,https://artificialanalysis.ai/models/mimo-v2-flash-reasoning
+GPT-5 (Low),400k,OpenAI,20.8*,--,88.4,7.31,12.97,20,81,--,74,--,-11,--,--,--,--,67,21,Model Providers,https://artificialanalysis.ai/models/gpt-5-low
+GPT-5.6 Terra (Non-reasoning),1M,OpenAI,20.8,$0.14,110.8,0.79,5.30,11,75,45,67,1,-23,--,--,--,30,--,5,Model Providers,https://artificialanalysis.ai/models/gpt-5-6-terra-non-reasoning
+GPT-5.4 nano (Xhigh),400k,OpenAI,20.7,$0.18,165.9,44.85,47.86,28,82,47,65,1,-29,--,25,24,22,76,26,Model Providers,https://artificialanalysis.ai/models/gpt-5-4-nano
+Claude 4.5 Sonnet (Reasoning),1M,Anthropic,20.7,$0.56,47.3,13.22,23.79,18,83,46,69,0,-0,--,--,--,21,57,51,Model Providers,https://artificialanalysis.ai/models/claude-4-5-sonnet-thinking
+Claude 4 Opus (Reasoning),200k,Anthropic,20.6*,--,--,--,--,12,80,--,--,--,--,--,--,--,--,54,--,Model Providers,https://artificialanalysis.ai/models/claude-4-opus-thinking
+GPT-5 mini (Medium),400k,OpenAI,20.6*,--,133.7,11.22,14.96,16,80,--,69,--,-11,--,--,--,--,71,56,Model Providers,https://artificialanalysis.ai/models/gpt-5-mini-medium
+K2 Horizon 7B,524288,Institute of Foundation Models,20.6,--,--,--,--,18,75,28,--,1,-17,--,--,--,26,--,66,Model Providers,https://artificialanalysis.ai/models/k2-horizon-7b
+Qwen3.5 Omni Plus,256k,Alibaba,20.4*,--,91.2,2.11,7.59,15,83,--,71,--,-13,--,--,--,--,51,63,Model Providers,https://artificialanalysis.ai/models/qwen3-5-omni-plus
+GPT-5.1 Codex mini (High),400k,OpenAI,20.4*,--,168.4,8.41,11.38,18,81,--,69,--,-16,--,--,--,--,68,48,Model Providers,https://artificialanalysis.ai/models/gpt-5-1-codex-mini
+Grok 4.1 Fast (Reasoning),2M,SpaceXAI,20.4*,--,--,--,--,19,85,--,63,--,-30,--,--,--,--,53,27,Model Providers,https://artificialanalysis.ai/models/grok-4-1-fast-reasoning
+DeepSeek V4 Pro 0813 (Non-reasoning),1M,DeepSeek,20.4,$0.36,96.0,1.68,6.89,11,--,40,--,2,-12,--,--,--,28,--,8,Model Providers,https://artificialanalysis.ai/models/deepseek-v4-pro-non-reasoning
+o3,200k,OpenAI,20.2*,--,119.8,5.71,9.89,20,83,--,70,--,-16,--,--,--,--,71,12,Model Providers,https://artificialanalysis.ai/models/o3
+Qwen3.8 27B (Non-reasoning),256k,Alibaba,20.2,$2.49,44.7,4.15,15.33,12,82,36,70,0,-8,--,--,--,29,--,82,Model Providers,https://artificialanalysis.ai/models/qwen3-8-27b-non-reasoning
+Ling 3.0 Flash,262144,InclusionAI,20.1,--,285.4,2.85,11.61,24,85,42,--,0,-18,--,--,--,22,--,56,Model Providers,https://artificialanalysis.ai/models/ling-3-0-flash
+GPT-5.4 nano (Medium),400k,OpenAI,20.0*,--,166.3,3.24,6.25,16,76,--,60,--,-18,--,--,--,--,64,49,Model Providers,https://artificialanalysis.ai/models/gpt-5-4-nano-medium
+Qwen3.6 27B (Non-reasoning),262144,Alibaba,19.8*,--,55.2,3.63,12.70,15,83,--,72,--,-53,--,--,--,23,46,16,Model Providers,https://artificialanalysis.ai/models/qwen3-6-27b-non-reasoning
+GPT-5.4 mini (Medium),400k,OpenAI,19.7*,--,218.0,3.42,5.72,19,82,--,71,--,-21,--,--,--,--,65,10,Model Providers,https://artificialanalysis.ai/models/gpt-5-4-mini-medium
+K-EXAONE 2.0 0803,262144,LG AI Research,19.7*,--,--,--,--,19,83,42,--,--,-7,--,--,--,--,--,77,Model Providers,https://artificialanalysis.ai/models/k-exaone-2-0-0803
+Step 3.7 Flash,262144,StepFun,19.5*,--,191.4,2.47,15.53,21,81,44,75,--,-37,--,15,30,18,67,15,Model Providers,https://artificialanalysis.ai/models/step-3-7-flash
+Kimi K2.5 (Non-reasoning),256k,Kimi,19.4*,--,57.1,2.55,11.31,13,79,--,73,--,-14,--,--,--,--,44,50,Model Providers,https://artificialanalysis.ai/models/kimi-k2-5-non-reasoning
+Qwen3.5 27B (Non-reasoning),262144,Alibaba,19.4*,--,83.8,5.67,11.64,14,84,--,70,--,-48,--,--,--,--,47,25,Model Providers,https://artificialanalysis.ai/models/qwen3-5-27b-non-reasoning
+Claude 4.5 Sonnet (Non-reasoning),1M,Anthropic,19.3*,--,45.1,1.09,12.18,7,73,--,65,--,-9,--,--,--,--,43,47,Model Providers,https://artificialanalysis.ai/models/claude-4-5-sonnet
+Qwen3.5 35B A3B (Reasoning),262144,Alibaba,19.3*,--,147.4,2.09,19.05,21,85,--,73,--,-48,--,--,22,--,73,15,Model Providers,https://artificialanalysis.ai/models/qwen3-5-35b-a3b
+LongCat 2.0,1M,LongCat,19.1,$0.15,69.7,2.65,38.53,34,78,36,--,0,-23,--,--,--,18,--,25,Model Providers,https://artificialanalysis.ai/models/longcat-2-0
+Claude 4 Sonnet (Reasoning),1M,Anthropic,18.9*,--,--,--,--,11,78,--,62,--,0,--,--,--,10,55,71,Model Providers,https://artificialanalysis.ai/models/claude-4-sonnet-thinking
+DeepSeek V4 Flash 0420 (Non-reasoning),1M,DeepSeek,18.9*,--,--,--,--,8,72,--,--,--,-44,--,--,--,--,47,5,Model Providers,https://artificialanalysis.ai/models/deepseek-v4-flash-0420-non-reasoning
+JT-35B-Flash,256k,China Mobile,18.7*,--,--,--,--,6,83,--,--,--,-24,--,--,--,--,42,36,Model Providers,https://artificialanalysis.ai/models/jt-35b-flash
+MiniMax-M2,204800,MiniMax,18.6*,--,69.6,1.41,37.35,14,78,--,--,--,-47,--,--,--,--,72,9,Model Providers,https://artificialanalysis.ai/models/minimax-m2
+KAT-Coder-Pro V1,256k,KwaiKAT,18.6*,--,--,--,--,34,76,--,--,--,-38,--,--,--,12,68,33,Model Providers,https://artificialanalysis.ai/models/kat-coder-pro-v1
+Claude 4.1 Opus (Non-reasoning),200k,Anthropic,18.6*,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/claude-4-1-opus
+GLM-4.6 (Reasoning),200k,Z AI,18.5*,--,36.4,3.42,72.20,14,78,--,--,--,-42,--,--,--,13,43,6,Model Providers,https://artificialanalysis.ai/models/glm-4-6-reasoning
+GPT-6 Luna (Non-reasoning),1M,OpenAI,18.5,$0.01,112.3,0.93,5.38,9,--,43,62,2,-22,--,--,--,27,--,21,Model Providers,https://artificialanalysis.ai/models/gpt-6-luna-non-reasoning
+Qwen3.5 397B A17B (Reasoning),262144,Alibaba,18.4,$0.47,55.7,2.27,68.44,29,89,45,77,0,-31,--,15,34,15,79,11,Model Providers,https://artificialanalysis.ai/models/qwen3-5-397b-a17b
+MiMo-V2.5-Pro (Non-reasoning),1M,Xiaomi,18.3*,--,32.4,2.14,17.56,15,76,--,--,--,-38,--,--,--,--,43,11,Model Providers,https://artificialanalysis.ai/models/mimo-v2-5-pro-non-reasoning
+Qwen3.6 35B A3B (Reasoning),262144,Alibaba,18.2,$0.48,140.9,2.06,43.90,22,84,37,75,0,-22,--,--,--,20,64,49,Model Providers,https://artificialanalysis.ai/models/qwen3-6-35b-a3b
+GPT-5.4 (Non-reasoning),1050k,OpenAI,18.2*,--,68.5,0.78,8.08,11,75,--,71,--,-16,--,--,--,--,48,15,Model Providers,https://artificialanalysis.ai/models/gpt-5-4-non-reasoning
+Grok 4 Fast (Reasoning),2M,SpaceXAI,17.9*,--,--,--,--,19,85,--,62,--,-30,--,--,--,--,51,32,Model Providers,https://artificialanalysis.ai/models/grok-4-fast-reasoning
+Gemini 3 Flash Preview (Non-reasoning),1M,Google,17.9*,--,195.7,0.87,3.43,15,81,--,79,--,-4,--,--,--,--,55,8,Model Providers,https://artificialanalysis.ai/models/gemini-3-flash
+Qwen3.5 122B A10B (Non-reasoning),262144,Alibaba,17.7*,--,142.0,2.36,5.88,16,83,--,70,--,-55,--,--,--,10,51,8,Model Providers,https://artificialanalysis.ai/models/qwen3-5-122b-a10b-non-reasoning
+Claude 3.7 Sonnet (Reasoning),200k,Anthropic,17.7*,--,--,--,--,10,77,--,--,--,-1,--,--,--,--,48,60,Model Providers,https://artificialanalysis.ai/models/claude-3-7-sonnet-thinking
+Muse Glimmer (High),131072,Meta,17.5,$0.05,122.4,1.14,21.55,22,84,45,74,1,-33,20,--,--,14,--,18,Model Providers,https://artificialanalysis.ai/models/muse-glimmer
+GLM-4.7 (Non-reasoning),200k,Z AI,17.4*,--,38.8,2.15,15.03,6,66,--,--,--,-47,--,--,--,--,55,7,Model Providers,https://artificialanalysis.ai/models/glm-4-7-non-reasoning
+Hy3-preview (Non-reasoning),256k,Tencent,17.0*,--,--,--,--,7,73,--,--,--,-35,--,--,--,--,48,24,Model Providers,https://artificialanalysis.ai/models/hy3-non-reasoning
+Ling-2.6-1T,262144,InclusionAI,17.0*,--,--,--,--,9,75,--,--,--,-51,--,--,--,--,57,7,Model Providers,https://artificialanalysis.ai/models/ling-2-6-1t
+GPT-5.2 (Non-reasoning),400k,OpenAI,17.0*,--,81.0,0.83,7.00,8,71,--,66,--,-12,--,--,--,--,47,38,Model Providers,https://artificialanalysis.ai/models/gpt-5-2-non-reasoning
+Step 3.5 Flash 2603,256k,StepFun,17.0*,--,137.3,3.28,21.49,24,83,--,--,--,-44,--,--,--,--,67,9,Model Providers,https://artificialanalysis.ai/models/step-3-5-flash
+Doubao Seed Code,256k,ByteDance Seed,16.9*,--,--,--,--,14,76,--,68,--,-35,--,--,--,--,51,20,Model Providers,https://artificialanalysis.ai/models/doubao-seed-code
+Claude 4.5 Haiku (Reasoning),200k,Anthropic,16.9,$0.28,94.3,20.78,26.08,10,67,42,59,0,-4,15,--,27,12,54,73,Model Providers,https://artificialanalysis.ai/models/claude-4-5-haiku-reasoning
+GPT-5 mini (High),400k,OpenAI,16.8,$0.05,138.5,49.51,53.12,21,83,39,70,0,-17,--,--,--,13,75,44,Model Providers,https://artificialanalysis.ai/models/gpt-5-mini
+Gemma 4 26B A4B (Reasoning),256k,Google,16.7*,--,65.4,0.98,39.18,19,79,40,69,--,-51,--,--,24,3,72,14,Model Providers,https://artificialanalysis.ai/models/gemma-4-26b-a4b
+o4-mini (High),200k,OpenAI,16.7*,--,148.6,13.87,17.23,17,78,--,69,--,-36,--,--,--,--,69,20,Model Providers,https://artificialanalysis.ai/models/o4-mini
+Ring-2.6-1T,262144,InclusionAI,16.6,$0.29,114.7,3.72,25.51,22,86,45,--,1,-38,--,--,--,12,45,15,Model Providers,https://artificialanalysis.ai/models/ring-2-6-1t
+Step 3.5 Flash,256k,StepFun,16.6*,--,128.0,3.31,22.84,21,83,--,--,--,-42,--,--,--,--,65,14,Model Providers,https://artificialanalysis.ai/models/step-3-5-flash-0202
+Claude 4 Opus (Non-reasoning),200k,Anthropic,16.6*,--,--,--,--,6,70,--,--,--,--,--,--,--,--,43,--,Model Providers,https://artificialanalysis.ai/models/claude-4-opus
+Claude 4 Sonnet (Non-reasoning),1M,Anthropic,16.6*,--,--,--,--,4,68,--,62,--,-9,--,--,--,--,45,59,Model Providers,https://artificialanalysis.ai/models/claude-4-sonnet
+DeepSeek V3.2 Exp (Reasoning),128k,DeepSeek,16.6*,--,--,--,--,15,80,--,--,--,-31,--,--,--,--,54,19,Model Providers,https://artificialanalysis.ai/models/deepseek-v3-2-reasoning-0925
+Qwen3 Max Thinking (Preview),262144,Alibaba,16.3*,--,--,--,--,13,78,--,--,--,-39,--,--,--,--,54,9,Model Providers,https://artificialanalysis.ai/models/qwen3-max-thinking-preview
+Gemini 2.5 Pro,1M,Google,16.1,$0.33,118.4,21.42,25.65,23,84,46,75,0,-16,--,--,--,0,49,9,Model Providers,https://artificialanalysis.ai/models/gemini-2-5-pro
+MiMo-V2-Flash (Non-reasoning),256k,Xiaomi,16.0*,--,--,--,--,9,66,--,--,--,-48,--,--,--,6,40,24,Model Providers,https://artificialanalysis.ai/models/mimo-v2-flash
+DeepSeek V3.2 (Non-reasoning),128k,DeepSeek,16.0*,--,--,--,--,11,75,--,--,--,-47,--,--,--,--,49,7,Model Providers,https://artificialanalysis.ai/models/deepseek-v3-2
+K2 Horizon 3.7B,524288,Institute of Foundation Models,15.6,--,--,--,--,14,69,22,--,0,-29,--,--,--,19,--,56,Model Providers,https://artificialanalysis.ai/models/k2-horizon-3-7b
+Qwen3 Max,262144,Alibaba,15.6*,--,--,--,--,12,76,--,--,--,-44,--,--,--,--,44,10,Model Providers,https://artificialanalysis.ai/models/qwen3-max
+Qwen3.5 122B A10B (Reasoning),262144,Alibaba,15.6,$0.32,130.6,2.35,21.50,25,86,40,75,0,-42,--,--,--,16,76,13,Model Providers,https://artificialanalysis.ai/models/qwen3-5-122b-a10b
+Gemini 3.1 Flash-Lite,1M,Google,15.6,$0.06,356.1,4.16,5.56,17,82,43,76,1,-16,9,12,--,0,77,17,Model Providers,https://artificialanalysis.ai/models/gemini-3-1-flash-lite-preview
+GPT-5.6 Luna (Non-reasoning),1M,OpenAI,15.5,$0.01,121.5,0.79,4.90,7,65,40,60,1,-25,--,--,--,21,--,25,Model Providers,https://artificialanalysis.ai/models/gpt-5-6-luna-non-reasoning
+Gemini 2.5 Flash Preview (Sep '25) (Reasoning),1M,Google,15.5*,--,--,--,--,14,79,--,73,--,-36,--,--,--,--,52,10,Model Providers,https://artificialanalysis.ai/models/gemini-2-5-flash-preview-09-2025-reasoning
+Claude 4.5 Haiku (Non-reasoning),200k,Anthropic,15.4*,--,86.3,0.50,6.29,4,65,--,55,--,-8,--,--,--,--,42,74,Model Providers,https://artificialanalysis.ai/models/claude-4-5-haiku
+Kimi K2 0905,256k,Kimi,15.3*,--,53.0,1.21,10.65,6,77,--,--,--,-27,--,--,--,--,42,30,Model Providers,https://artificialanalysis.ai/models/kimi-k2-0905
+Claude 3.7 Sonnet (Non-reasoning),200k,Anthropic,15.3*,--,--,--,--,4,66,--,60,--,-10,--,--,--,--,44,47,Model Providers,https://artificialanalysis.ai/models/claude-3-7-sonnet
+Qwen3.6 35B A3B (Non-reasoning),262144,Alibaba,15.2*,--,144.4,2.09,5.56,14,82,--,71,--,-60,--,--,--,17,36,8,Model Providers,https://artificialanalysis.ai/models/qwen3-6-35b-a3b-non-reasoning
+o1,200k,OpenAI,15.2*,--,--,--,--,7,75,--,--,--,-11,--,--,--,--,70,30,Model Providers,https://artificialanalysis.ai/models/o1
+Qwen3.5 35B A3B (Non-reasoning),262144,Alibaba,15.1*,--,164.5,2.13,5.17,13,82,--,69,--,-63,--,--,--,5,44,7,Model Providers,https://artificialanalysis.ai/models/qwen3-5-35b-a3b-non-reasoning
+Gemini 2.5 Pro Preview (Mar' 25),1M,Google,15.0*,--,--,--,--,18,84,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/gemini-2-5-pro-03-25
+GLM-4.6 (Non-reasoning),200k,Z AI,14.9*,--,34.2,4.48,19.10,5,63,--,--,--,-32,--,--,--,--,37,32,Model Providers,https://artificialanalysis.ai/models/glm-4-6
+GLM-4.7-Flash (Reasoning),200k,Z AI,14.9*,--,65.5,1.80,39.98,8,58,--,--,--,-63,--,--,--,--,61,6,Model Providers,https://artificialanalysis.ai/models/glm-4-7-flash
+DeepSeek V3.1 Terminus (Reasoning),128k,DeepSeek,14.8,--,--,--,--,16,79,38,--,0,-26,--,--,--,10,57,25,Model Providers,https://artificialanalysis.ai/models/deepseek-v3-1-terminus-reasoning
+Gemma 4 31B (Reasoning),256k,Google,14.7,$0.00,35.5,1.07,64.06,24,86,45,73,0,-48,--,--,37,6,76,15,Model Providers,https://artificialanalysis.ai/models/gemma-4-31b
+Grok 3 mini Reasoning (High),1M,SpaceXAI,14.6*,--,65.3,1.78,40.08,11,79,--,--,--,-7,--,--,--,--,46,74,Model Providers,https://artificialanalysis.ai/models/grok-3-mini-reasoning
+Grok 4.20 0309 (Non-reasoning),2M,SpaceXAI,14.6*,--,--,--,--,25,78,--,64,--,-43,--,--,--,--,48,7,Model Providers,https://artificialanalysis.ai/models/grok-4-20-0309-non-reasoning
+Gemini 2.5 Pro Preview (May' 25),1M,Google,14.5*,--,--,--,--,20,82,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/gemini-2-5-pro-05-06
+DeepSeek V3.2 Speciale,128k,DeepSeek,14.5*,--,--,--,--,29,87,--,--,--,-18,--,--,--,--,64,11,Model Providers,https://artificialanalysis.ai/models/deepseek-v3-2-speciale
+K-EXAONE (Reasoning),256k,LG AI Research,14.4*,--,--,--,--,14,78,--,--,--,-58,--,--,--,0,65,11,Model Providers,https://artificialanalysis.ai/models/k-exaone
+ERNIE 5.0 Thinking Preview,128k,Baidu,14.3*,--,--,--,--,13,78,--,65,--,-46,--,--,--,--,41,13,Model Providers,https://artificialanalysis.ai/models/ernie-5-0-thinking-preview
+Grok 4.20 0309 v2 (Non-reasoning),2M,SpaceXAI,14.2*,--,104.3,0.58,5.38,28,78,--,65,--,-45,--,--,--,--,49,3,Model Providers,https://artificialanalysis.ai/models/grok-4-20-non-reasoning
+Mistral Medium 3.5,256k,Mistral,14.2,$0.50,165.0,2.21,17.36,14,75,40,65,0,-37,12,--,--,13,69,18,Model Providers,https://artificialanalysis.ai/models/mistral-medium-3-5
+Gemma 4 12B (Reasoning),262144,Google,14.2*,--,113.9,2.44,24.40,16,75,--,70,--,-53,--,--,--,0,74,19,Model Providers,https://artificialanalysis.ai/models/gemma-4-12b
+Nova 2.0 Pro Preview (Medium),256k,Amazon,14.2*,--,134.2,11.25,29.88,9,78,--,65,--,-49,--,--,--,0,79,9,Model Providers,https://artificialanalysis.ai/models/nova-2-0-pro-reasoning-medium
+Grok Code Fast 1,256k,SpaceXAI,14.1*,--,--,--,--,8,73,--,--,--,-37,--,--,--,--,41,21,Model Providers,https://artificialanalysis.ai/models/grok-code-fast-1
+Grok 4.3 (Non-reasoning),1M,SpaceXAI,14.0,$0.17,95.2,0.66,5.92,7,66,39,65,0,-33,--,--,--,22,48,26,Model Providers,https://artificialanalysis.ai/models/grok-4-3-non-reasoning
+DeepSeek V3.1 Terminus (Non-reasoning),128k,DeepSeek,13.9*,--,52.8,0.93,10.40,9,75,--,--,--,-43,--,--,--,--,41,12,Model Providers,https://artificialanalysis.ai/models/deepseek-v3-1-terminus
+Gemma 4 31B (Non-reasoning),256k,Google,13.9*,--,48.4,1.97,12.29,12,76,--,70,--,-52,--,--,--,2,53,18,Model Providers,https://artificialanalysis.ai/models/gemma-4-31b-non-reasoning
+DeepSeek V3.2 Exp (Non-reasoning),128k,DeepSeek,13.9*,--,--,--,--,9,74,--,--,--,-48,--,--,--,--,43,8,Model Providers,https://artificialanalysis.ai/models/deepseek-v3-2-0925
+Apriel-v1.5-15B-Thinker,128k,ServiceNow,13.8*,--,--,--,--,12,71,--,57,--,-55,--,--,--,--,62,15,Model Providers,https://artificialanalysis.ai/models/apriel-v1-5-15b-thinker
+DeepSeek V3.1 (Non-reasoning),128k,DeepSeek,13.7*,--,98.0,1.39,6.49,7,74,--,--,--,-43,--,--,--,--,38,14,Model Providers,https://artificialanalysis.ai/models/deepseek-v3-1
+Nova 2.0 Omni (Medium),1M,Amazon,13.6*,--,--,--,--,7,76,--,62,--,-59,--,--,--,--,66,7,Model Providers,https://artificialanalysis.ai/models/nova-2-0-omni-reasoning-medium
+DeepSeek V3.1 (Reasoning),128k,DeepSeek,13.5*,--,120.9,2.94,23.61,14,78,--,--,--,-30,--,--,--,--,41,17,Model Providers,https://artificialanalysis.ai/models/deepseek-v3-1-reasoning
+Qwen3 VL 235B A22B (Reasoning),262144,Alibaba,13.4*,--,--,--,--,12,77,--,69,--,-47,--,--,--,--,56,15,Model Providers,https://artificialanalysis.ai/models/qwen3-vl-235b-a22b-reasoning
+Apriel-v1.6-15B-Thinker,128k,ServiceNow,13.4*,--,--,--,--,11,73,--,--,--,-59,--,--,--,--,69,8,Model Providers,https://artificialanalysis.ai/models/apriel-v1-6-15b-thinker
+Nova 2.0 Lite (High),1M,Amazon,13.4*,--,181.4,15.95,29.73,12,81,--,64,--,-55,--,--,--,0,71,9,Model Providers,https://artificialanalysis.ai/models/nova-2-0-lite-reasoning
+GPT-5.1 (Non-reasoning),400k,OpenAI,13.3*,--,104.8,1.13,5.90,5,64,--,62,--,-34,--,--,--,--,43,9,Model Providers,https://artificialanalysis.ai/models/gpt-5-1-non-reasoning
+Qwen3.5 9B (Non-reasoning),262144,Alibaba,13.3*,--,96.4,0.78,5.97,9,79,--,67,--,-71,--,--,--,--,38,2,Model Providers,https://artificialanalysis.ai/models/qwen3-5-9b-non-reasoning
+EXAONE 4.5 33B (Reasoning),262144,LG AI Research,13.2*,--,--,--,--,13,79,--,67,--,-51,--,--,--,0,58,20,Model Providers,https://artificialanalysis.ai/models/exaone-4-5-33b
+Command A+,192k,Cohere,13.1,$0.00,186.2,0.50,13.92,12,76,39,63,1,-4,--,--,--,1,74,86,Model Providers,https://artificialanalysis.ai/models/command-a-plus
+Gemma 4 26B A4B (Non-reasoning),256k,Google,13.1*,--,88.3,1.03,6.69,11,71,--,67,--,-62,--,--,--,--,45,8,Model Providers,https://artificialanalysis.ai/models/gemma-4-26b-a4b-non-reasoning
+Qwen3.5 4B (Reasoning),262144,Alibaba,13.1*,--,17.2,0.88,145.90,10,77,--,65,--,-58,--,--,--,--,52,13,Model Providers,https://artificialanalysis.ai/models/qwen3-5-4b
+DeepSeek R1 0528 (May '25),128k,DeepSeek,13.1*,--,35.2,1.05,72.01,16,81,--,--,--,-27,--,--,--,--,40,17,Model Providers,https://artificialanalysis.ai/models/deepseek-r1
+Gemini 2.5 Flash (Reasoning),1M,Google,13.1*,--,208.7,16.48,18.87,12,79,--,69,--,-30,--,--,--,--,50,25,Model Providers,https://artificialanalysis.ai/models/gemini-2-5-flash-reasoning
+GPT-5 nano (High),400k,OpenAI,13.0*,--,145.6,78.44,81.88,9,68,--,61,--,-29,--,--,--,--,68,41,Model Providers,https://artificialanalysis.ai/models/gpt-5-nano
+Nemotron 3.5 Lightning,1M,NVIDIA,12.9,$0.09,307.0,0.57,8.71,11,74,32,--,1,-18,--,--,--,7,--,62,Model Providers,https://artificialanalysis.ai/models/nemotron-3-5-lightning
+Nemotron 3 Super 120B A12B (Reasoning),1M,NVIDIA,12.8,$1.64,145.0,1.30,18.54,21,80,36,--,0,-42,--,2,1,0,71,13,Model Providers,https://artificialanalysis.ai/models/nvidia-nemotron-3-super-120b-a12b
+Nova 2.0 Pro Preview (Low),256k,Amazon,12.8*,--,129.5,7.14,26.44,5,75,--,63,--,-47,--,--,--,0,80,12,Model Providers,https://artificialanalysis.ai/models/nova-2-0-pro-reasoning-low
+GLM-4.5 (Reasoning),128k,Z AI,12.8*,--,--,--,--,13,78,--,--,--,-27,--,--,--,--,44,30,Model Providers,https://artificialanalysis.ai/models/glm-4.5
+Kimi K2,128k,Kimi,12.7*,--,51.2,1.49,11.26,7,77,--,--,--,-28,--,--,--,--,41,23,Model Providers,https://artificialanalysis.ai/models/kimi-k2
+Qwen3 235B A22B 2507 (Reasoning),256k,Alibaba,12.7,--,30.7,0.82,82.28,16,79,41,--,0,-47,--,--,--,0,51,10,Model Providers,https://artificialanalysis.ai/models/qwen3-235b-a22b-instruct-2507-reasoning
+GPT-4.1,1M,OpenAI,12.7*,--,155.1,0.90,4.12,4,67,--,61,--,-40,--,--,--,--,43,7,Model Providers,https://artificialanalysis.ai/models/gpt-4-1
+Granite 4.2 30B,131072,IBM,12.7,$0.07,76.1,0.87,33.70,11,64,38,--,0,-13,--,--,--,4,--,74,Model Providers,https://artificialanalysis.ai/models/granite-4-2-30b
+Qwen3 Max (Preview),262144,Alibaba,12.6*,--,--,--,--,10,76,--,--,--,-43,--,--,--,--,48,12,Model Providers,https://artificialanalysis.ai/models/qwen3-max-preview
+Nova 2.0 Lite (Medium),1M,Amazon,12.5*,--,195.5,17.08,29.87,9,77,--,63,--,-57,--,--,--,--,69,8,Model Providers,https://artificialanalysis.ai/models/nova-2-0-lite-reasoning-medium
+GPT-5 nano (Medium),400k,OpenAI,12.5*,--,145.3,27.38,30.82,9,67,--,58,--,-26,--,--,--,--,66,47,Model Providers,https://artificialanalysis.ai/models/gpt-5-nano-medium
+Qwen3.5 Omni Flash,256k,Alibaba,12.5*,--,255.9,1.81,3.76,8,74,--,65,--,-65,--,--,--,--,38,7,Model Providers,https://artificialanalysis.ai/models/qwen3-5-omni-flash
+o3-mini,200k,OpenAI,12.5*,--,177.7,6.08,8.89,8,75,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/o3-mini
+MiniCPM5-2B,131072,OpenBMB,12.5,--,--,--,--,9,70,26,--,0,-12,--,--,--,10,--,78,Model Providers,https://artificialanalysis.ai/models/minicpm5-2b
+o1-pro,200k,OpenAI,12.4*,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/o1-pro
+Gemini 2.5 Flash Preview (Sep '25) (Non-reasoning),1M,Google,12.4*,--,--,--,--,9,77,--,70,--,-40,--,--,--,--,44,9,Model Providers,https://artificialanalysis.ai/models/gemini-2-5-flash-preview-09-2025
+Mercury 2.5,260k,Inception,12.3,$0.12,704.0,3.26,3.97,12,--,39,--,0,-39,--,--,--,0,--,20,Model Providers,https://artificialanalysis.ai/models/mercury-2-5
+JT-MINI,128k,China Mobile,12.2*,--,--,--,--,6,68,--,--,--,-64,--,--,--,--,37,9,Model Providers,https://artificialanalysis.ai/models/jt-mini
+Grok 3,1M,SpaceXAI,12.1*,--,108.6,1.78,6.38,4,69,--,--,--,-33,--,--,--,--,47,13,Model Providers,https://artificialanalysis.ai/models/grok-3
+Seed-OSS-36B-Instruct,512k,ByteDance Seed,12.1*,--,39.5,2.86,66.20,10,73,--,--,--,-52,--,--,--,--,42,14,Model Providers,https://artificialanalysis.ai/models/seed-oss-36b-instruct
+Qwen3 235B A22B 2507 Instruct,256k,Alibaba,12.0*,--,45.6,1.29,12.27,11,75,--,--,--,-44,--,--,--,--,46,23,Model Providers,https://artificialanalysis.ai/models/qwen3-235b-a22b-instruct-2507
+Qwen3 Coder 480B A35B Instruct,262144,Alibaba,11.9*,--,92.7,0.98,6.37,5,62,--,--,--,-22,--,--,--,--,40,55,Model Providers,https://artificialanalysis.ai/models/qwen3-coder-480b-a35b-instruct
+Qwen3 VL 32B (Reasoning),256k,Alibaba,11.9*,--,--,--,--,10,73,--,63,--,-53,--,--,--,--,59,16,Model Providers,https://artificialanalysis.ai/models/qwen3-vl-32b-reasoning
+Magistral Medium 1.2,128k,Mistral,11.8*,--,--,--,--,10,74,--,60,--,-27,--,--,--,0,43,40,Model Providers,https://artificialanalysis.ai/models/magistral-medium-2509
+Sonar Reasoning Pro,127k,Perplexity,11.8*,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/sonar-reasoning-pro
+Nova 2.0 Lite (Low),1M,Amazon,11.8*,--,183.1,10.30,23.95,4,70,--,58,--,-54,--,--,--,--,61,13,Model Providers,https://artificialanalysis.ai/models/nova-2-0-lite-reasoning-low
+"HyperNova 60B 2605 (High, Based on gpt-oss-120b)",131072,Multiverse Computing,11.7*,--,--,--,--,17,73,--,--,0,-55,--,--,--,0,66,18,Model Providers,https://artificialanalysis.ai/models/hypernova-60b
+MiniMax M1 80k,1M,MiniMax,11.7*,--,69.8,1.73,37.54,9,70,--,--,--,-48,--,--,--,--,42,8,Model Providers,https://artificialanalysis.ai/models/minimax-m1-80k
+GPT-5.4 nano (Non-reasoning),400k,OpenAI,11.7*,--,163.1,0.61,3.68,4,56,--,44,--,-37,--,--,13,--,33,38,Model Providers,https://artificialanalysis.ai/models/gpt-5-4-nano-non-reasoning
+Nemotron Cascade 2 30B A3B,1M,NVIDIA,11.7*,--,--,--,--,12,76,--,--,--,-51,--,--,--,0,80,15,Model Providers,https://artificialanalysis.ai/models/nemotron-cascade-2-30b-a3b
+Gemini 2.5 Flash Preview (Reasoning),1M,Google,11.7*,--,--,--,--,12,70,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/gemini-2-5-flash-reasoning-04-2025
+gpt-oss-120b (High),131072,OpenAI,11.6,$0.11,212.1,0.84,12.63,20,78,34,--,0,-49,--,3,6,5,69,9,Model Providers,https://artificialanalysis.ai/models/gpt-oss-120b
+K2 Think V2,262144,Institute of Foundation Models,11.5*,--,--,--,--,10,71,--,--,--,-40,--,--,--,0,63,29,Model Providers,https://artificialanalysis.ai/models/k2-think-v2
+LongCat Flash Lite,256k,LongCat,11.5*,--,--,--,--,6,64,--,--,--,-70,--,--,--,--,43,4,Model Providers,https://artificialanalysis.ai/models/longcat-flash-lite
+GPT-5 (Minimal),400k,OpenAI,11.4*,--,79.0,1.08,7.41,6,67,--,62,--,-34,--,--,--,--,46,10,Model Providers,https://artificialanalysis.ai/models/gpt-5-minimal
+DeepSeek R1 (Jan '25),128k,DeepSeek,11.4,$0.26,142.4,1.09,21.07,8,71,38,--,0,-32,--,--,--,0,39,10,Model Providers,https://artificialanalysis.ai/models/deepseek-r1-0120
+o1-preview,128k,OpenAI,11.4*,--,--,--,--,--,76,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/o1-preview
+HyperCLOVA X SEED Think (32B),128k,Naver,11.4*,--,--,--,--,5,62,--,--,--,-53,--,--,--,--,38,19,Model Providers,https://artificialanalysis.ai/models/hyperclova-x-seed-think-32b
+Grok 4.1 Fast (Non-reasoning),2M,SpaceXAI,11.3*,--,--,--,--,5,64,--,48,--,-51,--,--,18,--,36,18,Model Providers,https://artificialanalysis.ai/models/grok-4-1-fast
+Mistral Small 4 (Reasoning),256k,Mistral,11.3,$0.02,176.7,0.86,15.01,10,77,39,57,0,-30,1,--,--,0,48,33,Model Providers,https://artificialanalysis.ai/models/mistral-small-4
+GLM-4.6V (Reasoning),128k,Z AI,11.2*,--,88.1,3.44,31.80,10,72,--,49,--,-27,--,--,--,--,30,49,Model Providers,https://artificialanalysis.ai/models/glm-4-6v-reasoning
+K-EXAONE (Non-reasoning),256k,LG AI Research,11.2*,--,--,--,--,6,69,--,--,--,-65,--,--,--,--,40,8,Model Providers,https://artificialanalysis.ai/models/k-exaone-non-reasoning
+Qwen3 Next 80B A3B (Reasoning),262144,Alibaba,11.2*,--,159.8,0.68,16.33,13,76,--,--,--,-51,--,--,--,0,61,13,Model Providers,https://artificialanalysis.ai/models/qwen3-next-80b-a3b-reasoning
+Qwen3.5 9B (Reasoning),262144,Alibaba,11.2,$0.21,57.8,1.85,45.09,15,81,30,69,1,-53,--,--,--,0,67,16,Model Providers,https://artificialanalysis.ai/models/qwen3-5-9b
+GPT-5.4 mini (Non-reasoning),400k,OpenAI,11.1*,--,203.3,0.66,3.12,6,61,--,60,--,-45,--,--,19,4,39,4,Model Providers,https://artificialanalysis.ai/models/gpt-5-4-mini-non-reasoning
+Nova 2.0 Omni (Low),1M,Amazon,11.1*,--,--,--,--,--,70,--,60,--,-50,--,--,--,--,62,15,Model Providers,https://artificialanalysis.ai/models/nova-2-0-omni-reasoning-low
+GLM-4.5-Air,128k,Z AI,11.1*,--,75.6,2.38,35.46,7,73,--,--,--,-62,--,--,--,--,38,7,Model Providers,https://artificialanalysis.ai/models/glm-4-5-air
+Granite 4.2 8B,131072,IBM,11.1,$0.02,126.1,0.68,20.51,10,63,31,--,0,-17,--,--,--,0,--,68,Model Providers,https://artificialanalysis.ai/models/granite-4-2-8b
+Grok 4 Fast (Non-reasoning),2M,SpaceXAI,11.1*,--,--,--,--,5,61,--,48,--,-54,--,--,--,--,38,12,Model Providers,https://artificialanalysis.ai/models/grok-4-fast
+Ling 3.0 Tiny,262144,InclusionAI,11.1,$0.00,15.8,31.73,189.79,9,73,24,--,0,-19,--,--,--,3,--,70,Model Providers,https://artificialanalysis.ai/models/ling-3-0-tiny
+Mi:dm K 2.5 Pro,128k,Korea Telecom,11.0*,--,--,--,--,8,70,--,--,--,-59,--,--,--,--,49,6,Model Providers,https://artificialanalysis.ai/models/mi-dm-k-2-5-pro-dec28
+o3-mini (High),200k,OpenAI,11.0,--,183.6,20.09,22.81,12,77,43,--,0,-43,--,--,--,0,67,19,Model Providers,https://artificialanalysis.ai/models/o3-mini-high
+Ring-1T,128k,InclusionAI,10.9*,--,--,--,--,11,77,--,--,--,-51,--,--,--,--,45,10,Model Providers,https://artificialanalysis.ai/models/ring-1t
+G9v3-3B,131072,AI9Stars,10.8*,--,--,--,--,4,44,--,--,--,-4,--,--,--,--,--,88,Model Providers,https://artificialanalysis.ai/models/g9v3-3b
+Trinity Large Thinking,512k,Arcee AI,10.8,$0.12,346.0,1.19,8.41,16,75,41,--,1,-44,--,--,--,0,56,14,Model Providers,https://artificialanalysis.ai/models/trinity-large-thinking
+Qwen3.5 4B (Non-reasoning),262144,Alibaba,10.8*,--,9.7,1.00,52.56,8,71,--,62,--,-75,--,--,--,--,33,3,Model Providers,https://artificialanalysis.ai/models/qwen3-5-4b-non-reasoning
+Mercury 2,128k,Inception,10.8,$0.04,525.3,7.24,8.20,17,77,38,--,0,-51,--,--,--,0,70,9,Model Providers,https://artificialanalysis.ai/models/mercury-2
+INTELLECT-3 (Based on GLM-4.5-Air),131100,Prime Intellect,10.6*,--,--,--,--,13,76,--,--,--,-51,--,--,--,--,34,12,Model Providers,https://artificialanalysis.ai/models/intellect-3
+GLM-4.7-Flash (Non-reasoning),200k,Z AI,10.6*,--,115.2,1.67,6.01,5,45,--,--,--,-69,--,--,--,--,46,6,Model Providers,https://artificialanalysis.ai/models/glm-4-7-flash-non-reasoning
+GPT-5 (ChatGPT),128k,OpenAI,10.4*,--,--,--,--,7,69,--,--,--,--,--,--,--,--,45,--,Model Providers,https://artificialanalysis.ai/models/gpt-5-chatgpt
+Solar Open 100B (Reasoning),128k,Upstage,10.4*,--,--,--,--,10,66,--,--,--,-54,--,--,--,--,58,10,Model Providers,https://artificialanalysis.ai/models/solar-open-100b-reasoning
+Grok 3 Reasoning Beta,1M,SpaceXAI,10.4*,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/grok-3-reasoning
+Gemini 2.5 Flash-Lite Preview (Sep '25) (Reasoning),1M,Google,10.4*,--,--,--,--,7,71,--,65,--,-54,--,--,--,--,53,12,Model Providers,https://artificialanalysis.ai/models/gemini-2-5-flash-lite-preview-09-2025-reasoning
+Nemotron 3 Nano Omni 30B A3B Reasoning,256k,NVIDIA,10.3*,--,237.0,0.75,11.30,5,47,--,53,--,-57,--,--,--,0,63,14,Model Providers,https://artificialanalysis.ai/models/nemotron-3-nano-omni-30b-a3b
+gpt-oss-120b (Low),131072,OpenAI,10.2*,--,238.4,0.87,11.35,6,67,--,--,--,-54,--,--,--,0,58,9,Model Providers,https://artificialanalysis.ai/models/gpt-oss-120b-low
+GPT-4.1 mini,1M,OpenAI,10.2*,--,151.3,0.76,4.07,5,66,--,59,--,-54,--,--,--,0,38,7,Model Providers,https://artificialanalysis.ai/models/gpt-4-1-mini
+MiniMax M1 40k,1M,MiniMax,10.0*,--,--,--,--,8,68,--,--,--,--,--,--,--,--,41,--,Model Providers,https://artificialanalysis.ai/models/minimax-m1-40k
+Nova 2.0 Pro Preview (Non-reasoning),256k,Amazon,10.0*,--,111.5,1.01,5.49,4,64,--,--,--,-50,--,--,--,0,52,20,Model Providers,https://artificialanalysis.ai/models/nova-2-0-pro
+gpt-oss-20b (Low),131072,OpenAI,10.0*,--,286.5,0.70,9.42,5,61,--,--,--,-59,--,--,--,--,58,13,Model Providers,https://artificialanalysis.ai/models/gpt-oss-20b-low
+Qwen3 VL 235B A22B Instruct,262144,Alibaba,9.9*,--,31.4,1.42,17.33,7,71,--,68,--,-53,--,--,--,--,43,8,Model Providers,https://artificialanalysis.ai/models/qwen3-vl-235b-a22b-instruct
+North Mini Code,256k,Cohere,9.9,$0.00,83.0,0.46,30.57,11,76,39,--,1,-49,--,--,--,0,58,17,Model Providers,https://artificialanalysis.ai/models/north-mini-code
+GPT-5 mini (Minimal),400k,OpenAI,9.9*,--,142.9,0.76,4.26,5,69,--,58,--,-53,--,--,--,--,46,11,Model Providers,https://artificialanalysis.ai/models/gpt-5-mini-minimal
+K2-V2 (High),512k,Institute of Foundation Models,9.9*,--,--,--,--,11,68,--,--,--,-56,--,--,--,--,60,9,Model Providers,https://artificialanalysis.ai/models/k2-v2
+Gemini 2.5 Flash (Non-reasoning),1M,Google,9.9*,--,206.3,0.47,2.89,5,68,--,65,--,-43,--,--,--,--,39,7,Model Providers,https://artificialanalysis.ai/models/gemini-2-5-flash
+Qwen3 30B A3B 2507 (Reasoning),262144,Alibaba,9.8,$0.07,--,--,--,10,71,33,--,0,-56,--,--,--,0,51,13,Model Providers,https://artificialanalysis.ai/models/qwen3-30b-a3b-2507-reasoning
+o1-mini,128k,OpenAI,9.8*,--,--,--,--,4,60,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/o1-mini
+DeepSeek V3 0324,128k,DeepSeek,9.7,$0.02,107.0,0.71,5.38,5,65,39,--,0,-41,--,--,--,0,41,14,Model Providers,https://artificialanalysis.ai/models/deepseek-v3-0324
+Ling 2.6 Flash,262144,InclusionAI,9.7*,--,--,--,--,6,59,--,--,--,-66,--,--,--,0,57,3,Model Providers,https://artificialanalysis.ai/models/ling-2-6-flash
+Qwen3 Next 80B A3B Instruct,262144,Alibaba,9.6*,--,117.3,0.86,5.13,8,74,--,--,--,-60,--,--,--,--,40,7,Model Providers,https://artificialanalysis.ai/models/qwen3-next-80b-a3b-instruct
+Tri-21B-think Preview,32k,Trillion Labs,9.6*,--,--,--,--,6,54,--,--,--,-62,--,--,--,--,47,19,Model Providers,https://artificialanalysis.ai/models/tri-21b-think-preview
+Qwen3 Coder 30B A3B Instruct,262144,Alibaba,9.6*,--,156.1,1.02,4.22,4,52,--,--,--,-51,--,--,--,--,33,20,Model Providers,https://artificialanalysis.ai/models/qwen3-coder-30b-a3b-instruct
+GPT-4.5 (Preview),128k,OpenAI,9.6*,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/gpt-4-5
+DiffusionGemma 26B A4B,256k,Google,9.5*,--,--,--,--,11,67,--,67,--,-59,--,--,--,0,59,9,Model Providers,https://artificialanalysis.ai/models/diffusiongemma-26b-a4b
+Qwen3 235B A22B (Reasoning),32768,Alibaba,9.5*,--,--,--,--,11,70,--,--,--,-45,--,--,--,--,39,22,Model Providers,https://artificialanalysis.ai/models/qwen3-235b-a22b-instruct-reasoning
+QwQ 32B,131072,Alibaba,9.5*,--,--,--,--,7,59,--,--,--,--,--,--,--,--,39,--,Model Providers,https://artificialanalysis.ai/models/qwq-32b
+Qwen3 VL 30B A3B (Reasoning),256k,Alibaba,9.5*,--,--,--,--,9,72,--,62,--,-58,--,--,--,--,45,10,Model Providers,https://artificialanalysis.ai/models/qwen3-vl-30b-a3b-reasoning
+Gemini 2.0 Flash Thinking Experimental (Jan '25),1M,Google,9.4*,--,--,--,--,6,70,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/gemini-2-0-flash-thinking-exp-0121
+Gemma 4 12B (Non-reasoning),262144,Google,9.4*,--,113.2,2.39,6.81,6,66,--,62,--,-53,--,--,--,--,45,27,Model Providers,https://artificialanalysis.ai/models/gemma-4-12b-non-reasoning
+Gemini 2.5 Flash-Lite Preview (Sep '25) (Non-reasoning),1M,Google,9.3*,--,--,--,--,5,65,--,63,--,-43,--,--,--,--,42,34,Model Providers,https://artificialanalysis.ai/models/gemini-2-5-flash-lite-preview-09-2025
+Llama 4 Maverick,1M,Meta,9.3,$0.04,55.9,1.11,10.06,5,67,32,62,0,-42,--,--,--,0,43,11,Model Providers,https://artificialanalysis.ai/models/llama-4-maverick
+Mistral Large 3,256k,Mistral,9.3,$0.03,78.6,1.03,7.38,4,68,37,56,0,-40,--,--,--,0,36,14,Model Providers,https://artificialanalysis.ai/models/mistral-large-3
+Qwen3 Coder Next,256k,Alibaba,9.2,$0.78,65.0,1.26,8.95,10,74,36,--,0,-62,--,--,--,1,35,6,Model Providers,https://artificialanalysis.ai/models/qwen3-coder-next
+Motif-2-12.7B-Reasoning,128k,Motif Technologies,9.2*,--,--,--,--,9,69,--,--,--,-62,--,--,--,--,57,9,Model Providers,https://artificialanalysis.ai/models/motif-2-12-7b
+Mistral Medium 3.1,128k,Mistral,9.2,--,--,--,--,5,59,32,54,0,-46,--,--,--,0,40,15,Model Providers,https://artificialanalysis.ai/models/mistral-medium-3-1
+Ling-1T,128k,InclusionAI,9.2*,--,--,--,--,7,72,--,--,--,-55,--,--,--,--,35,5,Model Providers,https://artificialanalysis.ai/models/ling-1t
+Nova Premier,1M,Amazon,9.2*,--,--,--,--,4,57,--,--,--,-35,--,--,--,--,36,28,Model Providers,https://artificialanalysis.ai/models/nova-premier
+Solar Pro 2 (Preview) (Reasoning),64k,Upstage,9.1*,--,--,--,--,6,58,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/solar-pro-2-preview-reasoning
+Granite 4.2 3B,131072,IBM,9.1,$0.01,220.3,0.50,11.84,7,56,25,--,0,-15,--,--,--,0,--,74,Model Providers,https://artificialanalysis.ai/models/granite-4-2-3b
+Magistral Medium 1,40k,Mistral,9.1*,--,--,--,--,10,68,--,--,--,-27,--,--,--,--,25,41,Model Providers,https://artificialanalysis.ai/models/magistral-medium
+Mistral Medium 3,128k,Mistral,9.0*,--,45.3,2.36,13.40,4,58,--,53,--,-31,--,--,--,--,39,39,Model Providers,https://artificialanalysis.ai/models/mistral-medium-3
+K2-V2 (Medium),512k,Institute of Foundation Models,9.0*,--,--,--,--,4,60,--,--,--,-49,--,--,--,--,55,18,Model Providers,https://artificialanalysis.ai/models/k2-v2-medium
+Llama Nemotron Super 49B v1.5 (Reasoning),128k,NVIDIA,9.0*,--,--,--,--,7,75,--,--,--,-48,--,--,--,--,37,22,Model Providers,https://artificialanalysis.ai/models/llama-nemotron-super-49b-v1-5-reasoning
+Devstral Medium,256k,Mistral,9.0*,--,--,--,--,4,49,--,--,--,-32,--,--,--,--,30,38,Model Providers,https://artificialanalysis.ai/models/devstral-medium
+Mistral Small 4 (Non-reasoning),256k,Mistral,9.0*,--,152.7,1.03,4.30,4,57,--,46,--,-49,--,--,--,--,33,22,Model Providers,https://artificialanalysis.ai/models/mistral-small-4-non-reasoning
+Tri-21B-Think,32k,Trillion Labs,9.0*,--,--,--,--,6,60,--,--,--,-63,--,--,--,--,55,15,Model Providers,https://artificialanalysis.ai/models/tri-21b-think-v0-5
+gpt-oss-20b (High),131072,OpenAI,9.0,$0.01,229.5,0.73,11.63,11,69,39,--,0,-63,--,1,--,0,65,6,Model Providers,https://artificialanalysis.ai/models/gpt-oss-20b
+"GPT-4o (March 2025, chatgpt-4o-latest)",128k,OpenAI,9.0*,--,--,--,--,4,65,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/gpt-4o-chatgpt-03-25
+Gemini 2.0 Flash (Feb '25),1M,Google,8.9*,--,--,--,--,4,62,--,--,--,-43,--,--,--,--,40,14,Model Providers,https://artificialanalysis.ai/models/gemini-2-0-flash
+Claude 3.5 Haiku,200k,Anthropic,8.9*,--,--,--,--,4,41,--,46,--,-23,--,--,--,0,43,59,Model Providers,https://artificialanalysis.ai/models/claude-3-5-haiku
+Llama 3.3 Nemotron Super 49B v1 (Reasoning),128k,NVIDIA,8.9*,--,--,--,--,6,64,--,--,--,-58,--,--,--,--,38,9,Model Providers,https://artificialanalysis.ai/models/llama-3-3-nemotron-super-49b-reasoning
+Gemma 4 E4B (Reasoning),128k,Google,8.9,$0.01,46.6,0.93,54.63,4,58,24,51,0,-20,--,--,--,0,44,69,Model Providers,https://artificialanalysis.ai/models/gemma-4-e4b
+NVIDIA Nemotron 3 Nano 30B A3B (Reasoning),1M,NVIDIA,8.9,$0.02,228.8,0.96,11.89,11,76,31,--,0,-52,--,--,--,0,71,17,Model Providers,https://artificialanalysis.ai/models/nvidia-nemotron-3-nano-30b-a3b-reasoning
+Qwen3 4B 2507 (Reasoning),262144,Alibaba,8.8*,--,--,--,--,6,67,--,--,--,-60,--,--,--,--,50,17,Model Providers,https://artificialanalysis.ai/models/qwen3-4b-2507-instruct-reasoning
+MiniCPM5-1B (Reasoning),128k,OpenBMB,8.8*,--,--,--,--,6,28,--,--,--,-15,--,--,--,--,49,83,Model Providers,https://artificialanalysis.ai/models/minicpm5-1b
+Sarvam 105B (High),128k,Sarvam,8.8*,--,--,--,--,11,74,--,--,--,-59,--,--,--,--,34,7,Model Providers,https://artificialanalysis.ai/models/sarvam-105b
+Gemini 2.0 Pro Experimental (Feb '25),2M,Google,8.7*,--,--,--,--,6,62,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/gemini-2-0-pro-experimental-02-05
+Nova 2.0 Lite (Non-reasoning),1M,Amazon,8.7*,--,168.4,1.10,4.07,3,60,--,49,--,-60,--,--,--,--,41,14,Model Providers,https://artificialanalysis.ai/models/nova-2-0-lite
+Devstral Small (May '25),256k,Mistral,8.7*,--,--,--,--,4,43,--,--,--,-57,--,--,--,--,32,14,Model Providers,https://artificialanalysis.ai/models/devstral-small-2505
+Claude 3 Opus,200k,Anthropic,8.7*,--,--,--,--,3,49,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/claude-3-opus
+MiniCPM5-1B (Non-reasoning),128k,OpenBMB,8.7*,--,--,--,--,5,27,--,--,--,-1,--,--,--,--,35,99,Model Providers,https://artificialanalysis.ai/models/minicpm5-1b-non-reasoning
+Sonar Reasoning,127k,Perplexity,8.7*,--,--,--,--,--,62,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/sonar-reasoning
+Gemini 2.5 Flash Preview (Non-reasoning),1M,Google,8.7*,--,--,--,--,4,59,--,62,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/gemini-2-5-flash-04-2025
+Devstral 2,256k,Mistral,8.6,--,--,--,--,4,59,33,--,0,-47,--,--,--,2,38,15,Model Providers,https://artificialanalysis.ai/models/devstral-2
+Magistral Small 1.2,128k,Mistral,8.6*,--,74.5,1.52,35.10,6,66,--,55,--,-65,--,--,--,0,44,9,Model Providers,https://artificialanalysis.ai/models/magistral-small-2509
+Gemini 2.5 Flash-Lite (Reasoning),1M,Google,8.5*,--,357.3,20.19,21.59,7,63,--,58,--,-46,--,--,--,--,50,23,Model Providers,https://artificialanalysis.ai/models/gemini-2-5-flash-lite-reasoning
+DeepSeek V3 (Dec '24),128k,DeepSeek,8.5,$0.02,37.0,1.28,14.78,3,56,36,--,0,-42,--,--,--,0,35,10,Model Providers,https://artificialanalysis.ai/models/deepseek-v3
+GPT-4o (Nov '24),128k,OpenAI,8.4*,--,160.3,0.91,4.03,2,54,--,--,--,-11,--,--,--,0,34,62,Model Providers,https://artificialanalysis.ai/models/gpt-4o
+Nanbeige4.1-3B,256k,Nanbeige,8.4*,--,--,--,--,11,85,--,--,--,-42,--,--,--,0,35,42,Model Providers,https://artificialanalysis.ai/models/nanbeige4-1-3b
+LFM2.5-2.6B,128k,Liquid AI,8.4*,--,--,--,--,6,56,14,--,--,-11,--,--,--,0,--,84,Model Providers,https://artificialanalysis.ai/models/lfm2-5-2-6b
+Qwen3 VL 32B Instruct,256k,Alibaba,8.4*,--,--,--,--,7,67,--,64,--,-63,--,--,--,--,39,8,Model Providers,https://artificialanalysis.ai/models/qwen3-vl-32b-instruct
+DeepSeek R1 Distill Qwen 32B,128k,DeepSeek,8.4*,--,--,--,--,5,62,--,--,--,--,--,--,--,--,23,--,Model Providers,https://artificialanalysis.ai/models/deepseek-r1-distill-qwen-32b
+GLM-4.6V (Non-reasoning),128k,Z AI,8.4*,--,66.6,3.76,11.27,4,57,--,42,--,-38,--,--,--,--,28,33,Model Providers,https://artificialanalysis.ai/models/glm-4-6v
+Qwen3 235B A22B (Non-reasoning),32768,Alibaba,8.3*,--,--,--,--,4,61,--,--,--,-52,--,--,--,--,37,13,Model Providers,https://artificialanalysis.ai/models/qwen3-235b-a22b-instruct
+Magistral Small 1,40k,Mistral,8.2*,--,--,--,--,8,64,--,--,--,-44,--,--,--,--,25,24,Model Providers,https://artificialanalysis.ai/models/magistral-small
+Gemini 2.0 Flash (experimental),1M,Google,8.2*,--,--,--,--,4,64,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/gemini-2-0-flash-experimental
+EXAONE 4.0 32B (Reasoning),131k,LG AI Research,8.2*,--,--,--,--,11,74,--,--,--,-60,--,--,--,--,36,14,Model Providers,https://artificialanalysis.ai/models/exaone-4-0-32b-reasoning
+Qwen3 VL 8B (Reasoning),256k,Alibaba,8.2*,--,--,--,--,4,58,--,57,--,-52,--,--,--,--,40,9,Model Providers,https://artificialanalysis.ai/models/qwen3-vl-8b-reasoning
+Nova 2.0 Omni (Non-reasoning),1M,Amazon,8.2*,--,--,--,--,4,55,--,50,--,-64,--,--,--,--,41,11,Model Providers,https://artificialanalysis.ai/models/nova-2-0-omni
+DeepSeek R1 0528 Qwen3 8B,32768,DeepSeek,8.1*,--,--,--,--,6,61,--,--,--,-64,--,--,--,--,20,14,Model Providers,https://artificialanalysis.ai/models/deepseek-r1-qwen3-8b
+Qwen2.5 Max,32k,Alibaba,8.0*,--,--,--,--,4,59,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/qwen-2-5-max
+Qwen3 VL 30B A3B Instruct,256k,Alibaba,7.9*,--,26.2,2.78,21.83,6,69,--,62,--,-63,--,--,--,--,33,6,Model Providers,https://artificialanalysis.ai/models/qwen3-vl-30b-a3b-instruct
+Hermes 4 - Llama-3.1 70B (Reasoning),128k,Nous Research,7.9*,--,--,--,--,9,70,--,--,--,-49,--,--,--,--,31,5,Model Providers,https://artificialanalysis.ai/models/hermes-4-llama-3-1-70b-reasoning
+Gemini 1.5 Pro (Sep '24),2M,Google,7.9*,--,--,--,--,5,59,--,55,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/gemini-1-5-pro
+Solar Pro 2 (Preview) (Non-reasoning),64k,Upstage,7.9*,--,--,--,--,4,54,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/solar-pro-2-preview
+DeepSeek R1 Distill Llama 70B,128k,DeepSeek,7.9*,--,--,--,--,5,40,--,--,--,-46,--,--,--,--,28,19,Model Providers,https://artificialanalysis.ai/models/deepseek-r1-distill-llama-70b
+Claude 3.5 Sonnet (Oct '24),200k,Anthropic,7.9*,--,--,--,--,4,60,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/claude-35-sonnet
+DeepSeek R1 Distill Qwen 14B,128k,DeepSeek,7.8*,--,--,--,--,4,48,--,--,--,--,--,--,--,--,22,--,Model Providers,https://artificialanalysis.ai/models/deepseek-r1-distill-qwen-14b
+Falcon-H1R-7B,256k,TII UAE,7.8*,--,--,--,--,11,66,--,--,--,-61,--,--,--,--,54,11,Model Providers,https://artificialanalysis.ai/models/falcon-h1r-7b
+GPT-4.1 nano,1M,OpenAI,7.8*,--,211.9,0.61,2.97,4,51,--,40,--,-58,--,--,--,0,32,17,Model Providers,https://artificialanalysis.ai/models/gpt-4-1-nano
+Solar Pro 3,128k,Upstage,7.8,$0.08,158.5,1.28,17.05,10,72,25,--,0,-53,--,--,--,0,71,12,Model Providers,https://artificialanalysis.ai/models/solar-pro-3
+Ling-flash-2.0,128k,InclusionAI,7.8*,--,4.5,2.47,113.13,6,66,--,--,--,-63,--,--,--,--,34,11,Model Providers,https://artificialanalysis.ai/models/ling-flash-2-0
+Gemma 4 E2B (Reasoning),128k,Google,7.8*,--,--,--,--,5,43,--,45,--,-24,--,--,--,0,38,68,Model Providers,https://artificialanalysis.ai/models/gemma-4-e2b
+Qwen3 Omni 30B A3B (Reasoning),65536,Alibaba,7.8*,--,101.2,1.93,26.65,7,73,--,60,--,-61,--,--,--,--,43,11,Model Providers,https://artificialanalysis.ai/models/qwen3-omni-30b-a3b-reasoning
+GPT-4o (Aug '24),128k,OpenAI,7.7*,--,137.5,0.95,4.59,2,52,--,56,--,-21,--,--,--,--,36,42,Model Providers,https://artificialanalysis.ai/models/gpt-4o-2024-08-06
+Qwen2.5 Instruct 72B,131072,Alibaba,7.7*,--,30.8,3.92,20.12,4,49,--,--,--,-53,--,--,--,--,37,15,Model Providers,https://artificialanalysis.ai/models/qwen2-5-72b-instruct
+Sonar,127k,Perplexity,7.7*,--,--,--,--,5,47,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/sonar
+Step3 VL 10B,65536,StepFun,7.7*,--,--,--,--,11,69,--,64,--,-59,--,--,--,--,50,17,Model Providers,https://artificialanalysis.ai/models/step-3-vl-10b
+Llama 3.3 Instruct 70B,128k,Meta,7.7*,--,92.8,1.71,7.10,4,50,--,--,--,-54,--,--,1,0,47,10,Model Providers,https://artificialanalysis.ai/models/llama-3-3-instruct-70b
+Qwen3 30B A3B (Reasoning),32768,Alibaba,7.6*,--,111.4,0.56,23.00,6,62,--,--,--,-51,--,--,--,--,41,19,Model Providers,https://artificialanalysis.ai/models/qwen3-30b-a3b-instruct-reasoning
+Sonar Pro,200k,Perplexity,7.6*,--,--,--,--,7,58,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/sonar-pro
+Devstral Small (Jul '25),256k,Mistral,7.6*,--,--,--,--,4,41,--,--,--,-51,--,--,--,--,35,23,Model Providers,https://artificialanalysis.ai/models/devstral-small
+QwQ 32B-Preview,32768,Alibaba,7.6*,--,--,--,--,4,56,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/QwQ-32B-Preview
+GLM-4.5V (Reasoning),64k,Z AI,7.6*,--,50.5,2.75,52.29,6,68,--,50,--,-46,--,--,--,--,34,15,Model Providers,https://artificialanalysis.ai/models/glm-4-5v-reasoning
+Mistral Large 2 (Nov '24),128k,Mistral,7.6*,--,--,--,--,3,49,--,--,--,-34,--,--,--,--,31,32,Model Providers,https://artificialanalysis.ai/models/mistral-large-2
+Devstral Small 2,256k,Mistral,7.5,--,--,--,--,3,53,32,45,0,-58,--,--,--,1,31,13,Model Providers,https://artificialanalysis.ai/models/devstral-small-2
+Llama 3.1 Nemotron Ultra 253B v1 (Reasoning),128k,NVIDIA,7.5*,--,--,--,--,7,73,--,--,--,-45,--,--,--,--,38,19,Model Providers,https://artificialanalysis.ai/models/llama-3-1-nemotron-ultra-253b-v1-reasoning
+Qwen3 30B A3B 2507 Instruct,262144,Alibaba,7.5*,--,42.0,1.13,13.03,7,66,--,--,--,-66,--,--,--,--,33,5,Model Providers,https://artificialanalysis.ai/models/qwen3-30b-a3b-2507
+ERNIE 4.5 300B A47B,131072,Baidu,7.5*,--,--,--,--,3,81,--,--,--,-35,--,--,--,--,39,33,Model Providers,https://artificialanalysis.ai/models/ernie-4-5-300b-a47b
+Hermes 4 - Llama-3.1 405B (Reasoning),128k,Nous Research,7.5*,--,38.0,2.46,68.31,11,73,--,--,--,-36,--,--,--,--,33,5,Model Providers,https://artificialanalysis.ai/models/hermes-4-llama-3-1-405b-reasoning
+Solar Pro 2 (Reasoning),65536,Upstage,7.5*,--,--,--,--,7,69,--,--,--,-56,--,--,--,--,37,5,Model Providers,https://artificialanalysis.ai/models/solar-pro-2-reasoning
+NVIDIA Nemotron Nano 12B v2 VL (Reasoning),128k,NVIDIA,7.5*,--,--,--,--,6,57,--,53,--,-64,--,--,--,--,32,8,Model Providers,https://artificialanalysis.ai/models/nvidia-nemotron-nano-12b-v2-vl-reasoning
+Gemma 4 E4B (Non-reasoning),128k,Google,7.5*,--,36.2,0.81,14.64,5,55,--,51,--,-41,--,--,--,--,41,46,Model Providers,https://artificialanalysis.ai/models/gemma-4-e4b-non-reasoning
+Granite 4.1 30B,131072,IBM,7.4*,--,--,--,--,4,48,--,--,--,-68,--,--,--,0,44,5,Model Providers,https://artificialanalysis.ai/models/granite-4-1-30b
+NVIDIA Nemotron Nano 9B V2 (Reasoning),131072,NVIDIA,7.4*,--,234.5,0.57,11.24,5,57,--,--,--,-42,--,--,--,--,28,40,Model Providers,https://artificialanalysis.ai/models/nvidia-nemotron-nano-9b-v2-reasoning
+Hermes 4 - Llama-3.1 405B (Non-reasoning),128k,Nous Research,7.4*,--,35.9,2.29,16.23,4,54,--,--,--,-33,--,--,--,--,35,20,Model Providers,https://artificialanalysis.ai/models/hermes-4-llama-3-1-405b
+Gemini 2.0 Flash-Lite (Feb '25),1M,Google,7.4*,--,--,--,--,3,54,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/gemini-2-0-flash-lite-001
+Llama Nemotron Super 49B v1.5 (Non-reasoning),128k,NVIDIA,7.4*,--,--,--,--,4,48,--,--,--,-46,--,--,--,--,33,33,Model Providers,https://artificialanalysis.ai/models/llama-nemotron-super-49b-v1-5
+Qwen3 32B (Non-reasoning),32768,Alibaba,7.3*,--,53.1,1.21,10.63,4,54,--,--,--,--,--,--,--,--,31,--,Model Providers,https://artificialanalysis.ai/models/qwen3-32b-instruct
+GPT-4o (May '24),128k,OpenAI,7.3*,--,123.1,0.95,5.01,2,53,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/gpt-4o-2024-05-13
+Gemini 2.0 Flash-Lite (Preview),1M,Google,7.3*,--,--,--,--,4,54,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/gemini-2-0-flash-lite-preview
+K2-V2 (Low),512k,Institute of Foundation Models,7.3*,--,--,--,--,4,54,--,--,--,-47,--,--,--,--,41,24,Model Providers,https://artificialanalysis.ai/models/k2-v2-low
+Llama 3.1 Nemotron Nano 4B v1.1 (Reasoning),128k,NVIDIA,7.3*,--,--,--,--,5,41,--,--,--,--,--,--,--,--,26,--,Model Providers,https://artificialanalysis.ai/models/llama-3-1-nemotron-nano-4b-reasoning
+Kimi Linear 48B A3B Instruct,1M,Kimi,7.3*,--,--,--,--,2,41,--,--,--,--,--,--,--,--,28,--,Model Providers,https://artificialanalysis.ai/models/kimi-linear-48b-a3b-instruct
+Llama 3.1 Instruct 405B,128k,Meta,7.3*,--,--,--,--,4,52,--,--,--,-17,--,--,--,--,39,48,Model Providers,https://artificialanalysis.ai/models/llama-3-1-instruct-405b
+Llama 3.3 Nemotron Super 49B v1 (Non-reasoning),128k,NVIDIA,7.3*,--,--,--,--,4,52,--,--,--,-50,--,--,--,--,39,26,Model Providers,https://artificialanalysis.ai/models/llama-3-3-nemotron-super-49b
+Qwen3 VL 8B Instruct,256k,Alibaba,7.3*,--,--,--,--,3,43,--,47,--,-52,--,--,--,--,32,9,Model Providers,https://artificialanalysis.ai/models/qwen3-vl-8b-instruct
+Qwen3 4B (Reasoning),32k,Alibaba,7.2*,--,--,--,--,4,52,--,--,--,--,--,--,--,--,33,--,Model Providers,https://artificialanalysis.ai/models/qwen3-4b-instruct-reasoning
+LFM2.5-8B-A1B,32768,Liquid AI,7.2*,--,--,--,--,7,51,--,--,--,-33,--,--,--,--,56,53,Model Providers,https://artificialanalysis.ai/models/lfm2-5-8b-a1b
+Qwen3 32B (Reasoning),32768,Alibaba,7.2,--,27.2,1.64,93.57,7,67,36,--,0,-50,--,--,--,0,36,18,Model Providers,https://artificialanalysis.ai/models/qwen3-32b-instruct-reasoning
+Claude 3.5 Sonnet (June '24),200k,Anthropic,7.2*,--,--,--,--,3,56,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/claude-35-sonnet-june-24
+Llama 3.1 Tulu3 405B,128k,Allen Institute for AI,7.2*,--,--,--,--,3,52,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/tulu3-405b
+GPT-4o (ChatGPT),128k,OpenAI,7.2*,--,--,--,--,3,51,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/gpt-4o-chatgpt
+Ring-flash-2.0,128k,InclusionAI,7.2*,--,--,--,--,10,73,--,--,--,-59,--,--,--,--,43,10,Model Providers,https://artificialanalysis.ai/models/ring-flash-2-0
+Pixtral Large,128k,Mistral,7.1*,--,--,--,--,3,51,--,51,--,--,--,--,--,--,34,--,Model Providers,https://artificialanalysis.ai/models/pixtral-large-2411
+Olmo 3.1 32B Think,65500,Allen Institute for AI,7.1*,--,--,--,--,6,59,--,--,--,-43,--,--,--,--,66,34,Model Providers,https://artificialanalysis.ai/models/olmo-3-1-32b-think
+Mistral Small 3.1,128k,Mistral,7.1,$0.03,27.6,0.99,19.13,4,45,28,--,0,-51,--,--,--,0,30,22,Model Providers,https://artificialanalysis.ai/models/mistral-small-3-1
+Grok 2 (Dec '24),131072,SpaceXAI,7.1*,--,--,--,--,3,51,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/grok-2-1212
+GPT-5 nano (Minimal),400k,OpenAI,7.1*,--,139.2,0.73,4.32,4,43,--,32,--,-64,--,--,--,--,33,11,Model Providers,https://artificialanalysis.ai/models/gpt-5-nano-minimal
+Gemini 1.5 Flash (Sep '24),1M,Google,7.1*,--,--,--,--,3,46,--,48,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/gemini-1-5-flash
+Qwen3 VL 4B (Reasoning),256k,Alibaba,7.0*,--,--,--,--,5,49,--,52,--,-68,--,--,--,--,37,8,Model Providers,https://artificialanalysis.ai/models/qwen3-vl-4b-reasoning
+GPT-4 Turbo,128k,OpenAI,7.0*,--,32.3,3.03,18.53,3,--,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/gpt-4-turbo
+Solar Pro 2 (Non-reasoning),65536,Upstage,7.0*,--,--,--,--,4,56,--,--,--,-62,--,--,--,--,34,7,Model Providers,https://artificialanalysis.ai/models/solar-pro-2
+Mistral Small 3.2,128k,Mistral,7.0,$0.11,33.6,0.97,15.86,4,51,29,48,0,-51,--,--,--,0,33,23,Model Providers,https://artificialanalysis.ai/models/mistral-small-3-2
+Nova Pro,300k,Amazon,7.0*,--,129.2,1.06,4.93,3,50,--,44,--,-48,--,--,--,--,38,22,Model Providers,https://artificialanalysis.ai/models/nova-pro
+Command A,256k,Cohere,7.0*,--,62.9,1.74,9.69,4,53,--,--,--,-48,--,--,--,--,36,23,Model Providers,https://artificialanalysis.ai/models/command-a
+Qwen3.5 2B (Reasoning),262144,Alibaba,6.9*,--,--,--,--,3,46,--,43,--,-60,--,--,--,0,31,26,Model Providers,https://artificialanalysis.ai/models/qwen3-5-2b
+Llama 3.1 Nemotron Instruct 70B,128k,NVIDIA,6.9*,--,--,--,--,4,46,--,--,--,-41,--,--,--,--,31,29,Model Providers,https://artificialanalysis.ai/models/llama-3-1-nemotron-instruct-70b
+Llama 3.1 Instruct 8B,128k,Meta,6.9*,--,138.9,0.89,4.49,5,26,--,--,--,-31,--,--,--,0,29,57,Model Providers,https://artificialanalysis.ai/models/llama-3-1-instruct-8b
+Grok Beta,128k,SpaceXAI,6.9*,--,--,--,--,4,47,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/grok-beta
+Qwen2.5 Instruct 32B,128k,Alibaba,6.9*,--,--,--,--,4,47,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/qwen2.5-32b-instruct
+NVIDIA Nemotron 3 Nano 30B A3B (Non-reasoning),1M,NVIDIA,6.8*,--,246.7,0.53,2.56,5,40,--,--,--,-69,--,--,--,0,37,9,Model Providers,https://artificialanalysis.ai/models/nvidia-nemotron-3-nano-30b-a3b
+NVIDIA Nemotron Nano 9B V2 (Non-reasoning),131072,NVIDIA,6.8*,--,170.6,1.05,3.98,5,56,--,--,--,-57,--,--,--,--,27,26,Model Providers,https://artificialanalysis.ai/models/nvidia-nemotron-nano-9b-v2
+Mistral Large 2 (Jul '24),128k,Mistral,6.8*,--,--,--,--,3,47,--,--,--,--,--,--,--,--,32,--,Model Providers,https://artificialanalysis.ai/models/mistral-large-2407
+Qwen3 4B 2507 Instruct,262144,Alibaba,6.7*,--,--,--,--,4,52,--,--,--,-62,--,--,--,--,34,18,Model Providers,https://artificialanalysis.ai/models/qwen3-4b-2507-instruct
+Qwen2.5 Coder Instruct 32B,131072,Alibaba,6.7*,--,--,--,--,4,42,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/qwen2-5-coder-32b-instruct
+Qwen3 14B (Non-reasoning),32768,Alibaba,6.7*,--,49.5,1.03,11.13,4,47,--,--,--,-67,--,--,--,--,24,8,Model Providers,https://artificialanalysis.ai/models/qwen3-14b-instruct
+GPT-4,8192,OpenAI,6.7*,--,--,--,--,--,35,--,--,--,-34,--,--,--,0,33,31,Model Providers,https://artificialanalysis.ai/models/gpt-4
+GLM-4.5V (Non-reasoning),64k,Z AI,6.7*,--,49.3,3.05,13.19,3,57,--,43,--,-56,--,--,--,--,29,10,Model Providers,https://artificialanalysis.ai/models/glm-4-5v
+Mistral Small 3,32k,Mistral,6.7*,--,61.0,0.93,9.13,4,46,--,--,--,--,--,--,--,--,26,--,Model Providers,https://artificialanalysis.ai/models/mistral-small-3
+Gemini 2.5 Flash-Lite (Non-reasoning),1M,Google,6.7*,--,323.2,0.31,1.85,4,47,--,54,--,-59,--,--,--,--,31,12,Model Providers,https://artificialanalysis.ai/models/gemini-2-5-flash-lite
+Nova Lite,300k,Amazon,6.7*,--,168.6,0.92,3.89,4,43,--,38,--,-42,--,--,--,--,34,42,Model Providers,https://artificialanalysis.ai/models/nova-lite
+GPT-4o mini,128k,OpenAI,6.7*,--,111.4,0.94,5.43,4,43,--,42,--,--,--,--,--,0,31,--,Model Providers,https://artificialanalysis.ai/models/gpt-4o-mini
+Hermes 4 - Llama-3.1 70B (Non-reasoning),128k,Nous Research,6.7*,--,--,--,--,4,49,--,--,--,-49,--,--,--,--,29,17,Model Providers,https://artificialanalysis.ai/models/hermes-4-llama-3-1-70b
+Qwen3 30B A3B (Non-reasoning),32768,Alibaba,6.6*,--,98.7,0.58,5.65,5,52,--,--,--,-66,--,--,--,--,32,11,Model Providers,https://artificialanalysis.ai/models/qwen3-30b-a3b-instruct
+DeepSeek-V2.5 (Dec '24),128k,DeepSeek,6.6*,--,--,--,--,--,42,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/deepseek-v2-5
+Qwen3 4B (Non-reasoning),32k,Alibaba,6.6*,--,--,--,--,3,40,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/qwen3-4b-instruct
+Llama 3.1 Instruct 70B,128k,Meta,6.6*,--,34.7,2.05,16.45,4,41,--,--,--,-43,--,--,--,--,34,22,Model Providers,https://artificialanalysis.ai/models/llama-3-1-instruct-70b
+Granite 4.1 8B,131072,IBM,6.6*,--,--,--,--,4,43,--,--,--,-64,--,--,--,--,39,13,Model Providers,https://artificialanalysis.ai/models/granite-4-1-8b
+Sarvam 30B (High),65536,Sarvam,6.6*,--,--,--,--,8,63,--,--,--,-72,--,--,--,--,26,4,Model Providers,https://artificialanalysis.ai/models/sarvam-30b
+Gemini 2.0 Flash Thinking Experimental (Dec '24),2M,Google,6.6*,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/gemini-2-0-flash-thinking-exp-1219
+DeepSeek-V2.5,128k,DeepSeek,6.6*,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/deepseek-v2-5-sep-2024
+Olmo 3.1 32B Instruct,65536,Allen Institute for AI,6.5*,--,--,--,--,5,54,--,--,--,-52,--,--,--,--,39,27,Model Providers,https://artificialanalysis.ai/models/olmo-3-1-32b-instruct
+Mistral Saba,32k,Mistral,6.5*,--,--,--,--,4,42,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/mistral-saba
+DeepSeek R1 Distill Llama 8B,128k,DeepSeek,6.5*,--,--,--,--,--,30,--,--,--,--,--,--,--,--,18,--,Model Providers,https://artificialanalysis.ai/models/deepseek-r1-distill-llama-8b
+Gemma 4 E2B (Non-reasoning),128k,Google,6.5*,--,--,--,--,5,41,--,42,--,-60,--,--,--,--,34,26,Model Providers,https://artificialanalysis.ai/models/gemma-4-e2b-non-reasoning
+Olmo 3 32B Think,65536,Allen Institute for AI,6.5*,--,--,--,--,6,61,--,--,--,-58,--,--,--,--,49,14,Model Providers,https://artificialanalysis.ai/models/olmo-3-32b-think
+Llama 4 Scout,10M,Meta,6.5,$0.11,80.1,0.97,7.21,4,59,21,53,0,-52,--,--,--,0,40,21,Model Providers,https://artificialanalysis.ai/models/llama-4-scout
+Gemini 1.5 Pro (May '24),2M,Google,6.4*,--,--,--,--,3,37,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/gemini-1-5-pro-may-2024
+R1 1776,128k,Perplexity,6.4*,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/r1-1776
+Qwen2.5 Turbo,1M,Alibaba,6.4*,--,92.9,2.20,7.58,4,41,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/qwen-turbo
+Reka Flash (Sep '24),128k,Reka AI,6.4*,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/reka-flash
+Llama 3.2 Instruct 90B (Vision),128k,Meta,6.4*,--,--,--,--,4,43,--,39,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/llama-3-2-instruct-90b-vision
+Solar Mini,4096,Upstage,6.4*,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/solar-mini
+Qwen3 14B (Reasoning),32768,Alibaba,6.4,--,33.7,0.92,75.08,5,60,31,--,0,-49,--,--,--,0,41,24,Model Providers,https://artificialanalysis.ai/models/qwen3-14b-instruct-reasoning
+Celeris-1,131072,Celeris,6.3,$0.05,1414.4,0.58,0.93,7,63,22,--,0,-72,--,--,--,0,--,7,Model Providers,https://artificialanalysis.ai/models/celeris-1
+Grok-1,8192,SpaceXAI,6.3*,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/grok-1
+Qwen2 Instruct 72B,131072,Alibaba,6.3*,--,--,--,--,4,37,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/qwen2-72b-instruct
+Phi-4 Mini Instruct,128k,Microsoft,6.3*,--,46.3,0.82,11.61,4,33,--,--,--,-61,--,--,--,0,21,22,Model Providers,https://artificialanalysis.ai/models/phi-4-mini
+EXAONE 4.0 32B (Non-reasoning),131k,LG AI Research,6.3*,--,--,--,--,5,63,--,--,--,-63,--,--,--,--,33,18,Model Providers,https://artificialanalysis.ai/models/exaone-4-0-32b
+Qwen3.5 2B (Non-reasoning),262144,Alibaba,6.2*,--,--,--,--,5,44,--,43,--,-83,--,--,--,0,29,2,Model Providers,https://artificialanalysis.ai/models/qwen3-5-2b-non-reasoning
+Gemini 1.5 Flash-8B,1048576,Google,6.2*,--,--,--,--,5,36,--,37,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/gemini-1-5-flash-8b
+Qwen3.5 0.8B (Reasoning),262144,Alibaba,6.1*,--,--,--,--,1,11,--,26,--,-55,--,--,--,0,21,39,Model Providers,https://artificialanalysis.ai/models/qwen3-5-0-8b
+DeepHermes 3 - Mistral 24B Preview (Non-reasoning),32k,Nous Research,6.1*,--,--,--,--,4,38,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/deephermes-3-mistral-24b-preview
+Jamba 1.7 Large,256k,AI21 Labs,6.1*,--,--,--,--,4,39,--,--,--,-55,--,--,--,--,35,5,Model Providers,https://artificialanalysis.ai/models/jamba-1-7-large
+Granite 4.0 H Small,128k,IBM,6.0*,--,--,--,--,4,42,--,--,--,-61,--,--,--,--,31,12,Model Providers,https://artificialanalysis.ai/models/granite-4-0-h-small
+Ministral 3 14B,256k,Mistral,6.0,$0.02,84.8,1.07,6.97,5,57,24,50,0,-66,--,--,--,0,32,7,Model Providers,https://artificialanalysis.ai/models/ministral-3-14b
+Jamba 1.5 Large,256k,AI21 Labs,6.0*,--,--,--,--,4,43,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/jamba-1-5-large
+Qwen3 Omni 30B A3B Instruct,65536,Alibaba,6.0*,--,96.7,1.88,7.05,5,62,--,55,--,-69,--,--,--,--,31,2,Model Providers,https://artificialanalysis.ai/models/qwen3-omni-30b-a3b-instruct
+Hermes 3 - Llama-3.1 70B,128k,Nous Research,6.0*,--,31.2,2.25,18.26,4,40,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/hermes-3-llama-3-1-70b
+Qwen3 8B (Non-reasoning),131072,Alibaba,6.0*,--,--,--,--,2,45,--,--,--,-74,--,--,--,--,29,4,Model Providers,https://artificialanalysis.ai/models/qwen3-8b-instruct
+DeepSeek-Coder-V2,128k,DeepSeek,6.0*,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/deepseek-coder-v2
+OLMo 2 32B,4096,Allen Institute for AI,6.0*,--,--,--,--,4,33,--,--,--,--,--,--,--,--,38,--,Model Providers,https://artificialanalysis.ai/models/olmo-2-32b
+Jamba 1.6 Large,256k,AI21 Labs,6.0*,--,--,--,--,4,39,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/jamba-1-6-large
+LFM2 24B A2B,32768,Liquid AI,5.9*,--,--,--,--,4,47,--,--,--,-58,--,--,--,--,46,31,Model Providers,https://artificialanalysis.ai/models/lfm2-24b-a2b
+Gemini 1.5 Flash (May '24),1M,Google,5.9*,--,--,--,--,4,32,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/gemini-1-5-flash-may-2024
+Phi-4,16k,Microsoft,5.9*,--,41.6,2.56,14.59,4,57,--,--,--,-56,--,--,--,--,24,19,Model Providers,https://artificialanalysis.ai/models/phi-4
+Claude 3 Sonnet,200k,Anthropic,5.9*,--,--,--,--,4,40,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/claude-3-sonnet
+Nova Micro,130k,Amazon,5.9*,--,320.4,0.84,2.40,5,36,--,--,--,-49,--,--,--,--,29,35,Model Providers,https://artificialanalysis.ai/models/nova-micro
+Granite 4.1 3B,131072,IBM,5.9*,--,--,--,--,3,31,--,--,--,-77,--,--,--,0,34,5,Model Providers,https://artificialanalysis.ai/models/granite-4-1-3b
+Mistral Small (Sep '24),32768,Mistral,5.8*,--,--,--,--,4,38,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/mistral-small
+Gemini 1.0 Ultra,32768,Google,5.8*,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/gemini-1-0-ultra
+Phi-3 Mini Instruct 3.8B,4096,Microsoft,5.8*,--,--,--,--,5,32,--,--,--,--,--,--,--,--,24,--,Model Providers,https://artificialanalysis.ai/models/phi-3-mini
+NVIDIA Nemotron Nano 12B v2 VL (Non-reasoning),128k,NVIDIA,5.8*,--,205.8,1.09,3.52,4,44,--,45,--,-72,--,--,--,--,26,4,Model Providers,https://artificialanalysis.ai/models/nvidia-nemotron-nano-12b-v2-vl
+Gemma 3n E4B Instruct Preview (May '25),32k,Google,5.8*,--,--,--,--,5,28,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/gemma-3n-e4b-preview-0520
+Phi-4 Multimodal Instruct,128k,Microsoft,5.8*,--,--,--,--,5,32,--,15,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/phi-4-multimodal
+Qwen2.5 Coder Instruct 7B,131072,Alibaba,5.8*,--,--,--,--,5,34,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/qwen2-5-coder-7b-instruct
+Mistral Large (Feb '24),32768,Mistral,5.8*,--,--,--,--,4,35,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/mistral-large
+Mixtral 8x22B Instruct,65384,Mistral,5.7*,--,--,--,--,4,33,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/mistral-8x22b-instruct
+Llama 2 Chat 7B,4096,Meta,5.7*,--,--,--,--,5,23,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/llama-2-chat-7b
+Llama 3.2 Instruct 3B,128k,Meta,5.7*,--,--,--,--,5,25,--,--,--,--,--,--,--,--,26,--,Model Providers,https://artificialanalysis.ai/models/llama-3-2-instruct-3b
+MiniCPM-V 4.6 1.3B,262k,OpenBMB,5.7*,--,--,--,--,5,31,--,38,--,-83,--,--,--,0,27,4,Model Providers,https://artificialanalysis.ai/models/minicpm-v4-6-1-3b
+Jamba Reasoning 3B,262k,AI21 Labs,5.7*,--,--,--,--,4,33,--,--,--,-58,--,--,--,--,52,31,Model Providers,https://artificialanalysis.ai/models/jamba-reasoning-3b
+Qwen3 VL 4B Instruct,256k,Alibaba,5.7*,--,--,--,--,4,37,--,44,--,-76,--,--,--,--,32,3,Model Providers,https://artificialanalysis.ai/models/qwen3-vl-4b-instruct
+Qwen1.5 Chat 110B,32k,Alibaba,5.7*,--,--,--,--,--,29,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/qwen1.5-110b-chat
+Reka Flash 3,128k,Reka AI,5.6*,--,86.5,1.49,30.38,4,53,--,--,--,-65,--,--,--,--,30,9,Model Providers,https://artificialanalysis.ai/models/reka-flash-3
+Olmo 3 7B Think,65536,Allen Institute for AI,5.6*,--,--,--,--,6,52,--,--,--,-72,--,--,--,--,41,7,Model Providers,https://artificialanalysis.ai/models/olmo-3-7b-think
+Claude 2.1,200k,Anthropic,5.6*,--,--,--,--,4,32,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/claude-21
+Claude 3 Haiku,200k,Anthropic,5.6*,--,--,--,--,4,37,--,31,--,-49,--,--,--,--,36,20,Model Providers,https://artificialanalysis.ai/models/claude-3-haiku
+OLMo 2 7B,4096,Allen Institute for AI,5.6*,--,--,--,--,5,29,--,--,--,--,--,--,--,--,24,--,Model Providers,https://artificialanalysis.ai/models/olmo-2-7b
+Molmo 7B-D,4096,Allen Institute for AI,5.6*,--,--,--,--,5,24,--,25,--,--,--,--,--,--,20,--,Model Providers,https://artificialanalysis.ai/models/molmo-7b-d
+Ling-mini-2.0,131k,InclusionAI,5.5*,--,--,--,--,5,56,--,--,--,-78,--,--,--,--,24,4,Model Providers,https://artificialanalysis.ai/models/ling-mini-2-0
+DeepSeek R1 Distill Qwen 1.5B,128k,DeepSeek,5.5*,--,--,--,--,3,10,--,--,--,--,--,--,--,--,13,--,Model Providers,https://artificialanalysis.ai/models/deepseek-r1-distill-qwen-1-5b
+DeepSeek-V2-Chat,128k,DeepSeek,5.5*,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/deepseek-v2
+Claude 2.0,100k,Anthropic,5.5*,--,--,--,--,--,34,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/claude-2
+Mistral Small (Feb '24),32768,Mistral,5.5*,--,--,--,--,4,30,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/mistral-small-2402
+Mistral Medium,32768,Mistral,5.5*,--,--,--,--,4,35,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/mistral-medium
+GPT-3.5 Turbo,4096,OpenAI,5.5*,--,--,--,--,--,30,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/gpt-35-turbo
+Ministral 3 8B,256k,Mistral,5.5,$0.01,106.3,0.79,5.50,4,47,21,46,0,-69,--,--,--,0,29,6,Model Providers,https://artificialanalysis.ai/models/ministral-3-8b
+Llama 3 Instruct 70B,8192,Meta,5.5*,--,--,--,--,5,38,--,--,--,-54,--,--,--,--,37,12,Model Providers,https://artificialanalysis.ai/models/llama-3-instruct-70b
+Qwen Chat 72B,33792,Alibaba,5.4*,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/qwen-chat-72b
+Arctic Instruct,4k,Snowflake,5.4*,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/arctic-instruct
+LFM 40B,32k,Liquid AI,5.4*,--,--,--,--,5,33,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/lfm-40b
+Llama 3.2 Instruct 11B (Vision),128k,Meta,5.4*,--,22.7,1.70,23.73,6,22,--,29,--,-63,--,--,--,--,30,18,Model Providers,https://artificialanalysis.ai/models/llama-3-2-instruct-11b-vision
+Qwen3.5 0.8B (Non-reasoning),262144,Alibaba,5.4*,--,--,--,--,5,24,--,26,--,-89,--,--,--,0,22,2,Model Providers,https://artificialanalysis.ai/models/qwen3-5-0-8b-non-reasoning
+PALM-2,8k,Google,5.4*,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/palm-2
+Gemini 1.0 Pro,32768,Google,5.3*,--,--,--,--,4,28,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/gemini-1-0-pro
+DeepSeek Coder V2 Lite Instruct,128k,DeepSeek,5.3*,--,--,--,--,5,32,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/deepseek-coder-v2-lite
+"Sarvam M (Reasoning, Based on Mistral Small 3.1)",32768,Sarvam,5.3*,--,--,--,--,3,42,--,--,--,-62,--,--,--,--,32,9,Model Providers,https://artificialanalysis.ai/models/sarvam-m-reasoning
+Llama 2 Chat 70B,4096,Meta,5.3*,--,--,--,--,5,33,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/llama-2-chat-70b
+DeepSeek LLM 67B Chat (V1),4096,DeepSeek,5.3*,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/deepseek-llm-67b-chat
+Llama 2 Chat 13B,4096,Meta,5.3*,--,--,--,--,5,32,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/llama-2-chat-13b
+Command-R+ (Apr '24),128k,Cohere,5.3*,--,--,--,--,5,32,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/command-r-plus-04-2024
+OpenChat 3.5 (1210),8192,OpenChat,5.3*,--,--,--,--,5,23,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/openchat-35
+DBRX Instruct,32768,Databricks,5.3*,--,--,--,--,3,33,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/dbrx
+Exaone 4.0 1.2B (Reasoning),64k,LG AI Research,5.3*,--,--,--,--,6,52,--,--,--,-80,--,--,--,--,23,7,Model Providers,https://artificialanalysis.ai/models/exaone-4-0-1-2b-reasoning
+Olmo 3 7B Instruct,65536,Allen Institute for AI,5.2*,--,--,--,--,6,40,--,--,--,-77,--,--,--,--,33,9,Model Providers,https://artificialanalysis.ai/models/olmo-3-7b-instruct
+Exaone 4.0 1.2B (Non-reasoning),64k,LG AI Research,5.2*,--,--,--,--,6,42,--,--,--,-82,--,--,--,--,25,8,Model Providers,https://artificialanalysis.ai/models/exaone-4-0-1-2b
+LFM2.5-1.2B-Thinking,32k,Liquid AI,5.2*,--,--,--,--,6,34,--,--,--,-80,--,--,--,--,42,6,Model Providers,https://artificialanalysis.ai/models/lfm2-5-1-2b-thinking
+Jamba 1.7 Mini,258k,AI21 Labs,5.2*,--,--,--,--,4,32,--,--,--,-73,--,--,--,--,31,5,Model Providers,https://artificialanalysis.ai/models/jamba-1-7-mini
+LFM2 2.6B,32768,Liquid AI,5.2*,--,--,--,--,5,31,--,--,--,-54,--,--,--,--,20,37,Model Providers,https://artificialanalysis.ai/models/lfm2-2-6b
+LFM2.5-1.2B-Instruct,32k,Liquid AI,5.2*,--,--,--,--,7,33,--,--,--,-72,--,--,--,--,44,15,Model Providers,https://artificialanalysis.ai/models/lfm2-5-1-2b-instruct
+Jamba 1.5 Mini,256k,AI21 Labs,5.2*,--,--,--,--,5,30,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/jamba-1-5-mini
+Granite 4.0 H 1B,128k,IBM,5.2*,--,--,--,--,5,26,--,--,--,-72,--,--,--,--,26,18,Model Providers,https://artificialanalysis.ai/models/granite-4-0-h-nano-1b
+Qwen3 1.7B (Reasoning),32k,Alibaba,5.2*,--,--,--,--,5,36,--,--,--,-78,--,--,--,--,27,5,Model Providers,https://artificialanalysis.ai/models/qwen3-1.7b-instruct-reasoning
+Jamba 1.6 Mini,256k,AI21 Labs,5.2*,--,--,--,--,4,30,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/jamba-1-6-mini
+Qwen3 8B (Reasoning),131072,Alibaba,5.2,--,--,--,--,4,59,28,--,0,-65,--,--,--,0,33,9,Model Providers,https://artificialanalysis.ai/models/qwen3-8b-instruct-reasoning
+Mixtral 8x7B Instruct,32768,Mistral,5.1*,--,24.9,1.11,21.16,5,29,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/mixtral-8x7b-instruct
+Gemma 3 270M,32k,Google,5.1*,--,--,--,--,4,22,--,--,--,-29,--,--,--,--,12,70,Model Providers,https://artificialanalysis.ai/models/gemma-3-270m
+Apertus 70B Instruct,65536,Swiss AI Initiative,5.1*,--,--,--,--,5,27,--,--,--,-62,--,--,--,--,26,17,Model Providers,https://artificialanalysis.ai/models/apertus-70b-instruct
+Granite 4.0 Micro,128k,IBM,5.1*,--,--,--,--,5,34,--,--,--,-78,--,--,--,--,25,4,Model Providers,https://artificialanalysis.ai/models/granite-4-0-micro
+DeepHermes 3 - Llama-3.1 8B Preview (Non-reasoning),128k,Nous Research,5.1*,--,--,--,--,4,27,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/deephermes-3-llama-3-1-8b-preview
+Mistral 7B Instruct,8192,Mistral,5.0*,--,--,--,--,5,18,--,--,--,-65,--,--,--,--,20,19,Model Providers,https://artificialanalysis.ai/models/mistral-7b-instruct
+Claude Instant,100k,Anthropic,5.0*,--,--,--,--,4,33,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/claude-instant
+Command-R (Mar '24),128k,Cohere,5.0*,--,--,--,--,5,28,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/command-r-03-2024
+Qwen Chat 14B,8192,Alibaba,5.0*,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/qwen-chat-14b
+Llama 65B,2048,Meta,5.0*,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/llama-65b
+Granite 4.0 1B,128k,IBM,5.0*,--,--,--,--,5,28,--,--,--,-82,--,--,--,--,21,6,Model Providers,https://artificialanalysis.ai/models/granite-4-0-nano-1b
+Molmo2-8B,36864,Allen Institute for AI,5.0*,--,--,--,--,4,43,--,37,--,-69,--,--,--,--,27,9,Model Providers,https://artificialanalysis.ai/models/molmo2-8b
+LFM2 8B A1B,32768,Liquid AI,4.9*,--,--,--,--,5,34,--,--,--,-76,--,--,--,--,26,8,Model Providers,https://artificialanalysis.ai/models/lfm2-8b-a1b
+Granite 3.3 8B (Non-reasoning),128k,IBM,4.9*,--,44.4,9.10,20.37,4,34,--,--,--,-77,--,--,--,--,22,4,Model Providers,https://artificialanalysis.ai/models/granite-3-3-8b-instruct
+Qwen3 1.7B (Non-reasoning),32k,Alibaba,4.9*,--,--,--,--,5,28,--,--,--,-84,--,--,--,--,21,2,Model Providers,https://artificialanalysis.ai/models/qwen3-1.7b-instruct
+Gemma 3 27B Instruct,128k,Google,4.9,$0.00,--,--,--,4,43,23,48,0,-67,--,--,--,0,32,8,Model Providers,https://artificialanalysis.ai/models/gemma-3-27b
+Ministral 3 3B,256k,Mistral,4.8,$0.01,207.9,0.71,3.11,5,36,15,38,0,-64,--,--,--,0,27,20,Model Providers,https://artificialanalysis.ai/models/ministral-3-3b
+Qwen3 0.6B (Non-reasoning),32k,Alibaba,4.8*,--,--,--,--,5,23,--,--,--,-85,--,--,--,--,22,6,Model Providers,https://artificialanalysis.ai/models/qwen3-0.6b-instruct
+LFM2 1.2B,32768,Liquid AI,4.8*,--,--,--,--,6,23,--,--,--,-72,--,--,--,--,22,19,Model Providers,https://artificialanalysis.ai/models/lfm2-1-2b
+Gemma 3 4B Instruct,128k,Google,4.8*,--,--,--,--,5,29,--,30,--,-83,--,--,--,--,28,2,Model Providers,https://artificialanalysis.ai/models/gemma-3-4b
+LFM2.5-VL-1.6B,32k,Liquid AI,4.8*,--,--,--,--,5,29,--,27,--,-84,--,--,--,--,33,4,Model Providers,https://artificialanalysis.ai/models/lfm2-5-vl-1-6b
+Qwen3 0.6B (Reasoning),32k,Alibaba,4.8*,--,--,--,--,6,24,--,--,--,-79,--,--,--,--,23,9,Model Providers,https://artificialanalysis.ai/models/qwen3-0.6b-instruct-reasoning
+Granite 4.0 350M,32768,IBM,4.8*,--,--,--,--,6,26,--,--,--,-69,--,--,--,--,16,24,Model Providers,https://artificialanalysis.ai/models/granite-4-0-350m
+Llama 3.2 Instruct 1B,128k,Meta,4.8*,--,--,--,--,5,20,--,--,--,-55,--,--,--,--,23,34,Model Providers,https://artificialanalysis.ai/models/llama-3-2-instruct-1b
+Tiny Aya Global,8192,Cohere,4.8*,--,--,--,--,5,31,--,--,--,-84,--,--,--,--,20,4,Model Providers,https://artificialanalysis.ai/models/tiny-aya-global
+Llama 3 Instruct 8B,8192,Meta,4.8*,--,--,--,--,5,30,--,--,--,-70,--,--,--,--,25,10,Model Providers,https://artificialanalysis.ai/models/llama-3-instruct-8b
+Apertus 8B Instruct,65536,Swiss AI Initiative,4.8*,--,--,--,--,5,26,--,--,--,-77,--,--,--,--,22,4,Model Providers,https://artificialanalysis.ai/models/apertus-8b-instruct
+Granite 4.0 H 350M,32768,IBM,4.8*,--,--,--,--,6,26,--,--,--,-81,--,--,--,--,18,12,Model Providers,https://artificialanalysis.ai/models/granite-4-0-h-350m
+Gemma 3n E4B Instruct,32k,Google,4.8*,--,--,--,--,4,30,--,26,--,-81,--,--,--,--,28,3,Model Providers,https://artificialanalysis.ai/models/gemma-3n-e4b
+Gemma 3n E2B Instruct,32k,Google,4.8*,--,--,--,--,4,23,--,--,--,-80,--,--,--,--,22,7,Model Providers,https://artificialanalysis.ai/models/gemma-3n-e2b
+Gemma 3 1B Instruct,32k,Google,4.8*,--,--,--,--,5,24,--,--,--,-75,--,--,--,--,20,18,Model Providers,https://artificialanalysis.ai/models/gemma-3-1b
+NVIDIA Nemotron 3 Nano 4B,262k,NVIDIA,4.8,--,--,--,--,5,51,16,--,0,-71,--,--,--,0,58,11,Model Providers,https://artificialanalysis.ai/models/nvidia-nemotron-3-nano-4b
+Gemma 3 12B Instruct,128k,Google,3.8,$0.00,--,--,--,4,35,16,38,0,-77,--,--,--,0,37,3,Model Providers,https://artificialanalysis.ai/models/gemma-3-12b
+K2 Horizon 0.9B,131072,Institute of Foundation Models,3.0,--,--,--,--,5,29,7,--,0,-73,--,--,--,0,--,14,Model Providers,https://artificialanalysis.ai/models/k2-horizon-0-9b
+EXAONE 4.5 33B (Non-reasoning),262144,LG AI Research,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/exaone-4-5-33b-non-reasoning
+GPT-4o mini Realtime (Dec '24),128k,OpenAI,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/gpt-4o-mini-realtime-dec-2024
+GPT-5.4 Pro (Xhigh),1050k,OpenAI,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/gpt-5-4-pro
+GPT-3.5 Turbo (0613),4096,OpenAI,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/gpt-3-5-turbo-0613
+"GPT-6 Sol (Daybreak Blue, max)",1050k,OpenAI,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/gpt-6-sol-daybreak-blue
+Gemini 3 Deep Think,128k,Google,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/gemini-3-deep-think
+Mi:dm K 2.5 Pro Preview,128k,Korea Telecom,--,--,--,--,--,9,72,--,--,--,-63,--,--,--,--,46,5,Model Providers,https://artificialanalysis.ai/models/midm-250-pro-rsnsft
+GPT-4o Realtime (Dec '24),128k,OpenAI,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/gpt-4o-realtime-dec-2024
+GPT-5.5 Pro (Xhigh),922k,OpenAI,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,--,Model Providers,https://artificialanalysis.ai/models/gpt-5-5-pro
+Cogito v2.1 (Reasoning),128k,Deep Cogito,--,--,--,--,--,12,77,--,--,--,-26,--,--,--,--,46,20,Model Providers,https://artificialanalysis.ai/models/cogito-v2-1-reasoning

@@ -49,8 +49,12 @@ def load_officers():
 
 
 def load_snapshot_best():
-    """快照按 canonical 名取 II 最高的行（与 enrich 同规则），供雷达取子分。"""
-    path = os.path.join(ROOT, "data", "aa_models_snapshot_2026-10-10.csv")
+    """最新快照按 canonical 名取 II 最高的行（与 enrich 同规则），供雷达取子分。"""
+    import glob as _g
+    paths = sorted(_g.glob(os.path.join(ROOT, "data", "aa_models_snapshot_*.csv")))
+    if not paths:
+        raise SystemExit("no aa snapshot found")
+    path = paths[-1]
     with open(path, encoding="utf-8") as f:
         rows = list(csv.DictReader(f))
 

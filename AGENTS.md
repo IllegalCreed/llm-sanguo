@@ -8,7 +8,7 @@
 
 ## 关键事实（新会话先读这个）
 
-- **数据**：`data/sanguo14_officers.csv`（1180 武将，Nobuwiki 整理的 PK 版数据）；`data/aa_models_snapshot_2026-10-10.csv`（697 模型、687 有分，源自 leaderboard 单页内嵌全库表，II/成本/速度/延迟俱全，榜首 57.6）
+- **数据**：`data/sanguo14_officers.csv`（1180 武将，Nobuwiki 整理的 PK 版数据）；AA 快照按抓取日留档（`data/aa_models_snapshot_*.csv`，现行 2026-10-16 版 703 模型/693 有分，2026-10-10 版 697 为首份），文件名=抓取日期，enrich 与站点自动取最新；**模型不成长**——已发布模型 II 不变，跨快照的折算值变化全部来自环境：榜首基准通胀、新秀进榜、降价、调用份额迁移（江湖变迁，非武将成长）
 - **方法论**：`docs/methodology.md`。核心规则——武力 ↔ Intelligence Index 为最高权重（0.7），折算公式 `武力 = round(II ÷ 榜首II × 100)`；智力 = 性价比（成本反比，权重 0.3）；统率/政治/魅力对应 agentic/对齐/调用量，暂无数据源；阵营典故仅作叙事；模型名不带推理档位后缀（max/xhigh 等），数值统一取最高档；折算统率 = agentic 四子分均值÷榜首×100，折算智力 = (1−成本百分位)×100，折算魅力 = OpenRouter 调用份额÷榜首×100（fetch_openrouter.py 抓取），折算政治 = ifbench与不幻觉率均值÷榜首×100
 - **映射**：`mapping/mapping_v0.8.csv` 演义版 102 席（武力/统率/智力/魅力/政治五维全折算）（双套数值：游戏原版 + 模型折算）；`mapping/mapping_source.csv` 是人工维护源（只写关系与典故，数值由脚本联结）。铁律：主公位=厂家机构位只写公司名（曹操=OpenAI、刘备=幻方量化、孙权=Meta），模型只坐武将/诸侯位（退役与否写进 note，不设"已故"角色）；血缘武将同厂商；模型名不带推理档位后缀、数值取最高档
 - **脚本**：`scripts/enrich_mapping.py`（改 mapping_source.csv 后重跑，产出 v0.8）；`scripts/fetch_openrouter.py`（抓 OpenRouter 调用榜，魅力维度数据源）；`scripts/build_site.py`（v0.5 → 美漫风展示站 `docs/index.html`，改完映射记得重跑）；`scripts/rebuild_snapshot.py`（快照重建，--leaderboard 单页全库为首选）；`scripts/match.py --model "模型名"`（天命版自动匹配）
