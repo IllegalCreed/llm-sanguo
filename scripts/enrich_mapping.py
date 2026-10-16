@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""联结 mapping_source.csv 与两份史源数据，生成 mapping_v0.7.csv。
+"""联结 mapping_source.csv 与两份史源数据，生成 mapping_v0.8.csv。
 
 - 游戏原版五维：data/sanguo14_officers.csv（按武将名精确匹配，繁体）
 - 模型评测：data/aa_models_snapshot_*.csv（取最新一份快照）
@@ -15,6 +15,8 @@
   itbenchSre/gdpval 四项 agentic 子分中非空项的均值（0-100）
 - 折算智力 = round((1 − 成本百分位) × 100)，成本百分位取全库有成本模型的排名
   （越便宜越有计）
+- 折算政治 = round(政治基准 ÷ 政治榜首 × 100)，政治基准 = ifbench（指令遵循）与
+  omniscienceNonHallucination（不幻觉率）两项非空项的均值——听指令、不整活
 - 折算魅力 = round(调用量份额 ÷ 榜首份额 × 100)，调用量取 OpenRouter
   rankings/models 端点全期 rankingMetricValue（data/openrouter_rankings_*.json，
   scripts/fetch_openrouter.py 抓取）；slug 三级匹配：去日期精确 → 前缀(≥6字符) →
@@ -104,6 +106,12 @@ def load_models():
         vals = [v for v in vals if v is not None]
         return round(sum(vals) / len(vals)) if vals else None
 
+    def politics(r):
+        # 政治基准 = 指令遵循(ifbench)与不幻觉率(nonhallucination)非空项均值
+        vals = [fnum(r[k]) for k in ("ifbench", "nonhallucination")]
+        vals = [v for v in vals if v is not None]
+        return round(sum(vals) / len(vals)) if vals else None
+
     index = {}
     for r in rows:
         ii = fnum(r["intelligence_index"])
@@ -113,6 +121,7 @@ def load_models():
             "cost": fnum(r["cost_per_task_usd"]),
             "speed": fnum(r["median_tokens_per_s"]),
             "leadership": agentic(r),
+            "politics": politics(r),
         }
         key = canonical_name(r["model"])
         best = index.get(key)
@@ -121,7 +130,8 @@ def load_models():
                 ((best["ii"] or -1), effort_rank(best["model"])):
             index[key] = rec
     top_leadership = max((rec["leadership"] or 0) for rec in index.values()) or None
-    return index, os.path.basename(path), top_ii, top_leadership, costs
+    top_politics = max((rec["politics"] or 0) for rec in index.values()) or None
+    return index, os.path.basename(path), top_ii, top_leadership, top_politics, costs
 
 
 # OpenRouter slug → AA 名的人工别名（词序/命名差异，匹配前先 norm）
@@ -168,7 +178,7 @@ def is_non_model(name):
 
 def main():
     officers = load_officers()
-    index, snapshot, top_ii, top_leadership, costs = load_models()
+    index, snapshot, top_ii, top_leadership, top_politics, costs = load_models()
     charm, charm_top = load_charm()
 
     def charm_for(model_name):
@@ -193,7 +203,8 @@ def main():
 
     header = [
         "role", "faction", "general", "model", "creator", "aa_ii",
-        "derived_warfare", "derived_leadership", "derived_intellect", "derived_charm",
+        "derived_warfare", "derived_leadership", "derived_intellect",
+        "derived_charm", "derived_politics",
         "cost_per_task_usd", "median_tokens_per_s",
         "game_leadership", "game_warfare", "game_intellect",
         "game_politics", "game_charm", "game_total", "note",
@@ -221,6 +232,9 @@ def main():
                 round((1 - bisect.bisect_left(costs, m["cost"]) / (len(costs) - 1)) * 100)
                 if m and m.get("cost") is not None and len(costs) > 1 else ""),
             "derived_charm": charm_for(r["model"]) if r["model"] else "",
+            "derived_politics": (
+                round(m["politics"] / top_politics * 100)
+                if m and m.get("politics") and top_politics else ""),
             "cost_per_task_usd": (m or {}).get("cost", "") if m else "",
             "median_tokens_per_s": (m or {}).get("speed", "") if m else "",
             "game_leadership": g["leadership"] if g else "",
@@ -232,7 +246,7 @@ def main():
             "note": r["note"],
         })
 
-    dst = os.path.join(MAPPING, "mapping_v0.7.csv")
+    dst = os.path.join(MAPPING, "mapping_v0.8.csv")
     with open(dst, "w", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=header)
         w.writeheader()
