@@ -5,9 +5,18 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 
 DATE=$(date +%Y-%m-%d)
-echo "== 1/6 抓 AA 快照（$DATE）=="
-curl -s --max-time 90 -o /tmp/leaderboard.html "https://artificialanalysis.ai/leaderboards/models"
-python3 scripts/rebuild_snapshot.py --leaderboard /tmp/leaderboard.html "data/aa_models_snapshot_${DATE}.csv"
+echo "== 1/6 抓 AA 快照 ($DATE) =="
+UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36"
+ok=0
+for i in 1 2 3; do
+  curl -s --compressed -A "$UA" --max-time 90 -o /tmp/leaderboard.html "https://artificialanalysis.ai/leaderboards/models"
+  if python3 scripts/rebuild_snapshot.py --leaderboard /tmp/leaderboard.html "data/aa_models_snapshot_${DATE}.csv"; then ok=1; break; fi
+  echo "第 $i 次抓取/解析失败，20s 后重试…"; sleep 20
+done
+if [ "$ok" != 1 ]; then
+  echo "::warning::AA 快照抓取失败（疑似数据中心 IP 被反爬拦截），本轮跳过快照更新，沿用最新历史快照"
+  rm -f "data/aa_models_snapshot_${DATE}.csv"
+fi
 
 echo "== 2/6 抓 OpenRouter 调用榜 =="
 python3 scripts/fetch_openrouter.py || echo "(跳过：OpenRouter 拉取失败)"
